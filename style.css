@@ -1,0 +1,61 @@
+.container {
+  min-height: 210px;
+  background: linear-gradient(45deg,#13c3e7,#01f86c);
+}
+
+.gamburger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  border: 0;
+  background-color: transparent
+  ;
+  
+  cursor: pointer;
+}
+
+.gamburger::after{
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  left: 0;
+  top:0;
+  box-shadow: 0 8px 0 0 white,0 16px 0 0 white;
+}
+
+.headerText{
+  text-align: center;
+  margin-top: 68px;
+}
+
+.gamburgerContainer{
+  margin-top: 18px;
+  margin-right: 20px;
+}
+
+.logo{
+  margin-top: 18px;
+  margin-left: 20px;
+  color: white;
+}
+
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.none{
+  display: none;
+}
+
+body {
+  min-width: 375px;
+  overflow-x: hidden;
+}
+
+*,*::after,::before{
+  box-sizing: border-box;
+}
