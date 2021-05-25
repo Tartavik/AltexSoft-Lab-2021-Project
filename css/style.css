@@ -30,24 +30,37 @@ html {
 *, *::after, ::before {
   box-sizing: inherit; }
 
+.wrapper {
+  width: 100%; }
+
 .none {
   display: none !important; }
 
+.overflow {
+  overflow: hidden; }
+
+.sticky {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0; }
+
 .container {
   min-height: 210px;
+  min-width: 375px;
   background: linear-gradient(45deg, #13c3e7, #01f86c); }
 
 .gamburgerContainer {
   margin-top: 18px;
   margin-right: 20px; }
-  .gamburgerContainer .gamburger {
+  .gamburgerContainer .gamburgerIcon {
     width: 24px;
     height: 18px;
     position: relative;
     border: 0;
     background-color: transparent;
     cursor: pointer; }
-    .gamburgerContainer .gamburger::after {
+    .gamburgerContainer .gamburgerIcon::after {
       content: '';
       position: absolute;
       width: 24px;
@@ -56,6 +69,31 @@ html {
       left: 0;
       top: 0;
       box-shadow: 0 8px 0 0 white,0 16px 0 0 white; }
+  .gamburgerContainer .backIcon {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer; }
+    .gamburgerContainer .backIcon::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      background-color: white;
+      left: 0;
+      top: 5px;
+      transform: rotate(45deg); }
+    .gamburgerContainer .backIcon::before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      background-color: white;
+      left: 0;
+      top: 5px;
+      transform: rotate(135deg); }
 
 .headerText {
   text-align: center;
@@ -91,18 +129,20 @@ html {
   right: 0;
   left: 0;
   background: white;
+  z-index: 1;
   font-family: Acme; }
-  .containerHeaderMenu nav {
+  .containerHeaderMenu .headerMenu {
     flex-direction: column;
     display: flex;
     margin-top: 24px; }
-    .containerHeaderMenu nav a {
+    .containerHeaderMenu .headerMenu a {
       margin-top: 16px;
       text-align: center;
       font-size: 12px;
       line-height: 24px;
       letter-spacing: 2px;
-      color: #22BF95; }
+      color: #22BF95;
+      text-decoration: none; }
   .containerHeaderMenu .currentLink::after {
     content: '';
     position: absolute;
@@ -133,30 +173,71 @@ html {
   margin: auto;
   border: 1px solid;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   font-family: Acme;
   margin-top: -12px;
   box-shadow: 0px 12px 24px #F2F2F2;
   border-radius: 5px;
   border: none;
-  background: white; }
+  background: white;
+  position: relative; }
   .tabs a {
     font-size: 12px;
     line-height: 20px;
     letter-spacing: 2px;
-    color: #7F7F7F; }
+    color: #7F7F7F;
+    cursor: pointer;
+    text-decoration: none; }
+  .tabs .headTips {
+    flex-basis: 29%;
+    text-align: center;
+    height: 100%;
+    padding-top: 3%; }
+    .tabs .headTips::after {
+      content: '';
+      position: absolute;
+      border-left: 1.5px solid #E5E5E5;
+      height: 50%;
+      left: 29%; }
+  .tabs .headGlossary {
+    flex-basis: 40%;
+    text-align: center;
+    height: 100%;
+    padding-top: 3%; }
+    .tabs .headGlossary::after {
+      content: '';
+      position: absolute;
+      border-left: 1.5px solid #E5E5E5;
+      height: 50%;
+      left: 69%; }
+  .tabs .headFAQs {
+    flex-basis: 31%;
+    height: 100%;
+    text-align: center;
+    padding-top: 3%; }
 
 .accordionsContainer {
   min-width: 335px;
+  margin-top: 24px;
   width: 100%;
   font-family: Aclonica; }
+  .accordionsContainer .line {
+    margin: auto;
+    height: 1px;
+    width: 89%;
+    background-color: #22BF95; }
   .accordionsContainer .skoutTipsContainer {
     width: 89%;
     margin: auto; }
+    .accordionsContainer .skoutTipsContainer .line {
+      width: 100%;
+      border-top: 1.5px solid #B2B2B2;
+      border-radius: 5px; }
   .accordionsContainer .accordContainer {
     width: 89%;
-    margin: auto; }
+    margin: auto;
+    min-height: 54px; }
     .accordionsContainer .accordContainer .panel {
       padding: 0 18px;
       color: #212121;
@@ -166,15 +247,18 @@ html {
       transition: max-height 0.4s ease-out; }
     .accordionsContainer .accordContainer .headAccordion {
       display: flex;
-      justify-content: space-between;
       align-items: center; }
       .accordionsContainer .accordContainer .headAccordion .number {
         font-family: Actor;
         font-size: 40px;
+        width: 30px;
         line-height: 48px;
         letter-spacing: 2px;
         color: #E5E5E5;
         text-transform: uppercase; }
+      .accordionsContainer .accordContainer .headAccordion .accordText {
+        flex-basis: 91%;
+        margin-left: 18px; }
       .accordionsContainer .accordContainer .headAccordion .accordion {
         border: 1.5px solid #22BF95;
         position: relative;
@@ -191,7 +275,7 @@ html {
           position: absolute;
           background-color: #22BF95;
           top: 50%;
-          left: 23%; }
+          left: 21%; }
         .accordionsContainer .accordContainer .headAccordion .accordion::before {
           content: '';
           width: 7px;
@@ -199,34 +283,82 @@ html {
           position: absolute;
           background-color: #22BF95;
           top: 50%;
-          left: 23%;
+          left: 20%;
           transform: rotate(90deg); }
   .accordionsContainer #headTips {
     width: 90px;
-    height: 19px; }
+    height: 19px;
+    margin-top: 10px; }
   .accordionsContainer #headGlossary {
     width: 114px;
     height: 18px;
     margin-left: 20px; }
+  .accordionsContainer .glossaryContaner .line {
+    margin-top: 24px;
+    margin-bottom: 11px;
+    width: 89%;
+    border-top: 1.5px solid #B2B2B2;
+    border-radius: 5px; }
+  .accordionsContainer .glossaryContaner img {
+    margin-top: 11px;
+    margin-bottom: 20px; }
 
 section {
   background: linear-gradient(45deg, #e0e0e0, #ffffff);
   font-family: Aclonica;
   padding-top: 1px; }
-  section .slaiderContainer {
+  section .sliderContainer {
+    max-width: 405px;
     margin: 24px 20px 0 20px;
     background-color: white;
     box-shadow: 0px 12px 24px #E5E5E5;
     border-radius: 5px;
-    padding: 40px 75px 40px 62px;
     display: flex; }
-    section .slaiderContainer .sliderItem {
-      font-size: 16px;
-      line-height: 32px; }
-      section .slaiderContainer .sliderItem span {
-        color: #7F7F7F; }
-    section .slaiderContainer .sliderButton {
-      margin-left: 25px; }
+    section .sliderContainer .sliderHead {
+      margin: 40px 75px 40px 60px; }
+      section .sliderContainer .sliderHead .sliderItem {
+        font-size: 16px;
+        line-height: 32px; }
+        section .sliderContainer .sliderHead .sliderItem span {
+          color: #7F7F7F; }
+    section .sliderContainer .sliderButton {
+      display: flex;
+      flex-direction: column;
+      margin-left: -45px; }
+      section .sliderContainer .sliderButton button {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: white;
+        border: 1px solid #22BF95;
+        display: flex;
+        align-items: stretch;
+        padding-bottom: -30px;
+        padding-bottom: -5px;
+        padding-top: 0px;
+        margin-top: 16px;
+        position: relative;
+        cursor: pointer; }
+        section .sliderContainer .sliderButton button::after {
+          content: '';
+          width: 6px;
+          height: 6px;
+          border-right: 2px solid #22BF95;
+          border-bottom: 2px solid #22BF95;
+          position: absolute;
+          transform: rotate(-50deg);
+          top: 4px;
+          left: 5px; }
+        section .sliderContainer .sliderButton button::before {
+          content: '';
+          width: 8px;
+          height: 2px;
+          background-color: #22BF95;
+          position: absolute;
+          top: 45%;
+          left: 21%; }
+      section .sliderContainer .sliderButton .rotate {
+        transform: rotate(180deg); }
   section .sliderText p {
     font-family: Actor;
     font-size: 32px;
@@ -244,6 +376,12 @@ section {
   height: 18px;
   margin-left: 20px; }
 
+.faqsContainer .line {
+  width: 89%;
+  border-top: 1.5px solid #B2B2B2;
+  border-radius: 5px;
+  margin: 24px auto 11px auto; }
+
 .faqsAccordionContainer {
   font-family: Aclonica; }
   .faqsAccordionContainer .panel {
@@ -254,22 +392,86 @@ section {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out; }
+    .faqsAccordionContainer .panel span {
+      font-size: 40px;
+      line-height: 48px;
+      margin-right: 25px;
+      color: #E5E5E5; }
     .faqsAccordionContainer .panel .answer {
       font-size: 14px;
-      line-height: 24px; }
+      line-height: 24px;
+      color: #191919; }
   .faqsAccordionContainer .headAccordion {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     min-height: 114px; }
+    .faqsAccordionContainer .headAccordion span:first-child {
+      font-size: 40px;
+      line-height: 48px;
+      margin-right: 25px;
+      color: #E5E5E5; }
+    .faqsAccordionContainer .headAccordion .accordion {
+      width: 20px;
+      height: 20px;
+      border-bottom: 1.5px solid #22BF95;
+      border-left: 1.5px solid #22BF95;
+      background: white;
+      border-top: 0;
+      border-right: 0;
+      transform: rotate(-45deg);
+      cursor: pointer; }
     .faqsAccordionContainer .headAccordion .question {
-      font-size: 16px;
-      line-height: 24px;
-      margin-left: 20px;
-      font-style: normal;
-      font-weight: normal; }
+      flex-basis: 80%;
+      color: #191919; }
 
-footer .skoutBottom {
-  width: 105px;
-  height: 38px; }
+footer {
+  background-color: #F2F2F2;
+  width: 100%;
+  font-family: Aclonica; }
+  footer .aboutCompany {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    footer .aboutCompany .linkCompany {
+      display: flex;
+      flex-direction: column;
+      margin: 24px 0 0 23px; }
+      footer .aboutCompany .linkCompany a {
+        font-size: 12px;
+        line-height: 24px;
+        color: #7F7F7F;
+        margin-top: 12px;
+        text-decoration: none; }
+      footer .aboutCompany .linkCompany span {
+        font-size: 16px;
+        line-height: 24px;
+        color: #7F7F7F;
+        margin-bottom: 20px; }
+    footer .aboutCompany .addres {
+      display: flex;
+      flex-direction: column;
+      padding: 8px 0 8px 23px;
+      border-top: 2px solid #22BF95; }
+      footer .aboutCompany .addres p {
+        font-size: 16px;
+        line-height: 36px;
+        color: #7F7F7F;
+        margin: 0; }
+      footer .aboutCompany .addres span {
+        font-size: 16px;
+        line-height: 24px;
+        color: #7F7F7F; }
+      footer .aboutCompany .addres a {
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 20px;
+        color: #22BF95; }
+  footer .social {
+    border-top: 1.5px solid #B2B2B2;
+    margin-top: 12px;
+    padding-top: 20px;
+    text-align: center; }
+  footer .skoutBottom {
+    width: 105px;
+    height: 38px; }

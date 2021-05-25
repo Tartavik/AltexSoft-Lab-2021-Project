@@ -11,24 +11,24 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
-        <div class="container">
-          <div class="headerInner">
-            <div class="logo"><img src="image/skoutTop.png" alt="Skout"></div>
 
-            <nav class="gamburgerContainer">
-              <button class="gamburger"></button>
-            </nav>
+      <header class="header">
+
+        <div class="container">
+
+          <div class="headerInner">
+            
+            <div class="logo"><img src="image/skoutTop.png" alt="Skout" /></div>
 
             <div class="containerHeaderMenu none">
               <div>
                 <nav class="headerMenu">
-                  <a href="sdf" class="currentLink">WHY SKOUT</a>
-                  <a href="#sdfdsf">PRODUCTS</a>
+                  <a href="#" class="currentLink">WHY SKOUT</a>
+                  <a href="#">PRODUCTS</a>
                   <a href="#">PARTNERS</a>
-                  <a href="head1">COMPANY</a>
-                  <a>TIPS&TOOLS</a>
-                  <a class="s">BLOG</a>
+                  <a href="#">COMPANY</a>
+                  <a href="#">TIPS&TOOLS</a>
+                  <a href="#">BLOG</a>
                 </nav>
               </div>
               <div class="enterButton">
@@ -36,31 +36,37 @@
                 <button>LOG IN</button>
               </div>
             </div>
+
+            <nav class="gamburgerContainer">
+              <button class="gamburger gamburgerIcon"></button>
+            </nav>
+
           </div>
 
           <div class="headerText"><span>Tips&Tools</span></div>
+
         </div>
       </header>
 
       <nav class="tabs">
-        <a href="#headTips">TIPS</a>
-        <div class="verticalLine"></div>
-        <a href="#headGlossary">GLOSSARY</a>
-        <div class="verticalLine"></div>
-        <a href="#headFAQs">FAQS</a>
+        <a href="#headTips" class="headTips">TIPS</a>
+        
+        <a href="#headGlossary" class="headGlossary">GLOSSARY</a>
+        
+        <a href="#headFAQs" class="headFAQs">FAQS</a>
+                
       </nav>
 
-      
       <div class="accordionsContainer">
         <div class="skoutTipsContainer">
           <div class="line"></div>
-          <img src="image/skout-tips.svg" id='headTips' alt="Skout Tips" />
+          <img src="image/skout-tips.svg" id="headTips" alt="Skout Tips" />
         </div>
-        
+        <div class="line"></div>
         <div class="accordContainer">
           <div class="headAccordion">
             <span class="number">1</span>
-            <span>System Patching</span>
+            <span class="accordText">System Patching</span>
             <button class="accordion"></button>
           </div>
           <div class="panel">
@@ -87,10 +93,11 @@
             </div>
           </div>
         </div>
+        <div class="line"></div>
         <div class="accordContainer">
           <div class="headAccordion">
             <span class="number">2</span>
-            <span>End-to-End Protection</span>
+            <span class="accordText">End-to-End Protection</span>
             <button class="accordion"></button>
           </div>
           <div class="panel">
@@ -117,10 +124,11 @@
             </div>
           </div>
         </div>
+        <div class="line"></div>
         <div class="accordContainer">
           <div class="headAccordion">
             <span class="number">3</span>
-            <span>Empowering Teams</span>
+            <span class="accordText">Empowering Teams</span>
             <button class="accordion"></button>
           </div>
           <div class="panel">
@@ -147,10 +155,11 @@
             </div>
           </div>
         </div>
+        <div class="line"></div>
         <div class="accordContainer">
           <div class="headAccordion">
             <span class="number">4</span>
-            <span>Secure Credentials</span>
+            <span class="accordText">Secure Credentials</span>
             <button class="accordion"></button>
           </div>
           <div class="panel">
@@ -177,14 +186,17 @@
             </div>
           </div>
         </div>
-
         <div class="line"></div>
-        <img src="image/skout-glossary.svg" id='headGlossary' alt="#">
-      </div>
+
+        <div class="glossaryContaner">
+          <div class="line"></div>
+          <img src="image/skout-glossary.svg" id="headGlossary" alt="#" />
+        </div>
+        </div>
 
       <section>
-        <div class="slaiderContainer">
-          <div class="slaiderHead">
+        <div class="sliderContainer">
+          <div class="sliderHead">
             <div class="sliderItem">
               <span>IP Address</span>
             </div>
@@ -202,89 +214,102 @@
             </div>
           </div>
           <div class="sliderButton">
-            <button>-></button>
-            <button><-</button>
+              <button></button>
+              <button class="rotate"></button>
           </div>
         </div>
         <div class="sliderText">
           <p>Ransomware</p>
-          <span>Malicious software that blocks access 
-            to a system until a ransom is paid.</span>
+          <span
+            >Malicious software that blocks access to a system until a ransom is
+            paid.</span
+          >
         </div>
       </section>
-      
-      <div class="line"></div>
-      <img src="image/skout-faqs.svg" id='headFAQs' alt="">
 
+      <div class="faqsContainer">
+        <div class="line"></div>
+        <img src="image/skout-faqs.svg" id="headFAQs" alt="" />
+
+      </div>
+      
       <div class="faqsAccordionContainer">
         <div class="">
           <div class="headAccordion">
-            <h1>Q</h1>
+            <span>Q</span>
             <span class="question">What are your system requirements?</span>
-            <button class="accordion">+</button>
+            <button class="accordion"></button>
           </div>
           <div class="panel">
-            <h1>A</h1>
+            <span>A</span>
             <div>
-              <span class="answer">SKOUT will work on Windows, Mac, 
-                and Linux environments.</span>
+              <span class="answer"
+                >SKOUT will work on Windows, Mac, and Linux environments.</span
+              >
             </div>
           </div>
         </div>
         <div class="">
           <div class="headAccordion">
-            <h1>Q</h1>
-            <span class="question" >Is SKOUT windows and Mac compatible?</span>
-            <button class="accordion">+</button>
+            <span>Q</span>
+            <span class="question"
+              >Do I need an MSP or Technology provider to get SKOUT?</span
+            >
+            <button class="accordion"></button>
           </div>
           <div class="panel">
-            <h1>A</h1>
+            <span>A</span>
             <div>
-              <span class="answer">SKOUT will work on Windows, Mac, 
-                and Linux environments.</span>
+              <span class="answer"
+                >SKOUT will work on Windows, Mac, and Linux environments.</span
+              >
             </div>
           </div>
         </div>
         <div class="">
           <div class="headAccordion">
-            <h1>Q</h1>
-            <span class="question">Do I need an MSP or Technology 
-              provider to get SKOUT?</span>
-            <button class="accordion">+</button>
+            <span>Q</span>
+            <span class="question"
+              >Do I need an MSP or Technology provider to get SKOUT?</span
+            >
+            <button class="accordion"></button>
           </div>
           <div class="panel">
-            <h1>A</h1>
+            <span>A</span>
             <div>
-              <span class="answer">SKOUT will work on Windows, Mac, 
-                and Linux environments.</span>
+              <span class="answer"
+                >SKOUT will work on Windows, Mac, and Linux environments.</span
+              >
             </div>
           </div>
         </div>
         <div class="">
           <div class="headAccordion">
-            <h1>Q</h1>
+            <span>Q</span>
             <span class="question">Is there a trial program?</span>
-            <button class="accordion">+</button>
+            <button class="accordion"></button>
           </div>
           <div class="panel">
-            <h1>A</h1>
+            <span>A</span>
             <div>
-              <span class="answer">SKOUT will work on Windows, Mac, 
-                and Linux environments.</span>
+              <span class="answer"
+                >SKOUT will work on Windows, Mac, and Linux environments.</span
+              >
             </div>
           </div>
         </div>
         <div class="">
           <div class="headAccordion">
-            <h1>Q</h1>
+            <span>Q</span>
             <span class="question">Can I get a Demo?</span>
-            <button class="accordion">+</button>
+            <button class="accordion"></button>
           </div>
           <div class="panel">
-            <h1>A</h1>
+            <span>A</span>
             <div>
-              <span class="answer">SKOUT will work on Windows, Mac, 
-                and Linux environments.</span>
+              <span class="answer"
+                >SKOUT will work on Windows, Mac, and Linux environments.</span
+              >
             </div>
           </div>
         </div>
@@ -293,7 +318,7 @@
 
       <footer>
         <div class="aboutCompany">
-          <div>
+          <div class="linkCompany">
             <a href="#">Blog</a>
             <a href="#">Company</a>
             <a href="#">Terms & Conditions</a>
@@ -302,22 +327,22 @@
             <a href="#">Call the SOC</a>
             <span>1-855-838-4500</span>
           </div>
-          <div>
-            <h4>New York</h4>
+          <div class="addres">
+            <p>New York</p>
             <span>+1 631-203-6600</span>
             <span>423 W 55th St. 7th Floor</span>
             <span>New York, NY, 10019</span>
             <a href="#">View Map</a>
           </div>
-          <div>
-            <h4>New York</h4>
+          <div class="addres">
+            <p>New York</p>
             <span>+1 631-203-6600</span>
             <span>423 W 55th St. 7th Floor</span>
             <span>New York, NY, 10019</span>
             <a href="#">View Map</a>
           </div>
-          <div>
-            <h4>New York</h4>
+          <div class="addres">
+            <p>New York</p>
             <span>+1 631-203-6600</span>
             <span>423 W 55th St. 7th Floor</span>
             <span>New York, NY, 10019</span>
@@ -326,12 +351,12 @@
         </div>
         <div class="social">
           <div>
-            <img src="#" alt="#">
-            <img src="#" alt="#">
-            <img src="#" alt="#">
-            <img src="#" alt="#">
+            <img src="#" alt="#" />
+            <img src="#" alt="#" />
+            <img src="#" alt="#" />
+            <img src="#" alt="#" />
           </div>
-          <img src="image/skoutBottom.png" class="skoutBottom" alt="">
+          <img src="image/skoutBottom.png" class="skoutBottom" alt="" />
         </div>
       </footer>
     </div>
