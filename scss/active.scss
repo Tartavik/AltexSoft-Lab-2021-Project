@@ -1,0 +1,50 @@
+.backIcon {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background-color: $colorTextPrimary;
+            left: 0;
+            top:5px;
+            transform: rotate(45deg);
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background-color: $colorTextPrimary;
+            left: 0;
+            top:5px;
+            transform: rotate(135deg)
+        }
+}
+
+.none{
+    display: none !important;
+  }
+
+.overflow{
+    overflow: hidden;
+} 
+
+.sticky {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+
+.nive{
+     display: none !important;
+}
+   

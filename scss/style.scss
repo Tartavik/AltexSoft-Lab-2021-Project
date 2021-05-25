@@ -1,5 +1,6 @@
 @import 'vars';
 @import 'fonts';
+@import 'active';
 body {
     min-width: 375px;
     overflow-x: hidden;
@@ -22,20 +23,6 @@ html{
     width: 100%;
 }  
 
-.none{
-    display: none !important;
-  }
-
-.overflow{
-    overflow: hidden;
-} 
-
-.sticky {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
 
 .container {
     min-height: 210px;
@@ -44,17 +31,17 @@ html{
 
   }
  
-  .gamburgerContainer{
-    margin-top: 18px;
-    margin-right: 20px;
+    .gamburgerContainer{
+        margin-top: 18px;
+        margin-right: 20px;
 
-    .gamburgerIcon {
-        width: 24px;
-        height: 18px;
-        position: relative;
-        border: 0;
-        background-color: transparent;
-        cursor: pointer;
+        .gamburgerIcon {
+            width: 24px;
+            height: 18px;
+            position: relative;
+            border: 0;
+            background-color: transparent;
+            cursor: pointer;
             &::after{
                 content: '';
                 position: absolute;
@@ -65,36 +52,8 @@ html{
                 top:0;
                 box-shadow: 0 8px 0 0 white,0 16px 0 0 white;
             }
-      }
-      .backIcon {
-        width: 24px;
-        height: 18px;
-        position: relative;
-        border: 0;
-        background-color: transparent;
-        cursor: pointer;
-            &::after{
-                content: '';
-                position: absolute;
-                width: 24px;
-                height: 2px;
-                background-color: $colorTextPrimary;
-                left: 0;
-                top:5px;
-                transform: rotate(45deg);
-            }
-            &::before{
-                content: '';
-                position: absolute;
-                width: 24px;
-                height: 2px;
-                background-color: $colorTextPrimary;
-                left: 0;
-                top:5px;
-                transform: rotate(135deg)
-            }
-      }
-  }
+        }
+    }
 
   .headerText{
     text-align: center;
@@ -330,6 +289,7 @@ html{
                 }
             }
         }
+        
     }
     
 

@@ -4,6 +4,11 @@ const gamburger = document.getElementsByClassName('gamburger')[0]
 const headerMenu = document.getElementsByClassName('headerMenu')[0];
 const anchors = document.querySelectorAll('a[href^="#head"');
 const tabs = document.getElementsByClassName("tabs")[0];
+const headAccordion = document.getElementsByClassName('headAccordion')[0];
+const number = document.getElementById('number');
+const accordText = document.getElementById('accordText');
+const accordion = document.getElementById('accordion');
+
 let sticky = tabs.offsetTop;
 
 gamburgerContainer.addEventListener('click',()=>{
@@ -25,7 +30,11 @@ function createAccordion(acc){
             panel.style.maxHeight = null;
           } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
-          } 
+          }
+         
+           
+          e.currentTarget.parentNode.children[0].classList.toggle('none');
+           
         });
       }
 }
