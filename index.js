@@ -1,77 +1,99 @@
-const containerHeaderMenu = document.getElementsByClassName('containerHeaderMenu')[0];
-const gamburgerContainer = document.getElementsByClassName('gamburgerContainer')[0];
-const gamburger = document.getElementsByClassName('gamburger')[0]
-const headerMenu = document.getElementsByClassName('headerMenu')[0];
+const containerHeaderMenu = document.getElementsByClassName(
+  "containerHeaderMenu"
+)[0];
+const gamburgerContainer =
+  document.getElementsByClassName("gamburgerContainer")[0];
+const gamburger = document.getElementsByClassName("gamburger")[0];
+const headerMenu = document.getElementsByClassName("headerMenu")[0];
 const anchors = document.querySelectorAll('a[href^="#head"');
 const tabs = document.getElementsByClassName("tabs")[0];
-const headAccordion = document.getElementsByClassName('headAccordion')[0];
-const number = document.getElementById('number');
-const accordText = document.getElementById('accordText');
-const accordion = document.getElementById('accordion');
-
+const accordContainer = document.getElementsByClassName("accordContainer");
+const number = document.getElementById("number");
+const accordText = document.getElementById("accordText");
+const accordion = document.getElementById("accordion");
+const headAccordionFaqs = document.getElementsByClassName("headAccordionFaqs");
 let sticky = tabs.offsetTop;
 
-gamburgerContainer.addEventListener('click',()=>{
-    containerHeaderMenu.classList.toggle('none');
-    gamburger.classList.toggle('gamburgerIcon');
-    gamburger.classList.toggle('backIcon');
-    document.body.classList.toggle('overflow');
+gamburgerContainer.addEventListener("click", () => {
+  containerHeaderMenu.classList.toggle("none");
+  gamburger.classList.toggle("gamburgerIcon");
+  gamburger.classList.toggle("backIcon");
+  document.body.classList.toggle("overflow");
 });
 
+createAccordionTop(accordContainer);
+createAccordionBottom(headAccordionFaqs);
 
-let acc = document.getElementsByClassName("accordion");
-createAccordion(acc);
-function createAccordion(acc){
-    for (let i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click",(e) =>{
-          e.currentTarget.classList.toggle("active");
-          let panel = e.currentTarget.parentNode.nextElementSibling;
-          if (panel.style.maxHeight){
-            panel.style.maxHeight = null;
-          } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-          }
-         
-           
-          e.currentTarget.parentNode.children[0].classList.toggle('none');
-           
-        });
+function createAccordionTop(acc) {
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", (e) => {
+      let panel = e.currentTarget.children[1];
+      e.currentTarget.children[0].children[2].classList.toggle(
+        "accordionActive"
+      );
+      e.currentTarget.children[0].children[2].classList.toggle("accordion");
+      e.currentTarget.children[0].children[0].classList.toggle("none");
+      e.currentTarget.children[0].children[1].classList.toggle(
+        "accordTextActive"
+);
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
       }
+    });
+  }
+}
+
+function createAccordionBottom (acc){
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", (e) => {
+      let panel = e.currentTarget.nextElementSibling;
+      e.currentTarget.children[2].classList.toggle('rotate')
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
 }
 
 
 for (let anchor of anchors) {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault()
-      
-      const blockID = anchor.getAttribute('href').substr(1)
-      console.log(anchor.getAttribute('href'));
-      document.getElementById(blockID).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        alignToTop: false
-      })
-    })
-  }
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    for(let link of anchors){
+      link.classList.remove('currentTabsLink');
+    }
+    e.currentTarget.classList.add('currentTabsLink')
 
+    const blockID = anchor.getAttribute("href").substr(1);
+    console.log(anchor.getAttribute("href"));
+    document.getElementById(blockID).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      alignToTop: false,
+    });
+  });
+}
 
+for (let i = 0; i < headerMenu.children.length; i++) {
+  headerMenu.children[i].addEventListener("click", (e) => {
+    for (let j = 0; j < headerMenu.children.length; j++) {
+      headerMenu.children[j].classList.remove("currentLink");
+    }
+    e.currentTarget.classList.add("currentLink");
+  });
+}
 
-
-  for(let i = 0;i < headerMenu.children.length;i++){
-    headerMenu.children[i].addEventListener('click',(e)=>{
-      for(let j = 0;j < headerMenu.children.length;j++){  
-        headerMenu.children[j].classList.remove('currentLink');
-      }
-      e.currentTarget.classList.add('currentLink');
-    })
-  }
-
-
-window.onscroll = () => {myFunction()};
+window.onscroll = () => {
+  myFunction();
+};
 
 function myFunction() {
   if (window.pageYOffset >= sticky) {
-    tabs.classList.add("sticky")
+    tabs.classList.add("sticky");
   } else {
     tabs.classList.remove("sticky");
   }

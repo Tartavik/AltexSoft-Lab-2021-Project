@@ -21,7 +21,7 @@
             <div class="logo"><img src="image/skoutTop.png" alt="Skout" /></div>
 
             <div class="containerHeaderMenu none">
-              <div>
+              <div class="wrapperHeaderMenu">
                 <nav class="headerMenu">
                   <a href="#" class="currentLink">WHY SKOUT</a>
                   <a href="#">PRODUCTS</a>
@@ -49,7 +49,7 @@
       </header>
 
       <nav class="tabs">
-        <a href="#headTips" class="headTips">TIPS</a>
+        <a href="#headTips" class="headTips currentTabsLink">TIPS</a>
         
         <a href="#headGlossary" class="headGlossary">GLOSSARY</a>
         
@@ -70,8 +70,8 @@
             <button class="accordion"></button>
           </div>
           <div class="panel">
-            <img src="image/groop.png" alt="#" />
-            <div>
+            <img src="image/groop.png" alt="#" class='mainIcon'/>
+            <div class="footerAccordion">
               <span
                 >There’s nothing hackers love more than a dismissed update
                 reminder. We keep our team’s computers in shape and up to date
@@ -87,8 +87,8 @@
                 systems are updated and updated regularly.
               </span>
             </div>
-            <div>
-              <img src="#" alt="#" />
+            <div class="bottomInfo">
+              <img src="image/Letter_i.png" alt="#" />
               <span>Based on the 2018 Verizon Data Breach Report</span>
             </div>
           </div>
@@ -101,8 +101,8 @@
             <button class="accordion"></button>
           </div>
           <div class="panel">
-            <img src="image/groop2.png" alt="#" />
-            <div>
+            <img src="image/groop2.png" alt="#" class='mainIcon'/>
+            <div class="footerAccordion">
               <span
                 >There’s nothing hackers love more than a dismissed update
                 reminder. We keep our team’s computers in shape and up to date
@@ -118,8 +118,8 @@
                 systems are updated and updated regularly.
               </span>
             </div>
-            <div>
-              <img src="#" alt="#" />
+            <div class="bottomInfo">
+              <img src="image/Letter_i.png" alt="#" />
               <span>Based on the 2018 Verizon Data Breach Report</span>
             </div>
           </div>
@@ -132,8 +132,8 @@
             <button class="accordion"></button>
           </div>
           <div class="panel">
-            <img src="image/groop3.png" alt="#" />
-            <div>
+            <img src="image/groop3.png" alt="#" class='mainIcon'/>
+            <div class="footerAccordion">
               <span
                 >There’s nothing hackers love more than a dismissed update
                 reminder. We keep our team’s computers in shape and up to date
@@ -149,8 +149,8 @@
                 systems are updated and updated regularly.
               </span>
             </div>
-            <div>
-              <img src="#" alt="#" />
+            <div class="bottomInfo">
+              <img src="image/Letter_i.png" alt="#" />
               <span>Based on the 2018 Verizon Data Breach Report</span>
             </div>
           </div>
@@ -163,8 +163,8 @@
             <button class="accordion"></button>
           </div>
           <div class="panel">
-            <img src="image/groop4.png" alt="#" />
-            <div>
+            <img src="image/groop4.png" alt="#" class='mainIcon' />
+            <div class="footerAccordion">
               <span
                 >There’s nothing hackers love more than a dismissed update
                 reminder. We keep our team’s computers in shape and up to date
@@ -180,8 +180,8 @@
                 systems are updated and updated regularly.
               </span>
             </div>
-            <div>
-              <img src="#" alt="#" />
+            <div class="bottomIcon">
+              <img src="image/Letter_i.png" alt="#" />
               <span>Based on the 2018 Verizon Data Breach Report</span>
             </div>
           </div>
@@ -215,15 +215,19 @@
           </div>
           <div class="sliderButton">
               <button></button>
-              <button class="rotate"></button>
+              <button class="rotateArrow"></button>
           </div>
         </div>
-        <div class="sliderText">
-          <p>Ransomware</p>
-          <span
-            >Malicious software that blocks access to a system until a ransom is
-            paid.</span
-          >
+        <div class="sliderTextContainer">
+          <div>
+            <p>Ransomware</p>
+          </div>
+          <div class="sliderText">
+            <div class="line"></div>
+            <span>Malicious software that blocks access to a system until a ransom is
+            paid.</span>
+          </div>
+
         </div>
       </section>
 
@@ -235,7 +239,7 @@
       
       <div class="faqsAccordionContainer">
         <div class="">
-          <div class="headAccordion">
+          <div class="headAccordionFaqs">
             <span>Q</span>
             <span class="question">What are your system requirements?</span>
             <button class="accordion"></button>
@@ -250,7 +254,7 @@
           </div>
         </div>
         <div class="">
-          <div class="headAccordion">
+          <div class="headAccordionFaqs">
             <span>Q</span>
             <span class="question"
               >Do I need an MSP or Technology provider to get SKOUT?</span
@@ -267,7 +271,7 @@
           </div>
         </div>
         <div class="">
-          <div class="headAccordion">
+          <div class="headAccordionFaqs">
             <span>Q</span>
             <span class="question"
               >Do I need an MSP or Technology provider to get SKOUT?</span
@@ -284,7 +288,7 @@
           </div>
         </div>
         <div class="">
-          <div class="headAccordion">
+          <div class="headAccordionFaqs">
             <span>Q</span>
             <span class="question">Is there a trial program?</span>
             <button class="accordion"></button>
@@ -299,7 +303,7 @@
           </div>
         </div>
         <div class="">
-          <div class="headAccordion">
+          <div class="headAccordionFaqs">
             <span>Q</span>
             <span class="question">Can I get a Demo?</span>
             <button class="accordion"></button>
@@ -313,7 +317,7 @@
             </div>
           </div>
         </div>
-        <div>MORE QUESTIONS</div>
+        <div class="moreQuestions">MORE QUESTIONS</div>
       </div>
 
       <footer>
@@ -350,11 +354,11 @@
           </div>
         </div>
         <div class="social">
-          <div>
-            <img src="#" alt="#" />
-            <img src="#" alt="#" />
-            <img src="#" alt="#" />
-            <img src="#" alt="#" />
+          <div class="conteinerSocialIcons">
+            <span class="twitter"></span>
+            <span class="facebook"></span>
+            <span class="youtube"></span>
+            <span class="in"></span>
           </div>
           <img src="image/skoutBottom.png" class="skoutBottom" alt="" />
         </div>

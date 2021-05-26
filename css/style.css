@@ -16,6 +16,203 @@
   font-style: normal;
   src: url("../fonts/Aclonica-Regular.woff2") format("woff2"), url("../fonts//Aclonica-Regular.woff") format("woff"); }
 
+.backIcon {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer; }
+  .backIcon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    top: 5px;
+    transform: rotate(45deg); }
+  .backIcon::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    top: 5px;
+    transform: rotate(135deg); }
+
+.none {
+  display: none !important; }
+
+.rotate {
+  transform: rotate(135deg) !important;
+  transition: transform .8s ease-in-out; }
+
+.currentLink::after {
+  content: '';
+  position: absolute;
+  margin-top: 20px;
+  left: 25%;
+  width: 40px;
+  height: 2px;
+  background-color: #22BF95; }
+
+.currentTabsLink {
+  color: #22BF95 !important; }
+
+.overflow {
+  overflow: hidden; }
+
+.sticky {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0; }
+
+.accordTextActive {
+  margin-top: 20px;
+  margin-left: 0px;
+  font-size: 24px;
+  line-height: 32px; }
+
+.accordionActive {
+  margin-left: 18px;
+  border: 1.5px solid #22BF95;
+  margin-top: 20px;
+  position: relative;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
+  border-radius: 50%;
+  cursor: pointer; }
+  .accordionActive::after {
+    content: '';
+    width: 7px;
+    height: 1px;
+    position: absolute;
+    background-color: #22BF95;
+    top: 50%;
+    left: 21%; }
+  .accordionActive::before {
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    background-color: #22BF95;
+    top: 50%;
+    left: 20%;
+    transform: rotate(90deg); }
+
+@media (min-width: 1440px) {
+  .wrapper {
+    max-width: 1440px;
+    margin: auto; }
+  .gamburgerContainer {
+    display: none;
+    position: absolute !important; }
+  .logo {
+    margin: 28px 84px 0px 84px !important; }
+    .logo img {
+      width: 110px !important;
+      height: 24px !important; }
+  .containerHeaderMenu {
+    display: flex !important;
+    position: static !important;
+    background-color: transparent !important;
+    flex-direction: row !important;
+    flex-basis: 78% !important;
+    justify-content: space-between !important; }
+    .containerHeaderMenu .wrapperHeaderMenu {
+      display: flex;
+      flex-basis: 70%; }
+    .containerHeaderMenu .headerMenu {
+      flex-direction: row !important;
+      margin-top: 0 !important;
+      display: flex;
+      justify-content: space-between;
+      width: 100%; }
+      .containerHeaderMenu .headerMenu a {
+        color: white !important;
+        position: relative !important;
+        min-width: 85px !important; }
+      .containerHeaderMenu .headerMenu .currentLink::after {
+        content: '';
+        position: absolute;
+        margin-top: 20px;
+        left: 25%;
+        width: 40px;
+        height: 2px;
+        background-color: white; }
+    .containerHeaderMenu .enterButton {
+      position: static !important;
+      flex-direction: row !important;
+      margin-bottom: 0 !important;
+      margin-right: 70px !important; }
+      .containerHeaderMenu .enterButton button {
+        margin-top: 20px !important;
+        margin-right: 20px !important;
+        background-color: transparent !important;
+        border: 1.5px solid white !important;
+        color: white !important; }
+  .headerText {
+    margin-top: 0 !important;
+    position: absolute;
+    top: 37%;
+    left: 28%; }
+    .headerText span {
+      font-size: 110px !important;
+      line-height: 130px !important; }
+  .container {
+    position: relative !important;
+    min-height: 500px !important; }
+  .tabs {
+    width: 700px !important;
+    height: 80px !important;
+    margin-top: -40px !important; }
+    .tabs a {
+      font-size: 12px !important;
+      line-height: 24px !important;
+      padding-top: 4% !important; }
+  .accordionsContainer {
+    margin-top: 98px !important; }
+  #headTips {
+    width: 247px !important;
+    height: 41px !important;
+    margin-top: 19px !important;
+    margin-bottom: 95px !important; }
+  .accordContainer {
+    min-height: 151px !important; }
+    .accordContainer .headAccordion .number {
+      font-size: 110px !important;
+      line-height: 130px !important;
+      width: 50px !important;
+      margin-right: 113px !important; }
+    .accordContainer .headAccordion .accordText {
+      font-size: 24px !important;
+      line-height: 36px !important; }
+    .accordContainer .headAccordion .accordion {
+      width: 35px !important;
+      height: 35px !important; }
+      .accordContainer .headAccordion .accordion::after {
+        content: '';
+        width: 20px !important;
+        height: 2px !important;
+        position: absolute;
+        background-color: #22BF95;
+        top: 50%;
+        left: 21%; }
+      .accordContainer .headAccordion .accordion::before {
+        content: '';
+        width: 20px !important;
+        height: 2px !important;
+        position: absolute;
+        background-color: #22BF95;
+        top: 50%;
+        left: 20%;
+        transform: rotate(90deg); } }
+
 body {
   min-width: 375px;
   overflow-x: hidden;
@@ -32,18 +229,6 @@ html {
 
 .wrapper {
   width: 100%; }
-
-.none {
-  display: none !important; }
-
-.overflow {
-  overflow: hidden; }
-
-.sticky {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  right: 0; }
 
 .container {
   min-height: 210px;
@@ -69,31 +254,6 @@ html {
       left: 0;
       top: 0;
       box-shadow: 0 8px 0 0 white,0 16px 0 0 white; }
-  .gamburgerContainer .backIcon {
-    width: 24px;
-    height: 18px;
-    position: relative;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer; }
-    .gamburgerContainer .backIcon::after {
-      content: '';
-      position: absolute;
-      width: 24px;
-      height: 2px;
-      background-color: white;
-      left: 0;
-      top: 5px;
-      transform: rotate(45deg); }
-    .gamburgerContainer .backIcon::before {
-      content: '';
-      position: absolute;
-      width: 24px;
-      height: 2px;
-      background-color: white;
-      left: 0;
-      top: 5px;
-      transform: rotate(135deg); }
 
 .headerText {
   text-align: center;
@@ -138,19 +298,14 @@ html {
     .containerHeaderMenu .headerMenu a {
       margin-top: 16px;
       text-align: center;
+      position: relative;
       font-size: 12px;
       line-height: 24px;
       letter-spacing: 2px;
       color: #22BF95;
       text-decoration: none; }
-  .containerHeaderMenu .currentLink::after {
-    content: '';
-    position: absolute;
-    margin-top: 20px;
-    left: 50%;
-    width: 40px;
-    height: 2px;
-    background-color: #22BF95; }
+      .containerHeaderMenu .headerMenu a:hover {
+        color: #7F7F7F; }
   .containerHeaderMenu .enterButton {
     flex-direction: column;
     display: flex;
@@ -166,6 +321,9 @@ html {
       border: 1.5px solid #22BF95;
       background-color: white;
       color: #22BF95; }
+      .containerHeaderMenu .enterButton button:hover {
+        border: 1.5px solid #7F7F7F;
+        color: #7F7F7F; }
 
 .tabs {
   width: 335px;
@@ -245,6 +403,19 @@ html {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-out; }
+      .accordionsContainer .accordContainer .panel .mainIcon {
+        margin: auto;
+        display: block; }
+      .accordionsContainer .accordContainer .panel .bottomInfo {
+        display: flex;
+        align-items: flex-start; }
+        .accordionsContainer .accordContainer .panel .bottomInfo img {
+          margin: 11px 20px 0 0; }
+        .accordionsContainer .accordContainer .panel .bottomInfo span {
+          margin: 11px 0 23px 0;
+          font-size: 12px;
+          line-height: 24px;
+          color: #7F7F7F; }
     .accordionsContainer .accordContainer .headAccordion {
       display: flex;
       align-items: center; }
@@ -276,6 +447,8 @@ html {
           background-color: #22BF95;
           top: 50%;
           left: 21%; }
+        .accordionsContainer .accordContainer .headAccordion .accordion:hover::after {
+          background-color: #7F7F7F; }
         .accordionsContainer .accordContainer .headAccordion .accordion::before {
           content: '';
           width: 7px;
@@ -285,10 +458,15 @@ html {
           top: 50%;
           left: 20%;
           transform: rotate(90deg); }
+        .accordionsContainer .accordContainer .headAccordion .accordion:hover::before {
+          background-color: #7F7F7F; }
+        .accordionsContainer .accordContainer .headAccordion .accordion:hover {
+          border: 1.5px solid #7F7F7F; }
   .accordionsContainer #headTips {
     width: 90px;
     height: 19px;
-    margin-top: 10px; }
+    margin-top: 10px;
+    margin-bottom: 18px; }
   .accordionsContainer #headGlossary {
     width: 114px;
     height: 18px;
@@ -315,12 +493,16 @@ section {
     border-radius: 5px;
     display: flex; }
     section .sliderContainer .sliderHead {
-      margin: 40px 75px 40px 60px; }
+      margin: 40px 75px 40px 60px;
+      flex-basis: 65%; }
       section .sliderContainer .sliderHead .sliderItem {
         font-size: 16px;
         line-height: 32px; }
         section .sliderContainer .sliderHead .sliderItem span {
+          cursor: pointer;
           color: #7F7F7F; }
+          section .sliderContainer .sliderHead .sliderItem span:hover {
+            color: #22BF95; }
     section .sliderContainer .sliderButton {
       display: flex;
       flex-direction: column;
@@ -357,24 +539,54 @@ section {
           position: absolute;
           top: 45%;
           left: 21%; }
-      section .sliderContainer .sliderButton .rotate {
+        section .sliderContainer .sliderButton button:hover {
+          border: 1px solid #7F7F7F; }
+        section .sliderContainer .sliderButton button:hover::after {
+          border-right: 2px solid #7F7F7F;
+          border-bottom: 2px solid #7F7F7F; }
+        section .sliderContainer .sliderButton button:hover::before {
+          background-color: #7F7F7F; }
+      section .sliderContainer .sliderButton .rotateArrow {
         transform: rotate(180deg); }
-  section .sliderText p {
-    font-family: Actor;
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #1A1A1A; }
-  section .sliderText span {
-    font-size: 16px;
-    line-height: 24px;
-    color: #191919; }
+  section .sliderTextContainer {
+    margin: 32px 24px 0 20px;
+    padding-bottom: 24px; }
+    section .sliderTextContainer p {
+      margin: 0 0 0 20px;
+      font-family: Actor;
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #1A1A1A; }
+    section .sliderTextContainer span {
+      font-size: 16px;
+      line-height: 24px;
+      color: #191919; }
+    section .sliderTextContainer .sliderText {
+      display: flex; }
+      section .sliderTextContainer .sliderText .line {
+        width: 1.5px;
+        height: 48px;
+        background-color: #22BF95;
+        margin-right: 20px; }
 
 #headFAQs {
   width: 110px;
   height: 18px;
   margin-left: 20px; }
+
+.moreQuestions {
+  margin: 20px 0 24px 0;
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #22BF95;
+  font-family: Acme; }
+  .moreQuestions:hover {
+    color: #7F7F7F; }
 
 .faqsContainer .line {
   width: 89%;
@@ -398,20 +610,23 @@ section {
       margin-right: 25px;
       color: #E5E5E5; }
     .faqsAccordionContainer .panel .answer {
+      flex-basis: 60%;
       font-size: 14px;
       line-height: 24px;
       color: #191919; }
-  .faqsAccordionContainer .headAccordion {
+  .faqsAccordionContainer .headAccordionFaqs {
     display: flex;
     align-items: center;
     padding: 0 20px;
     min-height: 114px; }
-    .faqsAccordionContainer .headAccordion span:first-child {
+    .faqsAccordionContainer .headAccordionFaqs span:first-child {
       font-size: 40px;
       line-height: 48px;
       margin-right: 25px;
       color: #E5E5E5; }
-    .faqsAccordionContainer .headAccordion .accordion {
+    .faqsAccordionContainer .headAccordionFaqs .accordion {
+      position: relative;
+      left: 19%;
       width: 20px;
       height: 20px;
       border-bottom: 1.5px solid #22BF95;
@@ -420,9 +635,13 @@ section {
       border-top: 0;
       border-right: 0;
       transform: rotate(-45deg);
+      transition: transform .8s ease-in-out;
       cursor: pointer; }
-    .faqsAccordionContainer .headAccordion .question {
-      flex-basis: 80%;
+      .faqsAccordionContainer .headAccordionFaqs .accordion:hover {
+        border-bottom: 1.5px solid #7F7F7F;
+        border-left: 1.5px solid #7F7F7F; }
+    .faqsAccordionContainer .headAccordionFaqs .question {
+      flex-basis: 60%;
       color: #191919; }
 
 footer {
@@ -467,11 +686,54 @@ footer {
         font-size: 12px;
         line-height: 20px;
         color: #22BF95; }
+        footer .aboutCompany .addres a:hover {
+          color: #7F7F7F; }
   footer .social {
     border-top: 1.5px solid #B2B2B2;
     margin-top: 12px;
     padding-top: 20px;
     text-align: center; }
+    footer .social .conteinerSocialIcons {
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 20px; }
+      footer .social .conteinerSocialIcons .twitter {
+        cursor: pointer;
+        display: inline-block;
+        width: 30px;
+        height: 24px;
+        background-image: url(../image/twitter.png);
+        background-position: 0 0; }
+        footer .social .conteinerSocialIcons .twitter:hover {
+          background-position: 30px 0; }
+      footer .social .conteinerSocialIcons .facebook {
+        cursor: pointer;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-image: url(../image/facebook.png);
+        background-position: 0 0; }
+        footer .social .conteinerSocialIcons .facebook:hover {
+          background-position: 25px 0; }
+      footer .social .conteinerSocialIcons .youtube {
+        cursor: pointer;
+        display: inline-block;
+        width: 32px;
+        height: 23px;
+        background-image: url(../image/youtube.png);
+        background-position: 0 0; }
+        footer .social .conteinerSocialIcons .youtube:hover {
+          background-position: 32px 0; }
+      footer .social .conteinerSocialIcons .in {
+        cursor: pointer;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-image: url(../image/in.png);
+        background-position: 0 0; }
+        footer .social .conteinerSocialIcons .in:hover {
+          background-position: 25px 0; }
   footer .skoutBottom {
     width: 105px;
-    height: 38px; }
+    height: 38px;
+    margin-bottom: 28px; }

@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'active';
+@import 'media1440px';
 body {
     min-width: 375px;
     overflow-x: hidden;
@@ -107,24 +108,18 @@ html{
         a{
             margin-top: 16px;
             text-align: center;
+            position: relative;
             font-size: 12px;
             line-height: 24px;
             letter-spacing: 2px;
             color: $colorTextlinks;
             text-decoration: none;
+            &:hover{
+                color:#7F7F7F;
+            }
             }
         }
-        .currentLink{
-            &::after{
-                content: '';
-                position: absolute;
-                margin-top: 20px;   
-                left: 50%;
-                width: 40px;
-                height: 2px;
-                background-color: $colorTextlinks;
-        }
-    }
+       
 
     .enterButton{
         flex-direction: column;
@@ -141,6 +136,10 @@ html{
             border: 1.5px solid $colorTextlinks;
             background-color: $colorTextPrimary;
             color: $colorTextlinks;
+            &:hover{
+                border: 1.5px solid #7F7F7F;
+                color: #7F7F7F;
+            }
         }
     }
 }
@@ -240,6 +239,24 @@ html{
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out;
+           .mainIcon{
+            margin: auto;
+            display: block;
+           }
+            .bottomInfo{
+                display: flex;
+                align-items: flex-start;
+                   img{
+                       margin: 11px 20px 0 0;
+                   };
+                   span{
+                       margin: 11px 0 23px 0;
+                       font-size: 12px;
+                        line-height: 24px;
+                        color: #7F7F7F;
+                   }
+            }
+          
         }
     
         .headAccordion{
@@ -276,6 +293,10 @@ html{
                     background-color: #22BF95;
                     top: 50%;
                     left: 21%;
+                    
+                }
+                &:hover::after{
+                    background-color: #7F7F7F;
                 }
                 &::before{
                     content: '';
@@ -286,6 +307,13 @@ html{
                     top: 50%;
                     left: 20%;
                     transform: rotate(90deg);
+                  
+                }
+                &:hover::before{
+                    background-color: #7F7F7F;
+                }
+                &:hover{
+                    border: 1.5px solid #7F7F7F;
                 }
             }
         }
@@ -297,6 +325,7 @@ html{
         width: 90px;
         height: 19px;
         margin-top: 10px;
+        margin-bottom: 18px;
     }
 
     #headGlossary{
@@ -332,11 +361,16 @@ section{
         display: flex;
         .sliderHead{
             margin: 40px 75px 40px 60px;
+            flex-basis: 65%;
             .sliderItem{
                 font-size: 16px;
                 line-height: 32px;
                 span{
+                    cursor: pointer;
                     color: #7F7F7F;
+                    &:hover{
+                        color:#22BF95 ;
+                    }
                 }
             }
         }
@@ -381,31 +415,54 @@ section{
                     top: 45%;
                     left: 21%;
                 }
-                
+                &:hover{
+                    border: 1px solid #7F7F7F;
+                }
+                &:hover::after{
+                    border-right: 2px solid #7F7F7F;
+                    border-bottom: 2px solid #7F7F7F;
+                }
+                &:hover::before{
+                    background-color: #7F7F7F;
+                }
             }
 
-            .rotate{
+            .rotateArrow{
                 transform: rotate(180deg);
             }
         }
         
     }
-  
 
-    .sliderText{
+
+    .sliderTextContainer{
+        margin: 32px 24px 0 20px;
+        padding-bottom: 24px;
         p{
+            margin: 0 0 0 20px;
             font-family: Actor;
             font-size: 32px;
             line-height: 40px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: #1A1A1A;;
+            
         }
         span{
             font-size: 16px;
             line-height: 24px;
             color: #191919;
         }
+        .sliderText{
+            display: flex;
+            .line{
+                width: 1.5px;
+                height: 48px;
+                background-color: #22BF95;
+                margin-right: 20px;
+            }
+        }
+       
     }
 }
 
@@ -415,6 +472,20 @@ section{
     margin-left: 20px;
 }
 
+.moreQuestions{
+    margin: 20px 0 24px 0;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #22BF95;
+    font-family: Acme;
+    &:hover{
+        color: #7F7F7F;
+    }
+}    
+
 .faqsContainer{
     .line{
         width: 89%;
@@ -422,6 +493,7 @@ section{
         border-radius: 5px;
         margin: 24px auto 11px auto;
     }
+    
 }
 
 .faqsAccordionContainer {
@@ -441,13 +513,14 @@ section{
             color: #E5E5E5;
         }
         .answer{
+            flex-basis: 60%;
             font-size: 14px;
             line-height: 24px;
             color: #191919;
         }
     }
 
-    .headAccordion{
+    .headAccordionFaqs{
         display: flex;
         align-items: center;
         padding: 0 20px;
@@ -460,6 +533,8 @@ section{
         }
 
         .accordion{
+            position: relative;
+            left: 19%;
             width: 20px;
             height: 20px;
             border-bottom: 1.5px solid #22BF95;
@@ -468,11 +543,17 @@ section{
             border-top: 0;
             border-right: 0;
             transform: rotate(-45deg);
+            transition: transform .8s ease-in-out;
             cursor: pointer;
+            &:hover{
+                border-bottom: 1.5px solid #7F7F7F;
+                border-left: 1.5px solid #7F7F7F;
+                
+            }
         }
 
         .question{
-            flex-basis: 80%;
+            flex-basis: 60%;
            color: #191919;
         }
     }
@@ -526,6 +607,9 @@ footer{
                 font-size: 12px;
                 line-height: 20px;
                 color: #22BF95;
+                &:hover{
+                    color: #7F7F7F;
+                }
             }
         }
     }
@@ -534,10 +618,60 @@ footer{
         margin-top: 12px;
         padding-top: 20px;
         text-align: center;
+        .conteinerSocialIcons{
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+            .twitter{
+                cursor: pointer;
+                display: inline-block;
+                width: 30px;
+                height: 24px;
+                background-image: url(../image/twitter.png);
+                background-position: 0 0;
+                &:hover{
+                    background-position: 30px 0;
+                }
+            }
+            .facebook{
+                cursor: pointer;
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background-image: url(../image/facebook.png);
+                background-position: 0 0;
+                &:hover{
+                    background-position: 25px 0;
+                }
+            }
+            .youtube{
+                cursor: pointer;
+                display: inline-block;
+                width: 32px;
+                height: 23px;
+                background-image: url(../image/youtube.png);
+                background-position: 0 0;
+                &:hover{
+                    background-position: 32px 0;
+                }
+            }
+            .in{
+                cursor: pointer;
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background-image: url(../image/in.png);
+                background-position: 0 0; 
+                &:hover{
+                    background-position: 25px 0;
+                }
+            }
+        }
     }
     .skoutBottom{
         width: 105px;
         height: 38px;
+        margin-bottom: 28px;
     }
 
 }
