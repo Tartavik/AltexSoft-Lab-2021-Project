@@ -1,3 +1,4 @@
+import {arrSliderText} from './sliderText'
 const containerHeaderMenu = document.getElementsByClassName(
   "containerHeaderMenu"
 )[0];
@@ -13,6 +14,12 @@ const accordText = document.getElementById("accordText");
 const accordion = document.getElementById("accordion");
 const headAccordionFaqs = document.getElementsByClassName("headAccordionFaqs");
 let sticky = tabs.offsetTop;
+let linkPageYOffset = {
+  headTips: document.getElementById("headTips").offsetTop,
+  headGlossary: document.getElementById("headGlossary").offsetTop,
+  headFAQs: document.getElementById("headFAQs").offsetTop,
+};
+console.log('arrSliderText');
 
 gamburgerContainer.addEventListener("click", () => {
   containerHeaderMenu.classList.toggle("none");
@@ -35,7 +42,7 @@ function createAccordionTop(acc) {
       e.currentTarget.children[0].children[0].classList.toggle("none");
       e.currentTarget.children[0].children[1].classList.toggle(
         "accordTextActive"
-);
+      );
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
@@ -45,11 +52,11 @@ function createAccordionTop(acc) {
   }
 }
 
-function createAccordionBottom (acc){
+function createAccordionBottom(acc) {
   for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", (e) => {
       let panel = e.currentTarget.nextElementSibling;
-      e.currentTarget.children[2].classList.toggle('rotate')
+      e.currentTarget.children[2].classList.toggle("rotate");
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
@@ -58,15 +65,14 @@ function createAccordionBottom (acc){
     });
   }
 }
-
 
 for (let anchor of anchors) {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    for(let link of anchors){
-      link.classList.remove('currentTabsLink');
+    for (let link of anchors) {
+      link.classList.remove("currentTabsLink");
     }
-    e.currentTarget.classList.add('currentTabsLink')
+    e.currentTarget.classList.add("currentTabsLink");
 
     const blockID = anchor.getAttribute("href").substr(1);
     console.log(anchor.getAttribute("href"));
@@ -89,6 +95,7 @@ for (let i = 0; i < headerMenu.children.length; i++) {
 
 window.onscroll = () => {
   myFunction();
+  currentTabsLink();
 };
 
 function myFunction() {
@@ -96,5 +103,24 @@ function myFunction() {
     tabs.classList.add("sticky");
   } else {
     tabs.classList.remove("sticky");
+  }
+}
+
+function currentTabsLink() {
+  let pageYOffset = window.pageYOffset;
+  let currentLink;
+  if (pageYOffset < linkPageYOffset.headGlossary - 30) {
+    currentLink = headTips.id;
+  } else if (pageYOffset < linkPageYOffset.headFAQs - 30) {
+    currentLink = headGlossary.id;
+  } else if (pageYOffset > linkPageYOffset.headFAQs - 30) {
+    currentLink = headFAQs.id;
+  }
+  for (let link of anchors) {
+    if (currentLink === link.classList[0]) {
+      link.classList.add("currentTabsLink");
+    } else {
+      link.classList.remove("currentTabsLink");
+    }
   }
 }
