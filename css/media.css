@@ -293,12 +293,12 @@
       height: 24px;
       display: inline-block !important; }
     .stickyMain .containerHeaderMenu .headerMenu a {
-      color: #7F7F7F; }
+      color: #7f7f7f; }
       .stickyMain .containerHeaderMenu .headerMenu a:hover {
         color: #22BF95; }
     .stickyMain .containerHeaderMenu .enterButton button {
-      color: #7F7F7F;
-      border: 1px solid #7F7F7F; }
+      color: #7f7f7f;
+      border: 1px solid #7f7f7f; }
       .stickyMain .containerHeaderMenu .enterButton button:hover {
         color: #22BF95;
         border: 1px solid #22BF95; } }

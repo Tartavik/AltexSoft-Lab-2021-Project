@@ -50,7 +50,7 @@
 }
 
 .currentTabsLink {
-  color: #22bf95 !important;
+  color: $colorTextlinks !important;
 }
 
 .overflow {
@@ -65,7 +65,7 @@
     position: absolute;
     width: 46px;
     height: 1px;
-    background-color: #22bf95;
+    background-color: $colorTextlinks;
     bottom: 16px;
     right: 102%;
   }
@@ -80,7 +80,7 @@
 
 .accordionActive {
   margin-left: 18px;
-  border: 1.5px solid #22bf95;
+  border: 1.5px solid $colorTextlinks;
   margin-top: 20px;
   position: relative;
   width: 14px;
@@ -94,7 +94,7 @@
     width: 7px;
     height: 1px;
     position: absolute;
-    background-color: #22bf95;
+    background-color: $colorTextlinks;
     top: 49%;
     left: 20%;
   }
@@ -103,7 +103,7 @@
     width: 0px;
     height: 0px;
     position: absolute;
-    background-color: #22bf95;
+    background-color: $colorTextlinks;
     top: 49%;
     left: 20%;
     transform: rotate(90deg);

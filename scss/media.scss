@@ -41,7 +41,7 @@
         position: relative;
         min-width: 85px;
         &:hover {
-          color: #7f7f7f;
+          color: $hoverColorLink;
         }
       }
       .currentLink {
@@ -68,8 +68,8 @@
         border: 1.5px solid white;
         color: white ;
         &:hover {
-          color: #7f7f7f;
-          border: 1.5px solid #7f7f7f;
+          color: $hoverColorLink;
+          border: 1.5px solid $hoverColorLink;
         }
       }
     }
@@ -404,19 +404,19 @@
       .containerHeaderMenu{
         .headerMenu{
             a{
-                color: #7F7F7F;
+                color: $hoverColorLink;
                 &:hover {
-                    color: #22BF95;
+                    color: $colorTextlinks;
                   }
             }
         }
         .enterButton {
             button{
-                color: #7F7F7F;
-                border: 1px solid #7F7F7F ;
+                color: $hoverColorLink;
+                border: 1px solid $hoverColorLink ;
                 &:hover {
-                    color: #22BF95;
-                    border: 1px solid #22BF95 ;
+                    color: $colorTextlinks;
+                    border: 1px solid $colorTextlinks ;
                   }
             }
         }

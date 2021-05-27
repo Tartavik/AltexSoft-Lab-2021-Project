@@ -59,7 +59,7 @@
   background-color: #22BF95; }
 
 .currentTabsLink {
-  color: #22bf95 !important; }
+  color: #22BF95 !important; }
 
 .overflow {
   overflow: hidden; }
@@ -69,7 +69,7 @@
   position: absolute;
   width: 46px;
   height: 1px;
-  background-color: #22bf95;
+  background-color: #22BF95;
   bottom: 16px;
   right: 102%; }
 
@@ -81,7 +81,7 @@
 
 .accordionActive {
   margin-left: 18px;
-  border: 1.5px solid #22bf95;
+  border: 1.5px solid #22BF95;
   margin-top: 20px;
   position: relative;
   width: 14px;
@@ -95,7 +95,7 @@
     width: 7px;
     height: 1px;
     position: absolute;
-    background-color: #22bf95;
+    background-color: #22BF95;
     top: 49%;
     left: 20%; }
   .accordionActive::before {
@@ -103,7 +103,7 @@
     width: 0px;
     height: 0px;
     position: absolute;
-    background-color: #22bf95;
+    background-color: #22BF95;
     top: 49%;
     left: 20%;
     transform: rotate(90deg); }
@@ -251,7 +251,7 @@ html {
     width: 100%;
     position: absolute;
     height: 2.5px;
-    background-color: #22bf95;
+    background-color: #22BF95;
     border-radius: 50px 50px 0 0;
     top: 0; }
   .tabs a {
@@ -298,7 +298,7 @@ html {
     margin: auto;
     height: 1px;
     width: 89%;
-    background-color: #22bf95; }
+    background-color: #22BF95; }
   .accordionsContainer .skoutTipsContainer {
     width: 89%;
     margin: auto; }
@@ -346,7 +346,7 @@ html {
         flex-basis: 93%;
         margin-left: 18px; }
       .accordionsContainer .accordContainer .headAccordion .accordion {
-        border: 1.5px solid #22bf95;
+        border: 1.5px solid #22BF95;
         position: relative;
         width: 14px;
         height: 14px;
@@ -359,7 +359,7 @@ html {
           width: 7px;
           height: 1px;
           position: absolute;
-          background-color: #22bf95;
+          background-color: #22BF95;
           top: 50%;
           left: 21%; }
         .accordionsContainer .accordContainer .headAccordion .accordion:hover::after {
@@ -370,7 +370,7 @@ html {
           width: 7px;
           height: 1px;
           position: absolute;
-          background-color: #22bf95;
+          background-color: #22BF95;
           top: 50%;
           left: 20%;
           transform: rotate(90deg); }
@@ -421,7 +421,7 @@ section {
           cursor: pointer;
           color: #7f7f7f; }
         section .sliderContainer .sliderHead .sliderItem:hover span {
-          color: #22bf95;
+          color: #22BF95;
           transition: 800ms color; }
     section .sliderContainer .sliderButtonContainer {
       display: flex;
@@ -432,7 +432,7 @@ section {
         height: 16px;
         border-radius: 50%;
         background: white;
-        border: 1px solid #22bf95;
+        border: 1px solid #22BF95;
         display: flex;
         align-items: stretch;
         padding-bottom: -30px;
@@ -445,8 +445,8 @@ section {
           content: "";
           width: 6px;
           height: 6px;
-          border-right: 2px solid #22bf95;
-          border-bottom: 2px solid #22bf95;
+          border-right: 2px solid #22BF95;
+          border-bottom: 2px solid #22BF95;
           position: absolute;
           transform: rotate(-50deg);
           top: 4px;
@@ -455,7 +455,7 @@ section {
           content: "";
           width: 8px;
           height: 2px;
-          background-color: #22bf95;
+          background-color: #22BF95;
           position: absolute;
           top: 45%;
           left: 21%; }
@@ -493,7 +493,7 @@ section {
       section .sliderTextContainer .sliderText .line {
         width: 1.5px;
         height: 48px;
-        background-color: #22bf95;
+        background-color: #22BF95;
         margin-right: 20px; }
 
 #headFAQs {
@@ -508,7 +508,7 @@ section {
   text-align: center;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #22bf95;
+  color: #22BF95;
   font-family: Acme; }
   .moreQuestions:hover {
     color: #7f7f7f;
@@ -553,8 +553,8 @@ section {
     .faqsAccordionContainer .headAccordionFaqs .accordion {
       width: 20px;
       height: 20px;
-      border-bottom: 1.5px solid #22bf95;
-      border-left: 1.5px solid #22bf95;
+      border-bottom: 1.5px solid #22BF95;
+      border-left: 1.5px solid #22BF95;
       background: white;
       border-top: 0;
       border-right: 0;
@@ -597,7 +597,7 @@ footer {
       display: flex;
       flex-direction: column;
       padding: 8px 0 8px 23px;
-      border-top: 2px solid #22bf95; }
+      border-top: 2px solid #22BF95; }
       footer .aboutCompany .addres p {
         font-size: 16px;
         line-height: 36px;
@@ -611,7 +611,7 @@ footer {
         text-decoration: none;
         font-size: 12px;
         line-height: 20px;
-        color: #22bf95; }
+        color: #22BF95; }
         footer .aboutCompany .addres a:hover {
           color: #7f7f7f;
           transition: 800ms color; }
@@ -964,12 +964,12 @@ footer {
       height: 24px;
       display: inline-block !important; }
     .stickyMain .containerHeaderMenu .headerMenu a {
-      color: #7F7F7F; }
+      color: #7f7f7f; }
       .stickyMain .containerHeaderMenu .headerMenu a:hover {
         color: #22BF95; }
     .stickyMain .containerHeaderMenu .enterButton button {
-      color: #7F7F7F;
-      border: 1px solid #7F7F7F; }
+      color: #7f7f7f;
+      border: 1px solid #7f7f7f; }
       .stickyMain .containerHeaderMenu .enterButton button:hover {
         color: #22BF95;
         border: 1px solid #22BF95; } }

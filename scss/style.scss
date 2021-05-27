@@ -119,7 +119,7 @@ html {
       color: $colorTextlinks;
       text-decoration: none;
       &:hover {
-        color: #7f7f7f;
+        color: $hoverColorLink;
         transition: 800ms color;
       }
     }
@@ -142,8 +142,8 @@ html {
       color: $colorTextlinks;
       cursor: pointer;
       &:hover {
-        border: 1.5px solid #7f7f7f;
-        color: #7f7f7f;
+        border: 1.5px solid $hoverColorLink;
+        color: $hoverColorLink;
         transition: 800ms color;
         transition: 800ms border;
       }
@@ -171,7 +171,7 @@ html {
     width: 100%;
     position: absolute;
     height: 2.5px;
-    background-color: #22bf95;
+    background-color: $colorTextlinks;
     border-radius: 50px 50px 0 0;
     top: 0;
   }
@@ -179,7 +179,7 @@ html {
     font-size: 12px;
     line-height: 20px;
     letter-spacing: 2px;
-    color: #7f7f7f;
+    color: $hoverColorLink;
     cursor: pointer;
     text-decoration: none;
     // flex-basis: 30%;
@@ -228,7 +228,7 @@ html {
     margin: auto;
     height: 1px;
     width: 89%;
-    background-color: #22bf95;
+    background-color: $colorTextlinks;
   }
 
   .skoutTipsContainer {
@@ -267,7 +267,7 @@ html {
           margin: 11px 0 23px 0;
           font-size: 12px;
           line-height: 24px;
-          color: #7f7f7f;
+          color: $hoverColorLink;
         }
       }
     }
@@ -291,7 +291,7 @@ html {
       }
 
       .accordion {
-        border: 1.5px solid #22bf95;
+        border: 1.5px solid $colorTextlinks;
         position: relative;
         width: 14px;
         height: 14px;
@@ -304,12 +304,12 @@ html {
           width: 7px;
           height: 1px;
           position: absolute;
-          background-color: #22bf95;
+          background-color: $colorTextlinks;
           top: 50%;
           left: 21%;
         }
         &:hover::after {
-          background-color: #7f7f7f;
+          background-color: $hoverColorLink;
           transition: 800ms background-color;
         }
         &::before {
@@ -317,17 +317,17 @@ html {
           width: 7px;
           height: 1px;
           position: absolute;
-          background-color: #22bf95;
+          background-color: $colorTextlinks;
           top: 50%;
           left: 20%;
           transform: rotate(90deg);
         }
         &:hover::before {
-          background-color: #7f7f7f;
+          background-color: $hoverColorLink;
           transition: 800ms background-color;
         }
         &:hover {
-          border: 1.5px solid #7f7f7f;
+          border: 1.5px solid $hoverColorLink;
           transition: 800ms border;
         }
       }
@@ -381,10 +381,10 @@ section {
         line-height: 32px;
         span {
           cursor: pointer;
-          color: #7f7f7f;
+          color: $hoverColorLink;
         }
         &:hover span {
-          color: #22bf95;
+          color: $colorTextlinks;
           transition: 800ms color;
         }
       }
@@ -399,7 +399,7 @@ section {
         height: 16px;
         border-radius: 50%;
         background: white;
-        border: 1px solid #22bf95;
+        border: 1px solid $colorTextlinks;
         display: flex;
         align-items: stretch;
         padding-bottom: -30px;
@@ -413,8 +413,8 @@ section {
           content: "";
           width: 6px;
           height: 6px;
-          border-right: 2px solid #22bf95;
-          border-bottom: 2px solid #22bf95;
+          border-right: 2px solid $colorTextlinks;
+          border-bottom: 2px solid $colorTextlinks;
           position: absolute;
           transform: rotate(-50deg);
           top: 4px;
@@ -425,23 +425,23 @@ section {
           content: "";
           width: 8px;
           height: 2px;
-          background-color: #22bf95;
+          background-color:$colorTextlinks;
           position: absolute;
           top: 45%;
           left: 21%;
         }
         &:hover {
-          border: 1px solid #7f7f7f;
+          border: 1px solid $hoverColorLink;
           transition: 800ms border;
         }
         &:hover::after {
-          border-right: 2px solid #7f7f7f;
-          border-bottom: 2px solid #7f7f7f;
+          border-right: 2px solid $hoverColorLink;
+          border-bottom: 2px solid $hoverColorLink;
           transition: 800ms border-right;
           transition: 800ms border-bottom;
         }
         &:hover::before {
-          background-color: #7f7f7f;
+          background-color: $hoverColorLink;
           transition: 800ms background-color;
         }
       }
@@ -475,7 +475,7 @@ section {
       .line {
         width: 1.5px;
         height: 48px;
-        background-color: #22bf95;
+        background-color: $colorTextlinks;
         margin-right: 20px;
       }
     }
@@ -495,10 +495,10 @@ section {
   text-align: center;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #22bf95;
+  color: $colorTextlinks;
   font-family: Acme;
   &:hover {
-    color: #7f7f7f;
+    color: $hoverColorLink;
     transition: 800ms color;
   }
 }
@@ -551,8 +551,8 @@ section {
     .accordion {
       width: 20px;
       height: 20px;
-      border-bottom: 1.5px solid #22bf95;
-      border-left: 1.5px solid #22bf95;
+      border-bottom: 1.5px solid $colorTextlinks;
+      border-left: 1.5px solid $colorTextlinks;
       background: white;
       border-top: 0;
       border-right: 0;
@@ -560,8 +560,8 @@ section {
       transition: transform 0.8s ease-in-out;
       cursor: pointer;
       &:hover {
-        border-bottom: 1.5px solid #7f7f7f;
-        border-left: 1.5px solid #7f7f7f;
+        border-bottom: 1.5px solid $hoverColorLink;
+        border-left: 1.5px solid $hoverColorLink;
         transition: 800ms border-left;
         transition: 800ms border-bottom;
       }
@@ -589,14 +589,14 @@ footer {
       a {
         font-size: 12px;
         line-height: 24px;
-        color: #7f7f7f;
+        color: $hoverColorLink;
         margin-top: 12px;
         text-decoration: none;
       }
       span {
         font-size: 16px;
         line-height: 24px;
-        color: #7f7f7f;
+        color: $hoverColorLink;
         margin-bottom: 20px;
       }
     }
@@ -604,25 +604,25 @@ footer {
       display: flex;
       flex-direction: column;
       padding: 8px 0 8px 23px;
-      border-top: 2px solid #22bf95;
+      border-top: 2px solid $colorTextlinks;
       p {
         font-size: 16px;
         line-height: 36px;
-        color: #7f7f7f;
+        color: $hoverColorLink;
         margin: 0;
       }
       span {
         font-size: 16px;
         line-height: 24px;
-        color: #7f7f7f;
+        color: $hoverColorLink;
       }
       a {
         text-decoration: none;
         font-size: 12px;
         line-height: 20px;
-        color: #22bf95;
+        color: $colorTextlinks;
         &:hover {
-          color: #7f7f7f;
+          color: $hoverColorLink;
           transition: 800ms color;
         }
       }
