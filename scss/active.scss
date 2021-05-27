@@ -1,104 +1,111 @@
-@import 'vars';
+@import "vars";
 .backIcon {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  &::after {
+    content: "";
+    position: absolute;
     width: 24px;
-    height: 18px;
-    position: relative;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-        &::after{
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 2px;
-            background-color: $colorTextPrimary;
-            left: 0;
-            top:5px;
-            transform: rotate(45deg);
-        }
-        &::before{
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 2px;
-            background-color: $colorTextPrimary;
-            left: 0;
-            top:5px;
-            transform: rotate(135deg)
-        }
-}
-
-.none{
-    display: none !important;
-  }
-
-.rotate{
-    transform: rotate(135deg) !important;
-    transition: transform .8s ease-in-out; 
-}  
-
-.currentLink{
-    &::after{
-        content: '';
-        position: absolute;
-        margin-top: 20px;   
-        left: 25%;
-        width: 40px;
-        height: 2px;
-        background-color: $colorTextlinks;
-    }
-}
-
-.currentTabsLink{
-    color: #22BF95 !important;
-}
-
-.overflow{
-    overflow: hidden;
-} 
-
-.sticky {
-    position: fixed !important;
-    top: 0;
+    height: 2px;
+    background-color: $colorTextPrimary;
     left: 0;
-    right: 0;
+    top: 5px;
+    transform: rotate(45deg);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: $colorTextPrimary;
+    left: 0;
+    top: 5px;
+    transform: rotate(135deg);
+  }
 }
 
-.accordTextActive{
+.none {
+  display: none !important;
+}
+
+.rotate {
+  transform: rotate(135deg) !important;
+  transition: transform 0.8s ease-in-out;
+}
+
+.currentLink {
+  &::after {
+    content: "";
+    position: absolute;
     margin-top: 20px;
-    margin-left: 0px;
-    font-size: 24px;
-    line-height: 32px;
+    left: 25%;
+    width: 40px;
+    height: 2px;
+    background-color: $colorTextlinks;
+  }
 }
 
-    .accordionActive{
-        margin-left: 18px;
-        border: 1.5px solid #22BF95;
-        margin-top: 20px;
-        position: relative;
-        width: 14px;
-        height: 14px;
-        background-color: white;
-        box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
-        border-radius: 50%;
-        cursor: pointer;
-        &::after{
-            content: '';
-            width: 7px;
-            height: 1px;
-            position: absolute;
-            background-color: #22BF95;
-            top: 50%;
-            left: 21%;
-        }
-        &::before{
-            content: '';
-            width: 0px;
-            height: 0px;
-            position: absolute;
-            background-color: #22BF95;
-            top: 50%;
-            left: 20%;
-            transform: rotate(90deg);
-        }
-    }
+.currentTabsLink {
+  color: #22bf95 !important;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+
+
+.activeSliderLink {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 46px;
+    height: 1px;
+    background-color: #22bf95;
+    bottom: 16px;
+    right: 102%;
+  }
+}
+
+.accordTextActive {
+  margin-top: 20px;
+  margin-left: 0px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.accordionActive {
+  margin-left: 18px;
+  border: 1.5px solid #22bf95;
+  margin-top: 20px;
+  position: relative;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  &::after {
+    content: "";
+    width: 7px;
+    height: 1px;
+    position: absolute;
+    background-color: #22bf95;
+    top: 49%;
+    left: 20%;
+  }
+  &::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    background-color: #22bf95;
+    top: 49%;
+    left: 20%;
+    transform: rotate(90deg);
+  }
+}

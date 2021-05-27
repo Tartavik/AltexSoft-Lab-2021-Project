@@ -4,36 +4,36 @@
     margin: auto; }
   .gamburgerContainer {
     display: none;
-    position: absolute !important; }
+    position: absolute; }
   .logo {
-    margin: 28px 84px 0px 84px !important; }
-    .logo img {
-      width: 110px !important;
-      height: 24px !important; }
+    margin: 28px 84px 0px 84px; }
+    .logo .skoutTop {
+      width: 110px;
+      height: 24px; }
   .containerHeaderMenu {
     display: flex !important;
-    position: static !important;
-    background-color: transparent !important;
-    flex-direction: row !important;
-    flex-basis: 78% !important;
-    justify-content: space-between !important; }
+    position: static;
+    background-color: transparent;
+    flex-direction: row;
+    flex-basis: 78%;
+    justify-content: space-between; }
     .containerHeaderMenu .wrapperHeaderMenu {
       display: flex;
       flex-basis: 70%; }
     .containerHeaderMenu .headerMenu {
-      flex-direction: row !important;
-      margin-top: 0 !important;
+      flex-direction: row;
+      margin-top: 0;
       display: flex;
       justify-content: space-between;
       width: 100%; }
       .containerHeaderMenu .headerMenu a {
-        color: white !important;
-        position: relative !important;
-        min-width: 85px !important; }
+        color: white;
+        position: relative;
+        min-width: 85px; }
         .containerHeaderMenu .headerMenu a:hover {
-          color: #7F7F7F !important; }
+          color: #7f7f7f; }
       .containerHeaderMenu .headerMenu .currentLink::after {
-        content: '';
+        content: "";
         position: absolute;
         margin-top: 20px;
         left: 25%;
@@ -41,38 +41,38 @@
         height: 2px;
         background-color: white; }
     .containerHeaderMenu .enterButton {
-      position: static !important;
-      flex-direction: row !important;
-      margin-bottom: 0 !important;
-      margin-right: 70px !important; }
+      position: static;
+      flex-direction: row;
+      margin-bottom: 0;
+      margin-right: 70px; }
       .containerHeaderMenu .enterButton button {
-        margin-top: 20px !important;
-        margin-right: 20px !important;
-        background-color: transparent !important;
-        border: 1.5px solid white !important;
-        color: white !important; }
+        margin-top: 20px;
+        margin-right: 20px;
+        background-color: transparent;
+        border: 1.5px solid white;
+        color: white; }
         .containerHeaderMenu .enterButton button:hover {
-          color: #7F7F7F !important;
-          border: 1.5px solid #7F7F7F !important; }
+          color: #7f7f7f;
+          border: 1.5px solid #7f7f7f; }
   .headerText {
-    margin-top: 0 !important;
+    margin-top: 0;
     position: absolute;
     top: 37%;
     left: 28%; }
     .headerText span {
-      font-size: 110px !important;
-      line-height: 130px !important; }
+      font-size: 110px;
+      line-height: 130px; }
   .container {
-    position: relative !important;
-    min-height: 500px !important; }
+    position: relative;
+    min-height: 500px; }
   .tabs {
-    width: 770px !important;
-    height: 80px !important;
-    margin-top: -35px !important; }
+    width: 770px;
+    height: 80px;
+    margin-top: -35px; }
     .tabs a {
-      font-size: 12px !important;
-      line-height: 24px !important;
-      padding-top: 4% !important; }
+      font-size: 12px;
+      line-height: 24px;
+      padding-top: 4%; }
   .accordionsContainer {
     margin-top: 98px !important; }
   #headTips {
@@ -273,4 +273,32 @@
     footer .social .skoutBottom {
       width: 168px !important;
       height: 58px !important;
-      margin-bottom: 68px; } }
+      margin-bottom: 68px; }
+  .sticky {
+    position: fixed !important;
+    top: 15%;
+    left: 0;
+    right: 0; }
+  .stickyMain {
+    z-index: 1;
+    margin: auto;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0; }
+    .stickyMain .logo .skoutTop {
+      display: none; }
+    .stickyMain .logo .skoutGrey {
+      width: 110px;
+      height: 24px;
+      display: inline-block !important; }
+    .stickyMain .containerHeaderMenu .headerMenu a {
+      color: #7F7F7F; }
+      .stickyMain .containerHeaderMenu .headerMenu a:hover {
+        color: #22BF95; }
+    .stickyMain .containerHeaderMenu .enterButton button {
+      color: #7F7F7F;
+      border: 1px solid #7F7F7F; }
+      .stickyMain .containerHeaderMenu .enterButton button:hover {
+        color: #22BF95;
+        border: 1px solid #22BF95; } }
