@@ -3,7 +3,7 @@
   background: linear-gradient(45deg,#13c3e7,#01f86c);
 }
 
-.gamburger {
+.hamburger {
   width: 24px;
   height: 18px;
   position: relative;
@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-.gamburger::after{
+.hamburger::after{
   content: '';
   position: absolute;
   width: 24px;
@@ -25,12 +25,12 @@
   box-shadow: 0 8px 0 0 white,0 16px 0 0 white;
 }
 
-.headerText{
+.header-text{
   text-align: center;
   margin-top: 68px;
 }
 
-.gamburgerContainer{
+.hamburger-container{
   margin-top: 18px;
   margin-right: 20px;
 }
@@ -41,7 +41,7 @@
   color: white;
 }
 
-.headerInner {
+.header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;

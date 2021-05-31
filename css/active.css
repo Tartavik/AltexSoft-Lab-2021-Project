@@ -31,7 +31,7 @@
   transform: rotate(135deg) !important;
   transition: transform 0.8s ease-in-out; }
 
-.currentLink::after {
+.active-link::after {
   content: "";
   position: absolute;
   margin-top: 20px;
@@ -40,7 +40,7 @@
   height: 2px;
   background-color: #22BF95; }
 
-.currentTabsLink {
+.current-tabs-link {
   color: #22BF95 !important; }
 
 .overflow {
@@ -55,13 +55,13 @@
   bottom: 16px;
   right: 102%; }
 
-.accordTextActive {
+.accord-text-active {
   margin-top: 20px;
   margin-left: 0px;
   font-size: 24px;
   line-height: 32px; }
 
-.accordionActive {
+.accordion-active {
   margin-left: 18px;
   border: 1.5px solid #22BF95;
   margin-top: 20px;
@@ -72,7 +72,7 @@
   box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
   border-radius: 50%;
   cursor: pointer; }
-  .accordionActive::after {
+  .accordion-active::after {
     content: "";
     width: 7px;
     height: 1px;
@@ -80,7 +80,7 @@
     background-color: #22BF95;
     top: 49%;
     left: 20%; }
-  .accordionActive::before {
+  .accordion-active::before {
     content: "";
     width: 0px;
     height: 0px;

@@ -2,7 +2,6 @@
 @import "fonts";
 @import "active";
 
-
 body {
   min-width: 375px;
   overflow-x: hidden;
@@ -28,21 +27,22 @@ html {
   box-sizing: inherit;
 }
 
-.wrapper {
-  width: 100%;
-}
-
-.container {
-  height: 210px;
-  min-width: 375px;
+.header{
   background: linear-gradient(45deg, #13c3e7, #01f86c);
+  width: 100%;
+  .container {
+    height: 210px;
+    min-width: 375px;
+    margin: auto;
+  }
 }
 
-.gamburgerContainer {
+
+.hamburger-container {
   margin-top: 18px;
   margin-right: 20px;
 
-  .gamburgerIcon {
+  .hamburger-icon {
     width: 24px;
     height: 18px;
     position: relative;
@@ -62,9 +62,10 @@ html {
   }
 }
 
-.headerText {
+.header-text {
+  margin: 30px auto 0 auto;
   text-align: center;
-  margin-top: 68px;
+  max-width: 123px;
   font-family: Actor;
   span {
     color: $colorTextPrimary;
@@ -79,20 +80,26 @@ html {
   margin-top: 18px;
   margin-left: 20px;
   color: $colorTextPrimary;
-
-  .skoutTop {
+  text-decoration: none;
+  p{
     width: 92px;
     height: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: Actor;
+    letter-spacing: 2px;
+    margin: 0;
+    font-weight: 900;
   }
 }
 
-.headerInner {
+.header-inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  
 }
 
-.containerHeaderMenu {
+.container-header-menu {
   top: 62px;
   position: fixed;
   display: flex;
@@ -104,12 +111,15 @@ html {
   background: white;
   z-index: 2;
   font-family: Acme;
-  .headerMenu {
+  .header-menu {
+    cursor: pointer;
+    margin: 0;
+    list-style: none;
     flex-direction: column;
     display: flex;
     margin-top: 24px;
-
-    a {
+    padding: 0;
+    li {
       margin-top: 16px;
       text-align: center;
       position: relative;
@@ -125,13 +135,14 @@ html {
     }
   }
 
-  .enterButton {
+  .enter-buttons {
     flex-direction: column;
     display: flex;
     position: fixed;
     bottom: 0;
     margin-bottom: 40px;
     button {
+      text-transform: uppercase;
       font-family: Acme;
       margin-top: 16px;
       width: 180px;
@@ -153,8 +164,8 @@ html {
 
 .tabs {
   z-index: 1;
-  width: 335px;
-  height: 40px;
+  max-width: 335px;
+  min-height: 40px;
   margin: auto;
   border: 1px solid;
   display: flex;
@@ -163,18 +174,11 @@ html {
   font-family: Acme;
   margin-top: -12px;
   box-shadow: 0px 12px 24px #f2f2f2;
-  border-radius: 5px;
-  border: none;
+  border: 0;
+  border-top:2.5px solid $colorTextlinks;
+  border-radius: 5px 5px 0 0;
   background: white;
   position: relative;
-  .lineTabs {
-    width: 100%;
-    position: absolute;
-    height: 2.5px;
-    background-color: $colorTextlinks;
-    border-radius: 50px 50px 0 0;
-    top: 0;
-  }
   a {
     font-size: 12px;
     line-height: 20px;
@@ -182,13 +186,12 @@ html {
     color: $hoverColorLink;
     cursor: pointer;
     text-decoration: none;
-    // flex-basis: 30%;
+    padding: 10px 0;
   }
-  .headTips {
+  .head-tips {
     flex-basis: 29%;
     text-align: center;
     height: 100%;
-    padding-top: 3%;
     &::after {
       content: "";
       position: absolute;
@@ -197,11 +200,10 @@ html {
       left: 29%;
     }
   }
-  .headGlossary {
+  .head-glossary {
     flex-basis: 40%;
     text-align: center;
     height: 100%;
-    padding-top: 3%;
     &::after {
       content: "";
       position: absolute;
@@ -210,40 +212,37 @@ html {
       left: 69%;
     }
   }
-  .headFAQs {
+  .head-FAQs {
     flex-basis: 31%;
     height: 100%;
     text-align: center;
-    padding-top: 3%;
   }
 }
 
-.accordionsContainer {
+.accordions-container {
   min-width: 335px;
   margin-top: 24px;
   width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
   font-family: Aclonica;
 
   .line {
-    margin: auto;
+
     height: 1px;
-    width: 89%;
     background-color: $colorTextlinks;
   }
 
-  .skoutTipsContainer {
-    width: 89%;
-    margin: auto;
-    .line {
-      width: 100%;
-      border-top: 1.5px solid #b2b2b2;
-      border-radius: 5px;
-    }
+  .skout-tips-container {
+
+
+    border-top: 1px solid #b2b2b2;
+    border-radius: 1px;
   }
 
-  .accordContainer {
-    width: 89%;
-    margin: auto;
+  .accord-container {
+
+
     min-height: 54px;
 
     .panel {
@@ -253,11 +252,12 @@ html {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-out;
-      .mainIcon {
+
+      .main-icon {
         margin: auto;
         display: block;
       }
-      .bottomInfo {
+      .bottom-info {
         display: flex;
         align-items: flex-start;
         img {
@@ -272,11 +272,12 @@ html {
       }
     }
 
-    .headAccordion {
+    .head-accordion {
       display: flex;
       align-items: center;
       cursor: pointer;
       .number {
+        margin-left: 16px;
         font-family: Actor;
         font-size: 40px;
         width: 30px;
@@ -285,12 +286,15 @@ html {
         color: #e5e5e5;
         text-transform: uppercase;
       }
-      .accordText {
-        flex-basis: 93%;
+      .accord-text {
+        width: 100%;
+        font-size: 16px;
+        line-height: 24px;
         margin-left: 18px;
+        transition: font-size 0.4s ease-out;
       }
 
-      .accordion {
+      .accordion-button {
         border: 1.5px solid $colorTextlinks;
         position: relative;
         width: 14px;
@@ -334,161 +338,152 @@ html {
     }
   }
 
-  #headTips {
+  #head-tips-img {
     width: 90px;
     height: 19px;
     margin-top: 10px;
     margin-bottom: 18px;
   }
 
-  #headGlossary {
+  #head-glossary {
     width: 114px;
-    height: 18px;
-    margin-left: 20px;
   }
-  .glossaryContaner {
-    .line {
-      margin-top: 24px;
-      margin-bottom: 11px;
-      width: 89%;
-      border-top: 1.5px solid #b2b2b2;
-      border-radius: 5px;
-    }
-    img {
-      margin-top: 11px;
-      margin-bottom: 20px;
-    }
+  .glossary-contaner {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding-top: 11px;
+    border-top: 1px solid #b2b2b2;
+    border-radius: 1px;
   }
 }
 
-section {
+.section {
   background: linear-gradient(45deg, #e0e0e0, #ffffff);
   font-family: Aclonica;
   padding-top: 1px;
-  .sliderContainer {
-    max-width: 442px;
-    margin: 24px 20px 0 20px;
-    background-color: white;
-    box-shadow: 0px 12px 24px #e5e5e5;
-    border-radius: 5px;
-    display: flex;
-    .sliderHead {
-      margin: 40px 75px 40px 60px;
-      flex-basis: 65%;
-      .sliderItem {
-        position: relative;
-        font-size: 16px;
-        line-height: 32px;
-        span {
-          cursor: pointer;
-          color: $hoverColorLink;
-        }
-        &:hover span {
-          color: $colorTextlinks;
-          transition: 800ms color;
+  .section-wrapper{
+    .slider-container {
+      max-width: 442px;
+      margin: 24px 20px 0 20px;
+      background-color: white;
+      box-shadow: 0px 12px 24px #e5e5e5;
+      border-radius: 5px;
+      display: flex;
+      .slider-head {
+        margin: 40px 75px 40px 60px;
+        flex-basis: 65%;
+        .sliderItem {
+          position: relative;
+          font-size: 16px;
+          line-height: 32px;
+          span {
+            cursor: pointer;
+            color: $hoverColorLink;
+          }
+          &:hover span {
+            color: $colorTextlinks;
+            transition: 800ms color;
+          }
         }
       }
-    }
-    .sliderButtonContainer {
-      display: flex;
-      flex-direction: column;
-      margin-left: -45px;
-
-      button {
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: white;
-        border: 1px solid $colorTextlinks;
+      .slider-button-container {
         display: flex;
-        align-items: stretch;
-        padding-bottom: -30px;
-        padding-bottom: -5px;
-        padding-top: 0px;
-        margin-top: 16px;
-        position: relative;
-        cursor: pointer;
-
-        &::after {
-          content: "";
-          width: 6px;
-          height: 6px;
-          border-right: 2px solid $colorTextlinks;
-          border-bottom: 2px solid $colorTextlinks;
-          position: absolute;
-          transform: rotate(-50deg);
-          top: 4px;
-          left: 5px;
+        flex-direction: column;
+        margin-left: -45px;
+  
+        button {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: white;
+          border: 1px solid $colorTextlinks;
+          display: flex;
+          align-items: stretch;
+          padding-bottom: -30px;
+          padding-bottom: -5px;
+          padding-top: 0px;
+          margin-top: 16px;
+          position: relative;
+          cursor: pointer;
+  
+          &::after {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-right: 2px solid $colorTextlinks;
+            border-bottom: 2px solid $colorTextlinks;
+            position: absolute;
+            transform: rotate(-50deg);
+            top: 4px;
+            left: 5px;
+          }
+  
+          &::before {
+            content: "";
+            width: 8px;
+            height: 2px;
+            background-color: $colorTextlinks;
+            position: absolute;
+            top: 45%;
+            left: 21%;
+          }
+          &:hover {
+            border: 1px solid $hoverColorLink;
+            transition: 800ms border;
+          }
+          &:hover::after {
+            border-right: 2px solid $hoverColorLink;
+            border-bottom: 2px solid $hoverColorLink;
+            transition: 800ms border-right;
+            transition: 800ms border-bottom;
+          }
+          &:hover::before {
+            background-color: $hoverColorLink;
+            transition: 800ms background-color;
+          }
         }
-
-        &::before {
-          content: "";
-          width: 8px;
-          height: 2px;
-          background-color:$colorTextlinks;
-          position: absolute;
-          top: 45%;
-          left: 21%;
+  
+        .rotate-arrow {
+          transform: rotate(180deg);
         }
-        &:hover {
-          border: 1px solid $hoverColorLink;
-          transition: 800ms border;
-        }
-        &:hover::after {
-          border-right: 2px solid $hoverColorLink;
-          border-bottom: 2px solid $hoverColorLink;
-          transition: 800ms border-right;
-          transition: 800ms border-bottom;
-        }
-        &:hover::before {
-          background-color: $hoverColorLink;
-          transition: 800ms background-color;
-        }
-      }
-
-      .rotateArrow {
-        transform: rotate(180deg);
       }
     }
-  }
-
-  .sliderTextContainer {
-    margin: 32px 24px 0 20px;
-    padding-bottom: 24px;
-    p {
+  
+    .slider-text-container {
+      margin: 32px 24px 0 20px;
       padding-bottom: 24px;
-      margin: 0 0 0 20px;
-      font-family: Actor;
-      font-size: 32px;
-      line-height: 40px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #1a1a1a;
-    }
-    span {
-      font-size: 16px;
-      line-height: 24px;
-      color: #191919;
-    }
-    .sliderText {
-      display: flex;
-      .line {
-        width: 1.5px;
-        height: 48px;
-        background-color: $colorTextlinks;
-        margin-right: 20px;
+      p {
+        padding-bottom: 24px;
+        margin: 0 0 0 20px;
+        font-family: Actor;
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #1a1a1a;
+      }
+      span {
+        font-size: 16px;
+        line-height: 24px;
+        color: #191919;
+      }
+      .slider-text {
+        display: flex;
+        max-width: 442px;
+        padding-left: 16px;
+        border-left: 1.5px solid $colorTextlinks;
       }
     }
   }
+  
 }
 
-#headFAQs {
+#head-FAQs {
   width: 110px;
   height: 18px;
-  margin-left: 20px;
 }
 
-.moreQuestions {
+.more-questions {
   margin: 20px 0 24px 0;
   font-size: 12px;
   line-height: 24px;
@@ -503,16 +498,20 @@ section {
   }
 }
 
-.faqsContainer {
-  .line {
-    width: 89%;
-    border-top: 1.5px solid #b2b2b2;
-    border-radius: 5px;
-    margin: 24px auto 11px auto;
+.faqs-container {
+  min-width: 335px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 0px 20px 0px 20px;
+  .head-FAQs-wrapper{
+    border-top: 1px solid #b2b2b2;
+    border-radius: 1px;
+    width: 100%;
+    padding-top: 19px;
   }
 }
 
-.faqsAccordionContainer {
+.faqs-accordion-container {
   font-family: Aclonica;
   .panel {
     display: flex;
@@ -529,6 +528,7 @@ section {
       color: #e5e5e5;
     }
     .answer {
+      margin: auto 0;
       flex-basis: 60%;
       font-size: 14px;
       line-height: 24px;
@@ -536,7 +536,8 @@ section {
     }
   }
 
-  .headAccordionFaqs {
+  .head-accordion-Faqs {
+    cursor: pointer;
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -548,7 +549,7 @@ section {
       color: #e5e5e5;
     }
 
-    .accordion {
+    .accordion-button {
       width: 20px;
       height: 20px;
       border-bottom: 1.5px solid $colorTextlinks;
@@ -576,31 +577,36 @@ section {
 
 footer {
   background-color: #f2f2f2;
+  min-width: 375px;
   width: 100%;
   font-family: Aclonica;
-  .aboutCompany {
+  .about-company {
     display: flex;
     flex-direction: column;
     width: 100%;
-    .linkCompany {
+    .link-company {
+      list-style: none;
       display: flex;
       flex-direction: column;
       margin: 24px 0 0 23px;
-      a {
-        font-size: 12px;
-        line-height: 24px;
-        color: $hoverColorLink;
-        margin-top: 12px;
-        text-decoration: none;
+      li{
+        a {
+          font-size: 12px;
+          line-height: 24px;
+          color: $hoverColorLink;
+          margin-top: 12px;
+          text-decoration: none;
+        }
+        span {
+          font-size: 16px;
+          line-height: 24px;
+          color: $hoverColorLink;
+          margin-bottom: 20px;
+        }
       }
-      span {
-        font-size: 16px;
-        line-height: 24px;
-        color: $hoverColorLink;
-        margin-bottom: 20px;
-      }
+      
     }
-    .addres {
+    .address {
       display: flex;
       flex-direction: column;
       padding: 8px 0 8px 23px;
@@ -616,7 +622,13 @@ footer {
         line-height: 24px;
         color: $hoverColorLink;
       }
-      a {
+      .phone{
+        font-size: 16px;
+        line-height: 24px;
+        color: $hoverColorLink;
+      }
+      
+      .view-map {
         text-decoration: none;
         font-size: 12px;
         line-height: 20px;
@@ -633,10 +645,12 @@ footer {
     margin-top: 12px;
     padding-top: 20px;
     text-align: center;
-    .conteinerSocialIcons {
+    
+    .conteiner-social-icons {
       display: flex;
       justify-content: space-evenly;
       margin-bottom: 20px;
+      padding-left: 0;
       .twitter {
         cursor: pointer;
         display: inline-block;
@@ -687,7 +701,7 @@ footer {
       }
     }
   }
-  .skoutBottom {
+  .skout-bottom {
     width: 105px;
     height: 38px;
     margin-bottom: 28px;

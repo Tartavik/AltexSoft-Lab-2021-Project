@@ -49,7 +49,7 @@
   transform: rotate(135deg) !important;
   transition: transform 0.8s ease-in-out; }
 
-.currentLink::after {
+.active-link::after {
   content: "";
   position: absolute;
   margin-top: 20px;
@@ -58,7 +58,7 @@
   height: 2px;
   background-color: #22BF95; }
 
-.currentTabsLink {
+.current-tabs-link {
   color: #22BF95 !important; }
 
 .overflow {
@@ -73,13 +73,13 @@
   bottom: 16px;
   right: 102%; }
 
-.accordTextActive {
+.accord-text-active {
   margin-top: 20px;
   margin-left: 0px;
   font-size: 24px;
   line-height: 32px; }
 
-.accordionActive {
+.accordion-active {
   margin-left: 18px;
   border: 1.5px solid #22BF95;
   margin-top: 20px;
@@ -90,7 +90,7 @@
   box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
   border-radius: 50%;
   cursor: pointer; }
-  .accordionActive::after {
+  .accordion-active::after {
     content: "";
     width: 7px;
     height: 1px;
@@ -98,7 +98,7 @@
     background-color: #22BF95;
     top: 49%;
     left: 20%; }
-  .accordionActive::before {
+  .accordion-active::before {
     content: "";
     width: 0px;
     height: 0px;
@@ -129,25 +129,25 @@ html {
 ::before {
   box-sizing: inherit; }
 
-.wrapper {
+.header {
+  background: linear-gradient(45deg, #13c3e7, #01f86c);
   width: 100%; }
+  .header .container {
+    height: 210px;
+    min-width: 375px;
+    margin: auto; }
 
-.container {
-  height: 210px;
-  min-width: 375px;
-  background: linear-gradient(45deg, #13c3e7, #01f86c); }
-
-.gamburgerContainer {
+.hamburger-container {
   margin-top: 18px;
   margin-right: 20px; }
-  .gamburgerContainer .gamburgerIcon {
+  .hamburger-container .hamburger-icon {
     width: 24px;
     height: 18px;
     position: relative;
     border: 0;
     background-color: transparent;
     cursor: pointer; }
-    .gamburgerContainer .gamburgerIcon::after {
+    .hamburger-container .hamburger-icon::after {
       content: "";
       position: absolute;
       width: 24px;
@@ -157,11 +157,12 @@ html {
       top: 0;
       box-shadow: 0 8px 0 0 white, 0 16px 0 0 white; }
 
-.headerText {
+.header-text {
+  margin: 30px auto 0 auto;
   text-align: center;
-  margin-top: 68px;
+  max-width: 123px;
   font-family: Actor; }
-  .headerText span {
+  .header-text span {
     color: white;
     font-size: 40px;
     line-height: 56px;
@@ -171,17 +172,23 @@ html {
 .logo {
   margin-top: 18px;
   margin-left: 20px;
-  color: white; }
-  .logo .skoutTop {
+  color: white;
+  text-decoration: none; }
+  .logo p {
     width: 92px;
-    height: 20px; }
+    height: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: Actor;
+    letter-spacing: 2px;
+    margin: 0;
+    font-weight: 900; }
 
-.headerInner {
+.header-inner {
   display: flex;
-  justify-content: space-between;
-  align-items: center; }
+  justify-content: space-between; }
 
-.containerHeaderMenu {
+.container-header-menu {
   top: 62px;
   position: fixed;
   display: flex;
@@ -193,11 +200,15 @@ html {
   background: white;
   z-index: 2;
   font-family: Acme; }
-  .containerHeaderMenu .headerMenu {
+  .container-header-menu .header-menu {
+    cursor: pointer;
+    margin: 0;
+    list-style: none;
     flex-direction: column;
     display: flex;
-    margin-top: 24px; }
-    .containerHeaderMenu .headerMenu a {
+    margin-top: 24px;
+    padding: 0; }
+    .container-header-menu .header-menu li {
       margin-top: 16px;
       text-align: center;
       position: relative;
@@ -206,16 +217,17 @@ html {
       letter-spacing: 2px;
       color: #22BF95;
       text-decoration: none; }
-      .containerHeaderMenu .headerMenu a:hover {
+      .container-header-menu .header-menu li:hover {
         color: #7f7f7f;
         transition: 800ms color; }
-  .containerHeaderMenu .enterButton {
+  .container-header-menu .enter-buttons {
     flex-direction: column;
     display: flex;
     position: fixed;
     bottom: 0;
     margin-bottom: 40px; }
-    .containerHeaderMenu .enterButton button {
+    .container-header-menu .enter-buttons button {
+      text-transform: uppercase;
       font-family: Acme;
       margin-top: 16px;
       width: 180px;
@@ -225,7 +237,7 @@ html {
       background-color: white;
       color: #22BF95;
       cursor: pointer; }
-      .containerHeaderMenu .enterButton button:hover {
+      .container-header-menu .enter-buttons button:hover {
         border: 1.5px solid #7f7f7f;
         color: #7f7f7f;
         transition: 800ms color;
@@ -233,8 +245,8 @@ html {
 
 .tabs {
   z-index: 1;
-  width: 335px;
-  height: 40px;
+  max-width: 335px;
+  min-height: 40px;
   margin: auto;
   border: 1px solid;
   display: flex;
@@ -243,98 +255,85 @@ html {
   font-family: Acme;
   margin-top: -12px;
   box-shadow: 0px 12px 24px #f2f2f2;
-  border-radius: 5px;
-  border: none;
+  border: 0;
+  border-top: 2.5px solid #22BF95;
+  border-radius: 5px 5px 0 0;
   background: white;
   position: relative; }
-  .tabs .lineTabs {
-    width: 100%;
-    position: absolute;
-    height: 2.5px;
-    background-color: #22BF95;
-    border-radius: 50px 50px 0 0;
-    top: 0; }
   .tabs a {
     font-size: 12px;
     line-height: 20px;
     letter-spacing: 2px;
     color: #7f7f7f;
     cursor: pointer;
-    text-decoration: none; }
-  .tabs .headTips {
+    text-decoration: none;
+    padding: 10px 0; }
+  .tabs .head-tips {
     flex-basis: 29%;
     text-align: center;
-    height: 100%;
-    padding-top: 3%; }
-    .tabs .headTips::after {
+    height: 100%; }
+    .tabs .head-tips::after {
       content: "";
       position: absolute;
       border-left: 1.5px solid #e5e5e5;
       height: 50%;
       left: 29%; }
-  .tabs .headGlossary {
+  .tabs .head-glossary {
     flex-basis: 40%;
     text-align: center;
-    height: 100%;
-    padding-top: 3%; }
-    .tabs .headGlossary::after {
+    height: 100%; }
+    .tabs .head-glossary::after {
       content: "";
       position: absolute;
       border-left: 1.5px solid #e5e5e5;
       height: 50%;
       left: 69%; }
-  .tabs .headFAQs {
+  .tabs .head-FAQs {
     flex-basis: 31%;
     height: 100%;
-    text-align: center;
-    padding-top: 3%; }
+    text-align: center; }
 
-.accordionsContainer {
+.accordions-container {
   min-width: 335px;
   margin-top: 24px;
   width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
   font-family: Aclonica; }
-  .accordionsContainer .line {
-    margin: auto;
+  .accordions-container .line {
     height: 1px;
-    width: 89%;
     background-color: #22BF95; }
-  .accordionsContainer .skoutTipsContainer {
-    width: 89%;
-    margin: auto; }
-    .accordionsContainer .skoutTipsContainer .line {
-      width: 100%;
-      border-top: 1.5px solid #b2b2b2;
-      border-radius: 5px; }
-  .accordionsContainer .accordContainer {
-    width: 89%;
-    margin: auto;
+  .accordions-container .skout-tips-container {
+    border-top: 1px solid #b2b2b2;
+    border-radius: 1px; }
+  .accordions-container .accord-container {
     min-height: 54px; }
-    .accordionsContainer .accordContainer .panel {
+    .accordions-container .accord-container .panel {
       padding: 0 18px;
       color: #212121;
       background-color: #fff;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-out; }
-      .accordionsContainer .accordContainer .panel .mainIcon {
+      .accordions-container .accord-container .panel .main-icon {
         margin: auto;
         display: block; }
-      .accordionsContainer .accordContainer .panel .bottomInfo {
+      .accordions-container .accord-container .panel .bottom-info {
         display: flex;
         align-items: flex-start; }
-        .accordionsContainer .accordContainer .panel .bottomInfo img {
+        .accordions-container .accord-container .panel .bottom-info img {
           margin: 11px 20px 0 0; }
-        .accordionsContainer .accordContainer .panel .bottomInfo span {
+        .accordions-container .accord-container .panel .bottom-info span {
           margin: 11px 0 23px 0;
           font-size: 12px;
           line-height: 24px;
           color: #7f7f7f; }
-    .accordionsContainer .accordContainer .headAccordion {
+    .accordions-container .accord-container .head-accordion {
       display: flex;
       align-items: center;
       cursor: pointer; }
-      .accordionsContainer .accordContainer .headAccordion .number {
+      .accordions-container .accord-container .head-accordion .number {
+        margin-left: 16px;
         font-family: Actor;
         font-size: 40px;
         width: 30px;
@@ -342,10 +341,13 @@ html {
         letter-spacing: 2px;
         color: #e5e5e5;
         text-transform: uppercase; }
-      .accordionsContainer .accordContainer .headAccordion .accordText {
-        flex-basis: 93%;
-        margin-left: 18px; }
-      .accordionsContainer .accordContainer .headAccordion .accordion {
+      .accordions-container .accord-container .head-accordion .accord-text {
+        width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+        margin-left: 18px;
+        transition: font-size 0.4s ease-out; }
+      .accordions-container .accord-container .head-accordion .accordion-button {
         border: 1.5px solid #22BF95;
         position: relative;
         width: 14px;
@@ -354,7 +356,7 @@ html {
         box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
         border-radius: 50%;
         cursor: pointer; }
-        .accordionsContainer .accordContainer .headAccordion .accordion::after {
+        .accordions-container .accord-container .head-accordion .accordion-button::after {
           content: "";
           width: 7px;
           height: 1px;
@@ -362,10 +364,10 @@ html {
           background-color: #22BF95;
           top: 50%;
           left: 21%; }
-        .accordionsContainer .accordContainer .headAccordion .accordion:hover::after {
+        .accordions-container .accord-container .head-accordion .accordion-button:hover::after {
           background-color: #7f7f7f;
           transition: 800ms background-color; }
-        .accordionsContainer .accordContainer .headAccordion .accordion::before {
+        .accordions-container .accord-container .head-accordion .accordion-button::before {
           content: "";
           width: 7px;
           height: 1px;
@@ -374,60 +376,55 @@ html {
           top: 50%;
           left: 20%;
           transform: rotate(90deg); }
-        .accordionsContainer .accordContainer .headAccordion .accordion:hover::before {
+        .accordions-container .accord-container .head-accordion .accordion-button:hover::before {
           background-color: #7f7f7f;
           transition: 800ms background-color; }
-        .accordionsContainer .accordContainer .headAccordion .accordion:hover {
+        .accordions-container .accord-container .head-accordion .accordion-button:hover {
           border: 1.5px solid #7f7f7f;
           transition: 800ms border; }
-  .accordionsContainer #headTips {
+  .accordions-container #head-tips-img {
     width: 90px;
     height: 19px;
     margin-top: 10px;
     margin-bottom: 18px; }
-  .accordionsContainer #headGlossary {
-    width: 114px;
-    height: 18px;
-    margin-left: 20px; }
-  .accordionsContainer .glossaryContaner .line {
+  .accordions-container #head-glossary {
+    width: 114px; }
+  .accordions-container .glossary-contaner {
     margin-top: 24px;
-    margin-bottom: 11px;
-    width: 89%;
-    border-top: 1.5px solid #b2b2b2;
-    border-radius: 5px; }
-  .accordionsContainer .glossaryContaner img {
-    margin-top: 11px;
-    margin-bottom: 20px; }
+    margin-bottom: 24px;
+    padding-top: 11px;
+    border-top: 1px solid #b2b2b2;
+    border-radius: 1px; }
 
-section {
+.section {
   background: linear-gradient(45deg, #e0e0e0, #ffffff);
   font-family: Aclonica;
   padding-top: 1px; }
-  section .sliderContainer {
+  .section .section-wrapper .slider-container {
     max-width: 442px;
     margin: 24px 20px 0 20px;
     background-color: white;
     box-shadow: 0px 12px 24px #e5e5e5;
     border-radius: 5px;
     display: flex; }
-    section .sliderContainer .sliderHead {
+    .section .section-wrapper .slider-container .slider-head {
       margin: 40px 75px 40px 60px;
       flex-basis: 65%; }
-      section .sliderContainer .sliderHead .sliderItem {
+      .section .section-wrapper .slider-container .slider-head .sliderItem {
         position: relative;
         font-size: 16px;
         line-height: 32px; }
-        section .sliderContainer .sliderHead .sliderItem span {
+        .section .section-wrapper .slider-container .slider-head .sliderItem span {
           cursor: pointer;
           color: #7f7f7f; }
-        section .sliderContainer .sliderHead .sliderItem:hover span {
+        .section .section-wrapper .slider-container .slider-head .sliderItem:hover span {
           color: #22BF95;
           transition: 800ms color; }
-    section .sliderContainer .sliderButtonContainer {
+    .section .section-wrapper .slider-container .slider-button-container {
       display: flex;
       flex-direction: column;
       margin-left: -45px; }
-      section .sliderContainer .sliderButtonContainer button {
+      .section .section-wrapper .slider-container .slider-button-container button {
         width: 16px;
         height: 16px;
         border-radius: 50%;
@@ -441,7 +438,7 @@ section {
         margin-top: 16px;
         position: relative;
         cursor: pointer; }
-        section .sliderContainer .sliderButtonContainer button::after {
+        .section .section-wrapper .slider-container .slider-button-container button::after {
           content: "";
           width: 6px;
           height: 6px;
@@ -451,7 +448,7 @@ section {
           transform: rotate(-50deg);
           top: 4px;
           left: 5px; }
-        section .sliderContainer .sliderButtonContainer button::before {
+        .section .section-wrapper .slider-container .slider-button-container button::before {
           content: "";
           width: 8px;
           height: 2px;
@@ -459,23 +456,23 @@ section {
           position: absolute;
           top: 45%;
           left: 21%; }
-        section .sliderContainer .sliderButtonContainer button:hover {
+        .section .section-wrapper .slider-container .slider-button-container button:hover {
           border: 1px solid #7f7f7f;
           transition: 800ms border; }
-        section .sliderContainer .sliderButtonContainer button:hover::after {
+        .section .section-wrapper .slider-container .slider-button-container button:hover::after {
           border-right: 2px solid #7f7f7f;
           border-bottom: 2px solid #7f7f7f;
           transition: 800ms border-right;
           transition: 800ms border-bottom; }
-        section .sliderContainer .sliderButtonContainer button:hover::before {
+        .section .section-wrapper .slider-container .slider-button-container button:hover::before {
           background-color: #7f7f7f;
           transition: 800ms background-color; }
-      section .sliderContainer .sliderButtonContainer .rotateArrow {
+      .section .section-wrapper .slider-container .slider-button-container .rotate-arrow {
         transform: rotate(180deg); }
-  section .sliderTextContainer {
+  .section .section-wrapper .slider-text-container {
     margin: 32px 24px 0 20px;
     padding-bottom: 24px; }
-    section .sliderTextContainer p {
+    .section .section-wrapper .slider-text-container p {
       padding-bottom: 24px;
       margin: 0 0 0 20px;
       font-family: Actor;
@@ -484,24 +481,21 @@ section {
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: #1a1a1a; }
-    section .sliderTextContainer span {
+    .section .section-wrapper .slider-text-container span {
       font-size: 16px;
       line-height: 24px;
       color: #191919; }
-    section .sliderTextContainer .sliderText {
-      display: flex; }
-      section .sliderTextContainer .sliderText .line {
-        width: 1.5px;
-        height: 48px;
-        background-color: #22BF95;
-        margin-right: 20px; }
+    .section .section-wrapper .slider-text-container .slider-text {
+      display: flex;
+      max-width: 442px;
+      padding-left: 16px;
+      border-left: 1.5px solid #22BF95; }
 
-#headFAQs {
+#head-FAQs {
   width: 110px;
-  height: 18px;
-  margin-left: 20px; }
+  height: 18px; }
 
-.moreQuestions {
+.more-questions {
   margin: 20px 0 24px 0;
   font-size: 12px;
   line-height: 24px;
@@ -510,19 +504,24 @@ section {
   text-transform: uppercase;
   color: #22BF95;
   font-family: Acme; }
-  .moreQuestions:hover {
+  .more-questions:hover {
     color: #7f7f7f;
     transition: 800ms color; }
 
-.faqsContainer .line {
-  width: 89%;
-  border-top: 1.5px solid #b2b2b2;
-  border-radius: 5px;
-  margin: 24px auto 11px auto; }
+.faqs-container {
+  min-width: 335px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 0px 20px 0px 20px; }
+  .faqs-container .head-FAQs-wrapper {
+    border-top: 1px solid #b2b2b2;
+    border-radius: 1px;
+    width: 100%;
+    padding-top: 19px; }
 
-.faqsAccordionContainer {
+.faqs-accordion-container {
   font-family: Aclonica; }
-  .faqsAccordionContainer .panel {
+  .faqs-accordion-container .panel {
     display: flex;
     padding: 0 20px;
     color: #212121;
@@ -530,27 +529,29 @@ section {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out; }
-    .faqsAccordionContainer .panel span {
+    .faqs-accordion-container .panel span {
       font-size: 40px;
       line-height: 48px;
       margin-right: 25px;
       color: #e5e5e5; }
-    .faqsAccordionContainer .panel .answer {
+    .faqs-accordion-container .panel .answer {
+      margin: auto 0;
       flex-basis: 60%;
       font-size: 14px;
       line-height: 24px;
       color: #191919; }
-  .faqsAccordionContainer .headAccordionFaqs {
+  .faqs-accordion-container .head-accordion-Faqs {
+    cursor: pointer;
     display: flex;
     align-items: center;
     padding: 0 20px;
     min-height: 114px; }
-    .faqsAccordionContainer .headAccordionFaqs span:first-child {
+    .faqs-accordion-container .head-accordion-Faqs span:first-child {
       font-size: 40px;
       line-height: 48px;
       margin-right: 25px;
       color: #e5e5e5; }
-    .faqsAccordionContainer .headAccordionFaqs .accordion {
+    .faqs-accordion-container .head-accordion-Faqs .accordion-button {
       width: 20px;
       height: 20px;
       border-bottom: 1.5px solid #22BF95;
@@ -561,58 +562,64 @@ section {
       transform: rotate(-45deg);
       transition: transform 0.8s ease-in-out;
       cursor: pointer; }
-      .faqsAccordionContainer .headAccordionFaqs .accordion:hover {
+      .faqs-accordion-container .head-accordion-Faqs .accordion-button:hover {
         border-bottom: 1.5px solid #7f7f7f;
         border-left: 1.5px solid #7f7f7f;
         transition: 800ms border-left;
         transition: 800ms border-bottom; }
-    .faqsAccordionContainer .headAccordionFaqs .question {
+    .faqs-accordion-container .head-accordion-Faqs .question {
       flex-basis: 87%;
       color: #191919; }
 
 footer {
   background-color: #f2f2f2;
+  min-width: 375px;
   width: 100%;
   font-family: Aclonica; }
-  footer .aboutCompany {
+  footer .about-company {
     display: flex;
     flex-direction: column;
     width: 100%; }
-    footer .aboutCompany .linkCompany {
+    footer .about-company .link-company {
+      list-style: none;
       display: flex;
       flex-direction: column;
       margin: 24px 0 0 23px; }
-      footer .aboutCompany .linkCompany a {
+      footer .about-company .link-company li a {
         font-size: 12px;
         line-height: 24px;
         color: #7f7f7f;
         margin-top: 12px;
         text-decoration: none; }
-      footer .aboutCompany .linkCompany span {
+      footer .about-company .link-company li span {
         font-size: 16px;
         line-height: 24px;
         color: #7f7f7f;
         margin-bottom: 20px; }
-    footer .aboutCompany .addres {
+    footer .about-company .address {
       display: flex;
       flex-direction: column;
       padding: 8px 0 8px 23px;
       border-top: 2px solid #22BF95; }
-      footer .aboutCompany .addres p {
+      footer .about-company .address p {
         font-size: 16px;
         line-height: 36px;
         color: #7f7f7f;
         margin: 0; }
-      footer .aboutCompany .addres span {
+      footer .about-company .address span {
         font-size: 16px;
         line-height: 24px;
         color: #7f7f7f; }
-      footer .aboutCompany .addres a {
+      footer .about-company .address .phone {
+        font-size: 16px;
+        line-height: 24px;
+        color: #7f7f7f; }
+      footer .about-company .address .view-map {
         text-decoration: none;
         font-size: 12px;
         line-height: 20px;
         color: #22BF95; }
-        footer .aboutCompany .addres a:hover {
+        footer .about-company .address .view-map:hover {
           color: #7f7f7f;
           transition: 800ms color; }
   footer .social {
@@ -620,51 +627,52 @@ footer {
     margin-top: 12px;
     padding-top: 20px;
     text-align: center; }
-    footer .social .conteinerSocialIcons {
+    footer .social .conteiner-social-icons {
       display: flex;
       justify-content: space-evenly;
-      margin-bottom: 20px; }
-      footer .social .conteinerSocialIcons .twitter {
+      margin-bottom: 20px;
+      padding-left: 0; }
+      footer .social .conteiner-social-icons .twitter {
         cursor: pointer;
         display: inline-block;
         width: 30px;
         height: 24px;
         background-image: url(../image/twitter.png);
         background-position: 0 0; }
-        footer .social .conteinerSocialIcons .twitter:hover {
+        footer .social .conteiner-social-icons .twitter:hover {
           background-position: 30px 0;
           transition: 300ms background-position; }
-      footer .social .conteinerSocialIcons .facebook {
+      footer .social .conteiner-social-icons .facebook {
         cursor: pointer;
         display: inline-block;
         width: 25px;
         height: 25px;
         background-image: url(../image/facebook.png);
         background-position: 0 0; }
-        footer .social .conteinerSocialIcons .facebook:hover {
+        footer .social .conteiner-social-icons .facebook:hover {
           background-position: 25px 0;
           transition: 300ms background-position; }
-      footer .social .conteinerSocialIcons .youtube {
+      footer .social .conteiner-social-icons .youtube {
         cursor: pointer;
         display: inline-block;
         width: 32px;
         height: 23px;
         background-image: url(../image/youtube.png);
         background-position: 0 0; }
-        footer .social .conteinerSocialIcons .youtube:hover {
+        footer .social .conteiner-social-icons .youtube:hover {
           background-position: 32px 0;
           transition: 300ms background-position; }
-      footer .social .conteinerSocialIcons .in {
+      footer .social .conteiner-social-icons .in {
         cursor: pointer;
         display: inline-block;
         width: 25px;
         height: 25px;
         background-image: url(../image/in.png);
         background-position: 0 0; }
-        footer .social .conteinerSocialIcons .in:hover {
+        footer .social .conteiner-social-icons .in:hover {
           background-position: 25px 0;
           transition: 300ms background-position; }
-  footer .skoutBottom {
+  footer .skout-bottom {
     width: 105px;
     height: 38px;
     margin-bottom: 28px; }
@@ -673,37 +681,36 @@ footer {
   .wrapper {
     max-width: 1440px;
     margin: auto; }
-  .gamburgerContainer {
+  .hamburger-container {
     display: none;
     position: absolute; }
   .logo {
     margin: 28px 84px 0px 84px; }
-    .logo .skoutTop {
+    .logo p {
       width: 110px;
-      height: 24px; }
-  .containerHeaderMenu {
+      height: 24px;
+      font-size: 24px; }
+  .container-header-menu {
     display: flex !important;
     position: static;
     background-color: transparent;
     flex-direction: row;
-    flex-basis: 78%;
+    width: 100%;
     justify-content: space-between; }
-    .containerHeaderMenu .wrapperHeaderMenu {
-      display: flex;
-      flex-basis: 70%; }
-    .containerHeaderMenu .headerMenu {
+    .container-header-menu .header-menu {
+      padding: 0;
+      width: 100%;
       flex-direction: row;
       margin-top: 0;
       display: flex;
-      justify-content: space-between;
-      width: 100%; }
-      .containerHeaderMenu .headerMenu a {
+      justify-content: space-between; }
+      .container-header-menu .header-menu li {
         color: white;
         position: relative;
         min-width: 85px; }
-        .containerHeaderMenu .headerMenu a:hover {
+        .container-header-menu .header-menu li:hover {
           color: #7f7f7f; }
-      .containerHeaderMenu .headerMenu .currentLink::after {
+      .container-header-menu .header-menu .active-link::after {
         content: "";
         position: absolute;
         margin-top: 20px;
@@ -711,71 +718,95 @@ footer {
         width: 40px;
         height: 2px;
         background-color: white; }
-    .containerHeaderMenu .enterButton {
+    .container-header-menu .enter-buttons {
       position: static;
       flex-direction: row;
       margin-bottom: 0;
       margin-right: 70px; }
-      .containerHeaderMenu .enterButton button {
+      .container-header-menu .enter-buttons button {
         margin-top: 20px;
         margin-right: 20px;
         background-color: transparent;
         border: 1.5px solid white;
         color: white; }
-        .containerHeaderMenu .enterButton button:hover {
+        .container-header-menu .enter-buttons button:hover {
           color: #7f7f7f;
           border: 1.5px solid #7f7f7f; }
-  .headerText {
-    margin-top: 0;
-    position: absolute;
-    top: 37%;
-    left: 28%; }
-    .headerText span {
+  .header-text {
+    max-width: 100%;
+    margin: 102px auto 0 auto; }
+    .header-text span {
       font-size: 110px;
       line-height: 130px; }
   .container {
     position: relative;
-    min-height: 500px; }
+    min-height: 500px;
+    max-width: 1440px; }
   .tabs {
-    width: 770px;
-    height: 80px;
+    max-width: 770px;
+    min-height: 80px;
     margin-top: -35px; }
     .tabs a {
       font-size: 12px;
       line-height: 24px;
-      padding-top: 4%; }
-  .accordionsContainer {
-    margin-top: 98px !important; }
-  #headTips {
-    width: 247px !important;
-    height: 41px !important;
-    margin-top: 19px !important;
-    margin-bottom: 95px !important; }
-  .accordContainer {
-    min-height: 151px !important;
-    position: relative; }
-    .accordContainer .headAccordion .number {
-      font-size: 110px !important;
-      line-height: 130px !important;
-      width: 50px !important;
-      margin-right: 113px !important; }
-    .accordContainer .headAccordion .accordText {
-      font-size: 24px;
-      line-height: 36px; }
-    .accordContainer .headAccordion .accordion {
-      width: 37.5px !important;
-      height: 35px !important; }
-      .accordContainer .headAccordion .accordion::after {
-        width: 20px !important;
-        height: 2px !important;
-        top: 49% !important;
-        left: 20% !important; }
-      .accordContainer .headAccordion .accordion::before {
-        width: 20px !important;
-        height: 2px !important;
-        top: 49% !important;
-        transform: rotate(90deg); }
-  .accordionActive {
+      padding: 28px 0; }
+  .accordions-container {
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 98px;
+    padding-left: 136px;
+    padding-right: 136px; }
+    .accordions-container .skout-tips-container #head-tips-img {
+      width: 247px;
+      height: 41px;
+      margin-top: 19px;
+      margin-bottom: 95px; }
+    .accordions-container .accord-container {
+      min-height: 151px;
+      position: relative; }
+      .accordions-container .accord-container .head-accordion .number {
+        font-size: 110px;
+        line-height: 130px;
+        width: 50px;
+        margin-right: 113px; }
+      .accordions-container .accord-container .head-accordion .accord-text {
+        font-size: 24px;
+        line-height: 36px; }
+      .accordions-container .accord-container .head-accordion .accordion-button {
+        width: 37.5px;
+        height: 35px; }
+        .accordions-container .accord-container .head-accordion .accordion-button::after {
+          width: 20px;
+          height: 2px;
+          top: 49%;
+          left: 20%; }
+        .accordions-container .accord-container .head-accordion .accordion-button::before {
+          width: 20px;
+          height: 2px;
+          top: 49%;
+          transform: rotate(90deg); }
+      .accordions-container .accord-container .panel {
+        position: relative; }
+        .accordions-container .accord-container .panel .main-icon {
+          margin: 42px 0 0 0; }
+        .accordions-container .accord-container .panel .footer-accordion {
+          font-size: 16px;
+          margin-bottom: 63px; }
+        .accordions-container .accord-container .panel .footer-accordion-container {
+          position: absolute;
+          top: 0%;
+          left: 41%;
+          width: 47%; }
+    .accordions-container .glossary-contaner {
+      margin-top: 160px;
+      padding-top: 19px;
+      margin-bottom: 50px; }
+      .accordions-container .glossary-contaner #head-glossary {
+        width: 342px;
+        height: 41px;
+        margin-left: 0;
+        margin: 19px 0 50px 0; }
+  .accordion-active {
     position: absolute;
     right: 0;
     top: -10px;
@@ -783,193 +814,169 @@ footer {
     width: 35px;
     height: 35px;
     margin-left: 37px; }
-    .accordionActive::after {
-      width: 20px !important;
-      height: 2px !important; }
-  .accordTextActive {
-    flex-basis: 15% !important;
+    .accordion-active::after {
+      width: 20px;
+      height: 2px; }
+  .accord-text-active {
+    flex-basis: 15%;
     margin-top: 57px;
-    font-size: 42px !important;
-    line-height: 54px !important; }
-  .panel {
-    position: relative; }
-    .panel .mainIcon {
-      margin: 42px 0 0 0 !important; }
-    .panel .footerAccordion {
-      font-size: 16px;
-      margin-bottom: 63px; }
-    .panel .footerAccordionContainer {
-      position: absolute;
-      top: 0%;
-      left: 41%;
-      width: 47%; }
-  .glossaryContaner {
-    width: 89%;
+    font-size: 42px;
+    line-height: 54px; }
+  .section .section-wrapper {
+    display: flex;
+    max-width: 1440px;
     margin: auto; }
-    .glossaryContaner .line {
-      width: 100% !important;
-      margin: auto !important;
-      margin-top: 160px !important; }
-    .glossaryContaner #headGlossary {
-      width: 342px !important;
-      height: 41px !important;
-      margin-left: 0 !important;
-      margin: 19px 0 50px 0; }
-  section {
-    display: flex; }
-    section .sliderContainer {
-      margin: 60px 0 60px -10px !important; }
-      section .sliderContainer .sliderHead {
-        margin: 60px 73px 29px 151px !important; }
-      section .sliderContainer .sliderButtonContainer {
+    .section .section-wrapper .slider-container {
+      margin: 60px 0 60px -10px; }
+      .section .section-wrapper .slider-container .slider-head {
+        margin: 60px 73px 29px 151px; }
+      .section .section-wrapper .slider-container .slider-button-container {
         position: relative;
         right: 5.5%; }
-        section .sliderContainer .sliderButtonContainer .sliderButton {
+        .section .section-wrapper .slider-container .slider-button-container .slider-button {
           width: 25px;
           height: 25px;
           margin-top: 20px; }
-          section .sliderContainer .sliderButtonContainer .sliderButton::after {
+          .section .section-wrapper .slider-container .slider-button-container .slider-button::after {
             width: 10px;
             height: 10px;
             top: 30%;
             left: 35%; }
-          section .sliderContainer .sliderButtonContainer .sliderButton::before {
+          .section .section-wrapper .slider-container .slider-button-container .slider-button::before {
             width: 15px;
             height: 2px; }
-    section .sliderTextContainer {
+    .section .section-wrapper .slider-text-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 54%;
-      margin: auto !important; }
-      section .sliderTextContainer p {
-        font-size: 90px !important;
-        line-height: 120px !important;
-        padding-bottom: 70px !important; }
-      section .sliderTextContainer span {
-        font-size: 24px !important;
-        line-height: 36px !important; }
-      section .sliderTextContainer .sliderText {
-        width: 86%;
-        margin: auto; }
-        section .sliderTextContainer .sliderText .line {
-          height: 72px !important;
-          margin-right: 35px !important; }
+      margin: auto; }
+      .section .section-wrapper .slider-text-container p {
+        font-size: 90px;
+        line-height: 120px;
+        padding-bottom: 70px; }
+      .section .section-wrapper .slider-text-container span {
+        font-size: 24px;
+        line-height: 36px; }
+      .section .section-wrapper .slider-text-container .slider-text {
+        padding-left: 40px;
+        margin-left: 80px; }
   .activeSliderLink::before {
     width: 105px;
     right: 117%; }
-  .faqsContainer {
-    width: 89%;
-    margin: auto; }
-    .faqsContainer .line {
-      margin: 160px 0 20px 0 !important;
-      width: 100% !important; }
-    .faqsContainer #headFAQs {
-      width: 232px;
-      height: 73px;
+  .faqs-container {
+    margin: 160px 136px 100px 136px;
+    padding: 0; }
+    .faqs-container .head-FAQs-wrapper #head-FAQs {
+      width: 272px;
+      height: 32px;
       margin-left: 0; }
-  .faqsAccordionContainer {
-    width: 89% !important;
-    margin: auto; }
-    .faqsAccordionContainer .panel {
-      padding: 0 !important; }
-      .faqsAccordionContainer .panel .panelSpan {
+  .faqs-accordion-container {
+    padding-left: 136px;
+    padding-right: 136px; }
+    .faqs-accordion-container .head-accordion-Faqs {
+      padding: 0;
+      min-height: 196px; }
+      .faqs-accordion-container .head-accordion-Faqs span:first-child {
+        font-size: 110px;
+        line-height: 130px;
+        margin-right: 100px; }
+      .faqs-accordion-container .head-accordion-Faqs .question {
+        flex-basis: 78%;
+        font-size: 24px;
+        line-height: 36px; }
+      .faqs-accordion-container .head-accordion-Faqs .accordion-button {
+        width: 30px;
+        height: 30px; }
+    .faqs-accordion-container .panel {
+      padding: 0; }
+      .faqs-accordion-container .panel .panel-span {
         margin-right: 100px;
-        font-size: 110px !important;
-        line-height: 130px !important; }
-      .faqsAccordionContainer .panel div {
-        margin: auto 0; }
-        .faqsAccordionContainer .panel div .answer {
-          font-size: 16px !important;
-          line-height: 24px !important; }
-  .headAccordionFaqs {
-    padding: 0 !important;
-    min-height: 196px !important; }
-    .headAccordionFaqs span:first-child {
-      font-size: 110px !important;
-      line-height: 130px !important;
-      margin-right: 100px !important; }
-    .headAccordionFaqs .question {
-      flex-basis: 78% !important;
-      font-size: 24px;
-      line-height: 36px; }
-    .headAccordionFaqs .accordion {
-      width: 30px !important;
-      height: 30px !important; }
-  .moreQuestions {
-    margin-bottom: 102px !important; }
-  footer .aboutCompany {
-    padding-top: 78px;
-    flex-direction: row !important; }
-    footer .aboutCompany .linkCompany {
-      padding-left: 6%;
-      flex-basis: 18%;
-      margin: 0 !important; }
-      footer .aboutCompany .linkCompany a {
-        margin-bottom: 30px;
-        min-width: 170px;
-        margin-top: 0 !important; }
-      footer .aboutCompany .linkCompany #Call {
-        margin-bottom: 0 !important; }
-    footer .aboutCompany .addresContainer {
+        font-size: 110px;
+        line-height: 130px; }
+      .faqs-accordion-container .panel .answer {
+        font-size: 16px;
+        line-height: 24px; }
+    .faqs-accordion-container .more-questions {
+      margin-bottom: 102px; }
+  footer {
+    max-width: 1440px;
+    margin: auto; }
+    footer .about-company {
+      padding-top: 78px;
+      flex-direction: row; }
+      footer .about-company .link-company {
+        padding-left: 6%;
+        flex-basis: 18%;
+        margin: 0;
+        margin-bottom: 35px; }
+        footer .about-company .link-company li {
+          margin-bottom: 30px; }
+          footer .about-company .link-company li a {
+            min-width: 170px;
+            margin-top: 0; }
+      footer .about-company .address-container {
+        margin: auto;
+        width: 72%; }
+        footer .about-company .address-container .address {
+          min-height: 118px;
+          padding: 0;
+          flex-direction: row;
+          justify-content: space-between; }
+          footer .about-company .address-container .address p {
+            font-size: 24px;
+            margin-right: 209px; }
+          footer .about-company .address-container .address span {
+            font-size: 16px;
+            line-height: 24px;
+            margin-right: 30px; }
+          footer .about-company .address-container .address .phone {
+            font-size: 16px;
+            line-height: 24px;
+            margin-right: 30px; }
+          footer .about-company .address-container .address .view-map {
+            font-size: 16px;
+            line-height: 24px; }
+          footer .about-company .address-container .address div {
+            display: flex;
+            flex-direction: column;
+            margin-right: 30px; }
+    footer .social {
+      width: 89%;
       margin: auto;
-      width: 72%; }
-      footer .aboutCompany .addresContainer .addres {
-        min-height: 118px;
-        padding: 0;
-        flex-direction: row;
-        justify-content: space-between; }
-        footer .aboutCompany .addresContainer .addres p {
-          font-size: 24px;
-          margin-right: 209px; }
-        footer .aboutCompany .addresContainer .addres span {
-          font-size: 16px;
-          line-height: 24px;
-          margin-right: 30px; }
-        footer .aboutCompany .addresContainer .addres a {
-          font-size: 16px;
-          line-height: 24px; }
-        footer .aboutCompany .addresContainer .addres div {
-          display: flex;
-          flex-direction: column;
-          margin-right: 30px; }
-  footer .social {
-    width: 89%;
-    margin: auto;
-    padding-top: 27px !important;
-    display: flex;
-    justify-content: space-between; }
-    footer .social span {
-      margin-right: 50px; }
-    footer .social .skoutBottom {
-      width: 168px !important;
-      height: 58px !important;
-      margin-bottom: 68px; }
+      padding-top: 27px;
+      display: flex;
+      justify-content: space-between; }
+      footer .social li {
+        margin-right: 50px; }
+      footer .social .skout-bottom {
+        width: 168px;
+        height: 58px;
+        margin-bottom: 68px; }
   .sticky {
-    position: fixed !important;
+    position: fixed;
     top: 15%;
     left: 0;
     right: 0; }
   .stickyMain {
+    width: 85%;
     z-index: 1;
     margin: auto;
-    position: fixed !important;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0; }
-    .stickyMain .logo .skoutTop {
-      display: none; }
-    .stickyMain .logo .skoutGrey {
+    .stickyMain .logo p {
+      color: #7f7f7f;
       width: 110px;
-      height: 24px;
-      display: inline-block !important; }
-    .stickyMain .containerHeaderMenu .headerMenu a {
+      height: 24px; }
+    .stickyMain .container-header-menu .header-menu li {
       color: #7f7f7f; }
-      .stickyMain .containerHeaderMenu .headerMenu a:hover {
+      .stickyMain .container-header-menu .header-menu li:hover {
         color: #22BF95; }
-    .stickyMain .containerHeaderMenu .enterButton button {
+    .stickyMain .container-header-menu .enter-buttons button {
       color: #7f7f7f;
       border: 1px solid #7f7f7f; }
-      .stickyMain .containerHeaderMenu .enterButton button:hover {
+      .stickyMain .container-header-menu .enter-buttons button:hover {
         color: #22BF95;
         border: 1px solid #22BF95; } }

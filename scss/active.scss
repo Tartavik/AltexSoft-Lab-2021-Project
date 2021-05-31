@@ -37,7 +37,7 @@
   transition: transform 0.8s ease-in-out;
 }
 
-.currentLink {
+.active-link {
   &::after {
     content: "";
     position: absolute;
@@ -49,7 +49,7 @@
   }
 }
 
-.currentTabsLink {
+.current-tabs-link {
   color: $colorTextlinks !important;
 }
 
@@ -71,14 +71,14 @@
   }
 }
 
-.accordTextActive {
+.accord-text-active {
   margin-top: 20px;
   margin-left: 0px;
   font-size: 24px;
   line-height: 32px;
 }
 
-.accordionActive {
+.accordion-active {
   margin-left: 18px;
   border: 1.5px solid $colorTextlinks;
   margin-top: 20px;
