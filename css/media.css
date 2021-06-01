@@ -143,7 +143,9 @@
     height: 35px; }
     .accordion-active::after {
       width: 20px;
-      height: 2px; }
+      height: 2px;
+      top: 14px;
+      left: 5px; }
   .accord-text-active {
     max-width: 175px;
     margin-top: 57px;

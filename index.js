@@ -114,7 +114,6 @@ function createAccordionTop(acc) {
       e.currentTarget.children[0].children[1].classList.toggle(
         "accord-text-active"
       );
-      console.log(panel.scrollHeight);
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
