@@ -1,6 +1,5 @@
 @import "vars";
 @import "fonts";
-@import "active";
 
 body {
   min-width: 375px;
@@ -26,17 +25,6 @@ html {
 ::before {
   box-sizing: inherit;
 }
-
-.header{
-  background: linear-gradient(45deg, #13c3e7, #01f86c);
-  width: 100%;
-  .container {
-    height: 210px;
-    min-width: 375px;
-    margin: auto;
-  }
-}
-
 
 .hamburger-container {
   margin-top: 18px;
@@ -81,7 +69,7 @@ html {
   margin-left: 20px;
   color: $colorTextPrimary;
   text-decoration: none;
-  p{
+  p {
     width: 92px;
     height: 20px;
     font-size: 20px;
@@ -96,7 +84,19 @@ html {
 .header-inner {
   display: flex;
   justify-content: space-between;
-  
+}
+
+.header {
+  background: linear-gradient(45deg, #13c3e7, #01f86c);
+  width: 100%;
+  .container {
+    min-height: 210px;
+    margin: auto;
+    .empty-element {
+      max-width: 1440px;
+      min-height: 80px;
+    }
+  }
 }
 
 .container-header-menu {
@@ -120,7 +120,7 @@ html {
     margin-top: 24px;
     padding: 0;
     li {
-      margin-top: 16px;
+      margin-bottom: 12px;
       text-align: center;
       position: relative;
       font-size: 12px;
@@ -169,13 +169,13 @@ html {
   margin: auto;
   border: 1px solid;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   font-family: Acme;
   margin-top: -12px;
   box-shadow: 0px 12px 24px #f2f2f2;
   border: 0;
-  border-top:2.5px solid $colorTextlinks;
+  border-top: 2.5px solid $colorTextlinks;
   border-radius: 5px 5px 0 0;
   background: white;
   position: relative;
@@ -186,36 +186,27 @@ html {
     color: $hoverColorLink;
     cursor: pointer;
     text-decoration: none;
-    padding: 10px 0;
+    padding: 10px 30px;
   }
   .head-tips {
-    flex-basis: 29%;
-    text-align: center;
-    height: 100%;
     &::after {
       content: "";
       position: absolute;
       border-left: 1.5px solid #e5e5e5;
-      height: 50%;
-      left: 29%;
+      height: 20px;
+      top: 10px;
+      left: 95px;
     }
   }
   .head-glossary {
-    flex-basis: 40%;
-    text-align: center;
-    height: 100%;
     &::after {
       content: "";
       position: absolute;
       border-left: 1.5px solid #e5e5e5;
-      height: 50%;
-      left: 69%;
+      height: 20px;
+      top: 10px;
+      left: 230px;
     }
-  }
-  .head-FAQs {
-    flex-basis: 31%;
-    height: 100%;
-    text-align: center;
   }
 }
 
@@ -228,21 +219,16 @@ html {
   font-family: Aclonica;
 
   .line {
-
     height: 1px;
     background-color: $colorTextlinks;
   }
 
   .skout-tips-container {
-
-
     border-top: 1px solid #b2b2b2;
     border-radius: 1px;
   }
 
   .accord-container {
-
-
     min-height: 54px;
 
     .panel {
@@ -301,7 +287,7 @@ html {
         height: 14px;
         background-color: white;
         box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
-        border-radius: 50%;
+        border-radius: 50px;
         cursor: pointer;
         &::after {
           content: "";
@@ -309,8 +295,8 @@ html {
           height: 1px;
           position: absolute;
           background-color: $colorTextlinks;
-          top: 50%;
-          left: 21%;
+          top: 5.5px;
+          left: 2px;
         }
         &:hover::after {
           background-color: $hoverColorLink;
@@ -322,8 +308,8 @@ html {
           height: 1px;
           position: absolute;
           background-color: $colorTextlinks;
-          top: 50%;
-          left: 20%;
+          top: 6px;
+          left: 2px;
           transform: rotate(90deg);
         }
         &:hover::before {
@@ -361,7 +347,7 @@ html {
   background: linear-gradient(45deg, #e0e0e0, #ffffff);
   font-family: Aclonica;
   padding-top: 1px;
-  .section-wrapper{
+  .section-wrapper {
     .slider-container {
       max-width: 442px;
       margin: 24px 20px 0 20px;
@@ -371,7 +357,7 @@ html {
       display: flex;
       .slider-head {
         margin: 40px 75px 40px 60px;
-        flex-basis: 65%;
+        width: 100%;
         .sliderItem {
           position: relative;
           font-size: 16px;
@@ -389,12 +375,13 @@ html {
       .slider-button-container {
         display: flex;
         flex-direction: column;
-        margin-left: -45px;
-  
+        // margin-left: -45px;
+        margin-right: 25px;
+
         button {
           width: 16px;
           height: 16px;
-          border-radius: 50%;
+          border-radius: 20px;
           background: white;
           border: 1px solid $colorTextlinks;
           display: flex;
@@ -405,7 +392,7 @@ html {
           margin-top: 16px;
           position: relative;
           cursor: pointer;
-  
+
           &::after {
             content: "";
             width: 6px;
@@ -417,15 +404,15 @@ html {
             top: 4px;
             left: 5px;
           }
-  
+
           &::before {
             content: "";
             width: 8px;
             height: 2px;
             background-color: $colorTextlinks;
             position: absolute;
-            top: 45%;
-            left: 21%;
+            top: 6px;
+            left: 2px;
           }
           &:hover {
             border: 1px solid $hoverColorLink;
@@ -442,13 +429,13 @@ html {
             transition: 800ms background-color;
           }
         }
-  
+
         .rotate-arrow {
           transform: rotate(180deg);
         }
       }
     }
-  
+
     .slider-text-container {
       margin: 32px 24px 0 20px;
       padding-bottom: 24px;
@@ -475,7 +462,6 @@ html {
       }
     }
   }
-  
 }
 
 #head-FAQs {
@@ -503,7 +489,7 @@ html {
   margin-top: 24px;
   margin-bottom: 24px;
   padding: 0px 20px 0px 20px;
-  .head-FAQs-wrapper{
+  .head-FAQs-wrapper {
     border-top: 1px solid #b2b2b2;
     border-radius: 1px;
     width: 100%;
@@ -529,7 +515,6 @@ html {
     }
     .answer {
       margin: auto 0;
-      flex-basis: 60%;
       font-size: 14px;
       line-height: 24px;
       color: #191919;
@@ -569,7 +554,7 @@ html {
     }
 
     .question {
-      flex-basis: 87%;
+      width: 100%;
       color: #191919;
     }
   }
@@ -577,65 +562,70 @@ html {
 
 footer {
   background-color: #f2f2f2;
-  min-width: 375px;
   width: 100%;
   font-family: Aclonica;
-  .about-company {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    .link-company {
-      list-style: none;
+  .footer-wrapper {
+    .about-company {
       display: flex;
       flex-direction: column;
-      margin: 24px 0 0 23px;
-      li{
-        a {
-          font-size: 12px;
-          line-height: 24px;
+      width: 100%;
+      .link-company {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 24px 0 0 23px;
+        li {
+          a {
+            font-size: 12px;
+            line-height: 24px;
+            color: $hoverColorLink;
+            margin-top: 12px;
+            text-decoration: none;
+          }
+          span {
+            font-size: 16px;
+            line-height: 24px;
+            color: $hoverColorLink;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    .address-container {
+      padding: 0;
+      margin-left: 23px;
+      .address {
+        display: flex;
+        flex-direction: column;
+        padding: 8px 0 8px 0;
+        border-top: 2px solid $colorTextlinks;
+        p {
+          font-size: 16px;
+          line-height: 36px;
           color: $hoverColorLink;
-          margin-top: 12px;
-          text-decoration: none;
+          margin: 0;
         }
         span {
           font-size: 16px;
           line-height: 24px;
           color: $hoverColorLink;
-          margin-bottom: 20px;
         }
-      }
-      
-    }
-    .address {
-      display: flex;
-      flex-direction: column;
-      padding: 8px 0 8px 23px;
-      border-top: 2px solid $colorTextlinks;
-      p {
-        font-size: 16px;
-        line-height: 36px;
-        color: $hoverColorLink;
-        margin: 0;
-      }
-      span {
-        font-size: 16px;
-        line-height: 24px;
-        color: $hoverColorLink;
-      }
-      .phone{
-        font-size: 16px;
-        line-height: 24px;
-        color: $hoverColorLink;
-      }
-      
-      .view-map {
-        text-decoration: none;
-        font-size: 12px;
-        line-height: 20px;
-        color: $colorTextlinks;
-        &:hover {
+        .phone {
+          font-size: 16px;
+          line-height: 24px;
           color: $hoverColorLink;
-          transition: 800ms color;
+        }
+
+        .view-map {
+          text-decoration: none;
+          font-size: 12px;
+          line-height: 20px;
+          color: $colorTextlinks;
+          &:hover {
+            color: $hoverColorLink;
+            transition: 800ms color;
+          }
         }
       }
     }
@@ -645,7 +635,7 @@ footer {
     margin-top: 12px;
     padding-top: 20px;
     text-align: center;
-    
+
     .conteiner-social-icons {
       display: flex;
       justify-content: space-evenly;
@@ -656,7 +646,7 @@ footer {
         display: inline-block;
         width: 30px;
         height: 24px;
-        background-image: url(../image/twitter.png);
+        background-image: url(../images/twitter.png);
         background-position: 0 0;
         &:hover {
           background-position: 30px 0;
@@ -668,7 +658,7 @@ footer {
         display: inline-block;
         width: 25px;
         height: 25px;
-        background-image: url(../image/facebook.png);
+        background-image: url(../images/facebook.png);
         background-position: 0 0;
         &:hover {
           background-position: 25px 0;
@@ -680,7 +670,7 @@ footer {
         display: inline-block;
         width: 32px;
         height: 23px;
-        background-image: url(../image/youtube.png);
+        background-image: url(../images/youtube.png);
         background-position: 0 0;
         &:hover {
           background-position: 32px 0;
@@ -692,7 +682,7 @@ footer {
         display: inline-block;
         width: 25px;
         height: 25px;
-        background-image: url(../image/in.png);
+        background-image: url(../images/in.png);
         background-position: 0 0;
         &:hover {
           background-position: 25px 0;
@@ -707,5 +697,5 @@ footer {
     margin-bottom: 28px;
   }
 }
-
+@import "active";
 @import "media";

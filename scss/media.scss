@@ -13,15 +13,23 @@
 
   .logo {
     margin: 28px 84px 0px 84px;
-    p{
+    p {
       width: 110px;
       height: 24px;
       font-size: 24px;
     }
   }
 
+  .header {
+    .container {
+      position: relative;
+      min-height: 500px;
+      max-width: 1440px;
+    }
+  }
+
   .container-header-menu {
-    display: flex !important;
+    display: flex;
     position: static;
     background-color: transparent;
     flex-direction: row;
@@ -34,8 +42,9 @@
       margin-top: 0;
       display: flex;
       justify-content: space-between;
-      
+
       li {
+        margin-bottom: 0;
         color: white;
         position: relative;
         min-width: 85px;
@@ -48,7 +57,7 @@
           content: "";
           position: absolute;
           margin-top: 20px;
-          left: 25%;
+          left: 20px;
           width: 40px;
           height: 2px;
           background-color: white;
@@ -62,6 +71,7 @@
       margin-right: 70px;
       button {
         margin-top: 20px;
+        margin-bottom: 20px;
         margin-right: 20px;
         background-color: transparent;
         border: 1.5px solid white;
@@ -75,17 +85,12 @@
   }
 
   .header-text {
-    max-width: 100%;
+    max-width: none;
     margin: 102px auto 0 auto;
     span {
       font-size: 110px;
       line-height: 130px;
     }
-  }
-  .container {
-    position: relative;
-    min-height: 500px;
-    max-width: 1440px;
   }
 
   .tabs {
@@ -95,7 +100,21 @@
     a {
       font-size: 12px;
       line-height: 24px;
-      padding: 28px 0;
+      padding: 28px 100px;
+    }
+    .head-tips {
+      &::after {
+        height: 40px;
+        top: 20px;
+        left: 235px;
+      }
+    }
+    .head-glossary {
+      &::after {
+        height: 40px;
+        top: 20px;
+        left: 525px;
+      }
     }
   }
 
@@ -117,6 +136,7 @@
       min-height: 151px;
       position: relative;
       .head-accordion {
+        justify-content: space-between;
         .number {
           font-size: 110px;
           line-height: 130px;
@@ -133,19 +153,20 @@
           &::after {
             width: 20px;
             height: 2px;
-            top: 49%;
-            left: 20%;
+            top: 15px;
+            left: 6px;
           }
           &::before {
             width: 20px;
             height: 2px;
-            top: 49%;
+            top: 15px;
+            left: 6px;
             transform: rotate(90deg);
           }
         }
       }
       .panel {
-        position: relative;
+        display: flex;
         .main-icon {
           margin: 42px 0 0 0;
         }
@@ -154,10 +175,8 @@
           margin-bottom: 63px;
         }
         .footer-accordion-container {
-          position: absolute;
-          top: 0%;
-          left: 41%;
-          width: 47%;
+          max-width: 500px;
+          margin-left: 135px;
         }
       }
     }
@@ -175,13 +194,8 @@
   }
 
   .accordion-active {
-    position: absolute;
-    right: 0;
-    top: -10px;
-    margin-top: 57px;
     width: 35px;
     height: 35px;
-    margin-left: 37px;
     &::after {
       width: 20px;
       height: 2px;
@@ -189,14 +203,14 @@
   }
 
   .accord-text-active {
-    flex-basis: 15%;
+    max-width: 175px;
     margin-top: 57px;
     font-size: 42px;
     line-height: 54px;
   }
 
   .section {
-    .section-wrapper{
+    .section-wrapper {
       display: flex;
       max-width: 1440px;
       margin: auto;
@@ -206,8 +220,7 @@
           margin: 60px 73px 29px 151px;
         }
         .slider-button-container {
-          position: relative;
-          right: 5.5%;
+          margin-right: 19px;
           .slider-button {
             width: 25px;
             height: 25px;
@@ -215,10 +228,11 @@
             &::after {
               width: 10px;
               height: 10px;
-              top: 30%;
-              left: 35%;
+              top: 7px;
+              left: 9px;
             }
             &::before {
+              top: 11px;
               width: 15px;
               height: 2px;
             }
@@ -229,12 +243,13 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 54%;
+
         margin: auto;
         p {
           font-size: 90px;
           line-height: 120px;
           padding-bottom: 70px;
+          margin: 0;
         }
         span {
           font-size: 24px;
@@ -246,29 +261,31 @@
         }
       }
     }
-    
   }
-  .activeSliderLink {
+  .active-slider-link {
     &::before {
       width: 105px;
-      right: 117%;
+      margin-right: 15px;
     }
   }
 
   .faqs-container {
-    margin: 160px 136px 100px 136px;
-    padding: 0;
-    .head-FAQs-wrapper{
+    max-width: 1440px;
+    padding-left: 136px;
+    padding-right: 136px;
+    margin: 160px auto 100px auto;
+    .head-FAQs-wrapper {
       #head-FAQs {
         width: 272px;
         height: 32px;
         margin-left: 0;
       }
-    }  
-    
+    }
   }
 
   .faqs-accordion-container {
+    max-width: 1440px;
+    margin: auto;
     padding-left: 136px;
     padding-right: 136px;
     .head-accordion-Faqs {
@@ -280,11 +297,11 @@
         margin-right: 100px;
       }
       .question {
-        flex-basis: 78%;
         font-size: 24px;
         line-height: 36px;
       }
       .accordion-button {
+        margin-right: 80px;
         width: 30px;
         height: 30px;
       }
@@ -297,11 +314,10 @@
         line-height: 130px;
       }
 
-        .answer {
-          font-size: 16px;
-          line-height: 24px;
-        }
-      
+      .answer {
+        font-size: 16px;
+        line-height: 24px;
+      }
     }
     .more-questions {
       margin-bottom: 102px;
@@ -309,94 +325,96 @@
   }
 
   footer {
-    max-width: 1440px;
-    margin: auto;
-    .about-company {
-      padding-top: 78px;
-      flex-direction: row;
-      .link-company {
-        padding-left: 6%;
-        flex-basis: 18%;
-        margin: 0;
-        margin-bottom: 35px;
-        li{
-          margin-bottom: 30px;
-          a {
-            
-            min-width: 170px;
-            margin-top: 0;
-          }
-        }
-        
-      }
-      .address-container {
-        margin: auto;
-        width: 72%;
-        .address {
-          min-height: 118px;
-          padding: 0;
-          flex-direction: row;
-          justify-content: space-between;
-          p {
-            font-size: 24px;
-            margin-right: 209px;
-          }
-          span {
-            font-size: 16px;
-            line-height: 24px;
-            margin-right: 30px;
-          }
-          .phone{
-            font-size: 16px;
-            line-height: 24px;
-            margin-right: 30px;
-          }
-          .view-map {
-            font-size: 16px;
-            line-height: 24px;
-          }
-          div {
-            display: flex;
-            flex-direction: column;
-            margin-right: 30px;
-          }
-        }
-      }
-    }
-    .social {
-      width: 89%;
+    .footer-wrapper {
+      max-width: 1440px;
       margin: auto;
-      padding-top: 27px;
-      display: flex;
-      justify-content: space-between;
-      li {
-        margin-right: 50px;
+      padding-left: 135px;
+      padding-right: 135px;
+      .about-company {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 78px;
+        flex-direction: row;
+        .link-company {
+          margin: 0;
+          padding: 0;
+          margin-bottom: 35px;
+          li {
+            margin-bottom: 30px;
+            a {
+              min-width: 170px;
+              margin-top: 0;
+            }
+          }
+        }
+        .address-container {
+          padding: 0;
+          .address {
+            min-height: 118px;
+            padding: 0;
+            flex-direction: row;
+            justify-content: space-between;
+            p {
+              font-size: 24px;
+              margin-right: 209px;
+            }
+            span {
+              font-size: 16px;
+              line-height: 24px;
+              margin-right: 30px;
+            }
+            .phone {
+              font-size: 16px;
+              line-height: 24px;
+              margin-right: 30px;
+            }
+            .view-map {
+              font-size: 16px;
+              line-height: 24px;
+            }
+            div {
+              display: flex;
+              flex-direction: column;
+              margin-right: 30px;
+            }
+          }
+        }
       }
-      .skout-bottom {
-        width: 168px;
-        height: 58px;
-        margin-bottom: 68px;
+      .social {
+        padding-top: 27px;
+        display: flex;
+        justify-content: space-between;
+        li {
+          margin-right: 50px;
+        }
+        .skout-bottom {
+          width: 168px;
+          height: 58px;
+          margin-bottom: 68px;
+        }
       }
     }
   }
+
   .sticky {
     position: fixed;
-    top: 15%;
+    top: 120px;
     left: 0;
     right: 0;
   }
 
-  .stickyMain {
-    width: 85%;
+  .sticky-main {
+    background-color: white;
+    transition: background-color 600ms;
+    max-width: 1440px;
     z-index: 1;
-
     margin: auto;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     .logo {
-      p{
+      p {
         color: $hoverColorLink;
         width: 110px;
         height: 24px;

@@ -14,17 +14,16 @@ const accordContainer = document.getElementsByClassName("accord-container");
 const headAccordionFaqs = document.getElementsByClassName(
   "head-accordion-Faqs"
 );
+const emptyElement = document.getElementsByClassName("empty-element")[0];
 const sliderP = document.getElementsByClassName("slider-P")[0];
 const sliderSpan = document.getElementsByClassName("slider-span")[0];
 const sliderButton = document.getElementsByClassName("slider-button");
 const headerInner = document.getElementsByClassName("header-inner")[0];
 let sliderHead = document.getElementsByClassName("slider-head")[0];
-let newArrSliderText =
-  screen.width >= 1440 ? arrSliderText.slice() : arrSliderText.slice(0, 5);
-let sticky = tabs.offsetTop;
+let newArrSliderText;
+let sticky = 465;
 let stickyMain = headerInner.offsetTop;
 let currentSlider = 0;
-let previousPageYOffset = 0;
 let linkPageYOffset = {
   headTips: document.getElementById("head-tips-img"),
   headGlossary: document.getElementById("head-glossary"),
@@ -32,32 +31,41 @@ let linkPageYOffset = {
 };
 createAccordionTop(accordContainer);
 createAccordionBottom(headAccordionFaqs);
-createSliderClick(newArrSliderText);
+createSliderClick(arrSliderText);
+
+window.addEventListener(
+  `resize`,
+  (event) => {
+    createSliderClick(arrSliderText);
+  },
+  false
+);
 
 function createSliderClick(arr) {
-  for (let i = 0; i < arr.length; i++) {
+  newArrSliderText = screen.width >= 1440 ? arr.slice() : arr.slice(0, 5);
+  sliderHead.innerHTML = "";
+  for (let i = 0; i < newArrSliderText.length; i++) {
     let div = document.createElement("div");
     let span = document.createElement("span");
-    span.innerText = arr[i].name;
+    span.innerText = newArrSliderText[i].name;
     div.classList.add("sliderItem");
     div.appendChild(span);
     sliderHead.appendChild(div);
     div.addEventListener("click", changeSliderText);
     if (i === currentSlider) {
-      div.classList.add("activeSliderLink");
+      div.classList.add("active-slider-link");
     }
   }
 }
 
 function changeSliderText() {
   Array.from(sliderHead.children).forEach((slider) => {
-    slider.classList.remove("activeSliderLink");
+    slider.classList.remove("active-slider-link");
   });
   newArrSliderText.forEach((slider, i) => {
     if (this.children[0].innerText === slider.name) {
-      sliderHead.children[i].classList.add("activeSliderLink");
+      sliderHead.children[i].classList.add("active-slider-link");
       currentSlider = i;
-      console.log(currentSlider);
       sliderP.innerText = slider.name;
       sliderSpan.innerText = slider.text;
     }
@@ -76,9 +84,9 @@ function changeSliderTextArrow() {
   sliderP.innerText = newArrSliderText[currentSlider].name;
   sliderSpan.innerText = newArrSliderText[currentSlider].text;
   Array.from(sliderHead.children).forEach((slider) => {
-    slider.classList.remove("activeSliderLink");
+    slider.classList.remove("active-slider-link");
   });
-  sliderHead.children[currentSlider].classList.add("activeSliderLink");
+  sliderHead.children[currentSlider].classList.add("active-slider-link");
 }
 
 for (let i = 0; i < sliderButton.length; i++) {
@@ -93,14 +101,12 @@ hamburgerContainer.addEventListener("click", () => {
 });
 
 function createAccordionTop(acc) {
-  console.log(acc);
   for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", (e) => {
       let panel = e.currentTarget.children[1];
       e.currentTarget.children[0].children[2].classList.toggle(
         "accordion-active"
       );
-      console.log(e.currentTarget.children[0].children[2]);
       e.currentTarget.children[0].children[2].classList.toggle(
         "accordion-button"
       );
@@ -108,11 +114,11 @@ function createAccordionTop(acc) {
       e.currentTarget.children[0].children[1].classList.toggle(
         "accord-text-active"
       );
-      console.log(panel.style.maxHeight);
+      console.log(panel.scrollHeight);
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
-        panel.style.maxHeight = 1000 + "px";
+        panel.style.maxHeight = 800 + "px";
       }
     });
   }
@@ -132,7 +138,7 @@ function createAccordionBottom(acc) {
     });
   }
 }
-console.log(anchors);
+
 for (let anchor of anchors) {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -161,20 +167,13 @@ for (let i = 0; i < headerMenu.children.length; i++) {
 }
 
 window.onscroll = () => {
-  let currentPageYOffset = window.pageYOffset;
-  if (currentPageYOffset < previousPageYOffset) {
-    showTabsStickyMenu();
-    showheaderInnerStickyMenu();
-  } else {
-    tabs.classList.remove("sticky");
-    headerInner.classList.remove("stickyMain");
-  }
-  previousPageYOffset = currentPageYOffset;
+  showTabsStickyMenu();
+  showheaderInnerStickyMenu();
   currentTabsLink();
 };
 
 function showTabsStickyMenu() {
-  if (window.pageYOffset >= sticky) {
+  if (window.pageYOffset >= sticky - 66) {
     tabs.classList.add("sticky");
   } else {
     tabs.classList.remove("sticky");
@@ -182,10 +181,12 @@ function showTabsStickyMenu() {
 }
 
 function showheaderInnerStickyMenu() {
-  if (window.pageYOffset >= stickyMain + 10) {
-    headerInner.classList.add("stickyMain");
+  if (window.pageYOffset >= stickyMain + 10 && window.screen.width >= 1440) {
+    headerInner.classList.add("sticky-main");
+    emptyElement.classList.remove("none");
   } else {
-    headerInner.classList.remove("stickyMain");
+    headerInner.classList.remove("sticky-main");
+    emptyElement.classList.add("none");
   }
 }
 

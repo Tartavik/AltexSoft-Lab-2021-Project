@@ -29,7 +29,7 @@
 }
 
 .none {
-  display: none !important;
+  display: none;
 }
 
 .rotate {
@@ -42,7 +42,7 @@
     content: "";
     position: absolute;
     margin-top: 20px;
-    left: 25%;
+    left: 20px;
     width: 40px;
     height: 2px;
     background-color: $colorTextlinks;
@@ -57,9 +57,7 @@
   overflow: hidden;
 }
 
-
-
-.activeSliderLink {
+.active-slider-link {
   &::before {
     content: "";
     position: absolute;
@@ -67,7 +65,7 @@
     height: 1px;
     background-color: $colorTextlinks;
     bottom: 16px;
-    right: 102%;
+    right: 270px;
   }
 }
 
@@ -81,13 +79,12 @@
 .accordion-active {
   margin-left: 18px;
   border: 1.5px solid $colorTextlinks;
-  margin-top: 20px;
   position: relative;
   width: 14px;
   height: 14px;
   background-color: white;
   box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
-  border-radius: 50%;
+  border-radius: 20px;
   cursor: pointer;
   &::after {
     content: "";
@@ -95,17 +92,7 @@
     height: 1px;
     position: absolute;
     background-color: $colorTextlinks;
-    top: 49%;
-    left: 20%;
-  }
-  &::before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    background-color: $colorTextlinks;
-    top: 49%;
-    left: 20%;
-    transform: rotate(90deg);
+    top: 6px;
+    left: 2.5px;
   }
 }
