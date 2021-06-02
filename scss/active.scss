@@ -33,7 +33,7 @@
 }
 
 .rotate {
-  transform: rotate(135deg) !important;
+  transform: rotate(135deg);
   transition: transform 0.8s ease-in-out;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .current-tabs-link {
-  color: $colorTextlinks !important;
+  color: $colorTextlinks;
 }
 
 .overflow {
