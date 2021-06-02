@@ -7,7 +7,7 @@ sass.compiler = require('node-sass');
 
 gulp.task('sass', () => {
   return gulp.src('./scss/**/*.scss')
-    .pipe(sass().on('erorr', sass.logErorr))
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
 });
 
