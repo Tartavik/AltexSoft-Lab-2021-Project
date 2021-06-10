@@ -69,16 +69,14 @@ html {
   margin-left: 20px;
   color: $colorTextPrimary;
   text-decoration: none;
-  p {
-    width: 92px;
-    height: 20px;
-    font-size: 20px;
-    text-transform: uppercase;
-    font-family: Actor;
-    letter-spacing: 2px;
-    margin: 0;
-    font-weight: 900;
-  }
+  width: 92px;
+  height: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: Actor;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 900;
 }
 
 .header-inner {

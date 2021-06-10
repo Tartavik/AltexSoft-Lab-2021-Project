@@ -1,7 +1,6 @@
 @import "vars";
 
 @media (min-width: 1440px) {
-
   .hamburger-container {
     display: none;
     position: absolute;
@@ -9,11 +8,9 @@
 
   .logo {
     margin: 28px 84px 0px 84px;
-    p {
-      width: 110px;
-      height: 24px;
-      font-size: 24px;
-    }
+    width: 110px;
+    height: 24px;
+    font-size: 24px;
   }
 
   .header {
@@ -412,11 +409,7 @@
     left: 0;
     right: 0;
     .logo {
-      p {
         color: $hoverColorLink;
-        width: 110px;
-        height: 24px;
-      }
     }
     .container-header-menu {
       .header-menu {
