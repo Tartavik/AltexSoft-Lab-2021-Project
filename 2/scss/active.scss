@@ -1,0 +1,120 @@
+@import "vars";
+@import 'mixins';
+.back-icon {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    &::after {
+       @include style-back-icon;
+        transform: rotate(45deg);
+    }
+    &::before {
+        @include style-back-icon;
+        transform: rotate(135deg);
+    }
+}
+
+.none {
+    display: none;
+}
+
+.active-link {
+    &::after {
+        content: "";
+        position: absolute;
+        margin-top: 20px;
+        left: 32px;
+        width: 40px;
+        height: 2px;
+        background-color: $colorTextlinks;
+    }
+}
+
+.is-hide {
+    overflow: hidden;
+  
+  }
+
+.slider-icon{
+    position: relative;
+    min-width: 35px;
+    min-height: 35px;
+    background-color: transparent;
+    border: 1px solid $colorTextlinks;
+    border-radius: 30px;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 17px;
+        height: 11px;
+        border-bottom: 1px solid $colorTextlinks;
+        border-left: 1px solid $colorTextlinks;
+        background-color: transparent;
+        transform: rotate(-45deg);
+        top: 8px;
+        right: 8px;
+    }
+}
+
+.slider-icon-disable{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid $colorTextlinks;
+    border-radius: 30px;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 1px;
+        border-top: 1px solid $colorTextlinks;
+        background-color: transparent;
+        top: 16px;
+        right: 8px;
+    }
+    
+}
+
+.opacity{
+    opacity: 0.5;
+}
+
+.sticky-main {
+    background-color: transparent;
+    transition: background-color 600ms;
+    max-width: 1440px;
+    z-index: 1;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    .logo {
+        color: $hoverColorLink;
+    }
+    .container-header-menu {
+      .header-menu {
+        li {
+          color: $hoverColorLink;
+          &:hover {
+            color: $colorTextlinks;
+          }
+        }
+        
+      }
+      .enter-buttons {
+        button {
+          color: $hoverColorLink;
+          border: 1px solid $hoverColorLink;
+          &:hover {
+            color: $colorTextlinks;
+            border: 1px solid $colorTextlinks;
+          }
+        }
+      }
+    }
+  }  

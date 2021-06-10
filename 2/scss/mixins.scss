@@ -1,0 +1,64 @@
+@import "vars";
+
+@mixin button-primary-first($width,$height,$color,$bg){
+    min-width: $width;
+    min-height: $height;
+    color: $color;
+    background-color: $bg;
+    font-family: Acme;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 6px 12px $color-shadow;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@mixin text-font-style {
+    font-family: Aclonica;
+    color: $colorTextPrimaryDark;
+}
+
+@mixin text-size-small{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin text-size-standart{
+    @include text-font-style;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+@mixin text-size-medium{
+    @include text-font-style;
+    font-size: 34px;
+    line-height: 42px;
+}
+
+@mixin text-size-large{
+    @include text-font-style;
+    font-size: 42px;
+    line-height: 54px;
+}
+
+@mixin text-size($font,$line){
+    font-size: $font;
+    line-height: $line;
+}
+
+@mixin style-back-icon{
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: $colorTextPrimary;
+    left: 0;
+    top: 5px;
+}
+
+@mixin button-hover-shadow{
+    box-shadow: 0px 6px 12px $color-shadow-hover;
+    transition: box-shadow 600ms;
+}

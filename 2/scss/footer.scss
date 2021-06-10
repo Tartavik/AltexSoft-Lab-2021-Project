@@ -1,0 +1,143 @@
+@import "vars";
+@import "fonts";
+@import 'mixins';
+
+.footer {
+    background-color: #f2f2f2;
+    width: 100%;
+    font-family: Aclonica;
+    .footer-wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      .about-company {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .link-company {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+          margin: 24px 0 0 23px;
+          li {
+            a {
+            @include text-size(12px,24px);
+              color: $hoverColorLink;
+              margin-top: 12px;
+              text-decoration: none;
+            }
+            span {
+                @include text-size-small;
+              color: $hoverColorLink;
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+      .address-container {
+        
+        padding: 0;
+        margin-left: 23px;
+        .address {
+          display: flex;
+          flex-direction: column;
+          padding: 8px 0 8px 0;
+          border-top: 2px solid $colorTextlinks;
+          p {
+            @include text-size(16px,36px);
+            color: $hoverColorLink;
+            margin: 0;
+          }
+          span {
+            @include text-size-small;
+            color: $hoverColorLink;
+            font-style: normal;
+          }
+          .phone {
+            @include text-size-small;
+            color: $hoverColorLink;
+          }
+  
+          .view-map {
+            text-decoration: none;
+            @include text-size(12px,20px);
+            color: $colorTextlinks;
+            &:hover {
+              color: $hoverColorLink;
+              transition: 800ms color;
+            }
+          }
+        }
+      }
+    }
+    .social {
+      border-top: 1.5px solid #b2b2b2;
+      margin-top: 12px;
+      padding-top: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .conteiner-social-icons {
+        display: grid;
+        grid-template-columns: 100% 100%;
+        margin-bottom: 20px;
+        padding-left: 0;
+        .twitter {
+          margin-right: 70px;
+          margin-bottom: 40px;
+          cursor: pointer;
+          display: inline-block;
+          width: 30px;
+          height: 24px;
+          background-image: url(../images/twitter.png);
+          background-position: 0 0;
+          &:hover {
+            background-position: 30px 0;
+            transition: 300ms background-position;
+          }
+        }
+        .facebook {
+          cursor: pointer;
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          background-image: url(../images/facebook.png);
+          background-position: 0 0;
+          &:hover {
+            background-position: 25px 0;
+            transition: 300ms background-position;
+          }
+        }
+        .youtube {
+          margin-right: 70px;
+          cursor: pointer;
+          display: inline-block;
+          width: 32px;
+          height: 23px;
+          background-image: url(../images/youtube.png);
+          background-position: 0 0;
+          &:hover {
+            background-position: 32px 0;
+            transition: 300ms background-position;
+          }
+        }
+        .in {
+          cursor: pointer;
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          background-image: url(../images/in.png);
+          background-position: 0 0;
+          &:hover {
+            background-position: 25px 0;
+            transition: 300ms background-position;
+          }
+        }
+      }
+    }
+    .skout-bottom {
+      width: 105px;
+      height: 38px;
+    }
+}

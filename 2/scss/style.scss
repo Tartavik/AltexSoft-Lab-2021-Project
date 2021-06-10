@@ -1,0 +1,48 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+@import "header";
+@import "about-skout";
+@import "cybersecurity";
+@import "big-slaider";
+@import "cards-slaider";
+@import "double-slaider";
+@import "info-questions";
+@import "footer";
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+::before {
+    box-sizing: inherit;
+}
+
+.slick-track {
+    display: flex;
+    align-items: flex-start;
+}
+
+.slick-list {
+    overflow: hidden;
+}
+
+@import "active";
+@import "media-tablet";
+@import "media-desktop";

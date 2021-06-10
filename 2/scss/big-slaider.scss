@@ -1,0 +1,103 @@
+@import "vars";
+@import "fonts";
+@import 'mixins';
+
+.wrapper-big-slaider{
+    margin-top: 30px;
+    padding-top: 30px;
+    background: linear-gradient(15deg, #e0e0e0, #ffffff);
+    .big-slider-container{
+        min-height: 1085px;
+        max-width: 1440px;
+        margin: auto;
+        .slider-title{
+            text-align: center;
+            span{
+                @include text-size-standart;
+            }
+        }
+    }
+}
+
+.inner-wrapper{
+    .container-dots{
+        margin: 30px 0 30px 0;
+        .slick-dots{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            li{
+                margin: 0 10px 0 10px;
+                list-style: none;
+            }
+            button{
+                
+                cursor: pointer;
+                padding: 5px;
+                position: relative;
+                font-size: 0;
+                border: 0;
+                background-color: transparent;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    background-color: $colorTextlinks;
+                    border-radius: 20px;
+                    left: 2px;
+                    top: 2px;
+                }
+            }
+            .slick-active{
+                button{
+                    margin-top: 8px;
+                   border: 1px solid $colorTextlinks;
+                   width: 24px;
+                   height: 24px;
+                   border-radius: 20px;
+                   &::before{
+                    left: 8px;
+                    top: 8px;
+                   }
+                }
+            }
+        }
+    }
+    .big-slider{
+        padding: 0 20px 0 20px;
+        .slider-image{
+            text-align: center;
+        }
+        .slider-button{
+            text-align: center;
+            margin: 50px 0 50px 0;
+            button{
+                @include button-primary-first(180px,40px,$colorTextPrimary,$colorTextlinks);
+                border: 0;
+
+                &:hover{
+                    @include button-hover-shadow;
+                }
+            }
+        }
+        .slider-text{
+            max-width: 400px;
+            margin: auto;
+            span:first-child{
+                font-family: Acme;
+                @include text-size(18px,24px);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: $colorTextPrimaryDark;
+                padding: 30px 0 0 0;
+                display: block;
+            }
+            span:last-child{
+                font-family: Aclonica;
+                color: $colorTextPrimaryDark;
+                @include text-size-small;
+            }
+        }
+    }    
+}
