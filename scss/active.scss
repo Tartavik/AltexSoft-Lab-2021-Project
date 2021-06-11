@@ -56,18 +56,6 @@
   max-width: 1440px;
 }
 
-.active-slider-link {
-  &::before {
-    content: "";
-    position: absolute;
-    width: 46px;
-    height: 1px;
-    background-color: $colorTextlinks;
-    bottom: 16px;
-    right: 140px;
-  }
-}
-
 .accord-text-active {
   margin-top: 20px;
   margin-left: 0px;

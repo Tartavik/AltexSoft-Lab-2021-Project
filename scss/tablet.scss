@@ -1,0 +1,222 @@
+@import "vars";
+
+@media (min-width: 768px) {
+    .hamburger-container {
+        margin-right: 50px;
+    }
+
+      .logo {
+        margin-left: 50px;
+        width: 110px;
+        height: 24px;
+      }
+      .header-text {
+        max-width: 270px;
+      }
+
+     .tabs{
+         min-width: 550px;
+         min-height: 60px;
+         margin-top: -20px;
+         a {
+            padding: 18px 68px;
+         }
+         .head-tips {
+            &::after {
+              height: 40px;
+              top: 10px;
+              left: 167px;
+            }
+          }
+          .head-glossary {
+            &::after {
+              height: 40px;
+              top: 10px;
+              left: 375px;
+            }
+          }
+     }
+      
+      .accordions-container {
+        margin-top: 62px;
+        padding: 0 70px 0 70px;
+        .glossary-contaner {
+            margin-top: 62px;
+            margin-bottom: 30px;
+        }
+      }
+
+      .section{
+        .section-wrapper {
+            display: flex;
+            .slider-container {
+                width: 100%;
+                margin: 30px 20px 30px 20px;
+            }
+            .slider-text-container {
+                margin: auto;
+                p{
+                    font-size: 50px;
+                    line-height: 70px;
+                }
+                span {
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+            }
+        }
+      }
+
+      .faqs-container {
+        padding: 0 70px 0 70px;
+        margin: 60px 0 30px 0;
+      }
+
+      .faqs-accordion-container{
+        padding: 0 70px 0 70px;
+        .head-accordion-Faqs {
+            padding: 0;
+        }
+      }
+
+      .footer{
+        .footer-wrapper {
+            padding: 0 70px 0 70px;
+            .about-company{
+                .link-company{
+                    margin: 30px 0 0 0;
+                }
+                .address-container{
+                    margin: 30px 0 30px 0;
+                }
+            }
+        }
+        
+      }
+}
+
+@media (min-width: 1200px) {
+    .hamburger-container {
+        display: none;
+        position: absolute;
+      }
+      .container-header-menu {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        .header-menu {
+          padding: 0;
+          width: 100%;
+          flex-direction: row;
+          margin-top: 0;
+          display: flex;
+          justify-content: space-between;
+    
+          li {
+            margin-bottom: 0;
+            color: white;
+            position: relative;
+            min-width: 85px;
+            &:hover {
+              color: $hoverColorLink;
+            }
+          }
+          .active-link {
+            &::after {
+              content: "";
+              position: absolute;
+              margin-top: 20px;
+              left: 20px;
+              width: 40px;
+              height: 2px;
+              background-color: white;
+            }
+          }
+        }
+        .enter-buttons {
+          position: static;
+          flex-direction: row;
+          margin-bottom: 0;
+          margin-right: 20px;
+          button {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            background-color: transparent;
+            border: 1.5px solid white;
+            color: white;
+            &:hover {
+              color: $hoverColorLink;
+              border: 1.5px solid $hoverColorLink;
+            }
+          }
+        }
+      }
+      .logo {
+        margin: 25px 50px 0 50px;
+      }
+
+      .header {
+        .container {
+          min-height: 300px;
+        }
+      }
+
+      .section{
+        .section-wrapper {
+            .slider-container {
+                max-width: 442px;
+            }
+            .active-slider-link {
+                &::before {
+                  right: 270px;
+                }
+              }
+        }
+      }
+
+      .sticky {
+        position: fixed;
+        top: 120px;
+        left: 0;
+        right: 0;
+      }
+    
+      .sticky-main {
+        background-color: white;
+        transition: background-color 600ms;
+        max-width: 1440px;
+        z-index: 1;
+        margin: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        .logo {
+            color: $hoverColorLink;
+        }
+        .container-header-menu {
+          .header-menu {
+            li {
+              color: $hoverColorLink;
+              &:hover {
+                color: $colorTextlinks;
+              }
+            }
+          }
+          .enter-buttons {
+            button {
+              color: $hoverColorLink;
+              border: 1px solid $hoverColorLink;
+              &:hover {
+                color: $colorTextlinks;
+                border: 1px solid $colorTextlinks;
+              }
+            }
+          }
+        }
+      }
+}

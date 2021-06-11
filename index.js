@@ -22,7 +22,7 @@ const sliderButton = document.getElementsByClassName("slider-button");
 const headerInner = document.getElementsByClassName("header-inner")[0];
 let sliderHead = document.getElementsByClassName("slider-head")[0];
 let newArrSliderText;
-let sticky = 465;
+let sticky = tabs.offsetTop;
 let stickyMain = headerInner.offsetTop;
 let currentSlider = 0;
 let linkPageYOffset = {
@@ -37,6 +37,7 @@ createSliderClick(arrSliderText);
 window.addEventListener(
   `resize`,
   (event) => {
+    sticky = tabs.offsetTop;
     createSliderClick(arrSliderText);
   },
   false
@@ -174,15 +175,15 @@ window.onscroll = () => {
 };
 
 function showTabsStickyMenu() {
-  if (window.pageYOffset >= sticky - 66) {
+  if (window.pageYOffset >= sticky - 75) {
     tabs.classList.add("sticky");
   } else {
     tabs.classList.remove("sticky");
   }
 }
-
 function showheaderInnerStickyMenu() {
-  if (window.pageYOffset >= stickyMain + 10 && window.screen.width >= 1440) {
+  if (window.pageYOffset >= stickyMain + 10 && window.screen.width >= 1200) {
+    console.log('dsf');
     headerInner.classList.add("sticky-main");
     emptyElement.classList.remove("none");
   } else {

@@ -41,8 +41,8 @@ html {
   margin-top: 18px;
   margin-right: 20px; }
   .hamburger-container .hamburger-icon {
-    width: 24px;
-    height: 18px;
+    min-width: 24px;
+    min-height: 18px;
     position: relative;
     border: 0;
     background-color: transparent;
@@ -74,8 +74,8 @@ html {
   margin-left: 20px;
   color: white;
   text-decoration: none;
-  width: 92px;
-  height: 20px;
+  min-width: 92px;
+  min-height: 20px;
   font-size: 20px;
   text-transform: uppercase;
   font-family: Actor;
@@ -138,8 +138,8 @@ html {
       text-transform: uppercase;
       font-family: Acme;
       margin-top: 16px;
-      width: 180px;
-      height: 40px;
+      min-width: 180px;
+      min-height: 40px;
       border-radius: 20px;
       border: 1.5px solid #22BF95;
       background-color: white;
@@ -196,10 +196,11 @@ html {
   min-width: 335px;
   margin-top: 24px;
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 20px 0 20px;
   font-family: Aclonica; }
   .accordions-container .skout-tips-container {
+    padding-top: 10px;
+    padding-bottom: 25px;
     border-top: 1px solid #b2b2b2;
     border-radius: 1px; }
   .accordions-container .accord-container {
@@ -238,7 +239,7 @@ html {
         margin-left: 16px;
         font-family: Actor;
         font-size: 40px;
-        width: 30px;
+        min-width: 30px;
         line-height: 48px;
         letter-spacing: 2px;
         color: #e5e5e5;
@@ -285,12 +286,10 @@ html {
           border: 1.5px solid #7f7f7f;
           transition: 800ms border; }
   .accordions-container #head-tips-img {
-    width: 90px;
-    height: 19px;
-    margin-top: 10px;
-    margin-bottom: 18px; }
+    max-width: 90px;
+    max-height: 19px; }
   .accordions-container #head-glossary {
-    width: 114px; }
+    max-width: 114px; }
   .accordions-container .glossary-contaner {
     margin-top: 24px;
     margin-bottom: 24px;
@@ -302,8 +301,16 @@ html {
   background: linear-gradient(45deg, #e0e0e0, #ffffff);
   font-family: Aclonica;
   padding-top: 1px; }
+  .section .section-wrapper .active-slider-link::before {
+    content: "";
+    position: absolute;
+    width: 46px;
+    height: 1px;
+    background-color: #22BF95;
+    bottom: 16px;
+    right: 165px; }
   .section .section-wrapper .slider-container {
-    max-width: 442px;
+    max-width: 335px;
     margin: 24px 20px 0 20px;
     background-color: white;
     box-shadow: 0px 12px 24px #e5e5e5;
@@ -327,8 +334,8 @@ html {
       flex-direction: column;
       margin-right: 25px; }
       .section .section-wrapper .slider-container .slider-button-container button {
-        width: 16px;
-        height: 16px;
+        min-width: 16px;
+        min-height: 16px;
         border-radius: 20px;
         background: white;
         border: 1px solid #22BF95;
@@ -394,8 +401,8 @@ html {
       border-left: 1.5px solid #22BF95; }
 
 #head-FAQs {
-  width: 110px;
-  height: 18px; }
+  max-width: 110px;
+  max-height: 18px; }
 
 .more-questions {
   margin: 20px 0 24px 0;
@@ -587,8 +594,8 @@ html {
           background-position: 25px 0;
           transition: 300ms background-position; }
   .footer .skout-bottom {
-    width: 105px;
-    height: 38px;
+    max-width: 105px;
+    max-height: 38px;
     margin-bottom: 28px; }
 
 .back-icon {
@@ -638,15 +645,6 @@ html {
 .max-width {
   max-width: 1440px; }
 
-.active-slider-link::before {
-  content: "";
-  position: absolute;
-  width: 46px;
-  height: 1px;
-  background-color: #22BF95;
-  bottom: 16px;
-  right: 140px; }
-
 .accord-text-active {
   margin-top: 20px;
   margin-left: 0px;
@@ -675,18 +673,66 @@ html {
 .line {
   border-bottom: 1px solid #22BF95; }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
+  .hamburger-container {
+    margin-right: 50px; }
+  .logo {
+    margin-left: 50px;
+    width: 110px;
+    height: 24px; }
+  .header-text {
+    max-width: 270px; }
+  .tabs {
+    min-width: 550px;
+    min-height: 60px;
+    margin-top: -20px; }
+    .tabs a {
+      padding: 18px 68px; }
+    .tabs .head-tips::after {
+      height: 40px;
+      top: 10px;
+      left: 167px; }
+    .tabs .head-glossary::after {
+      height: 40px;
+      top: 10px;
+      left: 375px; }
+  .accordions-container {
+    margin-top: 62px;
+    padding: 0 70px 0 70px; }
+    .accordions-container .glossary-contaner {
+      margin-top: 62px;
+      margin-bottom: 30px; }
+  .section .section-wrapper {
+    display: flex; }
+    .section .section-wrapper .slider-container {
+      width: 100%;
+      margin: 30px 20px 30px 20px; }
+    .section .section-wrapper .slider-text-container {
+      margin: auto; }
+      .section .section-wrapper .slider-text-container p {
+        font-size: 50px;
+        line-height: 70px; }
+      .section .section-wrapper .slider-text-container span {
+        font-size: 18px;
+        line-height: 26px; }
+  .faqs-container {
+    padding: 0 70px 0 70px;
+    margin: 60px 0 30px 0; }
+  .faqs-accordion-container {
+    padding: 0 70px 0 70px; }
+    .faqs-accordion-container .head-accordion-Faqs {
+      padding: 0; }
+  .footer .footer-wrapper {
+    padding: 0 70px 0 70px; }
+    .footer .footer-wrapper .about-company .link-company {
+      margin: 30px 0 0 0; }
+    .footer .footer-wrapper .about-company .address-container {
+      margin: 30px 0 30px 0; } }
+
+@media (min-width: 1200px) {
   .hamburger-container {
     display: none;
     position: absolute; }
-  .logo {
-    margin: 28px 84px 0px 84px;
-    width: 110px;
-    height: 24px;
-    font-size: 24px; }
-  .header .container {
-    position: relative;
-    min-height: 500px; }
   .container-header-menu {
     display: flex;
     position: static;
@@ -720,7 +766,7 @@ html {
       position: static;
       flex-direction: row;
       margin-bottom: 0;
-      margin-right: 70px; }
+      margin-right: 20px; }
       .container-header-menu .enter-buttons button {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -731,6 +777,53 @@ html {
         .container-header-menu .enter-buttons button:hover {
           color: #7f7f7f;
           border: 1.5px solid #7f7f7f; }
+  .logo {
+    margin: 25px 50px 0 50px; }
+  .header .container {
+    min-height: 300px; }
+  .section .section-wrapper .slider-container {
+    max-width: 442px; }
+  .section .section-wrapper .active-slider-link::before {
+    right: 270px; }
+  .sticky {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    right: 0; }
+  .sticky-main {
+    background-color: white;
+    transition: background-color 600ms;
+    max-width: 1440px;
+    z-index: 1;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; }
+    .sticky-main .logo {
+      color: #7f7f7f; }
+    .sticky-main .container-header-menu .header-menu li {
+      color: #7f7f7f; }
+      .sticky-main .container-header-menu .header-menu li:hover {
+        color: #22BF95; }
+    .sticky-main .container-header-menu .enter-buttons button {
+      color: #7f7f7f;
+      border: 1px solid #7f7f7f; }
+      .sticky-main .container-header-menu .enter-buttons button:hover {
+        color: #22BF95;
+        border: 1px solid #22BF95; } }
+
+@media (min-width: 1440px) {
+  .logo {
+    margin: 28px 84px 0px 84px;
+    min-width: 110px;
+    min-height: 24px;
+    font-size: 24px; }
+  .header .container {
+    position: relative;
+    min-height: 500px; }
+  .container-header-menu .enter-buttons {
+    margin-right: 70px; }
   .header-text {
     max-width: none;
     margin: 102px auto 0 auto; }
@@ -755,14 +848,14 @@ html {
       left: 525px; }
   .accordions-container {
     margin: auto;
-    margin-top: 98px;
-    padding-left: 136px;
-    padding-right: 136px; }
-    .accordions-container .skout-tips-container #head-tips-img {
-      width: 247px;
-      height: 41px;
-      margin-top: 19px;
-      margin-bottom: 95px; }
+    margin-top: 100px;
+    padding: 0 136px 0 136px; }
+    .accordions-container .skout-tips-container {
+      padding-top: 20px;
+      padding-bottom: 100px; }
+      .accordions-container .skout-tips-container #head-tips-img {
+        min-width: 247px;
+        min-height: 41px; }
     .accordions-container .accord-container {
       min-height: 151px;
       position: relative; }
@@ -771,7 +864,7 @@ html {
         .accordions-container .accord-container .head-accordion .number {
           font-size: 110px;
           line-height: 130px;
-          width: 50px;
+          min-width: 50px;
           margin-right: 113px; }
         .accordions-container .accord-container .head-accordion .accord-text {
           font-size: 24px;
@@ -825,15 +918,18 @@ html {
   .section .section-wrapper {
     display: flex;
     margin: auto; }
+    .section .section-wrapper .active-slider-link::before {
+      right: 200px; }
     .section .section-wrapper .slider-container {
+      max-width: 442px;
       margin: 60px 0 60px -10px; }
       .section .section-wrapper .slider-container .slider-head {
         margin: 60px 73px 29px 151px; }
       .section .section-wrapper .slider-container .slider-button-container {
         margin-right: 19px; }
         .section .section-wrapper .slider-container .slider-button-container .slider-button {
-          width: 25px;
-          height: 25px;
+          min-width: 25px;
+          min-height: 25px;
           margin-top: 20px; }
           .section .section-wrapper .slider-container .slider-button-container .slider-button::after {
             width: 10px;
@@ -861,15 +957,15 @@ html {
         padding-left: 40px;
         margin-left: 80px; }
   .active-slider-link::before {
-    width: 105px;
+    min-width: 105px;
     margin-right: 15px; }
   .faqs-container {
     padding-left: 136px;
     padding-right: 136px;
     margin: 160px auto 100px auto; }
     .faqs-container .head-FAQs-wrapper #head-FAQs {
-      width: 272px;
-      height: 32px;
+      min-width: 272px;
+      min-height: 32px;
       margin-left: 0; }
   .faqs-accordion-container {
     margin: auto;
@@ -950,33 +1046,6 @@ html {
       .footer .footer-wrapper .social li {
         margin-right: 50px; }
       .footer .footer-wrapper .social .skout-bottom {
-        width: 168px;
-        height: 58px;
-        margin-bottom: 68px; }
-  .sticky {
-    position: fixed;
-    top: 120px;
-    left: 0;
-    right: 0; }
-  .sticky-main {
-    background-color: white;
-    transition: background-color 600ms;
-    max-width: 1440px;
-    z-index: 1;
-    margin: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0; }
-    .sticky-main .logo {
-      color: #7f7f7f; }
-    .sticky-main .container-header-menu .header-menu li {
-      color: #7f7f7f; }
-      .sticky-main .container-header-menu .header-menu li:hover {
-        color: #22BF95; }
-    .sticky-main .container-header-menu .enter-buttons button {
-      color: #7f7f7f;
-      border: 1px solid #7f7f7f; }
-      .sticky-main .container-header-menu .enter-buttons button:hover {
-        color: #22BF95;
-        border: 1px solid #22BF95; } }
+        min-width: 168px;
+        min-height: 58px;
+        margin-bottom: 68px; } }
