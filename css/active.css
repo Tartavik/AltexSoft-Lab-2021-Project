@@ -1,11 +1,11 @@
-.backIcon {
+.back-icon {
   width: 24px;
   height: 18px;
   position: relative;
   border: 0;
   background-color: transparent;
   cursor: pointer; }
-  .backIcon::after {
+  .back-icon::after {
     content: "";
     position: absolute;
     width: 24px;
@@ -14,7 +14,7 @@
     left: 0;
     top: 5px;
     transform: rotate(45deg); }
-  .backIcon::before {
+  .back-icon::before {
     content: "";
     position: absolute;
     width: 24px;
@@ -27,10 +27,6 @@
 .none {
   display: none; }
 
-.rotate {
-  transform: rotate(135deg) !important;
-  transition: transform 0.8s ease-in-out; }
-
 .active-link::after {
   content: "";
   position: absolute;
@@ -41,10 +37,13 @@
   background-color: #22BF95; }
 
 .current-tabs-link {
-  color: #22BF95 !important; }
+  color: #22BF95; }
 
-.overflow {
+.is-hidden {
   overflow: hidden; }
+
+.max-width {
+  max-width: 1440px; }
 
 .active-slider-link::before {
   content: "";
@@ -53,7 +52,7 @@
   height: 1px;
   background-color: #22BF95;
   bottom: 16px;
-  right: 270px; }
+  right: 140px; }
 
 .accord-text-active {
   margin-top: 20px;
@@ -65,8 +64,8 @@
   margin-left: 18px;
   border: 1.5px solid #22BF95;
   position: relative;
-  width: 14px;
-  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
   background-color: white;
   box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
   border-radius: 20px;
@@ -79,3 +78,6 @@
     background-color: #22BF95;
     top: 6px;
     left: 2.5px; }
+
+.line {
+  border-bottom: 1px solid #22BF95; }

@@ -1,5 +1,5 @@
 @import "vars";
-.backIcon {
+.back-icon {
   width: 24px;
   height: 18px;
   position: relative;
@@ -32,11 +32,6 @@
   display: none;
 }
 
-.rotate {
-  transform: rotate(135deg);
-  transition: transform 0.8s ease-in-out;
-}
-
 .active-link {
   &::after {
     content: "";
@@ -53,8 +48,12 @@
   color: $colorTextlinks;
 }
 
-.overflow {
+.is-hidden {
   overflow: hidden;
+}
+
+.max-width{
+  max-width: 1440px;
 }
 
 .active-slider-link {
@@ -65,7 +64,7 @@
     height: 1px;
     background-color: $colorTextlinks;
     bottom: 16px;
-    right: 270px;
+    right: 140px;
   }
 }
 
@@ -80,8 +79,8 @@
   margin-left: 18px;
   border: 1.5px solid $colorTextlinks;
   position: relative;
-  width: 14px;
-  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
   background-color: white;
   box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
   border-radius: 20px;
@@ -95,4 +94,8 @@
     top: 6px;
     left: 2.5px;
   }
+}
+
+.line {
+  border-bottom: 1px solid $colorTextlinks;
 }

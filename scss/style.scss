@@ -75,7 +75,6 @@ html {
   text-transform: uppercase;
   font-family: Actor;
   letter-spacing: 2px;
-  margin: 0;
   font-weight: 900;
 }
 
@@ -91,7 +90,6 @@ html {
     min-height: 210px;
     margin: auto;
     .empty-element {
-      max-width: 1440px;
       min-height: 80px;
     }
   }
@@ -126,6 +124,7 @@ html {
       letter-spacing: 2px;
       color: $colorTextlinks;
       text-decoration: none;
+      text-transform: uppercase;
       &:hover {
         color: $hoverColorLink;
         transition: 800ms color;
@@ -185,6 +184,7 @@ html {
     cursor: pointer;
     text-decoration: none;
     padding: 10px 30px;
+    text-transform: uppercase;
   }
   .head-tips {
     &::after {
@@ -215,12 +215,7 @@ html {
   padding-left: 20px;
   padding-right: 20px;
   font-family: Aclonica;
-
-  .line {
-    height: 1px;
-    background-color: $colorTextlinks;
-  }
-
+  
   .skout-tips-container {
     border-top: 1px solid #b2b2b2;
     border-radius: 1px;
@@ -228,7 +223,7 @@ html {
 
   .accord-container {
     min-height: 54px;
-
+    border-top:1px solid $colorTextlinks;
     .panel {
       padding: 0 18px;
       color: #212121;
@@ -260,6 +255,11 @@ html {
       display: flex;
       align-items: center;
       cursor: pointer;
+      border: 0;
+      background-color: $colorTextPrimary;
+      width: 100%;
+      font-family: Aclonica;
+      text-align: start;
       .number {
         margin-left: 16px;
         font-family: Actor;
@@ -281,8 +281,8 @@ html {
       .accordion-button {
         border: 1.5px solid $colorTextlinks;
         position: relative;
-        width: 14px;
-        height: 14px;
+        min-width: 14px;
+        min-height: 14px;
         background-color: white;
         box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
         border-radius: 50px;
@@ -525,16 +525,21 @@ html {
     align-items: center;
     padding: 0 20px;
     min-height: 114px;
+    border: 0;
+    background: white;
+    width: 100%;
+    text-align: start;
     span:first-child {
       font-size: 40px;
       line-height: 48px;
       margin-right: 25px;
       color: #e5e5e5;
+      font-family: Actor;
     }
 
     .accordion-button {
-      width: 20px;
-      height: 20px;
+      min-width: 20px;
+      min-height: 20px;
       border-bottom: 1.5px solid $colorTextlinks;
       border-left: 1.5px solid $colorTextlinks;
       background: white;
@@ -550,15 +555,20 @@ html {
         transition: 800ms border-bottom;
       }
     }
+    .rotate {
+      transform: rotate(135deg);
+      transition: transform 0.8s ease-in-out;
+    }
 
     .question {
       width: 100%;
       color: #191919;
+      font-family: Aclonica;
     }
   }
 }
 
-footer {
+.footer {
   background-color: #f2f2f2;
   width: 100%;
   font-family: Aclonica;
@@ -608,6 +618,7 @@ footer {
           font-size: 16px;
           line-height: 24px;
           color: $hoverColorLink;
+          font-style: normal;
         }
         .phone {
           font-size: 16px;

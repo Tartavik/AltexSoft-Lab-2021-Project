@@ -73,16 +73,14 @@ html {
   margin-top: 18px;
   margin-left: 20px;
   color: white;
-  text-decoration: none; }
-  .logo p {
-    width: 92px;
-    height: 20px;
-    font-size: 20px;
-    text-transform: uppercase;
-    font-family: Actor;
-    letter-spacing: 2px;
-    margin: 0;
-    font-weight: 900; }
+  text-decoration: none;
+  width: 92px;
+  height: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: Actor;
+  letter-spacing: 2px;
+  font-weight: 900; }
 
 .header-inner {
   display: flex;
@@ -95,7 +93,6 @@ html {
     min-height: 210px;
     margin: auto; }
     .header .container .empty-element {
-      max-width: 1440px;
       min-height: 80px; }
 
 .container-header-menu {
@@ -126,7 +123,8 @@ html {
       line-height: 24px;
       letter-spacing: 2px;
       color: #22BF95;
-      text-decoration: none; }
+      text-decoration: none;
+      text-transform: uppercase; }
       .container-header-menu .header-menu li:hover {
         color: #7f7f7f;
         transition: 800ms color; }
@@ -177,7 +175,8 @@ html {
     color: #7f7f7f;
     cursor: pointer;
     text-decoration: none;
-    padding: 10px 30px; }
+    padding: 10px 30px;
+    text-transform: uppercase; }
   .tabs .head-tips::after {
     content: "";
     position: absolute;
@@ -200,14 +199,12 @@ html {
   padding-left: 20px;
   padding-right: 20px;
   font-family: Aclonica; }
-  .accordions-container .line {
-    height: 1px;
-    background-color: #22BF95; }
   .accordions-container .skout-tips-container {
     border-top: 1px solid #b2b2b2;
     border-radius: 1px; }
   .accordions-container .accord-container {
-    min-height: 54px; }
+    min-height: 54px;
+    border-top: 1px solid #22BF95; }
     .accordions-container .accord-container .panel {
       padding: 0 18px;
       color: #212121;
@@ -231,7 +228,12 @@ html {
     .accordions-container .accord-container .head-accordion {
       display: flex;
       align-items: center;
-      cursor: pointer; }
+      cursor: pointer;
+      border: 0;
+      background-color: white;
+      width: 100%;
+      font-family: Aclonica;
+      text-align: start; }
       .accordions-container .accord-container .head-accordion .number {
         margin-left: 16px;
         font-family: Actor;
@@ -250,8 +252,8 @@ html {
       .accordions-container .accord-container .head-accordion .accordion-button {
         border: 1.5px solid #22BF95;
         position: relative;
-        width: 14px;
-        height: 14px;
+        min-width: 14px;
+        min-height: 14px;
         background-color: white;
         box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
         border-radius: 50px;
@@ -444,15 +446,20 @@ html {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    min-height: 114px; }
+    min-height: 114px;
+    border: 0;
+    background: white;
+    width: 100%;
+    text-align: start; }
     .faqs-accordion-container .head-accordion-Faqs span:first-child {
       font-size: 40px;
       line-height: 48px;
       margin-right: 25px;
-      color: #e5e5e5; }
+      color: #e5e5e5;
+      font-family: Actor; }
     .faqs-accordion-container .head-accordion-Faqs .accordion-button {
-      width: 20px;
-      height: 20px;
+      min-width: 20px;
+      min-height: 20px;
       border-bottom: 1.5px solid #22BF95;
       border-left: 1.5px solid #22BF95;
       background: white;
@@ -466,127 +473,132 @@ html {
         border-left: 1.5px solid #7f7f7f;
         transition: 800ms border-left;
         transition: 800ms border-bottom; }
+    .faqs-accordion-container .head-accordion-Faqs .rotate {
+      transform: rotate(135deg);
+      transition: transform 0.8s ease-in-out; }
     .faqs-accordion-container .head-accordion-Faqs .question {
       width: 100%;
-      color: #191919; }
+      color: #191919;
+      font-family: Aclonica; }
 
-footer {
+.footer {
   background-color: #f2f2f2;
   width: 100%;
   font-family: Aclonica; }
-  footer .footer-wrapper .about-company {
+  .footer .footer-wrapper .about-company {
     display: flex;
     flex-direction: column;
     width: 100%; }
-    footer .footer-wrapper .about-company .link-company {
+    .footer .footer-wrapper .about-company .link-company {
       list-style: none;
       display: flex;
       flex-direction: column;
       padding: 0;
       margin: 24px 0 0 23px; }
-      footer .footer-wrapper .about-company .link-company li a {
+      .footer .footer-wrapper .about-company .link-company li a {
         font-size: 12px;
         line-height: 24px;
         color: #7f7f7f;
         margin-top: 12px;
         text-decoration: none; }
-      footer .footer-wrapper .about-company .link-company li span {
+      .footer .footer-wrapper .about-company .link-company li span {
         font-size: 16px;
         line-height: 24px;
         color: #7f7f7f;
         margin-bottom: 20px; }
-  footer .footer-wrapper .address-container {
+  .footer .footer-wrapper .address-container {
     padding: 0;
     margin-left: 23px; }
-    footer .footer-wrapper .address-container .address {
+    .footer .footer-wrapper .address-container .address {
       display: flex;
       flex-direction: column;
       padding: 8px 0 8px 0;
       border-top: 2px solid #22BF95; }
-      footer .footer-wrapper .address-container .address p {
+      .footer .footer-wrapper .address-container .address p {
         font-size: 16px;
         line-height: 36px;
         color: #7f7f7f;
         margin: 0; }
-      footer .footer-wrapper .address-container .address span {
+      .footer .footer-wrapper .address-container .address span {
+        font-size: 16px;
+        line-height: 24px;
+        color: #7f7f7f;
+        font-style: normal; }
+      .footer .footer-wrapper .address-container .address .phone {
         font-size: 16px;
         line-height: 24px;
         color: #7f7f7f; }
-      footer .footer-wrapper .address-container .address .phone {
-        font-size: 16px;
-        line-height: 24px;
-        color: #7f7f7f; }
-      footer .footer-wrapper .address-container .address .view-map {
+      .footer .footer-wrapper .address-container .address .view-map {
         text-decoration: none;
         font-size: 12px;
         line-height: 20px;
         color: #22BF95; }
-        footer .footer-wrapper .address-container .address .view-map:hover {
+        .footer .footer-wrapper .address-container .address .view-map:hover {
           color: #7f7f7f;
           transition: 800ms color; }
-  footer .social {
+  .footer .social {
     border-top: 1.5px solid #b2b2b2;
     margin-top: 12px;
     padding-top: 20px;
     text-align: center; }
-    footer .social .conteiner-social-icons {
+    .footer .social .conteiner-social-icons {
       display: flex;
       justify-content: space-evenly;
       margin-bottom: 20px;
       padding-left: 0; }
-      footer .social .conteiner-social-icons .twitter {
+      .footer .social .conteiner-social-icons .twitter {
         cursor: pointer;
         display: inline-block;
         width: 30px;
         height: 24px;
         background-image: url(../images/twitter.png);
         background-position: 0 0; }
-        footer .social .conteiner-social-icons .twitter:hover {
+        .footer .social .conteiner-social-icons .twitter:hover {
           background-position: 30px 0;
           transition: 300ms background-position; }
-      footer .social .conteiner-social-icons .facebook {
+      .footer .social .conteiner-social-icons .facebook {
         cursor: pointer;
         display: inline-block;
         width: 25px;
         height: 25px;
         background-image: url(../images/facebook.png);
         background-position: 0 0; }
-        footer .social .conteiner-social-icons .facebook:hover {
+        .footer .social .conteiner-social-icons .facebook:hover {
           background-position: 25px 0;
           transition: 300ms background-position; }
-      footer .social .conteiner-social-icons .youtube {
+      .footer .social .conteiner-social-icons .youtube {
         cursor: pointer;
         display: inline-block;
         width: 32px;
         height: 23px;
         background-image: url(../images/youtube.png);
         background-position: 0 0; }
-        footer .social .conteiner-social-icons .youtube:hover {
+        .footer .social .conteiner-social-icons .youtube:hover {
           background-position: 32px 0;
           transition: 300ms background-position; }
-      footer .social .conteiner-social-icons .in {
+      .footer .social .conteiner-social-icons .in {
         cursor: pointer;
         display: inline-block;
         width: 25px;
         height: 25px;
         background-image: url(../images/in.png);
         background-position: 0 0; }
-        footer .social .conteiner-social-icons .in:hover {
+        .footer .social .conteiner-social-icons .in:hover {
           background-position: 25px 0;
           transition: 300ms background-position; }
-  footer .skout-bottom {
+  .footer .skout-bottom {
     width: 105px;
     height: 38px;
     margin-bottom: 28px; }
 
-.backIcon {
+.back-icon {
   width: 24px;
   height: 18px;
   position: relative;
   border: 0;
   background-color: transparent;
   cursor: pointer; }
-  .backIcon::after {
+  .back-icon::after {
     content: "";
     position: absolute;
     width: 24px;
@@ -595,7 +607,7 @@ footer {
     left: 0;
     top: 5px;
     transform: rotate(45deg); }
-  .backIcon::before {
+  .back-icon::before {
     content: "";
     position: absolute;
     width: 24px;
@@ -608,10 +620,6 @@ footer {
 .none {
   display: none; }
 
-.rotate {
-  transform: rotate(135deg) !important;
-  transition: transform 0.8s ease-in-out; }
-
 .active-link::after {
   content: "";
   position: absolute;
@@ -622,10 +630,13 @@ footer {
   background-color: #22BF95; }
 
 .current-tabs-link {
-  color: #22BF95 !important; }
+  color: #22BF95; }
 
-.overflow {
+.is-hidden {
   overflow: hidden; }
+
+.max-width {
+  max-width: 1440px; }
 
 .active-slider-link::before {
   content: "";
@@ -634,7 +645,7 @@ footer {
   height: 1px;
   background-color: #22BF95;
   bottom: 16px;
-  right: 270px; }
+  right: 140px; }
 
 .accord-text-active {
   margin-top: 20px;
@@ -646,8 +657,8 @@ footer {
   margin-left: 18px;
   border: 1.5px solid #22BF95;
   position: relative;
-  width: 14px;
-  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
   background-color: white;
   box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
   border-radius: 20px;
@@ -661,23 +672,21 @@ footer {
     top: 6px;
     left: 2.5px; }
 
+.line {
+  border-bottom: 1px solid #22BF95; }
+
 @media (min-width: 1440px) {
-  .wrapper {
-    max-width: 1440px;
-    margin: auto; }
   .hamburger-container {
     display: none;
     position: absolute; }
   .logo {
-    margin: 28px 84px 0px 84px; }
-    .logo p {
-      width: 110px;
-      height: 24px;
-      font-size: 24px; }
+    margin: 28px 84px 0px 84px;
+    width: 110px;
+    height: 24px;
+    font-size: 24px; }
   .header .container {
     position: relative;
-    min-height: 500px;
-    max-width: 1440px; }
+    min-height: 500px; }
   .container-header-menu {
     display: flex;
     position: static;
@@ -745,7 +754,6 @@ footer {
       top: 20px;
       left: 525px; }
   .accordions-container {
-    max-width: 1440px;
     margin: auto;
     margin-top: 98px;
     padding-left: 136px;
@@ -769,8 +777,8 @@ footer {
           font-size: 24px;
           line-height: 36px; }
         .accordions-container .accord-container .head-accordion .accordion-button {
-          width: 37.5px;
-          height: 35px; }
+          min-width: 35px;
+          min-height: 35px; }
           .accordions-container .accord-container .head-accordion .accordion-button::after {
             width: 20px;
             height: 2px;
@@ -797,13 +805,13 @@ footer {
       padding-top: 19px;
       margin-bottom: 50px; }
       .accordions-container .glossary-contaner #head-glossary {
-        width: 342px;
-        height: 41px;
+        min-width: 342px;
+        min-height: 41px;
         margin-left: 0;
         margin: 19px 0 50px 0; }
   .accordion-active {
-    width: 35px;
-    height: 35px; }
+    min-width: 35px;
+    min-height: 35px; }
     .accordion-active::after {
       width: 20px;
       height: 2px;
@@ -816,7 +824,6 @@ footer {
     line-height: 54px; }
   .section .section-wrapper {
     display: flex;
-    max-width: 1440px;
     margin: auto; }
     .section .section-wrapper .slider-container {
       margin: 60px 0 60px -10px; }
@@ -857,7 +864,6 @@ footer {
     width: 105px;
     margin-right: 15px; }
   .faqs-container {
-    max-width: 1440px;
     padding-left: 136px;
     padding-right: 136px;
     margin: 160px auto 100px auto; }
@@ -866,7 +872,6 @@ footer {
       height: 32px;
       margin-left: 0; }
   .faqs-accordion-container {
-    max-width: 1440px;
     margin: auto;
     padding-left: 136px;
     padding-right: 136px; }
@@ -882,8 +887,8 @@ footer {
         line-height: 36px; }
       .faqs-accordion-container .head-accordion-Faqs .accordion-button {
         margin-right: 80px;
-        width: 30px;
-        height: 30px; }
+        min-width: 30px;
+        min-height: 30px; }
     .faqs-accordion-container .panel {
       padding: 0; }
       .faqs-accordion-container .panel .panel-span {
@@ -895,57 +900,56 @@ footer {
         line-height: 24px; }
     .faqs-accordion-container .more-questions {
       margin-bottom: 102px; }
-  footer .footer-wrapper {
-    max-width: 1440px;
+  .footer .footer-wrapper {
     margin: auto;
     padding-left: 135px;
     padding-right: 135px; }
-    footer .footer-wrapper .about-company {
+    .footer .footer-wrapper .about-company {
       display: flex;
       justify-content: space-between;
       padding-top: 78px;
       flex-direction: row; }
-      footer .footer-wrapper .about-company .link-company {
+      .footer .footer-wrapper .about-company .link-company {
         margin: 0;
         padding: 0;
         margin-bottom: 35px; }
-        footer .footer-wrapper .about-company .link-company li {
+        .footer .footer-wrapper .about-company .link-company li {
           margin-bottom: 30px; }
-          footer .footer-wrapper .about-company .link-company li a {
+          .footer .footer-wrapper .about-company .link-company li a {
             min-width: 170px;
             margin-top: 0; }
-      footer .footer-wrapper .about-company .address-container {
+      .footer .footer-wrapper .about-company .address-container {
         padding: 0; }
-        footer .footer-wrapper .about-company .address-container .address {
+        .footer .footer-wrapper .about-company .address-container .address {
           min-height: 118px;
           padding: 0;
           flex-direction: row;
           justify-content: space-between; }
-          footer .footer-wrapper .about-company .address-container .address p {
+          .footer .footer-wrapper .about-company .address-container .address p {
             font-size: 24px;
-            margin-right: 209px; }
-          footer .footer-wrapper .about-company .address-container .address span {
+            margin-right: 150px; }
+          .footer .footer-wrapper .about-company .address-container .address span {
             font-size: 16px;
             line-height: 24px;
             margin-right: 30px; }
-          footer .footer-wrapper .about-company .address-container .address .phone {
+          .footer .footer-wrapper .about-company .address-container .address .phone {
             font-size: 16px;
             line-height: 24px;
             margin-right: 30px; }
-          footer .footer-wrapper .about-company .address-container .address .view-map {
+          .footer .footer-wrapper .about-company .address-container .address .view-map {
             font-size: 16px;
             line-height: 24px; }
-          footer .footer-wrapper .about-company .address-container .address div {
+          .footer .footer-wrapper .about-company .address-container .address div {
             display: flex;
             flex-direction: column;
             margin-right: 30px; }
-    footer .footer-wrapper .social {
+    .footer .footer-wrapper .social {
       padding-top: 27px;
       display: flex;
       justify-content: space-between; }
-      footer .footer-wrapper .social li {
+      .footer .footer-wrapper .social li {
         margin-right: 50px; }
-      footer .footer-wrapper .social .skout-bottom {
+      .footer .footer-wrapper .social .skout-bottom {
         width: 168px;
         height: 58px;
         margin-bottom: 68px; }
@@ -964,10 +968,8 @@ footer {
     top: 0;
     left: 0;
     right: 0; }
-    .sticky-main .logo p {
-      color: #7f7f7f;
-      width: 110px;
-      height: 24px; }
+    .sticky-main .logo {
+      color: #7f7f7f; }
     .sticky-main .container-header-menu .header-menu li {
       color: #7f7f7f; }
       .sticky-main .container-header-menu .header-menu li:hover {

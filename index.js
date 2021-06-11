@@ -6,11 +6,12 @@ const containerHeaderMenu = document.getElementsByClassName(
 const hamburgerContainer = document.getElementsByClassName(
   "hamburger-container"
 )[0];
-const hamburger = document.getElementById("hamburger");
+const hamburger = document.getElementsByClassName("hamburger-icon")[0];
 const headerMenu = document.getElementsByClassName("header-menu")[0];
 const anchors = document.querySelectorAll('a[href^="#head"');
 const tabs = document.getElementsByClassName("tabs")[0];
 const accordContainer = document.getElementsByClassName("accord-container");
+const headAccordion = document.getElementsByClassName('head-accordion');
 const headAccordionFaqs = document.getElementsByClassName(
   "head-accordion-Faqs"
 );
@@ -29,7 +30,7 @@ let linkPageYOffset = {
   headGlossary: document.getElementById("head-glossary"),
   headFAQs: document.getElementById("head-FAQs"),
 };
-createAccordionTop(accordContainer);
+createAccordionTop(headAccordion);
 createAccordionBottom(headAccordionFaqs);
 createSliderClick(arrSliderText);
 
@@ -96,22 +97,23 @@ for (let i = 0; i < sliderButton.length; i++) {
 hamburgerContainer.addEventListener("click", () => {
   containerHeaderMenu.classList.toggle("none");
   hamburger.classList.toggle("hamburger-icon");
-  hamburger.classList.toggle("backIcon");
-  document.body.classList.toggle("overflow");
+  hamburger.classList.toggle("back-icon");
+  document.body.classList.toggle("is-hidden");
 });
 
 function createAccordionTop(acc) {
-  for (let i = 0; i < acc.length; i++) {
+  for (let i = 0; i < accordContainer.length; i++) {
     acc[i].addEventListener("click", (e) => {
-      let panel = e.currentTarget.children[1];
-      e.currentTarget.children[0].children[2].classList.toggle(
+      console.log(e.currentTarget.nextElementSibling);
+      let panel = e.currentTarget.nextElementSibling;
+      e.currentTarget.children[2].classList.toggle(
         "accordion-active"
       );
-      e.currentTarget.children[0].children[2].classList.toggle(
+      e.currentTarget.children[2].classList.toggle(
         "accordion-button"
       );
-      e.currentTarget.children[0].children[0].classList.toggle("none");
-      e.currentTarget.children[0].children[1].classList.toggle(
+      e.currentTarget.children[0].classList.toggle("none");
+      e.currentTarget.children[1].classList.toggle(
         "accord-text-active"
       );
       if (panel.style.maxHeight) {

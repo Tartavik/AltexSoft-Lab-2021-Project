@@ -17,7 +17,6 @@
     .container {
       position: relative;
       min-height: 500px;
-      max-width: 1440px;
     }
   }
 
@@ -112,7 +111,6 @@
   }
 
   .accordions-container {
-    max-width: 1440px;
     margin: auto;
     margin-top: 98px;
     padding-left: 136px;
@@ -141,8 +139,8 @@
           line-height: 36px;
         }
         .accordion-button {
-          width: 37.5px;
-          height: 35px;
+          min-width: 35px;
+          min-height: 35px;
           &::after {
             width: 20px;
             height: 2px;
@@ -178,8 +176,8 @@
       padding-top: 19px;
       margin-bottom: 50px;
       #head-glossary {
-        width: 342px;
-        height: 41px;
+        min-width: 342px;
+        min-height: 41px;
         margin-left: 0;
         margin: 19px 0 50px 0;
       }
@@ -187,8 +185,8 @@
   }
 
   .accordion-active {
-    width: 35px;
-    height: 35px;
+    min-width: 35px;
+    min-height: 35px;
     &::after {
       width: 20px;
       height: 2px;
@@ -207,7 +205,6 @@
   .section {
     .section-wrapper {
       display: flex;
-      max-width: 1440px;
       margin: auto;
       .slider-container {
         margin: 60px 0 60px -10px;
@@ -265,7 +262,6 @@
   }
 
   .faqs-container {
-    max-width: 1440px;
     padding-left: 136px;
     padding-right: 136px;
     margin: 160px auto 100px auto;
@@ -279,7 +275,6 @@
   }
 
   .faqs-accordion-container {
-    max-width: 1440px;
     margin: auto;
     padding-left: 136px;
     padding-right: 136px;
@@ -297,8 +292,8 @@
       }
       .accordion-button {
         margin-right: 80px;
-        width: 30px;
-        height: 30px;
+        min-width: 30px;
+        min-height: 30px;
       }
     }
     .panel {
@@ -319,9 +314,8 @@
     }
   }
 
-  footer {
+  .footer {
     .footer-wrapper {
-      max-width: 1440px;
       margin: auto;
       padding-left: 135px;
       padding-right: 135px;
@@ -351,7 +345,7 @@
             justify-content: space-between;
             p {
               font-size: 24px;
-              margin-right: 209px;
+              margin-right: 150px;
             }
             span {
               font-size: 16px;
