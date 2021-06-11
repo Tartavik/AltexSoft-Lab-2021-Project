@@ -43,16 +43,17 @@
     background-color: $colorTextlinks;
   }
 }
-
-.current-tabs-link {
-  color: $colorTextlinks;
+.tabs {
+  .current-tabs-link {
+    color: $colorTextlinks;
+  }
 }
 
 .is-hidden {
   overflow: hidden;
 }
 
-.max-width{
+.max-width {
   max-width: 1440px;
 }
 

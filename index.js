@@ -11,7 +11,7 @@ const headerMenu = document.getElementsByClassName("header-menu")[0];
 const anchors = document.querySelectorAll('a[href^="#head"');
 const tabs = document.getElementsByClassName("tabs")[0];
 const accordContainer = document.getElementsByClassName("accord-container");
-const headAccordion = document.getElementsByClassName('head-accordion');
+const headAccordion = document.getElementsByClassName("head-accordion");
 const headAccordionFaqs = document.getElementsByClassName(
   "head-accordion-Faqs"
 );
@@ -26,7 +26,7 @@ let sticky = tabs.offsetTop;
 let stickyMain = headerInner.offsetTop;
 let currentSlider = 0;
 let linkPageYOffset = {
-  headTips: document.getElementById("head-tips-img"),
+  headTips: document.getElementById("head-tips"),
   headGlossary: document.getElementById("head-glossary"),
   headFAQs: document.getElementById("head-FAQs"),
 };
@@ -107,16 +107,10 @@ function createAccordionTop(acc) {
     acc[i].addEventListener("click", (e) => {
       console.log(e.currentTarget.nextElementSibling);
       let panel = e.currentTarget.nextElementSibling;
-      e.currentTarget.children[2].classList.toggle(
-        "accordion-active"
-      );
-      e.currentTarget.children[2].classList.toggle(
-        "accordion-button"
-      );
+      e.currentTarget.children[2].classList.toggle("accordion-active");
+      e.currentTarget.children[2].classList.toggle("accordion-button");
       e.currentTarget.children[0].classList.toggle("none");
-      e.currentTarget.children[1].classList.toggle(
-        "accord-text-active"
-      );
+      e.currentTarget.children[1].classList.toggle("accord-text-active");
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
@@ -183,7 +177,6 @@ function showTabsStickyMenu() {
 }
 function showheaderInnerStickyMenu() {
   if (window.pageYOffset >= stickyMain + 10 && window.screen.width >= 1200) {
-    console.log('dsf');
     headerInner.classList.add("sticky-main");
     emptyElement.classList.remove("none");
   } else {

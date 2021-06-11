@@ -285,22 +285,20 @@ html {
         .accordions-container .accord-container .head-accordion .accordion-button:hover {
           border: 1.5px solid #7f7f7f;
           transition: 800ms border; }
-  .accordions-container #head-tips-img {
+  .accordions-container #head-tips {
     max-width: 90px;
     max-height: 19px; }
   .accordions-container #head-glossary {
     max-width: 114px; }
   .accordions-container .glossary-contaner {
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin: 24px 0 24px 0;
     padding-top: 11px;
     border-top: 1px solid #b2b2b2;
     border-radius: 1px; }
 
 .section {
   background: linear-gradient(45deg, #e0e0e0, #ffffff);
-  font-family: Aclonica;
-  padding-top: 1px; }
+  font-family: Aclonica; }
   .section .section-wrapper .active-slider-link::before {
     content: "";
     position: absolute;
@@ -334,15 +332,13 @@ html {
       flex-direction: column;
       margin-right: 25px; }
       .section .section-wrapper .slider-container .slider-button-container button {
+        display: flex;
         min-width: 16px;
         min-height: 16px;
         border-radius: 20px;
         background: white;
         border: 1px solid #22BF95;
-        display: flex;
         align-items: stretch;
-        padding-bottom: -30px;
-        padding-bottom: -5px;
         padding-top: 0px;
         margin-top: 16px;
         position: relative;
@@ -636,7 +632,7 @@ html {
   height: 2px;
   background-color: #22BF95; }
 
-.current-tabs-link {
+.tabs .current-tabs-link {
   color: #22BF95; }
 
 .is-hidden {
@@ -853,7 +849,7 @@ html {
     .accordions-container .skout-tips-container {
       padding-top: 20px;
       padding-bottom: 100px; }
-      .accordions-container .skout-tips-container #head-tips-img {
+      .accordions-container .skout-tips-container #head-tips {
         min-width: 247px;
         min-height: 41px; }
     .accordions-container .accord-container {

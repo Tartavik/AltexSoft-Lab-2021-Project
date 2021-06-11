@@ -214,7 +214,7 @@ html {
   width: 100%;
   padding: 0 20px 0 20px;
   font-family: Aclonica;
-  
+
   .skout-tips-container {
     padding-top: 10px;
     padding-bottom: 25px;
@@ -224,7 +224,7 @@ html {
 
   .accord-container {
     min-height: 54px;
-    border-top:1px solid $colorTextlinks;
+    border-top: 1px solid $colorTextlinks;
     .panel {
       padding: 0 18px;
       color: #212121;
@@ -323,7 +323,7 @@ html {
     }
   }
 
-  #head-tips-img {
+  #head-tips {
     max-width: 90px;
     max-height: 19px;
   }
@@ -332,18 +332,16 @@ html {
     max-width: 114px;
   }
   .glossary-contaner {
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin: 24px 0 24px 0;
     padding-top: 11px;
     border-top: 1px solid #b2b2b2;
     border-radius: 1px;
   }
 }
 
-.section{
+.section {
   background: linear-gradient(45deg, #e0e0e0, #ffffff);
   font-family: Aclonica;
-  padding-top: 1px;
   .section-wrapper {
     .active-slider-link {
       &::before {
@@ -386,15 +384,13 @@ html {
         margin-right: 25px;
 
         button {
+          display: flex;
           min-width: 16px;
           min-height: 16px;
           border-radius: 20px;
           background: white;
           border: 1px solid $colorTextlinks;
-          display: flex;
           align-items: stretch;
-          padding-bottom: -30px;
-          padding-bottom: -5px;
           padding-top: 0px;
           margin-top: 16px;
           position: relative;
