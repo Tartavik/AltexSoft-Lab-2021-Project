@@ -114,7 +114,7 @@
       display: flex;
       justify-content: space-between;
 
-      li {
+      .header-menu-item {
         margin-bottom: 0;
         color: white;
         position: relative;
@@ -140,7 +140,7 @@
       flex-direction: row;
       margin-bottom: 0;
       margin-right: 20px;
-      button {
+      .header-button {
         margin-top: 20px;
         margin-bottom: 20px;
         margin-right: 20px;
@@ -199,7 +199,7 @@
     }
     .container-header-menu {
       .header-menu {
-        li {
+        .header-menu-item{
           color: $hoverColorLink;
           &:hover {
             color: $colorTextlinks;
@@ -207,7 +207,7 @@
         }
       }
       .enter-buttons {
-        button {
+        .header-button {
           color: $hoverColorLink;
           border: 1px solid $hoverColorLink;
           &:hover {
