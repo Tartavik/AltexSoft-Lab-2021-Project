@@ -1,110 +1,113 @@
 @import "vars";
 @import "fonts";
-@import 'mixins';
+@import "mixins";
 
-.wrapper-cards-slaider{
-    margin-top: -265px;
-    
-    background-color: transparent;
-    .slider-title{
-        margin: 35px 0 20px 0;
-        text-align: center;
-        span{
-            @include text-size-standart;
-        }
+.wrapper-cards-slaider {
+  margin-top: -265px;
+
+  background-color: transparent;
+  .slider-title {
+    margin: 35px 0 20px 0;
+    text-align: center;
+    span {
+      @include text-size-standart;
     }
+  }
 }
 
-.cards-slider{
-    .slick-track{
-        display: flex;
-        align-items: center;
-    }
-    .slider-item{
-        min-height: 530px; 
-        background-color: $colorTextPrimary;
-        box-shadow: 0px 12px 24px $colorLightSliderShadow;
-        border-radius: 5px;
-        margin: 0 25px 25px 25px;
-        
-        .slider-item-title{
-            margin: 40px auto 40px auto;
-            text-align: center;
-            span{
-               
-                letter-spacing: 2.25px;
-                text-transform: uppercase;
-                color: $colorTextlinks;
-                @include text-size(18px,24px);
-            }
-        }
-        .slider-item-content{
-            padding: 0 55px 0 55px;
-            margin: auto;
-            li{
-                display: flex;
-                list-style: none;
-                min-height: 60px;
-                align-items: center;
-                border-top: 2px solid #F2F2F2;
-               span{
-                font-family: Aclonica;
+.cards-slider {
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+  .slider-item {
+    min-height: 530px;
+    background-color: $colorTextPrimary;
+    box-shadow: 0px 12px 24px $colorLightSliderShadow;
+    border-radius: 5px;
+    margin: 0 25px 25px 25px;
 
-                @include text-size(13px,24px);
-                color: $hoverColorLink;
-                margin-left: 20px;
-               }
-              
-            }
-        }
-        .slider-item-button{
-            margin-top: 50px;
-            text-align: center;
-            button{
-                @include button-primary-first(220px,40px,$colorTextlinks,$colorTextPrimary);
-                border: 1.5px solid $colorTextlinks;
-                &:hover{
-                    @include button-hover-shadow;
-                }
-            }
-        }
-        &:hover{
-            cursor: pointer;
-            background: linear-gradient(130deg, #19b0f8, #00e99a);
-            transition: min-height, min-width 500ms;
-            min-height: 580px;
-            min-width: 350px;
-            .slider-item-title{
-                span{
-                    color: $colorTextPrimary;
-                }  
-            }
-            .slider-item-content{
-                li{
-                    border-top:1px solid #F2F2F2;
-                    span{
-                        color: $colorTextPrimary;
-                    }
-                    .slider-icon{
-                        border: 1px solid $colorTextPrimary;
-                        &::before{
-                            border-bottom: 1px solid $colorTextPrimary;
-                            border-left: 1px solid $colorTextPrimary;
-                        }
-                    }
-                    .slider-icon-disable{
-                        border: 1px solid $colorTextPrimary;
-                        &::before{
-                            border-top: 1px solid $colorTextPrimary;
-                        }
-                    }
-                }
-            }
-            .slider-item-button{
-                button{
-                    border: 0;
-                }
-            }
-        }
+    .slider-item-title {
+      margin: 40px auto 40px auto;
+      text-align: center;
+      span {
+        letter-spacing: 2.25px;
+        text-transform: uppercase;
+        color: $colorTextlinks;
+        @include text-size(18px, 24px);
+      }
     }
+    .slider-item-content {
+      padding: 0 55px 0 55px;
+      margin: auto;
+      li {
+        display: flex;
+        list-style: none;
+        min-height: 60px;
+        align-items: center;
+        border-top: 2px solid #f2f2f2;
+        span {
+          font-family: Aclonica;
+
+          @include text-size(13px, 24px);
+          color: $hoverColorLink;
+          margin-left: 20px;
+        }
+      }
+    }
+    .slider-item-button {
+      margin-top: 50px;
+      text-align: center;
+      button {
+        @include button-primary-first(
+          220px,
+          40px,
+          $colorTextlinks,
+          $colorTextPrimary
+        );
+        border: 1.5px solid $colorTextlinks;
+        &:hover {
+          @include button-hover-shadow;
+        }
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(130deg, #19b0f8, #00e99a);
+      transition: min-height, min-width 500ms;
+      min-height: 580px;
+      min-width: 350px;
+      .slider-item-title {
+        span {
+          color: $colorTextPrimary;
+        }
+      }
+      .slider-item-content {
+        li {
+          border-top: 1px solid #f2f2f2;
+          span {
+            color: $colorTextPrimary;
+          }
+          .slider-icon {
+            border: 1px solid $colorTextPrimary;
+            &::before {
+              border-bottom: 1px solid $colorTextPrimary;
+              border-left: 1px solid $colorTextPrimary;
+            }
+          }
+          .slider-icon-disable {
+            border: 1px solid $colorTextPrimary;
+            &::before {
+              border-top: 1px solid $colorTextPrimary;
+            }
+          }
+        }
+      }
+      .slider-item-button {
+        button {
+          border: 0;
+        }
+      }
+    }
+  }
 }

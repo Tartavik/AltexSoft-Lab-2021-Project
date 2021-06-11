@@ -1,76 +1,71 @@
 @import "vars";
 @import "fonts";
-@import 'mixins';
+@import "mixins";
 
-.wrapper-main-double-slaider{
-    .main-double-slaider{
-        margin: auto 20px auto 20px;
-        .slider-item{
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            .double-slider-icon{
-                img{
-            
-                        width: 240px;
-                        height: 120px;
-                
-                }
-            }
-            .slider-text{
-                margin: auto;
-                text-align: center;
-                span{
-                    font-family: Aclonica;
-                    @include text-size(24px,36px);
-                    color: $hoverColorLink;
-                }
-                .author{
-                    margin-top: 20px;
-                    margin-bottom: 70px;
-                    span{
-                        font-family: Acme;
-                        @include text-size(12px,24px);
-                        letter-spacing: 2px;
-                        text-transform: uppercase;
-                        color: $hoverColorLink;
-                    }
-                }
-            }
+.wrapper-main-double-slaider {
+  .main-double-slaider {
+    margin: auto 20px auto 20px;
+    .slider-item {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .double-slider-icon {
+        img {
+          width: 240px;
+          height: 120px;
         }
+      }
+      .slider-text {
+        margin: auto;
+        text-align: center;
+        span {
+          font-family: Aclonica;
+          @include text-size(24px, 36px);
+          color: $hoverColorLink;
+        }
+        .author {
+          margin-top: 20px;
+          margin-bottom: 70px;
+          span {
+            font-family: Acme;
+            @include text-size(12px, 24px);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: $hoverColorLink;
+          }
+        }
+      }
     }
+  }
 }
 
-
-
-.wrapper-secondary-double-slaider{
-    max-width: 1440px;
-    margin: auto;
-    padding: 0 20px 0 20px;
-    .secondary-double-slaider{
-        margin-bottom: 50px;
-        .slider-item{
-            cursor: pointer;
-            opacity: 0.5;
-          text-align: center;
-        }
-        .slick-track{
-            padding-bottom: 15px;
-            border-bottom: 2px solid $colorLightSliderShadow;
-        }
-        .slick-current{
-            opacity: 1;
-            &::before{
-                margin-left: 10px;
-                content: '';
-                position: absolute;
-                bottom: -2px;
-                width: 100px;
-                height: 5px;
-                background-color: $colorTextlinks;
-            }
-        
-        }
+.wrapper-secondary-double-slaider {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 20px 0 20px;
+  .secondary-double-slaider {
+    margin-bottom: 50px;
+    .slider-item {
+      cursor: pointer;
+      opacity: 0.5;
+      text-align: center;
     }
+    .slick-track {
+      padding-bottom: 15px;
+      border-bottom: 2px solid $colorLightSliderShadow;
+    }
+    .slick-current {
+      opacity: 1;
+      &::before {
+        margin-left: 10px;
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        width: 100px;
+        height: 5px;
+        background-color: $colorTextlinks;
+      }
+    }
+  }
 }

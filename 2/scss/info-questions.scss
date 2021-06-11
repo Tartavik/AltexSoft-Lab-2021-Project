@@ -1,100 +1,100 @@
 @import "vars";
 @import "fonts";
-@import 'mixins';
+@import "mixins";
 
-.wrapper-info-questions{
-    max-width: 1440px;
-    margin: 0 auto 20px auto;
-    .container-info{
-        display: flex;
-        flex-direction: column-reverse;
-        img{
-            width: 100%;
-            max-width: 705px;
-        }
-        .info{
-            .title{
-                display: block;
-                max-width: 280px;
-                @include text-size-standart;
-                margin: auto 25px 25px 25px;
-            }
-            .text{
-                display: block;
-                @include text-size-small;
-                font-family: 'Aclonica';
-                margin: 0 25px 25px 25px;
-            }
-        }
+.wrapper-info-questions {
+  max-width: 1440px;
+  margin: 0 auto 20px auto;
+  .container-info {
+    display: flex;
+    flex-direction: column-reverse;
+    img {
+      width: 100%;
+      max-width: 705px;
     }
-    .container-info-bottom{
-        display: flex;
-        max-width: 655px;
-        flex-direction: column;
-        background: linear-gradient(201deg, #13c3e7, #01f86c);
-        filter: drop-shadow(0px 12px 24px $colorLightSliderShadow);
-        margin: -100px 25px 0 25px;
-        border-radius: 5px;
-        padding: 0 25px 25px 25px;
-        .learn-more{
-            .title{
-                padding: 25px 0 10px 0;
-               
-                border-bottom: 2px solid $colorTextPrimary;
-                span{
-                    font-family: Acme;
-                    @include text-size(12px,24px); 
-                    letter-spacing: 2px;
-                    text-transform: uppercase;
-                    color: $colorTextPrimary;
-                }
-            }
-            div{
-                margin: 20px 0 0 0;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                span{
-                    @include text-size-small;
-                    color: $colorTextPrimary;
-                    font-family: Aclonica;
-                }
-                button{
-                    cursor: pointer;
-                    position: relative;
-                    width: 35px;
-                    height: 35px;
-                    background-color: transparent;
-                    border: 1px solid $colorTextPrimary;
-                    border-radius: 25px;
-                    &::before{
-                        content: '';
-                        position: absolute;
-                        width: 25px;
-                        left: 4px;
-                        height: 1px;
-                        background-color: $colorTextPrimary;
-                    }
-                    &::after{
-                        content: '';
-                        position: absolute;
-                        width: 13px;
-                        height: 13px;
-                        top: 11px;
-                        left: 15px;
-                        border-top: 1px solid $colorTextPrimary;
-                        border-right: 1px solid $colorTextPrimary;
-                        transform: rotate(45deg);                    
-                    }
-                    &:hover{
-                        width: 40px;
-                        height: 40px;
-                        &::after{
-                            top: 13px;
-                        }
-                    }
-                }
-            }
-        }
+    .info {
+      .title {
+        display: block;
+        max-width: 280px;
+        @include text-size-standart;
+        margin: auto 25px 25px 25px;
+      }
+      .text {
+        display: block;
+        @include text-size-small;
+        font-family: "Aclonica";
+        margin: 0 25px 25px 25px;
+      }
     }
+  }
+  .container-info-bottom {
+    display: flex;
+    max-width: 655px;
+    flex-direction: column;
+    background: linear-gradient(201deg, #13c3e7, #01f86c);
+    filter: drop-shadow(0px 12px 24px $colorLightSliderShadow);
+    margin: -100px 25px 0 25px;
+    border-radius: 5px;
+    padding: 0 25px 25px 25px;
+    .learn-more {
+      .title {
+        padding: 25px 0 10px 0;
+
+        border-bottom: 2px solid $colorTextPrimary;
+        span {
+          font-family: Acme;
+          @include text-size(12px, 24px);
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: $colorTextPrimary;
+        }
+      }
+      div {
+        margin: 20px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          @include text-size-small;
+          color: $colorTextPrimary;
+          font-family: Aclonica;
+        }
+        button {
+          cursor: pointer;
+          position: relative;
+          width: 35px;
+          height: 35px;
+          background-color: transparent;
+          border: 1px solid $colorTextPrimary;
+          border-radius: 25px;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 25px;
+            left: 4px;
+            height: 1px;
+            background-color: $colorTextPrimary;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            top: 11px;
+            left: 15px;
+            border-top: 1px solid $colorTextPrimary;
+            border-right: 1px solid $colorTextPrimary;
+            transform: rotate(45deg);
+          }
+          &:hover {
+            width: 40px;
+            height: 40px;
+            &::after {
+              top: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

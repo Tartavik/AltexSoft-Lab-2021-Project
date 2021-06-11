@@ -1,97 +1,100 @@
 @import "vars";
 @import "fonts";
-@import 'mixins';
+@import "mixins";
 
-.cybersecurity-container{
-    max-width: 1440px;
-    margin: auto;
-    .cybersecurity-title{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-        span{
-            @include text-size-standart;      
-        }
+.cybersecurity-container {
+  max-width: 1440px;
+  margin: auto;
+  .cybersecurity-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    span {
+      @include text-size-standart;
     }
-    .cards-container{
-        margin: auto 20px auto 20px;
+  }
+  .cards-container {
+    margin: auto 20px auto 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .card {
+      margin-bottom: 30px;
+      display: flex;
+      max-width: 500px;
+      min-height: 200px;
+      box-shadow: 0px 12px 24px rgba(127, 127, 127, 0.3);
+      border-radius: 5px;
+      border-left: 5px solid $colorTextlinks;
+      .card-text {
+        margin: 34px 25px 9px 60px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        .card{
-            margin-bottom: 30px;
-            display: flex;
-            max-width: 500px;
-            min-height: 200px;
-            box-shadow: 0px 12px 24px rgba(127, 127, 127, 0.3);
-            border-radius: 5px;
-            border-left: 5px solid $colorTextlinks;
-            .card-text{
-                margin: 34px 25px 9px 60px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                font-family: Aclonica;
-                color: $colorTextPrimaryDark;
-                span:first-child{
-                    @include text-size-standart;
-                    margin-bottom: 16px;
-                }
-                span:last-child{
-                    @include text-size(13px,24px);
-                }
-            }
-            .card-icon{
-                display: flex;
-            }
-            .card-i{
-                display: flex;
-                position: relative;
-                align-items: flex-end;
-                div{
-                    display: flex;
-                    &:hover::after{
-                        opacity: 1;
-                        @include text-size(12px,24px);
-                        font-family: Aclonica;
-                        background-color: $colorTextPrimary;
-                        border: 1px solid #B2B2B2;
-                        border-radius: 5px;
-                        top: 125px;
-                        left: -139px;
-                        color: $hoverColorLink;
-                        content: attr(note);
-                        padding: 5px 15px;
-                        position: absolute;
-                        width: 340px;
-                    }
-                    &::after{
-                        content: '';
-                        opacity: 0;
-                        background-color: $colorTextPrimary;
-                        transition: opacity 700ms;
-                      }
-                      img{
-                        cursor: pointer;
-                        width: 21px;
-                        margin: 0 15px 15px 0;
-                    }
-                }
-                
-               
-            }
-        }
-    }
-    .cybersecurity-button{
-        display: flex;
         justify-content: center;
-        margin-bottom: 20px;
-        button{
-            @include button-primary-first(230px,40px,$colorTextPrimary,$colorTextlinks);
-            border: 0;
+        font-family: Aclonica;
+        color: $colorTextPrimaryDark;
+        span:first-child {
+          @include text-size-standart;
+          margin-bottom: 16px;
         }
-        button:hover{
-            @include button-hover-shadow;
+        span:last-child {
+          @include text-size(13px, 24px);
         }
+      }
+      .card-icon {
+        display: flex;
+      }
+      .card-i {
+        display: flex;
+        position: relative;
+        align-items: flex-end;
+        div {
+          display: flex;
+          &:hover::after {
+            opacity: 1;
+            @include text-size(12px, 24px);
+            font-family: Aclonica;
+            background-color: $colorTextPrimary;
+            border: 1px solid #b2b2b2;
+            border-radius: 5px;
+            top: 125px;
+            left: -139px;
+            color: $hoverColorLink;
+            content: attr(note);
+            padding: 5px 15px;
+            position: absolute;
+            width: 340px;
+          }
+          &::after {
+            content: "";
+            opacity: 0;
+            background-color: $colorTextPrimary;
+            transition: opacity 700ms;
+          }
+          img {
+            cursor: pointer;
+            width: 21px;
+            margin: 0 15px 15px 0;
+          }
+        }
+      }
     }
+  }
+  .cybersecurity-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    button {
+      @include button-primary-first(
+        230px,
+        40px,
+        $colorTextPrimary,
+        $colorTextlinks
+      );
+      border: 0;
+    }
+    button:hover {
+      @include button-hover-shadow;
+    }
+  }
 }
