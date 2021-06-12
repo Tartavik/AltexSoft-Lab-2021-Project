@@ -13,7 +13,7 @@
     order: 2;
     opacity: 0;
     transition: opacity 700ms;
-    .skout-sa-img{
+    .skout-sa-img {
       width: 100%;
     }
   }
@@ -29,7 +29,7 @@
     }
     .text-about-skout {
       margin: auto;
-      .text-about-skout-value{
+      .text-about-skout-value {
         color: $colorTextPrimaryDark;
         font-family: Aclonica;
         @include text-size(14px, 24px);

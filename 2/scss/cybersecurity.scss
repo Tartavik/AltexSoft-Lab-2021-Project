@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
-    .cybersecurity-title-value{
+    .cybersecurity-title-value {
       @include text-size-standart;
     }
   }
@@ -48,7 +48,7 @@
         display: flex;
         position: relative;
         align-items: flex-end;
-        .card-i-note{
+        .card-i-note {
           display: flex;
           &:hover::after {
             opacity: 1;
@@ -71,7 +71,7 @@
             background-color: $colorTextPrimary;
             transition: opacity 700ms;
           }
-          .card-i-img{
+          .card-i-img {
             cursor: pointer;
             width: 21px;
             margin: 0 15px 15px 0;
@@ -84,7 +84,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    .btn{
+    .btn {
       @include button-primary-first(
         230px,
         40px,

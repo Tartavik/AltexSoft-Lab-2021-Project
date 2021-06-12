@@ -19,8 +19,8 @@
         flex-direction: column;
         padding: 0;
         margin: 24px 0 0 23px;
-        .link-company-item{
-          .link-company{
+        .link-company-item {
+          .link-company {
             @include text-size(12px, 24px);
             color: $hoverColorLink;
             margin-top: 12px;
@@ -42,12 +42,12 @@
         flex-direction: column;
         padding: 8px 0 8px 0;
         border-top: 2px solid $colorTextlinks;
-        .address-title{
+        .address-title {
           @include text-size(16px, 36px);
           color: $hoverColorLink;
           margin: 0;
         }
-        .location{
+        .location {
           @include text-size-small;
           color: $hoverColorLink;
           font-style: normal;

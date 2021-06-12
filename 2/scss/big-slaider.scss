@@ -12,7 +12,7 @@
     margin: auto;
     .slider-title-container {
       text-align: center;
-      .slider-title{
+      .slider-title {
         @include text-size-standart;
       }
     }
@@ -71,7 +71,7 @@
     .slider-button {
       text-align: center;
       margin: 50px 0 50px 0;
-      .btn{
+      .btn {
         @include button-primary-first(
           180px,
           40px,
@@ -88,7 +88,7 @@
     .slider-text-container {
       max-width: 400px;
       margin: auto;
-      .slider-title{
+      .slider-title {
         font-family: Acme;
         @include text-size(18px, 24px);
         letter-spacing: 2px;
@@ -97,7 +97,7 @@
         padding: 30px 0 0 0;
         display: block;
       }
-      .slider-text{
+      .slider-text {
         font-family: Aclonica;
         color: $colorTextPrimaryDark;
         @include text-size-small;
