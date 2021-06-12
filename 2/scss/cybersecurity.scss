@@ -1,9 +1,9 @@
 @import "vars";
 @import "fonts";
 @import "mixins";
+@import 'active';
 
 .cybersecurity-container {
-  max-width: 1440px;
   margin: auto;
   .cybersecurity-title {
     display: flex;
@@ -63,7 +63,7 @@
             content: attr(note);
             padding: 5px 15px;
             position: absolute;
-            width: 340px;
+            min-width: 340px;
           }
           &::after {
             content: "";
@@ -73,7 +73,7 @@
           }
           .card-i-img {
             cursor: pointer;
-            width: 21px;
+            max-width: 21px;
             margin: 0 15px 15px 0;
           }
         }

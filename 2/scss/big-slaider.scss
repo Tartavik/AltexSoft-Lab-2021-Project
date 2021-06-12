@@ -1,6 +1,7 @@
 @import "vars";
 @import "fonts";
 @import "mixins";
+@import "active";
 
 .wrapper-big-slaider {
   margin-top: 30px;
@@ -8,7 +9,6 @@
   background: linear-gradient(15deg, #e0e0e0, #ffffff);
   .big-slider-container {
     min-height: 1085px;
-    max-width: 1440px;
     margin: auto;
     .slider-title-container {
       text-align: center;
@@ -52,8 +52,8 @@
         button {
           margin-top: 8px;
           border: 1px solid $colorTextlinks;
-          width: 24px;
-          height: 24px;
+          min-width: 24px;
+          min-height: 24px;
           border-radius: 20px;
           &::before {
             left: 8px;

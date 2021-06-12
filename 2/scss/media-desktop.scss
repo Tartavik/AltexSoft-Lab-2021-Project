@@ -1,5 +1,6 @@
 @import "vars";
 @import "mixins";
+@import "active";
 
 @media (min-width: 1440px) {
   .hamburger-container {
@@ -11,7 +12,6 @@
     .container {
       position: relative;
       min-height: 900px;
-      max-width: 1440px;
     }
   }
 
@@ -216,7 +216,6 @@
 
   .wrapper-main-double-slaider {
     .main-double-slaider {
-      max-width: 1440px;
       margin: 160px auto 100px auto;
       padding: 0 135px 0 135px;
       .slider-item {
@@ -272,7 +271,6 @@
 
   .footer {
     .footer-wrapper {
-      max-width: 1440px;
       margin: auto;
       padding-left: 135px;
       padding-right: 135px;

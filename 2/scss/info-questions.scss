@@ -3,7 +3,6 @@
 @import "mixins";
 
 .wrapper-info-questions {
-  max-width: 1440px;
   margin: 0 auto 20px auto;
   .container-info {
     display: flex;
@@ -62,8 +61,8 @@
         .learn-more-btn {
           cursor: pointer;
           position: relative;
-          width: 35px;
-          height: 35px;
+          min-width: 35px;
+          min-height: 35px;
           background-color: transparent;
           border: 1px solid $colorTextPrimary;
           border-radius: 25px;

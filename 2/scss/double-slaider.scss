@@ -1,6 +1,7 @@
 @import "vars";
 @import "fonts";
 @import "mixins";
+@import 'active';
 
 .wrapper-main-double-slaider {
   .main-double-slaider {
@@ -41,7 +42,6 @@
 }
 
 .wrapper-secondary-double-slaider {
-  max-width: 1440px;
   margin: auto;
   padding: 0 20px 0 20px;
   .secondary-double-slaider {
