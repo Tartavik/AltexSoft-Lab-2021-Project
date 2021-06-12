@@ -5,7 +5,7 @@
   height: 18px;
   position: relative;
   border: 0;
-  background-color: transparent;
+  background-color: $color-bg-transparent;
   cursor: pointer;
   &::after {
     @include style-back-icon;
@@ -45,7 +45,7 @@
   position: relative;
   min-width: 35px;
   min-height: 35px;
-  background-color: transparent;
+  background-color: $color-bg-transparent;
   border: 1px solid $colorTextlinks;
   border-radius: 30px;
   &::before {
@@ -55,7 +55,7 @@
     height: 11px;
     border-bottom: 1px solid $colorTextlinks;
     border-left: 1px solid $colorTextlinks;
-    background-color: transparent;
+    background-color: $color-bg-transparent;
     transform: rotate(-45deg);
     top: 8px;
     right: 8px;
@@ -66,7 +66,7 @@
   position: relative;
   width: 35px;
   height: 35px;
-  background-color: transparent;
+  background-color: $color-bg-transparent;
   border: 1px solid $colorTextlinks;
   border-radius: 30px;
   &::before {
@@ -75,7 +75,7 @@
     width: 18px;
     height: 1px;
     border-top: 1px solid $colorTextlinks;
-    background-color: transparent;
+    background-color: $color-bg-transparent;
     top: 16px;
     right: 8px;
   }
@@ -86,7 +86,7 @@
 }
 
 .sticky-main {
-  background-color: transparent;
+  background-color:$color-bg-transparent;
   transition: background-color 600ms;
   max-width: 1440px;
   z-index: 1;

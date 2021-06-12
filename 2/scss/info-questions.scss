@@ -63,7 +63,7 @@
           position: relative;
           min-width: 35px;
           min-height: 35px;
-          background-color: transparent;
+          background-color: $color-bg-transparent;
           border: 1px solid $colorTextPrimary;
           border-radius: 25px;
           &::before {

@@ -5,6 +5,7 @@
 
 .header {
   background: linear-gradient(45deg, #13c3e7, #01f86c);
+  margin: auto;
   width: 100%;
   .container {
     margin: auto;
@@ -101,7 +102,7 @@
     min-height: 18px;
     position: relative;
     border: 0;
-    background-color: transparent;
+    background-color: $color-bg-transparent;
     cursor: pointer;
     &::after {
       content: "";

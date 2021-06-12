@@ -22,7 +22,7 @@
   .container-header-menu {
     display: flex;
     position: static;
-    background-color: transparent;
+    background-color: $color-bg-transparent;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
@@ -64,7 +64,7 @@
         margin-top: 20px;
         margin-bottom: 20px;
         margin-right: 20px;
-        background-color: transparent;
+        background-color: $color-bg-transparent;
         border: 1.5px solid $colorTextPrimary;
         color: $colorTextPrimary;
         box-shadow: none;
