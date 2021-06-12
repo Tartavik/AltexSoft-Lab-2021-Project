@@ -176,7 +176,7 @@ html {
   border-radius: 5px 5px 0 0;
   background: white;
   position: relative;
-  a {
+  .anchor{
     font-size: 12px;
     line-height: 20px;
     letter-spacing: 2px;
@@ -240,10 +240,10 @@ html {
       .bottom-info {
         display: flex;
         align-items: flex-start;
-        img {
+        .bottom-info-img{
           margin: 11px 20px 0 0;
         }
-        span {
+        .bottom-info-text{
           margin: 11px 0 23px 0;
           font-size: 12px;
           line-height: 24px;
@@ -343,6 +343,7 @@ html {
   background: linear-gradient(45deg, #e0e0e0, #ffffff);
   font-family: Aclonica;
   .section-wrapper {
+    padding-top: 24px;
     .active-slider-link {
       &::before {
         content: "";
@@ -357,6 +358,7 @@ html {
     .slider-container {
       max-width: 335px;
       margin: 24px 20px 0 20px;
+      padding-top: 24px;
       background-color: white;
       box-shadow: 0px 12px 24px #e5e5e5;
       border-radius: 5px;
@@ -364,15 +366,15 @@ html {
       .slider-head {
         margin: 40px 75px 40px 60px;
         width: 100%;
-        .sliderItem {
+        .slider-item {
           position: relative;
           font-size: 16px;
           line-height: 32px;
-          span {
+          .slider-item-text{
             cursor: pointer;
             color: $hoverColorLink;
           }
-          &:hover span {
+          &:hover .slider-item-text {
             color: $colorTextlinks;
             transition: 800ms color;
           }
@@ -383,7 +385,7 @@ html {
         flex-direction: column;
         margin-right: 25px;
 
-        button {
+        .slider-button{
           display: flex;
           min-width: 16px;
           min-height: 16px;
@@ -442,7 +444,7 @@ html {
     .slider-text-container {
       margin: 32px 24px 0 20px;
       padding-bottom: 24px;
-      p {
+      .slider-title{
         padding-bottom: 24px;
         margin: 0 0 0 20px;
         font-family: Actor;
@@ -452,16 +454,16 @@ html {
         text-transform: uppercase;
         color: #1a1a1a;
       }
-      span {
-        font-size: 16px;
-        line-height: 24px;
-        color: #191919;
-      }
       .slider-text {
         display: flex;
         max-width: 442px;
         padding-left: 16px;
         border-left: 1.5px solid $colorTextlinks;
+        .slider-span{
+          font-size: 16px;
+          line-height: 24px;
+          color: #191919;
+        }
       }
     }
   }
@@ -510,7 +512,7 @@ html {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out;
-    span {
+    .panel-letter {
       font-size: 40px;
       line-height: 48px;
       margin-right: 25px;
@@ -534,7 +536,7 @@ html {
     background: white;
     width: 100%;
     text-align: start;
-    span:first-child {
+    .accordion-letter {
       font-size: 40px;
       line-height: 48px;
       margin-right: 25px;
@@ -588,19 +590,21 @@ html {
         flex-direction: column;
         padding: 0;
         margin: 24px 0 0 23px;
-        li {
-          a {
+        .link-company-item{
+          .link-company-link{
             font-size: 12px;
             line-height: 24px;
             color: $hoverColorLink;
             margin-top: 12px;
             text-decoration: none;
           }
-          span {
-            font-size: 16px;
-            line-height: 24px;
-            color: $hoverColorLink;
-            margin-bottom: 20px;
+          #Call{
+            span{
+              font-size: 16px;
+              line-height: 24px;
+              color: $hoverColorLink;
+              margin-bottom: 20px;
+            }
           }
         }
       }
@@ -613,13 +617,13 @@ html {
         flex-direction: column;
         padding: 8px 0 8px 0;
         border-top: 2px solid $colorTextlinks;
-        p {
+        .address-title{
           font-size: 16px;
           line-height: 36px;
           color: $hoverColorLink;
           margin: 0;
         }
-        span {
+        .address-text{
           font-size: 16px;
           line-height: 24px;
           color: $hoverColorLink;
@@ -629,6 +633,7 @@ html {
           font-size: 16px;
           line-height: 24px;
           color: $hoverColorLink;
+          text-decoration: none;
         }
 
         .view-map {

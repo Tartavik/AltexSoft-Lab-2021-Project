@@ -16,7 +16,7 @@ const headAccordionFaqs = document.getElementsByClassName(
   "head-accordion-Faqs"
 );
 const emptyElement = document.getElementsByClassName("empty-element")[0];
-const sliderP = document.getElementsByClassName("slider-P")[0];
+const sliderTitle = document.getElementsByClassName("slider-title")[0];
 const sliderSpan = document.getElementsByClassName("slider-span")[0];
 const sliderButton = document.getElementsByClassName("slider-button");
 const headerInner = document.getElementsByClassName("header-inner")[0];
@@ -50,7 +50,8 @@ function createSliderClick(arr) {
     let div = document.createElement("div");
     let span = document.createElement("span");
     span.innerText = newArrSliderText[i].name;
-    div.classList.add("sliderItem");
+    div.classList.add("slider-item");
+    span.classList.add('slider-item-text');
     div.appendChild(span);
     sliderHead.appendChild(div);
     div.addEventListener("click", changeSliderText);
@@ -68,7 +69,7 @@ function changeSliderText() {
     if (this.children[0].innerText === slider.name) {
       sliderHead.children[i].classList.add("active-slider-link");
       currentSlider = i;
-      sliderP.innerText = slider.name;
+      sliderTitle.innerText = slider.name;
       sliderSpan.innerText = slider.text;
     }
   });
@@ -83,7 +84,7 @@ function changeSliderTextArrow() {
   if (currentSlider === -1) {
     currentSlider = newArrSliderText.length - 1;
   }
-  sliderP.innerText = newArrSliderText[currentSlider].name;
+  sliderTitle.innerText = newArrSliderText[currentSlider].name;
   sliderSpan.innerText = newArrSliderText[currentSlider].text;
   Array.from(sliderHead.children).forEach((slider) => {
     slider.classList.remove("active-slider-link");
@@ -196,6 +197,7 @@ function currentTabsLink() {
     currentLink = linkPageYOffset.headFAQs.id;
   }
   for (let link of anchors) {
+    console.log('1');
     if (currentLink === link.classList[0]) {
       link.classList.add("current-tabs-link");
     } else {
