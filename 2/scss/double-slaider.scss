@@ -11,15 +11,15 @@
       flex-direction: column;
       align-items: center;
       .double-slider-icon {
-        img {
-          width: 240px;
-          height: 120px;
+        .double-slider-icon-img{
+          min-width: 240px;
+          max-height: 120px;
         }
       }
-      .slider-text {
+      .slider-text-container {
         margin: auto;
         text-align: center;
-        span {
+        .slider-text{
           font-family: Aclonica;
           @include text-size(24px, 36px);
           color: $hoverColorLink;
@@ -27,7 +27,7 @@
         .author {
           margin-top: 20px;
           margin-bottom: 70px;
-          span {
+          .author-fn-ln{
             font-family: Acme;
             @include text-size(12px, 24px);
             letter-spacing: 2px;

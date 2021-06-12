@@ -8,7 +8,7 @@
   .container-info {
     display: flex;
     flex-direction: column-reverse;
-    img {
+    .info-img{
       width: 100%;
       max-width: 705px;
     }
@@ -37,11 +37,11 @@
     border-radius: 5px;
     padding: 0 25px 25px 25px;
     .learn-more {
-      .title {
+      .title-container{
         padding: 25px 0 10px 0;
 
         border-bottom: 2px solid $colorTextPrimary;
-        span {
+        .title{
           font-family: Acme;
           @include text-size(12px, 24px);
           letter-spacing: 2px;
@@ -49,17 +49,17 @@
           color: $colorTextPrimary;
         }
       }
-      div {
+      .learn-more-text-container{
         margin: 20px 0 0 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        span {
+        .learn-more-text{
           @include text-size-small;
           color: $colorTextPrimary;
           font-family: Aclonica;
         }
-        button {
+        .learn-more-btn {
           cursor: pointer;
           position: relative;
           width: 35px;

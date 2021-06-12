@@ -13,7 +13,7 @@
     order: 2;
     opacity: 0;
     transition: opacity 700ms;
-    img {
+    .skout-sa-img{
       width: 100%;
     }
   }
@@ -29,7 +29,7 @@
     }
     .text-about-skout {
       margin: auto;
-      span {
+      .text-about-skout-value{
         color: $colorTextPrimaryDark;
         font-family: Aclonica;
         @include text-size(14px, 24px);
@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    button:first-child {
+    .btn:first-child {
       @include button-primary-first(
         200px,
         40px,
@@ -57,7 +57,7 @@
         @include button-hover-shadow;
       }
     }
-    button:last-child {
+    .btn:last-child {
       border: 0;
       @include button-primary-first(
         200px,

@@ -34,7 +34,7 @@
       display: flex;
       justify-content: space-between;
 
-      li {
+      .header-menu-item{
         margin-bottom: 0;
         color: $colorTextPrimary;
         position: relative;
@@ -60,7 +60,7 @@
       flex-direction: row;
       margin-bottom: 0;
       margin-right: 70px;
-      button {
+      .btn {
         margin-top: 20px;
         margin-bottom: 20px;
         margin-right: 20px;
@@ -80,7 +80,7 @@
     max-width: 1100px;
     margin: 40px auto 0 auto;
     padding: 0;
-    span {
+    .header-text-value{
       @include text-size(110px, 130px);
     }
   }
@@ -97,7 +97,7 @@
     }
     .bottom-button-why-skout {
       margin: auto;
-      button {
+      .btn {
         margin-left: 0;
         min-width: 200px;
         min-height: 40px;
@@ -136,7 +136,7 @@
     .cybersecurity-title {
       justify-content: flex-start;
       padding: 100px 0 80px 0;
-      span {
+      .cybersecurity-title-value{
         @include text-size-large;
       }
     }
@@ -182,10 +182,10 @@
     margin-top: 0;
     .big-slider-container {
       padding: 0 135px 0 135px;
-      .slider-title {
+      .slider-title-container {
         text-align: start;
         margin-bottom: 80px;
-        span {
+        .slider-title{
           @include text-size-large;
         }
       }
@@ -206,9 +206,9 @@
 
   .wrapper-cards-slaider {
     margin-top: -500px;
-    .slider-title {
+    .slider-title-container {
       margin: 150px 0 70px 0;
-      span {
+      .slider-title{
         @include text-size-medium;
       }
     }
@@ -223,12 +223,12 @@
         display: flex;
         flex-direction: row;
         .double-slider-icon {
-          img {
+          .double-slider-icon-img{
             min-width: 340px;
             min-height: 200px;
           }
         }
-        .slider-text {
+        .slider-text-container {
           .author {
             margin-bottom: 0;
           }
@@ -281,13 +281,13 @@
         justify-content: space-between;
         padding-top: 78px;
         flex-direction: row;
-        .link-company {
+        .link-company-container {
           margin: 0;
           padding: 0;
           margin-bottom: 35px;
-          li {
+          .link-company-item{
             margin-bottom: 30px;
-            a {
+            .link-company{
               min-width: 170px;
               margin-top: 0;
             }
@@ -300,11 +300,11 @@
             padding: 0;
             flex-direction: row;
             justify-content: space-between;
-            p {
+            .address-title{
               font-size: 24px;
               margin-right: 209px;
             }
-            span {
+            .location{
               @include text-size-small;
               margin-right: 30px;
             }
@@ -329,7 +329,7 @@
         justify-content: space-between;
         align-items: end;
         .conteiner-social-icons {
-          li {
+          .social-icon{
             margin-left: 0;
             margin-right: 50px;
           }

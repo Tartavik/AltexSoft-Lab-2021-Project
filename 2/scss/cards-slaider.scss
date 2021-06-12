@@ -6,10 +6,10 @@
   margin-top: -265px;
 
   background-color: transparent;
-  .slider-title {
+  .slider-title-container {
     margin: 35px 0 20px 0;
     text-align: center;
-    span {
+    .slider-title{
       @include text-size-standart;
     }
   }
@@ -27,10 +27,10 @@
     border-radius: 5px;
     margin: 0 25px 25px 25px;
 
-    .slider-item-title {
+    .slider-item-title-container {
       margin: 40px auto 40px auto;
       text-align: center;
-      span {
+      .slider-item-title{
         letter-spacing: 2.25px;
         text-transform: uppercase;
         color: $colorTextlinks;
@@ -40,13 +40,13 @@
     .slider-item-content {
       padding: 0 55px 0 55px;
       margin: auto;
-      li {
+      .slider-item-content-text{
         display: flex;
         list-style: none;
         min-height: 60px;
         align-items: center;
         border-top: 2px solid #f2f2f2;
-        span {
+        .slider-text{
           font-family: Aclonica;
 
           @include text-size(13px, 24px);
@@ -58,7 +58,7 @@
     .slider-item-button {
       margin-top: 50px;
       text-align: center;
-      button {
+      .btn{
         @include button-primary-first(
           220px,
           40px,
@@ -77,15 +77,15 @@
       transition: min-height, min-width 500ms;
       min-height: 580px;
       min-width: 350px;
-      .slider-item-title {
-        span {
+      .slider-item-title-container {
+        .slider-item-title{
           color: $colorTextPrimary;
         }
       }
       .slider-item-content {
-        li {
+        .slider-item-content-text{
           border-top: 1px solid #f2f2f2;
-          span {
+          .slider-text{
             color: $colorTextPrimary;
           }
           .slider-icon {
@@ -104,7 +104,7 @@
         }
       }
       .slider-item-button {
-        button {
+        .btn {
           border: 0;
         }
       }

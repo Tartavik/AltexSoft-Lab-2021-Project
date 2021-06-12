@@ -10,9 +10,9 @@
     min-height: 1085px;
     max-width: 1440px;
     margin: auto;
-    .slider-title {
+    .slider-title-container {
       text-align: center;
-      span {
+      .slider-title{
         @include text-size-standart;
       }
     }
@@ -71,7 +71,7 @@
     .slider-button {
       text-align: center;
       margin: 50px 0 50px 0;
-      button {
+      .btn{
         @include button-primary-first(
           180px,
           40px,
@@ -85,10 +85,10 @@
         }
       }
     }
-    .slider-text {
+    .slider-text-container {
       max-width: 400px;
       margin: auto;
-      span:first-child {
+      .slider-title{
         font-family: Acme;
         @include text-size(18px, 24px);
         letter-spacing: 2px;
@@ -97,7 +97,7 @@
         padding: 30px 0 0 0;
         display: block;
       }
-      span:last-child {
+      .slider-text{
         font-family: Aclonica;
         color: $colorTextPrimaryDark;
         @include text-size-small;

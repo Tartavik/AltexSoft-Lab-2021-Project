@@ -13,14 +13,14 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      .link-company {
+      .link-company-container {
         list-style: none;
         display: flex;
         flex-direction: column;
         padding: 0;
         margin: 24px 0 0 23px;
-        li {
-          a {
+        .link-company-item{
+          .link-company{
             @include text-size(12px, 24px);
             color: $hoverColorLink;
             margin-top: 12px;
@@ -42,12 +42,12 @@
         flex-direction: column;
         padding: 8px 0 8px 0;
         border-top: 2px solid $colorTextlinks;
-        p {
+        .address-title{
           @include text-size(16px, 36px);
           color: $hoverColorLink;
           margin: 0;
         }
-        span {
+        .location{
           @include text-size-small;
           color: $hoverColorLink;
           font-style: normal;
@@ -55,6 +55,7 @@
         .phone {
           @include text-size-small;
           color: $hoverColorLink;
+          text-decoration: none;
         }
 
         .view-map {
@@ -136,7 +137,7 @@
     }
   }
   .skout-bottom {
-    width: 105px;
-    height: 38px;
+    max-width: 105px;
+    max-height: 38px;
   }
 }
