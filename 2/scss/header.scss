@@ -21,11 +21,11 @@
 }
 
 .logo {
-  margin-top: 18px;
+  margin-top: 20px;
   margin-left: 20px;
   color: $colorTextPrimary;
   text-decoration: none;
-  min-width: 92px;
+  min-width: 90px;
   font-size: 20px;
   text-transform: uppercase;
   font-family: Actor;
@@ -33,7 +33,7 @@
 }
 
 .container-header-menu {
-  top: 62px;
+  top: 60px;
   position: fixed;
   display: flex;
   align-items: center;
@@ -94,9 +94,7 @@
 }
 
 .hamburger-container {
-  margin-top: 18px;
-  margin-right: 20px;
-
+  margin: 20px 20px 0 0;
   .hamburger-icon {
     min-width: 24px;
     min-height: 18px;
