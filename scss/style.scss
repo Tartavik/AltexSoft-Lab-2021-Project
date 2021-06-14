@@ -192,7 +192,7 @@ html {
       &::after {
         content: "";
         position: absolute;
-        border-left: 1.5px solid #e5e5e5;
+        border-left: 1.5px solid $color-accord-letter;
         height: 20px;
         top: 10px;
         left: 95px;
@@ -202,7 +202,7 @@ html {
       &::after {
         content: "";
         position: absolute;
-        border-left: 1.5px solid #e5e5e5;
+        border-left: 1.5px solid $color-accord-letter;
         height: 20px;
         top: 10px;
         left: 230px;
@@ -236,7 +236,7 @@ html {
     border-top: 1px solid $color-text-links;
     .panel {
       padding: 0 18px;
-      color: #191919;
+      color: $color-text-dark;
       background-color: $color-text-primary;
       max-height: 0;
       overflow: hidden;
@@ -276,7 +276,7 @@ html {
         margin: 0 16px 0 16px;
         font-family: Actor;
         min-width: 30px;
-        color: #e5e5e5;
+        color: $color-accord-letter;
       }
       .accord-text {
         @include text-medium();
@@ -358,7 +358,7 @@ html {
     .slider-container {
       max-width: 335px;
       background-color: $color-text-primary;
-      box-shadow: 0px 12px 24px #e5e5e5;
+      box-shadow: 0px 12px 24px $color-accord-letter;
       border-radius: 5px;
       display: flex;
       .slider-head {
@@ -448,7 +448,7 @@ html {
         padding-bottom: 24px;
         margin: 0 0 0 20px;
         font-family: Actor;
-        color: #191919;
+        color: $color-text-dark;
       }
       .slider-text {
         display: flex;
@@ -457,7 +457,7 @@ html {
         border-left: 1.5px solid $color-text-links;
         .slider-span{
           @include text-medium();
-          color: #191919;
+          color: $color-text-dark;
         }
       }
     }
@@ -499,7 +499,7 @@ html {
   .panel {
     display: flex;
     padding: 0 20px;
-    color: #191919;
+    color: $color-text-dark;
     background-color: $color-text-primary;
     max-height: 0;
     overflow: hidden;
@@ -507,12 +507,12 @@ html {
     .panel-letter {
       @include text-size(40px,48px);
       margin-right: 25px;
-      color: #e5e5e5;
+      color: $color-accord-letter;
     }
     .answer {
       @include text-size(14px,24px);
       margin: auto 0;
-      color: #191919;
+      color: $color-text-dark;
     }
   }
 
@@ -529,7 +529,7 @@ html {
     .accordion-letter {
       @include text-size(40px,48px);
       margin-right: 25px;
-      color: #e5e5e5;
+      color: $color-accord-letter;
       font-family: Actor;
     }
 
@@ -558,7 +558,7 @@ html {
 
     .question {
       width: 100%;
-      color: #191919;
+      color: $color-text-dark;
       font-family: Aclonica;
     }
   }
@@ -589,7 +589,7 @@ html {
             text-decoration: none;
           }
           #Call{
-            span{
+            .tel{
               @include text-medium();
               color: $color-link-hover;
               margin-bottom: 20px;
