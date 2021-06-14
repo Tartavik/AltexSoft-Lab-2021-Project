@@ -197,7 +197,6 @@ function currentTabsLink() {
     currentLink = linkPageYOffset.headFAQs.id;
   }
   for (let link of anchors) {
-    console.log('1');
     if (currentLink === link.classList[0]) {
       link.classList.add("current-tabs-link");
     } else {

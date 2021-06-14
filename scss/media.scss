@@ -1,30 +1,29 @@
 @import "vars";
-
+@import "mixins";
 @media (min-width: 1440px) {
 
   .logo {
-    margin: 28px 84px 0px 84px;
     min-width: 110px;
     min-height: 24px;
     font-size: 24px;
+    margin-right: 130px;
   }
 
   .header {
     .container {
       position: relative;
       min-height: 500px;
+      padding: 28px 90px 0 90px;
     }
   }
 
-  .container-header-menu {
-    .enter-buttons {
-      margin-right: 70px;
-    }
+  .sticky-main {
+    padding: 28px 90px 28px 90px;
   }
 
   .header-text {
     max-width: none;
-    margin: 102px auto 0 auto;
+    margin: 102px auto 0;
     .header-text-value {
       font-size: 110px;
       line-height: 130px;
@@ -36,8 +35,6 @@
     min-height: 80px;
     margin-top: -35px;
     .anchor{
-      font-size: 12px;
-      line-height: 24px;
       padding: 28px 100px;
     }
     .head-tips {
@@ -58,8 +55,7 @@
 
   .accordions-container {
     margin: auto;
-    margin-top: 100px;
-    padding: 0 136px 0 136px;
+    padding: 100px 136px 50px 136px;
     .skout-tips-container {
       padding-top: 20px;
       padding-bottom: 100px;
@@ -74,10 +70,10 @@
       .head-accordion {
         justify-content: space-between;
         .number {
+          margin: 0 110px 0 50px;
           font-size: 110px;
           line-height: 130px;
           min-width: 50px;
-          margin-right: 113px;
         }
         .accord-text {
           font-size: 24px;
@@ -118,13 +114,10 @@
     }
     .glossary-contaner {
       margin-top: 160px;
-      padding-top: 19px;
-      margin-bottom: 50px;
+      padding-top: 20px;
       #head-glossary {
         min-width: 342px;
         min-height: 41px;
-        margin-left: 0;
-        margin: 19px 0 50px 0;
       }
     }
   }
@@ -147,18 +140,17 @@
     line-height: 54px;
   }
 
-  .section {
-    .section-wrapper {
+  .slider-block {
+    .slider-wrapper {
       display: flex;
       margin: auto;
+      padding: 60px 0;
       .active-slider-link {
         &::before {
           right: 200px;
         }
       }
       .slider-container {
-        max-width: 442px;
-        margin: 60px 0 60px -10px;
         .slider-head {
           margin: 60px 73px 29px 151px;
         }
@@ -213,10 +205,10 @@
   }
 
   .faqs-container {
-    padding-left: 136px;
-    padding-right: 136px;
-    margin: 160px auto 100px auto;
+    padding: 160px 136px 0;
+    margin: auto;
     .head-FAQs-wrapper {
+      padding-top: 20px;
       #head-FAQs {
         min-width: 272px;
         min-height: 32px;
@@ -227,10 +219,8 @@
 
   .faqs-accordion-container {
     margin: auto;
-    padding-left: 136px;
-    padding-right: 136px;
+    padding: 100px 136px;
     .head-accordion-Faqs {
-      padding: 0;
       min-height: 196px;
       .accordion-letter {
         font-size: 110px;
@@ -261,7 +251,7 @@
       }
     }
     .more-questions {
-      margin-bottom: 102px;
+      padding-top: 50px;
     }
   }
 
@@ -273,12 +263,8 @@
       .about-company {
         display: flex;
         justify-content: space-between;
-        padding-top: 78px;
         flex-direction: row;
         .link-company {
-          margin: 0;
-          padding: 0;
-          margin-bottom: 35px;
           .link-company-item{
             margin-bottom: 30px;
             .link-company-link{
@@ -288,7 +274,6 @@
           }
         }
         .address-container {
-          padding: 0;
           .address {
             min-height: 118px;
             padding: 0;
@@ -312,11 +297,6 @@
               font-size: 16px;
               line-height: 24px;
             }
-            div {
-              display: flex;
-              flex-direction: column;
-              margin-right: 30px;
-            }
           }
         }
       }
@@ -330,7 +310,7 @@
         .skout-bottom {
           min-width: 168px;
           min-height: 58px;
-          margin-bottom: 68px;
+          margin-right: 50px;
         }
       }
     }

@@ -1,17 +1,20 @@
 @import "vars";
-
+@import "mixins";
 @media (min-width: 768px) {
-  .hamburger-container {
-    margin-right: 50px;
-  }
 
   .logo {
-    margin-left: 50px;
     width: 110px;
     height: 24px;
   }
   .header-text {
     max-width: 270px;
+  }
+
+  .header {
+    .container {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
 
   .tabs {
@@ -38,21 +41,19 @@
   }
 
   .accordions-container {
-    margin-top: 62px;
-    padding: 0 70px 0 70px;
+    padding: 60px 70px 30px 70px;
     .glossary-contaner {
       margin-top: 62px;
-      margin-bottom: 30px;
     }
   }
 
-  .section {
-    .section-wrapper {
-      padding-top: 0;
+  .slider-block {
+    .slider-wrapper {
       display: flex;
+      padding: 30px 20px 30px 20px;
       .slider-container {
         width: 100%;
-        margin: 30px 20px 30px 20px;
+        
       }
       .slider-text-container {
         margin: auto;
@@ -70,25 +71,22 @@
     }
   }
 
+  .more-questions{
+    padding: 25px 0 0 0;
+  }
+
   .faqs-container {
-    padding: 0 70px 0 70px;
-    margin: 60px 0 30px 0;
+    padding: 60px 70px 0 70px;
   }
 
   .faqs-accordion-container {
-    padding: 0 70px 0 70px;
-    .head-accordion-Faqs {
-      padding: 0;
-    }
+    padding: 50px 70px 50px 70px;
   }
 
   .footer {
     .footer-wrapper {
-      padding: 0 70px 0 70px;
+      padding: 60px 70px;
       .about-company {
-        .link-company {
-          margin: 30px 0 0 0;
-        }
         .address-container {
           margin: 30px 0 30px 0;
         }
@@ -102,6 +100,11 @@
     display: none;
     position: absolute;
   }
+
+  .logo{
+    margin: auto 0;
+  }
+
   .container-header-menu {
     display: flex;
     position: static;
@@ -119,12 +122,15 @@
 
       .header-menu-item {
         margin-bottom: 0;
-        color: white;
         position: relative;
         min-width: 85px;
-        &:hover {
-          color: $hoverColorLink;
+        .link{
+          color: white;
+          &:hover {
+            color: $color-link-hover;
+          }
         }
+        
       }
       .active-link {
         &::after {
@@ -142,23 +148,17 @@
       position: static;
       flex-direction: row;
       margin-bottom: 0;
-      margin-right: 20px;
       .header-button {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-right: 20px;
+        margin: 0 0 0 20px;
         background-color: transparent;
         border: 1.5px solid white;
         color: white;
         &:hover {
-          color: $hoverColorLink;
-          border: 1.5px solid $hoverColorLink;
+          color: $color-link-hover;
+          border: 1.5px solid $color-link-hover;
         }
       }
     }
-  }
-  .logo {
-    margin: 25px 50px 0 50px;
   }
 
   .header {
@@ -167,8 +167,8 @@
     }
   }
 
-  .section {
-    .section-wrapper {
+  .slider-block {
+    .slider-wrapper {
       .slider-container {
         max-width: 442px;
       }
@@ -191,6 +191,7 @@
     background-color: white;
     transition: background-color 600ms;
     max-width: 1440px;
+    padding: 24px 50px;
     z-index: 1;
     margin: auto;
     position: fixed;
@@ -198,24 +199,26 @@
     left: 0;
     right: 0;
     .logo {
-      color: $hoverColorLink;
+      color: $color-link-hover;
     }
     .container-header-menu {
       .header-menu {
         .header-menu-item{
-          color: $hoverColorLink;
+          .link{
+            color: $color-link-hover;
+          }
           &:hover {
-            color: $colorTextlinks;
+            color: $color-text-links;
           }
         }
       }
       .enter-buttons {
         .header-button {
-          color: $hoverColorLink;
-          border: 1px solid $hoverColorLink;
+          color: $color-link-hover;
+          border: 1px solid $color-link-hover;
           &:hover {
-            color: $colorTextlinks;
-            border: 1px solid $colorTextlinks;
+            color: $color-text-links;
+            border: 1px solid $color-text-links;
           }
         }
       }

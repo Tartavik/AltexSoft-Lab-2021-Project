@@ -1,5 +1,6 @@
 @import "vars";
 @import "fonts";
+@import "mixins";
 
 body {
   min-width: 375px;
@@ -27,9 +28,6 @@ html {
 }
 
 .hamburger-container {
-  margin-top: 18px;
-  margin-right: 20px;
-
   .hamburger-icon {
     min-width: 24px;
     min-height: 18px;
@@ -42,7 +40,7 @@ html {
       position: absolute;
       width: 24px;
       height: 2px;
-      background-color: $colorTextPrimary;
+      background-color: $color-text-primary;
       left: 0;
       top: 0;
       box-shadow: 0 8px 0 0 white, 0 16px 0 0 white;
@@ -56,7 +54,7 @@ html {
   max-width: 123px;
   font-family: Actor;
   .header-text-value {
-    color: $colorTextPrimary;
+    color: $color-text-primary;
     font-size: 40px;
     line-height: 56px;
     letter-spacing: 2px;
@@ -65,9 +63,7 @@ html {
 }
 
 .logo {
-  margin-top: 18px;
-  margin-left: 20px;
-  color: $colorTextPrimary;
+  color: $color-text-primary;
   text-decoration: none;
   min-width: 92px;
   min-height: 20px;
@@ -87,6 +83,7 @@ html {
   background: linear-gradient(45deg, #13c3e7, #01f86c);
   width: 100%;
   .container {
+    @include wrapper;
     min-height: 210px;
     margin: auto;
     .empty-element {
@@ -113,21 +110,33 @@ html {
     list-style: none;
     flex-direction: column;
     display: flex;
-    margin-top: 24px;
+    margin-top: 28px;
     padding: 0;
     .header-menu-item {
-      margin-bottom: 12px;
+      @include fs-small;
+      padding: 12px;
       text-align: center;
       position: relative;
-      font-size: 12px;
-      line-height: 24px;
       letter-spacing: 2px;
-      color: $colorTextlinks;
-      text-decoration: none;
       text-transform: uppercase;
-      &:hover {
-        color: $hoverColorLink;
-        transition: 800ms color;
+      .link{
+        color: $color-text-links;
+        text-decoration: none;
+        &:hover {
+          color: $color-link-hover;
+          transition: 800ms color;
+        }
+      }
+    }
+    .active-link {
+      &::after {
+        content: "";
+        position: absolute;
+        margin-top: 20px;
+        left: 33px;
+        width: 40px;
+        height: 2px;
+        background-color: $color-text-links;
       }
     }
   }
@@ -145,13 +154,13 @@ html {
       min-width: 180px;
       min-height: 40px;
       border-radius: 20px;
-      border: 1.5px solid $colorTextlinks;
-      background-color: $colorTextPrimary;
-      color: $colorTextlinks;
+      border: 1.5px solid $color-text-links;
+      background-color: $color-text-primary;
+      color: $color-text-links;
       cursor: pointer;
       &:hover {
-        border: 1.5px solid $hoverColorLink;
-        color: $hoverColorLink;
+        border: 1.5px solid $color-link-hover;
+        color: $color-link-hover;
         transition: 800ms color;
         transition: 800ms border;
       }
@@ -172,15 +181,14 @@ html {
   margin-top: -12px;
   box-shadow: 0px 12px 24px #f2f2f2;
   border: 0;
-  border-top: 2.5px solid $colorTextlinks;
+  border-top: 2.5px solid $color-text-links;
   border-radius: 5px 5px 0 0;
   background: white;
   position: relative;
   .anchor{
-    font-size: 12px;
-    line-height: 20px;
+    @include fs-small;
     letter-spacing: 2px;
-    color: $hoverColorLink;
+    color: $color-link-hover;
     cursor: pointer;
     text-decoration: none;
     padding: 10px 30px;
@@ -209,10 +217,10 @@ html {
 }
 
 .accordions-container {
+  @include wrapper;
+  padding-bottom: 24px;
   min-width: 335px;
-  margin-top: 24px;
   width: 100%;
-  padding: 0 20px 0 20px;
   font-family: Aclonica;
 
   .skout-tips-container {
@@ -224,7 +232,7 @@ html {
 
   .accord-container {
     min-height: 54px;
-    border-top: 1px solid $colorTextlinks;
+    border-top: 1px solid $color-text-links;
     .panel {
       padding: 0 18px;
       color: #212121;
@@ -244,10 +252,9 @@ html {
           margin: 11px 20px 0 0;
         }
         .bottom-info-text{
+          @include fs-small;
           margin: 11px 0 23px 0;
-          font-size: 12px;
-          line-height: 24px;
-          color: $hoverColorLink;
+          color: $color-link-hover;
         }
       }
     }
@@ -256,13 +263,14 @@ html {
       display: flex;
       align-items: center;
       cursor: pointer;
+      padding: 0;
       border: 0;
-      background-color: $colorTextPrimary;
+      background-color: $color-text-primary;
       width: 100%;
       font-family: Aclonica;
       text-align: start;
       .number {
-        margin-left: 16px;
+        margin: 0 16px 0 16px;
         font-family: Actor;
         font-size: 40px;
         min-width: 30px;
@@ -275,12 +283,11 @@ html {
         width: 100%;
         font-size: 16px;
         line-height: 24px;
-        margin-left: 18px;
         transition: font-size 0.4s ease-out;
       }
 
       .accordion-button {
-        border: 1.5px solid $colorTextlinks;
+        border: 1.5px solid $color-text-links;
         position: relative;
         min-width: 14px;
         min-height: 14px;
@@ -293,12 +300,12 @@ html {
           width: 7px;
           height: 1px;
           position: absolute;
-          background-color: $colorTextlinks;
+          background-color: $color-text-links;
           top: 5.5px;
           left: 2px;
         }
         &:hover::after {
-          background-color: $hoverColorLink;
+          background-color: $color-link-hover;
           transition: 800ms background-color;
         }
         &::before {
@@ -306,17 +313,17 @@ html {
           width: 7px;
           height: 1px;
           position: absolute;
-          background-color: $colorTextlinks;
+          background-color: $color-text-links;
           top: 6px;
           left: 2px;
           transform: rotate(90deg);
         }
         &:hover::before {
-          background-color: $hoverColorLink;
+          background-color: $color-link-hover;
           transition: 800ms background-color;
         }
         &:hover {
-          border: 1.5px solid $hoverColorLink;
+          border: 1.5px solid $color-link-hover;
           transition: 800ms border;
         }
       }
@@ -332,33 +339,31 @@ html {
     max-width: 114px;
   }
   .glossary-contaner {
-    margin: 24px 0 24px 0;
-    padding-top: 11px;
+    margin-top: 24px;
+    padding-top: 10px;
     border-top: 1px solid #b2b2b2;
     border-radius: 1px;
   }
 }
 
-.section {
+.slider-block {
   background: linear-gradient(45deg, #e0e0e0, #ffffff);
   font-family: Aclonica;
-  .section-wrapper {
-    padding-top: 24px;
+  .slider-wrapper {
+    @include wrapper;
     .active-slider-link {
       &::before {
         content: "";
         position: absolute;
         width: 46px;
         height: 1px;
-        background-color: $colorTextlinks;
+        background-color: $color-text-links;
         bottom: 16px;
         right: 165px;
       }
     }
     .slider-container {
       max-width: 335px;
-      margin: 24px 20px 0 20px;
-      padding-top: 24px;
       background-color: white;
       box-shadow: 0px 12px 24px #e5e5e5;
       border-radius: 5px;
@@ -372,10 +377,10 @@ html {
           line-height: 32px;
           .slider-item-text{
             cursor: pointer;
-            color: $hoverColorLink;
+            color: $color-link-hover;
           }
           &:hover .slider-item-text {
-            color: $colorTextlinks;
+            color: $color-text-links;
             transition: 800ms color;
           }
         }
@@ -391,7 +396,7 @@ html {
           min-height: 16px;
           border-radius: 20px;
           background: white;
-          border: 1px solid $colorTextlinks;
+          border: 1px solid $color-text-links;
           align-items: stretch;
           padding-top: 0px;
           margin-top: 16px;
@@ -402,8 +407,8 @@ html {
             content: "";
             width: 6px;
             height: 6px;
-            border-right: 2px solid $colorTextlinks;
-            border-bottom: 2px solid $colorTextlinks;
+            border-right: 2px solid $color-text-links;
+            border-bottom: 2px solid $color-text-links;
             position: absolute;
             transform: rotate(-50deg);
             top: 4px;
@@ -414,23 +419,23 @@ html {
             content: "";
             width: 8px;
             height: 2px;
-            background-color: $colorTextlinks;
+            background-color: $color-text-links;
             position: absolute;
             top: 6px;
             left: 2px;
           }
           &:hover {
-            border: 1px solid $hoverColorLink;
+            border: 1px solid $color-link-hover;
             transition: 800ms border;
           }
           &:hover::after {
-            border-right: 2px solid $hoverColorLink;
-            border-bottom: 2px solid $hoverColorLink;
+            border-right: 2px solid $color-link-hover;
+            border-bottom: 2px solid $color-link-hover;
             transition: 800ms border-right;
             transition: 800ms border-bottom;
           }
           &:hover::before {
-            background-color: $hoverColorLink;
+            background-color: $color-link-hover;
             transition: 800ms background-color;
           }
         }
@@ -445,6 +450,7 @@ html {
       margin: 32px 24px 0 20px;
       padding-bottom: 24px;
       .slider-title{
+        font-weight: normal;
         padding-bottom: 24px;
         margin: 0 0 0 20px;
         font-family: Actor;
@@ -458,7 +464,7 @@ html {
         display: flex;
         max-width: 442px;
         padding-left: 16px;
-        border-left: 1.5px solid $colorTextlinks;
+        border-left: 1.5px solid $color-text-links;
         .slider-span{
           font-size: 16px;
           line-height: 24px;
@@ -475,34 +481,33 @@ html {
 }
 
 .more-questions {
-  margin: 20px 0 24px 0;
-  font-size: 12px;
-  line-height: 24px;
+  @include fs-small;
+  display: block;
+  padding: 20px 0 24px 0;
   text-align: center;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: $colorTextlinks;
+  color: $color-text-links;
   font-family: Acme;
   &:hover {
-    color: $hoverColorLink;
+    color: $color-link-hover;
     transition: 800ms color;
   }
 }
 
 .faqs-container {
   min-width: 335px;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  padding: 0px 20px 0px 20px;
+  @include wrapper;
   .head-FAQs-wrapper {
     border-top: 1px solid #b2b2b2;
     border-radius: 1px;
     width: 100%;
-    padding-top: 19px;
+    padding-top: 10px;
   }
 }
 
 .faqs-accordion-container {
+  @include wrapper;
   font-family: Aclonica;
   .panel {
     display: flex;
@@ -530,9 +535,9 @@ html {
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 0 20px;
     min-height: 114px;
     border: 0;
+    padding: 0;
     background: white;
     width: 100%;
     text-align: start;
@@ -547,8 +552,8 @@ html {
     .accordion-button {
       min-width: 20px;
       min-height: 20px;
-      border-bottom: 1.5px solid $colorTextlinks;
-      border-left: 1.5px solid $colorTextlinks;
+      border-bottom: 1.5px solid $color-text-links;
+      border-left: 1.5px solid $color-text-links;
       background: white;
       border-top: 0;
       border-right: 0;
@@ -556,8 +561,8 @@ html {
       transition: transform 0.8s ease-in-out;
       cursor: pointer;
       &:hover {
-        border-bottom: 1.5px solid $hoverColorLink;
-        border-left: 1.5px solid $hoverColorLink;
+        border-bottom: 1.5px solid $color-link-hover;
+        border-left: 1.5px solid $color-link-hover;
         transition: 800ms border-left;
         transition: 800ms border-bottom;
       }
@@ -580,6 +585,8 @@ html {
   width: 100%;
   font-family: Aclonica;
   .footer-wrapper {
+    @include wrapper;
+    padding-bottom: 25px;
     .about-company {
       display: flex;
       flex-direction: column;
@@ -589,12 +596,11 @@ html {
         display: flex;
         flex-direction: column;
         padding: 0;
-        margin: 24px 0 0 23px;
+        margin: 0;
         .link-company-item{
           .link-company-link{
-            font-size: 12px;
-            line-height: 24px;
-            color: $hoverColorLink;
+            @include fs-small;
+            color: $color-link-hover;
             margin-top: 12px;
             text-decoration: none;
           }
@@ -602,7 +608,7 @@ html {
             span{
               font-size: 16px;
               line-height: 24px;
-              color: $hoverColorLink;
+              color: $color-link-hover;
               margin-bottom: 20px;
             }
           }
@@ -611,38 +617,36 @@ html {
     }
     .address-container {
       padding: 0;
-      margin-left: 23px;
       .address {
         display: flex;
         flex-direction: column;
         padding: 8px 0 8px 0;
-        border-top: 2px solid $colorTextlinks;
+        border-top: 2px solid $color-text-links;
         .address-title{
           font-size: 16px;
           line-height: 36px;
-          color: $hoverColorLink;
+          color: $color-link-hover;
           margin: 0;
         }
         .address-text{
           font-size: 16px;
           line-height: 24px;
-          color: $hoverColorLink;
+          color: $color-link-hover;
           font-style: normal;
         }
         .phone {
           font-size: 16px;
           line-height: 24px;
-          color: $hoverColorLink;
+          color: $color-link-hover;
           text-decoration: none;
         }
 
         .view-map {
+          @include fs-small;
           text-decoration: none;
-          font-size: 12px;
-          line-height: 20px;
-          color: $colorTextlinks;
+          color: $color-text-links;
           &:hover {
-            color: $hoverColorLink;
+            color: $color-link-hover;
             transition: 800ms color;
           }
         }
@@ -651,7 +655,6 @@ html {
   }
   .social {
     border-top: 1.5px solid #b2b2b2;
-    margin-top: 12px;
     padding-top: 20px;
     text-align: center;
 
@@ -661,59 +664,34 @@ html {
       margin-bottom: 20px;
       padding-left: 0;
       .twitter {
-        cursor: pointer;
-        display: inline-block;
-        width: 30px;
-        height: 24px;
-        background-image: url(../images/twitter.png);
-        background-position: 0 0;
+        @include social-icon(30px,24px,url(../images/twitter.png));
         &:hover {
-          background-position: 30px 0;
-          transition: 300ms background-position;
+          @include social-icon-hover(30px);
         }
       }
       .facebook {
-        cursor: pointer;
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        background-image: url(../images/facebook.png);
-        background-position: 0 0;
+        @include social-icon(25px,25px,url(../images/facebook.png));
         &:hover {
-          background-position: 25px 0;
-          transition: 300ms background-position;
+          @include social-icon-hover(25px);
         }
       }
       .youtube {
-        cursor: pointer;
-        display: inline-block;
-        width: 32px;
-        height: 23px;
-        background-image: url(../images/youtube.png);
-        background-position: 0 0;
+        @include social-icon(32px,23px,url(../images/youtube.png));
         &:hover {
-          background-position: 32px 0;
-          transition: 300ms background-position;
+          @include social-icon-hover(32px);
         }
       }
       .in {
-        cursor: pointer;
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        background-image: url(../images/in.png);
-        background-position: 0 0;
+        @include social-icon(25px,25px,url(../images/in.png));
         &:hover {
-          background-position: 25px 0;
-          transition: 300ms background-position;
+          @include social-icon-hover(25px);
         }
       }
     }
   }
   .skout-bottom {
-    max-width: 105px;
+    min-width: 105px;
     max-height: 38px;
-    margin-bottom: 28px;
   }
 }
 @import "active";

@@ -1,0 +1,25 @@
+@import "vars";
+
+@mixin social-icon($width,$height,$bg-img){
+    cursor: pointer;
+    display: inline-block;
+    width: $width;
+    height: $height;
+    background-image: $bg-img;
+    background-position: 0 0;
+}
+
+@mixin social-icon-hover($bg-x){
+    background-position: $bg-x 0;
+    transition: 300ms background-position;
+}
+
+@mixin wrapper {
+    max-width: 1440px;
+    padding: 24px 20px 0 20px;
+}
+
+@mixin fs-small {
+    font-size: 12px;
+    line-height: 24px;
+}
