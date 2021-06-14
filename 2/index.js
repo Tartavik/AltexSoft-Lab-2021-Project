@@ -6,7 +6,6 @@ const hamburgerContainer = document.getElementsByClassName(
 )[0];
 const hamburger = document.getElementsByClassName("hamburger-icon")[0];
 const headerMenu = document.getElementsByClassName("header-menu")[0];
-
 hamburgerContainer.addEventListener("click", () => {
   containerHeaderMenu.classList.toggle("none");
   hamburger.classList.toggle("hamburger-icon");
@@ -72,7 +71,7 @@ $(document).ready(function () {
   });
   $(".cards-slider").slick({
     arrows: false,
-    infinite: false,
+    infinite: true,
     variableWidth: true,
     mobileFirst: true,
     responsive: [

@@ -8,6 +8,7 @@
   margin: auto;
   width: 100%;
   .container {
+    padding: 20px 20px 30px;
     margin: auto;
     .empty-element {
       min-height: 80px;
@@ -21,8 +22,6 @@
 }
 
 .logo {
-  margin-top: 20px;
-  margin-left: 20px;
   color: $colorTextPrimary;
   text-decoration: none;
   min-width: 90px;
@@ -53,17 +52,19 @@
     margin-top: 24px;
     padding: 0;
     .header-menu-item {
+      @include text-size(12px, 24px);
       text-transform: uppercase;
       margin-bottom: 12px;
       text-align: center;
       position: relative;
-      @include text-size(12px, 24px);
       letter-spacing: 2px;
-      color: $colorTextlinks;
-      text-decoration: none;
-      &:hover {
-        color: $hoverColorLink;
-        transition: 800ms color;
+      .link {
+        color: $colorTextlinks;
+        text-decoration: none;
+        &:hover {
+          color: $hoverColorLink;
+          transition: 800ms color;
+        }
       }
     }
     .active-link {
@@ -105,7 +106,6 @@
 }
 
 .hamburger-container {
-  margin: 20px 20px 0 0;
   .hamburger-icon {
     min-width: 24px;
     min-height: 18px;
@@ -127,7 +127,7 @@
 }
 
 .header-text {
-  margin: 30px auto 0 auto;
+  margin: 30px auto 30px auto;
   text-align: center;
   max-width: 500px;
   font-family: Actor;
@@ -142,20 +142,17 @@
 .bottom-text-container {
   display: flex;
   flex-direction: column;
-  padding-left: 20px;
-  padding-right: 20px;
   .bottom-text {
     @include text-size(12px, 24px);
     color: $colorTextPrimary;
     font-family: Aclonica;
-    margin: 30px auto 0 auto;
     max-width: 670px;
     padding-left: 15px;
     border-left: 1px solid $colorTextPrimary;
     filter: drop-shadow(0px 2px 6px rgba(26, 26, 26, 0.3));
   }
   .bottom-button-why-skout {
-    margin: 20px auto 30px auto;
+    margin: 20px auto 0;
     .btn {
       @include button-primary-first(
         130px,
@@ -170,3 +167,235 @@
     }
   }
 }
+
+.back-icon {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  border: 0;
+  background-color: $color-bg-transparent;
+  cursor: pointer;
+  &::after {
+    @include style-back-icon;
+    transform: rotate(45deg);
+  }
+  &::before {
+    @include style-back-icon;
+    transform: rotate(135deg);
+  }
+}
+
+.none {
+  display: none;
+}
+
+@media (min-width: 768px) {
+
+  .header {
+    .container {
+      position: relative;
+      padding: 28px 54px;
+    }
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .container-header-menu {
+    top: 75px;
+    z-index: 2;
+    .header-menu {
+      .header-menu-item {
+        padding: 13px;
+        margin-bottom: 0;
+      }
+      .active-link {
+        &::after {
+          left: 32px;
+        }
+      }
+    }
+  }
+
+
+
+  .header-text {
+    max-width: 1100px;
+    margin: 80px auto 0 auto;
+    padding: 20px;
+    .header-text-value {
+      font-size: 70px;
+      line-height: 84px;
+    }
+  }
+
+  .bottom-text-container {
+    flex-direction: row;
+    margin-top: 60px;
+    .bottom-text {
+      @include text-size-small;
+      margin: auto;
+      padding-left: 30px;
+      border-left: 2px solid $colorTextPrimary;
+    }
+    .bottom-button-why-skout {
+      margin: auto;
+      .btn {
+        margin-left: 25px;
+        min-width: 200px;
+        min-height: 40px;
+      }
+    }
+  }
+  .sticky-main {
+    background-color:$colorTextPrimary;
+    transition: background-color 600ms;
+    max-width: 1440px;
+    z-index: 1;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    .logo {
+      color: $hoverColorLink;
+    }
+    .container-header-menu {
+      .header-menu {
+        .header-menu-item{
+          .link{
+            color: $hoverColorLink;
+            &:hover {
+              color: $colorTextlinks;
+            }
+          }
+          
+        }
+      }
+      .enter-buttons {
+        button {
+          color: $hoverColorLink;
+          border: 1px solid $hoverColorLink;
+          &:hover {
+            color: $colorTextlinks;
+            border: 1px solid $colorTextlinks;
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-hide {
+  overflow: hidden;
+}
+
+@media (min-width: 1440px) {
+    .hamburger-container {
+    display: none;
+    position: absolute;
+  }
+  
+  .header {
+    .container {
+      min-height: 900px;
+      padding: 28px 90px;
+    }
+  }
+
+  .container-header-menu {
+    display: flex;
+    position: static;
+    background-color: $color-bg-transparent;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+
+    .header-menu {
+      padding: 0;
+      width: 100%;
+      flex-direction: row;
+      margin-top: 0;
+      display: flex;
+      justify-content: space-between;
+
+      .header-menu-item {
+        margin-bottom: 0;
+        color: $colorTextPrimary;
+        position: relative;
+        min-width: 100px;
+
+        .link {
+          color: $colorTextPrimary;
+
+          &:hover {
+            color: $hoverColorLink;
+
+            &::after {
+              background-color: $hoverColorLink;
+            }
+          }
+        }
+      }
+      .active-link {
+        &::after {
+          width: 50px;
+          left: 25px;
+          background-color: $colorTextPrimary;
+        }
+      }
+    }
+    .enter-buttons {
+      position: static;
+      flex-direction: row;
+      margin-bottom: 0;
+
+      .btn {
+        margin: 0 0 0 20px;
+        background-color: $color-bg-transparent;
+        border: 1.5px solid $colorTextPrimary;
+        color: $colorTextPrimary;
+        box-shadow: none;
+
+        &:hover {
+          color: $hoverColorLink;
+          border: 1.5px solid $hoverColorLink;
+        }
+      }
+    }
+  }
+
+
+  .header-text {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    padding: 0;
+
+    .header-text-value {
+      @include text-size(110px, 130px);
+    }
+  }
+
+  .bottom-text-container {
+    flex-direction: row;
+    margin-top: 120px;
+    .bottom-text {
+      @include text-size(20px, 26px);
+      margin: auto;
+      padding-left: 30px;
+      border-left: 2px solid $colorTextPrimary;
+    }
+
+    .bottom-button-why-skout {
+      margin: auto;
+
+      .btn {
+        margin-left: 0;
+        min-width: 200px;
+        min-height: 40px;
+      }
+    }
+  }
+}
+

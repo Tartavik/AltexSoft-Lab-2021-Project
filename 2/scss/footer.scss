@@ -141,3 +141,101 @@
     max-height: 38px;
   }
 }
+
+@media (min-width: 768px) {
+  .footer {
+    .footer-wrapper {
+      flex-direction: column;
+      .social {
+        justify-content: space-between;
+        grid-template-columns: none;
+        padding: 20px 20px 0 20px;
+        .conteiner-social-icons {
+          display: flex;
+          grid-template-columns: 0;
+          .social-icon {
+            margin-right: 25px;
+          }
+          .twitter {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    .footer-wrapper {
+      margin: auto;
+      padding-left: 135px;
+      padding-right: 135px;
+      .about-company {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 78px;
+        flex-direction: row;
+        .link-company-container {
+          margin: 0;
+          padding: 0;
+          margin-bottom: 35px;
+          .link-company-item {
+            margin-bottom: 30px;
+            .link-company {
+              min-width: 170px;
+              margin-top: 0;
+            }
+          }
+        }
+        .address-container {
+          padding: 0;
+          .address {
+            min-height: 118px;
+            padding: 0;
+            flex-direction: row;
+            justify-content: space-between;
+            .address-title {
+              font-size: 24px;
+              margin-right: 150px;
+            }
+            .location {
+              @include text-size-small;
+              margin-right: 30px;
+            }
+            .phone {
+              @include text-size-small;
+              margin-right: 30px;
+            }
+            .view-map {
+              @include text-size-small;
+            }
+            div {
+              display: flex;
+              flex-direction: column;
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+      .social {
+        padding: 27px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        .conteiner-social-icons {
+          .social-icon {
+            margin-left: 0;
+            margin-right: 50px;
+          }
+        }
+
+        .skout-bottom {
+          min-width: 168px;
+          min-height: 58px;
+          margin-bottom: 68px;
+        }
+      }
+    }
+  }
+}

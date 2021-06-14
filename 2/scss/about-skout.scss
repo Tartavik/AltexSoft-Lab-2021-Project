@@ -70,3 +70,62 @@
     }
   }
 }
+
+@media (min-width: 768px) {
+  .about-skout-container {
+    margin: auto;
+    .skout-sa {
+      justify-content: center;
+      display: flex;
+      .skout-sa-img {
+        width: auto;
+      }
+    }
+    .about-skout {
+      .title-about-skout {
+        margin: 60px 0 30px 0;
+        @include text-size-medium;
+      }
+      .text-about-skout {
+        .text-about-skout-value {
+          font-size: 16px;
+        }
+      }
+    }
+    .buttons-about-skout {
+      margin: 60px auto 60px auto;
+      .btn {
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .about-skout-container {
+    margin: 50px auto 0 auto;
+    padding: 0 135px 0 135px;
+    display: grid;
+    grid-template-areas:
+      "s a"
+      "s b";
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 2fr;
+    .skout-sa {
+      grid-area: s;
+      margin-right: 100px;
+    }
+    .about-skout {
+      grid-area: a;
+      .title-about-skout {
+        margin: 60px 0 40px 0;
+        @include text-size-large;
+      }
+    }
+    .buttons-about-skout {
+      flex-direction: row;
+      grid-area: b;
+      margin: 0;
+    }
+  }
+}

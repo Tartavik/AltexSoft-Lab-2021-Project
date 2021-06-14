@@ -1,7 +1,7 @@
 @import "vars";
 @import "fonts";
 @import "mixins";
-@import 'active';
+
 
 .cybersecurity-container {
   margin: auto;
@@ -95,6 +95,52 @@
     }
     .btn:hover {
       @include button-hover-shadow;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .cybersecurity-container {
+    .cybersecurity-title {
+      padding: 50px 0 40px 0;
+      margin-bottom: 0;
+      .cybersecurity-title-value {
+        @include text-size-medium;
+      }
+    }
+    .cards-container {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      .card {
+        margin-right: 30px;
+      }
+    }
+    .cybersecurity-button {
+      margin-bottom: 50px;
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .cybersecurity-container {
+    margin: auto;
+    padding: 0 135px 0 135px;
+    .cybersecurity-title {
+      justify-content: flex-start;
+      padding: 100px 0 80px 0;
+      .cybersecurity-title-value {
+        @include text-size-large;
+      }
+    }
+    .cards-container {
+      padding-left: 70px;
+      margin: auto;
+    }
+    .cybersecurity-button {
+      margin-bottom: 100px;
+      margin-top: 80px;
     }
   }
 }
