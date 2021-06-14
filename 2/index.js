@@ -94,11 +94,13 @@ $(document).ready(function () {
   $(".secondary-double-slaider").slick({
     arrows: false,
     slidesToShow: 3,
+    centerPadding: '0px',
     mobileFirst: true,
     asNavFor: ".main-double-slaider",
     dots: false,
     focusOnSelect: true,
     touchMove: false,
+    centerMode: true,
     responsive: [
       {
         breakpoint: 1439,

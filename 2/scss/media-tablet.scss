@@ -25,6 +25,11 @@
         padding: 13px;
         margin-bottom: 0;
       }
+      .active-link {
+        &::after {
+          left: 32px;
+        }
+      }
     }
   }
 

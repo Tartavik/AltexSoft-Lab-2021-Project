@@ -21,17 +21,7 @@
   display: none;
 }
 
-.active-link {
-  &::after {
-    content: "";
-    position: absolute;
-    margin-top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 2px;
-    background-color: $colorTextlinks;
-  }
-}
+
 
 .max-width{
   max-width: 1440px;
@@ -86,7 +76,7 @@
 }
 
 .sticky-main {
-  background-color:$color-bg-transparent;
+  background-color:$colorTextPrimary;
   transition: background-color 600ms;
   max-width: 1440px;
   z-index: 1;

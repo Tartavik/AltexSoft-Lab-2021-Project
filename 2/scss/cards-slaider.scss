@@ -16,6 +16,9 @@
 }
 
 .cards-slider {
+  .slick-list{
+    overflow: visible;
+  }
   .slick-track {
     display: flex;
     align-items: center;
@@ -74,9 +77,8 @@
     &:hover {
       cursor: pointer;
       background: linear-gradient(130deg, #19b0f8, #00e99a);
-      transition: min-height, min-width 500ms;
-      min-height: 580px;
-      min-width: 350px;
+      transform: scale(1.1);
+      transition: all 1s ease-out;
       .slider-item-title-container {
         .slider-item-title {
           color: $colorTextPrimary;

@@ -86,10 +86,14 @@
             transform: rotate(45deg);
           }
           &:hover {
-            width: 40px;
-            height: 40px;
+            border: 1px solid $hoverColorLink;
+            transform: scale(1.2);
             &::after {
-              top: 13px;
+              border-color: $hoverColorLink;
+              top: 11px;
+            }
+            &::before {
+              background-color: $hoverColorLink;
             }
           }
         }

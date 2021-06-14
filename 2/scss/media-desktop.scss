@@ -38,19 +38,18 @@
         margin-bottom: 0;
         color: $colorTextPrimary;
         position: relative;
-        min-width: 85px;
+        min-width: 100px;
         &:hover {
           color: $hoverColorLink;
+          &::after {
+            background-color: $hoverColorLink;
+          }
         }
       }
       .active-link {
         &::after {
-          content: "";
-          position: absolute;
-          margin-top: 20px;
-          left: 20px;
-          width: 40px;
-          height: 2px;
+          width: 50px;
+          left: 25px;
           background-color: $colorTextPrimary;
         }
       }
