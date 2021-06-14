@@ -15,7 +15,7 @@ const headAccordion = document.getElementsByClassName("head-accordion");
 const headAccordionFaqs = document.getElementsByClassName(
   "head-accordion-Faqs"
 );
-const emptyElement = document.getElementsByClassName("empty-element")[0];
+const container = document.getElementsByClassName('container')[0];
 const sliderTitle = document.getElementsByClassName("slider-title")[0];
 const sliderSpan = document.getElementsByClassName("slider-span")[0];
 const sliderButton = document.getElementsByClassName("slider-button");
@@ -179,10 +179,10 @@ function showTabsStickyMenu() {
 function showheaderInnerStickyMenu() {
   if (window.pageYOffset >= stickyMain + 10 && window.screen.width >= 1200) {
     headerInner.classList.add("sticky-main");
-    emptyElement.classList.remove("none");
+    container.classList.add("added-empty-field");
   } else {
     headerInner.classList.remove("sticky-main");
-    emptyElement.classList.add("none");
+    container.classList.remove("added-empty-field");
   }
 }
 
@@ -197,7 +197,7 @@ function currentTabsLink() {
     currentLink = linkPageYOffset.headFAQs.id;
   }
   for (let link of anchors) {
-    if (currentLink === link.classList[0]) {
+    if (currentLink === link.getAttribute("href").substr(1)) {
       link.classList.add("current-tabs-link");
     } else {
       link.classList.remove("current-tabs-link");

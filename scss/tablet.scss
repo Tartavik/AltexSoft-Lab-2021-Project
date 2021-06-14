@@ -1,19 +1,13 @@
 @import "vars";
 @import "mixins";
 @media (min-width: 768px) {
-
-  .logo {
-    width: 110px;
-    height: 24px;
-  }
   .header-text {
     max-width: 270px;
   }
 
   .header {
     .container {
-      padding-left: 50px;
-      padding-right: 50px;
+      padding: 28px 50px 0 50px;
     }
   }
 
@@ -21,21 +15,21 @@
     min-width: 550px;
     min-height: 60px;
     margin-top: -20px;
-    .anchor{
+    .anchor {
       padding: 18px 68px;
-    }
-    .head-tips {
-      &::after {
-        height: 40px;
-        top: 10px;
-        left: 167px;
+      &:first-child {
+        &::after {
+          height: 40px;
+          top: 10px;
+          left: 167px;
+        }
       }
-    }
-    .head-glossary {
-      &::after {
-        height: 40px;
-        top: 10px;
-        left: 375px;
+      &:last-child {
+        &::after {
+          height: 40px;
+          top: 10px;
+          left: 375px;
+        }
       }
     }
   }
@@ -44,6 +38,10 @@
     padding: 60px 70px 30px 70px;
     .glossary-contaner {
       margin-top: 62px;
+      font-size: 24px;
+    }
+    .skout-tips-container {
+      font-size: 24px;
     }
   }
 
@@ -53,30 +51,30 @@
       padding: 30px 20px 30px 20px;
       .slider-container {
         width: 100%;
-        
       }
       .slider-text-container {
         margin: auto;
-        .slider-title{
-          font-size: 50px;
-          line-height: 70px;
+        .slider-title {
+          @include text-size(50px,70px);
         }
         .slider-text {
-          .slider-span{
-            font-size: 18px;
-            line-height: 26px;
+          .slider-span {
+            @include text-size(18px,26px);
           }
         }
       }
     }
   }
 
-  .more-questions{
+  .more-questions {
     padding: 25px 0 0 0;
   }
 
   .faqs-container {
     padding: 60px 70px 0 70px;
+    .head-FAQs-wrapper {
+      font-size: 24px;
+    }
   }
 
   .faqs-accordion-container {
@@ -101,8 +99,8 @@
     position: absolute;
   }
 
-  .logo{
-    margin: auto 0;
+  .logo {
+    margin: auto 24px auto 0;
   }
 
   .container-header-menu {
@@ -124,13 +122,12 @@
         margin-bottom: 0;
         position: relative;
         min-width: 85px;
-        .link{
-          color: white;
+        .link {
+          color: $color-text-primary;
           &:hover {
             color: $color-link-hover;
           }
         }
-        
       }
       .active-link {
         &::after {
@@ -140,7 +137,7 @@
           left: 20px;
           width: 40px;
           height: 2px;
-          background-color: white;
+          background-color: $color-text-primary;
         }
       }
     }
@@ -151,8 +148,8 @@
       .header-button {
         margin: 0 0 0 20px;
         background-color: transparent;
-        border: 1.5px solid white;
-        color: white;
+        border: 1.5px solid $color-text-primary;
+        color: $color-text-primary;
         &:hover {
           color: $color-link-hover;
           border: 1.5px solid $color-link-hover;
@@ -164,6 +161,15 @@
   .header {
     .container {
       min-height: 300px;
+    }
+  }
+
+  .accordions-container {
+    .skout-tips-container {
+      font-size: 28px;
+    }
+    .glossary-contaner {
+      font-size: 28px;
     }
   }
 
@@ -180,6 +186,12 @@
     }
   }
 
+  .faqs-container {
+    .head-FAQs-wrapper {
+      font-size: 28px;
+    }
+  }
+
   .sticky {
     position: fixed;
     top: 120px;
@@ -188,7 +200,7 @@
   }
 
   .sticky-main {
-    background-color: white;
+    background-color: $color-text-primary;
     transition: background-color 600ms;
     max-width: 1440px;
     padding: 24px 50px;
@@ -203,8 +215,8 @@
     }
     .container-header-menu {
       .header-menu {
-        .header-menu-item{
-          .link{
+        .header-menu-item {
+          .link {
             color: $color-link-hover;
           }
           &:hover {

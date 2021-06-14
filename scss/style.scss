@@ -43,7 +43,7 @@ html {
       background-color: $color-text-primary;
       left: 0;
       top: 0;
-      box-shadow: 0 8px 0 0 white, 0 16px 0 0 white;
+      box-shadow: 0 8px 0 0 $color-text-primary, 0 16px 0 0 $color-text-primary;
     }
   }
 }
@@ -54,23 +54,20 @@ html {
   max-width: 123px;
   font-family: Actor;
   .header-text-value {
+    @include text-size(40px,56px);
+    @include text-type;
     color: $color-text-primary;
-    font-size: 40px;
-    line-height: 56px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
   }
 }
 
 .logo {
+  @include text-type;
   color: $color-text-primary;
   text-decoration: none;
   min-width: 92px;
   min-height: 20px;
   font-size: 20px;
-  text-transform: uppercase;
   font-family: Actor;
-  letter-spacing: 2px;
   font-weight: 900;
 }
 
@@ -101,7 +98,7 @@ html {
   bottom: 0;
   right: 0;
   left: 0;
-  background: white;
+  background: $color-text-primary;
   z-index: 2;
   font-family: Acme;
   .header-menu {
@@ -113,12 +110,11 @@ html {
     margin-top: 28px;
     padding: 0;
     .header-menu-item {
-      @include fs-small;
+      @include text-small;
+      @include text-type;
       padding: 12px;
       text-align: center;
       position: relative;
-      letter-spacing: 2px;
-      text-transform: uppercase;
       .link{
         color: $color-text-links;
         text-decoration: none;
@@ -183,37 +179,38 @@ html {
   border: 0;
   border-top: 2.5px solid $color-text-links;
   border-radius: 5px 5px 0 0;
-  background: white;
+  background: $color-text-primary;
   position: relative;
   .anchor{
-    @include fs-small;
-    letter-spacing: 2px;
+    @include text-small;
+    @include text-type;
     color: $color-link-hover;
     cursor: pointer;
     text-decoration: none;
     padding: 10px 30px;
-    text-transform: uppercase;
-  }
-  .head-tips {
-    &::after {
-      content: "";
-      position: absolute;
-      border-left: 1.5px solid #e5e5e5;
-      height: 20px;
-      top: 10px;
-      left: 95px;
+    &:first-child{
+      &::after {
+        content: "";
+        position: absolute;
+        border-left: 1.5px solid #e5e5e5;
+        height: 20px;
+        top: 10px;
+        left: 95px;
+      }
     }
-  }
-  .head-glossary {
-    &::after {
-      content: "";
-      position: absolute;
-      border-left: 1.5px solid #e5e5e5;
-      height: 20px;
-      top: 10px;
-      left: 230px;
+    &:last-child{
+      &::after {
+        content: "";
+        position: absolute;
+        border-left: 1.5px solid #e5e5e5;
+        height: 20px;
+        top: 10px;
+        left: 230px;
+      }
     }
+   
   }
+  
 }
 
 .accordions-container {
@@ -226,8 +223,12 @@ html {
   .skout-tips-container {
     padding-top: 10px;
     padding-bottom: 25px;
-    border-top: 1px solid #b2b2b2;
+    border-top: 1px solid $color-anchors;
     border-radius: 1px;
+    @include anchor-skout;
+    #head-tips{
+     @include anchor-item;
+    }
   }
 
   .accord-container {
@@ -235,8 +236,8 @@ html {
     border-top: 1px solid $color-text-links;
     .panel {
       padding: 0 18px;
-      color: #212121;
-      background-color: #fff;
+      color: #191919;
+      background-color: $color-text-primary;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-out;
@@ -252,7 +253,7 @@ html {
           margin: 11px 20px 0 0;
         }
         .bottom-info-text{
-          @include fs-small;
+          @include text-small;
           margin: 11px 0 23px 0;
           color: $color-link-hover;
         }
@@ -270,19 +271,16 @@ html {
       font-family: Aclonica;
       text-align: start;
       .number {
+        @include text-size(40px,48px);
+        @include text-type;
         margin: 0 16px 0 16px;
         font-family: Actor;
-        font-size: 40px;
         min-width: 30px;
-        line-height: 48px;
-        letter-spacing: 2px;
         color: #e5e5e5;
-        text-transform: uppercase;
       }
       .accord-text {
+        @include text-medium();
         width: 100%;
-        font-size: 16px;
-        line-height: 24px;
         transition: font-size 0.4s ease-out;
       }
 
@@ -291,7 +289,7 @@ html {
         position: relative;
         min-width: 14px;
         min-height: 14px;
-        background-color: white;
+        background-color: $color-text-primary;
         box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
         border-radius: 50px;
         cursor: pointer;
@@ -329,25 +327,20 @@ html {
       }
     }
   }
-
-  #head-tips {
-    max-width: 90px;
-    max-height: 19px;
-  }
-
-  #head-glossary {
-    max-width: 114px;
-  }
   .glossary-contaner {
     margin-top: 24px;
     padding-top: 10px;
-    border-top: 1px solid #b2b2b2;
+    border-top: 1px solid $color-anchors;
     border-radius: 1px;
+    @include anchor-skout;
+    #head-glossary{
+      @include anchor-item;
+    }
   }
 }
 
 .slider-block {
-  background: linear-gradient(45deg, #e0e0e0, #ffffff);
+  background: linear-gradient(45deg, #e0e0e0, $color-text-primary);
   font-family: Aclonica;
   .slider-wrapper {
     @include wrapper;
@@ -364,7 +357,7 @@ html {
     }
     .slider-container {
       max-width: 335px;
-      background-color: white;
+      background-color: $color-text-primary;
       box-shadow: 0px 12px 24px #e5e5e5;
       border-radius: 5px;
       display: flex;
@@ -372,9 +365,8 @@ html {
         margin: 40px 75px 40px 60px;
         width: 100%;
         .slider-item {
+          @include text-size(16px,32px);
           position: relative;
-          font-size: 16px;
-          line-height: 32px;
           .slider-item-text{
             cursor: pointer;
             color: $color-link-hover;
@@ -395,7 +387,7 @@ html {
           min-width: 16px;
           min-height: 16px;
           border-radius: 20px;
-          background: white;
+          background: $color-text-primary;
           border: 1px solid $color-text-links;
           align-items: stretch;
           padding-top: 0px;
@@ -450,15 +442,13 @@ html {
       margin: 32px 24px 0 20px;
       padding-bottom: 24px;
       .slider-title{
+        @include text-size(32px,40px);
+        @include text-type;
         font-weight: normal;
         padding-bottom: 24px;
         margin: 0 0 0 20px;
         font-family: Actor;
-        font-size: 32px;
-        line-height: 40px;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: #1a1a1a;
+        color: #191919;
       }
       .slider-text {
         display: flex;
@@ -466,8 +456,7 @@ html {
         padding-left: 16px;
         border-left: 1.5px solid $color-text-links;
         .slider-span{
-          font-size: 16px;
-          line-height: 24px;
+          @include text-medium();
           color: #191919;
         }
       }
@@ -475,18 +464,12 @@ html {
   }
 }
 
-#head-FAQs {
-  max-width: 110px;
-  max-height: 18px;
-}
-
 .more-questions {
-  @include fs-small;
+  @include text-small;
+  @include text-type;
   display: block;
   padding: 20px 0 24px 0;
   text-align: center;
-  letter-spacing: 2px;
-  text-transform: uppercase;
   color: $color-text-links;
   font-family: Acme;
   &:hover {
@@ -499,10 +482,14 @@ html {
   min-width: 335px;
   @include wrapper;
   .head-FAQs-wrapper {
-    border-top: 1px solid #b2b2b2;
+    @include anchor-skout;
+    border-top: 1px solid $color-anchors;
     border-radius: 1px;
     width: 100%;
     padding-top: 10px;
+    #head-FAQs{
+      @include anchor-item;
+    }
   }
 }
 
@@ -512,21 +499,19 @@ html {
   .panel {
     display: flex;
     padding: 0 20px;
-    color: #212121;
-    background-color: #fff;
+    color: #191919;
+    background-color: $color-text-primary;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out;
     .panel-letter {
-      font-size: 40px;
-      line-height: 48px;
+      @include text-size(40px,48px);
       margin-right: 25px;
       color: #e5e5e5;
     }
     .answer {
+      @include text-size(14px,24px);
       margin: auto 0;
-      font-size: 14px;
-      line-height: 24px;
       color: #191919;
     }
   }
@@ -538,12 +523,11 @@ html {
     min-height: 114px;
     border: 0;
     padding: 0;
-    background: white;
+    background: $color-text-primary;
     width: 100%;
     text-align: start;
     .accordion-letter {
-      font-size: 40px;
-      line-height: 48px;
+      @include text-size(40px,48px);
       margin-right: 25px;
       color: #e5e5e5;
       font-family: Actor;
@@ -554,7 +538,7 @@ html {
       min-height: 20px;
       border-bottom: 1.5px solid $color-text-links;
       border-left: 1.5px solid $color-text-links;
-      background: white;
+      background: $color-text-primary;
       border-top: 0;
       border-right: 0;
       transform: rotate(-45deg);
@@ -599,15 +583,14 @@ html {
         margin: 0;
         .link-company-item{
           .link-company-link{
-            @include fs-small;
+            @include text-small;
             color: $color-link-hover;
             margin-top: 12px;
             text-decoration: none;
           }
           #Call{
             span{
-              font-size: 16px;
-              line-height: 24px;
+              @include text-medium();
               color: $color-link-hover;
               margin-bottom: 20px;
             }
@@ -623,26 +606,23 @@ html {
         padding: 8px 0 8px 0;
         border-top: 2px solid $color-text-links;
         .address-title{
-          font-size: 16px;
-          line-height: 36px;
+          @include text-size(16px,36px);
           color: $color-link-hover;
           margin: 0;
         }
         .address-text{
-          font-size: 16px;
-          line-height: 24px;
+          @include text-medium();
           color: $color-link-hover;
           font-style: normal;
         }
         .phone {
-          font-size: 16px;
-          line-height: 24px;
+          @include text-medium();
           color: $color-link-hover;
           text-decoration: none;
         }
 
         .view-map {
-          @include fs-small;
+          @include text-small;
           text-decoration: none;
           color: $color-text-links;
           &:hover {
@@ -654,7 +634,7 @@ html {
     }
   }
   .social {
-    border-top: 1.5px solid #b2b2b2;
+    border-top: 1.5px solid $color-anchors;
     padding-top: 20px;
     text-align: center;
 
