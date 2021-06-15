@@ -13,6 +13,7 @@
       text-align: center;
       .slider-title {
         @include text-size-standart;
+        font-weight: 400;
       }
     }
   }
@@ -94,6 +95,7 @@
         text-transform: uppercase;
         color: $colorTextPrimaryDark;
         display: block;
+        font-weight: 400;
       }
       .slider-text {
         font-family: Aclonica;

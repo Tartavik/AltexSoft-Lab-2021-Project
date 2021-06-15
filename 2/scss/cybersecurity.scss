@@ -12,6 +12,7 @@
     margin-bottom: 30px;
     .cybersecurity-title-value {
       @include text-size-standart;
+      font-weight: 400;
     }
   }
   .cards-container {
@@ -36,6 +37,7 @@
         color: $colorTextPrimaryDark;
         .card-title {
           @include text-size-standart;
+          font-weight: 400;
           margin-bottom: 16px;
         }
         .card-text {
@@ -74,8 +76,12 @@
           }
           .card-i-img {
             cursor: pointer;
-            max-width: 21px;
+            min-width: 21px;
+            min-height: 21px;
             margin: 0 15px 15px 0;
+            background-image: url(/2/images/Letter_i.png);
+            background-size: contain;
+
           }
         }
       }

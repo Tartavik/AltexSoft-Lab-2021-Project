@@ -1,32 +1,26 @@
-const containerHeaderMenu = document.getElementsByClassName(
-  "container-header-menu"
-)[0];
-const hamburger = document.getElementsByClassName("hamburger-icon")[0];
-const headerMenu = document.getElementsByClassName("header-menu")[0];
-hamburger.addEventListener("click", () => {
-  containerHeaderMenu.classList.toggle("none");
-  hamburger.classList.toggle("hamburger-icon");
-  hamburger.classList.toggle("back-icon");
-  document.body.classList.toggle("is-hide");
+const containerHeaderMenu = document.querySelector('.container-header-menu');
+const hamburger = document.querySelector('.hamburger-icon');
+const headerMenu = document.querySelector('.header-menu');
+hamburger.addEventListener('click', () => {
+  containerHeaderMenu.classList.toggle('none');
+  hamburger.classList.toggle('hamburger-icon');
+  hamburger.classList.toggle('back-icon');
+  document.body.classList.toggle('is-hide');
 });
 
 for (let i = 0; i < headerMenu.children.length; i++) {
-  headerMenu.children[i].addEventListener("click", (e) => {
+  headerMenu.children[i].addEventListener('click', (e) => {
     for (let j = 0; j < headerMenu.children.length; j++) {
-      headerMenu.children[j].classList.remove("active-link");
+      headerMenu.children[j].classList.remove('active-link');
     }
-    e.currentTarget.classList.add("active-link");
-  });
+    e.currentTarget.classList.add('active-link');
+  })
 }
 
-const skoutSA = document.getElementsByClassName("skout-sa")[0];
-const aboutSkout = document.getElementsByClassName("about-skout")[0];
-const buttonAboutSkout = document.getElementsByClassName(
-  "buttons-about-skout"
-)[0];
-const aboutSkoutContainer = document.getElementsByClassName(
-  "about-skout-container"
-)[0];
+const skoutSA = document.querySelector('.skout-sa');
+const aboutSkout = document.querySelector('.about-skout');
+const buttonAboutSkout = document.querySelector('.buttons-about-skout');
+const aboutSkoutContainer = document.querySelector('.about-skout-container');
 
 if (window.screen.width >= 768) {
   window.onscroll = () => {
@@ -45,7 +39,7 @@ if (window.screen.width >= 768) {
     if (currentPageYOffset > nextCurrentPageYOffset) {
       showHeaderInnerStickyMenu();
     } else {
-      headerInner.classList.remove("sticky-main");
+      headerInner.classList.remove('sticky-main');
     }
 
     currentPageYOffset = nextCurrentPageYOffset;
@@ -57,16 +51,16 @@ if (window.screen.width >= 768) {
 }
 
 $(document).ready(function () {
-  $(".big-slider").slick({
+  $('.big-slider').slick({
     arrows: false,
     dots: true,
     adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 30000,
     mobileFirst: true,
-    appendDots: $(".container-dots"),
+    appendDots: $('.container-dots'),
   });
-  $(".cards-slider").slick({
+  $('.cards-slider').slick({
     arrows: false,
     infinite: true,
     variableWidth: true,
@@ -81,18 +75,18 @@ $(document).ready(function () {
       },
     ],
   });
-  $(".main-double-slaider").slick({
+  $('.main-double-slaider').slick({
     arrows: false,
     autoplay: true,
     autoplaySpeed: 15000,
-    asNavFor: ".secondary-double-slaider",
+    asNavFor: '.wrapper-secondary-double-slaider',
   });
-  $(".secondary-double-slaider").slick({
+  $('.wrapper-secondary-double-slaider').slick({
     arrows: false,
     slidesToShow: 3,
     centerPadding: '0px',
     mobileFirst: true,
-    asNavFor: ".main-double-slaider",
+    asNavFor: '.main-double-slaider',
     dots: false,
     focusOnSelect: true,
     touchMove: false,
@@ -115,17 +109,17 @@ $(document).ready(function () {
   });
 });
 
-const headerInner = document.getElementsByClassName("header-inner")[0];
+const headerInner = document.getElementsByClassName('header-inner')[0];
 const container = document.getElementsByClassName('container')[0];
 let stickyMain = headerInner.offsetTop;
 let currentPageYOffset = window.pageYOffset;
 
 function showHeaderInnerStickyMenu() {
   if (window.pageYOffset >= stickyMain + 10 && window.screen.width >= 1440) {
-    headerInner.classList.add("sticky-main");
+    headerInner.classList.add('sticky-main');
     container.classList.add('added-empty-field');
   } else {
-    headerInner.classList.remove("sticky-main");
+    headerInner.classList.remove('sticky-main');
     container.classList.remove('added-empty-field');
   }
 }

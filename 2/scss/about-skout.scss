@@ -25,6 +25,7 @@
     margin: auto;
     .title-about-skout {
       @include text-size-standart;
+      font-weight: 400;
     }
     .text-about-skout {
       margin: 20px auto ;

@@ -195,7 +195,7 @@
           padding: 0;
           .address {
             min-height: 118px;
-            padding: 0;
+            padding: 20px 0 0 ;
             flex-direction: row;
             justify-content: space-between;
             .address-title {
@@ -236,7 +236,7 @@
         .skout-bottom {
           min-width: 168px;
           min-height: 58px;
-          margin-right: 40px;
+          margin-right: 45px;
         }
       }
     }

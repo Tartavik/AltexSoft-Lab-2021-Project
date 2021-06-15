@@ -11,7 +11,6 @@
 @import "footer";
 
 body {
-  overflow-x: hidden;
   margin: 0;
 }
 
@@ -33,6 +32,7 @@ html {
 ::before {
   box-sizing: inherit;
 }
+
 
 .slick-track {
   display: flex;

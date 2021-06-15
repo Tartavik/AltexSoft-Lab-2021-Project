@@ -44,7 +44,6 @@
 .wrapper-secondary-double-slaider {
   margin: auto;
   padding: 20px 20px 30px;
-  .secondary-double-slaider {
     .slider-item {
       cursor: pointer;
       opacity: 0.5;
@@ -66,7 +65,7 @@
         background-color: $colorTextlinks;
       }
     }
-  }
+
 }
 
 @media (min-width: 768px) {
@@ -86,11 +85,10 @@
 
   .wrapper-secondary-double-slaider {
     padding: 28px 54px 50px;
-    .secondary-double-slaider {
       .slider-item {
         text-align: start;
       }
-    }
+
     .slick-track {
       transform: translate3d(0px, 0px, 0px) !important;
     }
@@ -125,11 +123,9 @@
 
   .wrapper-secondary-double-slaider {
     padding: 0 135px 110px 135px;
-    .secondary-double-slaider {
 
       .slick-list {
         padding: 0 !important;
       }
-    }
   }
 }
