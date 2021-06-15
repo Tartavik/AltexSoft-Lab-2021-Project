@@ -4,10 +4,9 @@
 @import "active";
 
 .wrapper-big-slaider {
-  margin-top: 30px;
-  padding-top: 30px;
   background: linear-gradient(15deg, #e0e0e0, #ffffff);
   .big-slider-container {
+    padding: 20px 20px 30px;
     min-height: 1085px;
     margin: auto;
     .slider-title-container {
@@ -24,10 +23,13 @@
     margin: 30px 0 30px 0;
     .slick-dots {
       display: flex;
+      padding: 0;
       align-items: center;
       justify-content: center;
+      margin: 20px auto;
       li {
-        margin: 0 10px 0 10px;
+        cursor: pointer;
+        padding: 10px;
         list-style: none;
       }
       button {
@@ -64,13 +66,9 @@
     }
   }
   .big-slider {
-    padding: 0 20px 0 20px;
     .slider-image {
       text-align: center;
     }
-    .slider-button {
-      text-align: center;
-      margin: 50px 0 50px 0;
       .btn {
         @include button-primary-first(
           180px,
@@ -79,13 +77,14 @@
           $colorTextlinks
         );
         border: 0;
-
+        display: block;
+        margin: 30px auto 0;
         &:hover {
           @include button-hover-shadow;
         }
       }
-    }
     .slider-text-container {
+      padding-top: 30px;
       max-width: 400px;
       margin: auto;
       .slider-title {
@@ -94,7 +93,6 @@
         letter-spacing: 2px;
         text-transform: uppercase;
         color: $colorTextPrimaryDark;
-        padding: 30px 0 0 0;
         display: block;
       }
       .slider-text {
@@ -108,8 +106,8 @@
 
 @media (min-width: 768px) {
   .wrapper-big-slaider {
-    padding-top: 60px;
     .big-slider-container {
+      padding: 28px 54px 50px;
       min-height: 1085px;
       .slider-title-container {
         .slider-title {
@@ -147,17 +145,16 @@
       .slider-image {
         min-width: 625px;
       }
-      .slider-button {
-        text-align: start;
+
+      .btn{
+        margin: 50px 0 0;
       }
     }
   }
 
   .wrapper-big-slaider {
-    padding-top: 120px;
-    margin-top: 0;
     .big-slider-container {
-      padding: 0 135px 0 135px;
+      padding: 110px 135px 110px 135px;
       .slider-title-container {
         text-align: start;
         margin-bottom: 80px;

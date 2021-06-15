@@ -3,7 +3,8 @@
 @import "mixins";
 
 .wrapper-info-questions {
-  margin: 0 auto 20px auto;
+  margin: auto;
+  padding: 20px 20px 30px;
   .container-info {
     display: flex;
     flex-direction: column-reverse;
@@ -16,13 +17,12 @@
         display: block;
         max-width: 280px;
         @include text-size-standart;
-        margin: auto 25px 25px 25px;
       }
       .text {
         display: block;
         @include text-size-small;
         font-family: "Aclonica";
-        margin: 0 25px 25px 25px;
+        padding:20px 0;
       }
     }
   }
@@ -104,16 +104,13 @@
 
 @media (min-width: 768px) {
   .wrapper-info-questions {
-    margin: 0 auto 40px auto;
+    padding: 28px 0 50px;
     .container-info {
       .info {
         max-width: 705px;
         margin: auto;
-        .title {
-          margin: auto 0 25px 0;
-        }
         .text {
-          margin: auto 0 25px 0;
+          padding: 30px 0;
         }
       }
       .info-img {
@@ -137,7 +134,7 @@
 
 @media (min-width: 1440px) {
   .wrapper-info-questions {
-    margin: 0 auto 80px auto;
+    padding: 50px 0 110px 0;
     .container-info {
       flex-direction: row;
       align-items: center;
@@ -149,7 +146,7 @@
           max-width: none;
         }
         .text {
-          margin: 40px 0 0 0;
+          padding: 40px 0 0;
         }
       }
     }

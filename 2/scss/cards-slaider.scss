@@ -3,11 +3,11 @@
 @import "mixins";
 
 .wrapper-cards-slaider {
-  margin-top: -265px;
-
+  margin-top: -200px;
   background-color: $color-bg-transparent;
+  padding: 20px 0 30px;
   .slider-title-container {
-    margin: 35px 0 20px 0;
+    padding-bottom: 20px;
     text-align: center;
     .slider-title {
       @include text-size-standart;
@@ -158,8 +158,9 @@
 
 @media (min-width: 768px) {
   .wrapper-cards-slaider {
+    padding: 28px 0 50px;
     .slider-title-container {
-      margin: 75px 0 35px 0;
+      padding-bottom: 30px;
 
       .slider-title {
         @include text-size-medium;
@@ -188,8 +189,9 @@
 
   .wrapper-cards-slaider {
     margin-top: -500px;
+    padding: 150px 0;
     .slider-title-container {
-      margin: 150px 0 70px 0;
+      padding-bottom: 70px;
       .slider-title {
         @include text-size-medium;
       }

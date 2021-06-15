@@ -1,12 +1,9 @@
 const containerHeaderMenu = document.getElementsByClassName(
   "container-header-menu"
 )[0];
-const hamburgerContainer = document.getElementsByClassName(
-  "hamburger-container"
-)[0];
 const hamburger = document.getElementsByClassName("hamburger-icon")[0];
 const headerMenu = document.getElementsByClassName("header-menu")[0];
-hamburgerContainer.addEventListener("click", () => {
+hamburger.addEventListener("click", () => {
   containerHeaderMenu.classList.toggle("none");
   hamburger.classList.toggle("hamburger-icon");
   hamburger.classList.toggle("back-icon");
@@ -119,7 +116,6 @@ $(document).ready(function () {
 });
 
 const headerInner = document.getElementsByClassName("header-inner")[0];
-const emptyElement = document.getElementsByClassName("empty-element")[0];
 const container = document.getElementsByClassName('container')[0];
 let stickyMain = headerInner.offsetTop;
 let currentPageYOffset = window.pageYOffset;
@@ -127,10 +123,9 @@ let currentPageYOffset = window.pageYOffset;
 function showHeaderInnerStickyMenu() {
   if (window.pageYOffset >= stickyMain + 10 && window.screen.width >= 1440) {
     headerInner.classList.add("sticky-main");
-    container.style.paddingTop = '78px';
-    emptyElement.classList.remove("none");
+    container.classList.add('added-empty-field');
   } else {
     headerInner.classList.remove("sticky-main");
-    emptyElement.classList.add("none");
+    container.classList.remove('added-empty-field');
   }
 }

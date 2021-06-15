@@ -9,6 +9,7 @@
   .footer-wrapper {
     display: flex;
     flex-direction: column-reverse;
+    padding: 20px 20px 30px;
     .about-company {
       display: flex;
       flex-direction: column;
@@ -18,7 +19,6 @@
         display: flex;
         flex-direction: column;
         padding: 0;
-        margin: 24px 0 0 23px;
         .link-company-item {
           .link-company {
             @include text-size(12px, 24px);
@@ -35,8 +35,8 @@
       }
     }
     .address-container {
+      font-style: normal;
       padding: 0;
-      margin-left: 23px;
       .address {
         display: flex;
         flex-direction: column;
@@ -50,7 +50,6 @@
         .location {
           @include text-size-small;
           color: $hoverColorLink;
-          font-style: normal;
         }
         .phone {
           @include text-size-small;
@@ -72,7 +71,6 @@
   }
   .social {
     border-top: 1.5px solid #b2b2b2;
-    margin-top: 12px;
     padding-top: 20px;
     text-align: center;
     display: flex;
@@ -81,7 +79,6 @@
     .conteiner-social-icons {
       display: grid;
       grid-template-columns: 100% 100%;
-      margin-bottom: 20px;
       padding-left: 0;
       .twitter {
         margin-right: 70px;
@@ -145,11 +142,12 @@
 @media (min-width: 768px) {
   .footer {
     .footer-wrapper {
+      padding: 28px 54px 50px;
       flex-direction: column;
       .social {
         justify-content: space-between;
         grid-template-columns: none;
-        padding: 20px 20px 0 20px;
+        padding-top: 30px;
         .conteiner-social-icons {
           display: flex;
           grid-template-columns: 0;
@@ -161,6 +159,14 @@
           }
         }
       }
+      .address-container{
+        .address{
+          .location-container{
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
     }
   }
 }
@@ -169,17 +175,14 @@
   .footer {
     .footer-wrapper {
       margin: auto;
-      padding-left: 135px;
-      padding-right: 135px;
+      padding: 75px 135px 110px;
       .about-company {
         display: flex;
         justify-content: space-between;
         padding-top: 78px;
         flex-direction: row;
         .link-company-container {
-          margin: 0;
-          padding: 0;
-          margin-bottom: 35px;
+          padding-right: 100px;
           .link-company-item {
             margin-bottom: 30px;
             .link-company {
@@ -197,7 +200,7 @@
             justify-content: space-between;
             .address-title {
               font-size: 24px;
-              margin-right: 150px;
+              margin-right: 210px;
             }
             .location {
               @include text-size-small;
@@ -233,7 +236,7 @@
         .skout-bottom {
           min-width: 168px;
           min-height: 58px;
-          margin-bottom: 68px;
+          margin-right: 40px;
         }
       }
     }
