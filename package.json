@@ -2,7 +2,6 @@
   "name": "altexsoft-lab-2021-project",
   "version": "1.0.0",
   "description": "project",
-
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

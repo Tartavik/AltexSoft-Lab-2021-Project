@@ -46,10 +46,6 @@
   overflow: hidden;
 }
 
-.max-width {
-  max-width: 1440px;
-}
-
 .accord-text-active {
   @include text-size(24px,32px);
   margin-top: 20px;
