@@ -3,15 +3,14 @@ const hamburger = document.querySelector('.hamburger-icon');
 const headerMenu = document.querySelector('.header-menu');
 hamburger.addEventListener('click', () => {
   containerHeaderMenu.classList.toggle('none');
-  hamburger.classList.toggle('hamburger-icon');
-  hamburger.classList.toggle('back-icon');
+  hamburger.classList.toggle('open-menu');
   document.body.classList.toggle('is-hide');
 });
 
 for (let i = 0; i < headerMenu.children.length; i++) {
-  headerMenu.children[i].addEventListener('click', (e) => {
+  headerMenu.children[i].children[0].addEventListener('click', e => {
     for (let j = 0; j < headerMenu.children.length; j++) {
-      headerMenu.children[j].classList.remove('active-link');
+      headerMenu.children[j].children[0].classList.remove('active-link');
     }
     e.currentTarget.classList.add('active-link');
   })
@@ -22,7 +21,7 @@ const aboutSkout = document.querySelector('.about-skout');
 const buttonAboutSkout = document.querySelector('.buttons-about-skout');
 const aboutSkoutContainer = document.querySelector('.about-skout-container');
 
-if (window.screen.width >= 768) {
+if (window.matchMedia("(min-width: 768px)").matches) {
   window.onscroll = () => {
     if (
       window.pageYOffset >=

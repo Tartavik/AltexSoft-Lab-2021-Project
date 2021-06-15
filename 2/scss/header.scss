@@ -125,6 +125,17 @@
     }
   }
 
+  .hamburger-icon.open-menu{
+    &::after {
+      @include style-back-icon;
+      transform: rotate(45deg);
+      box-shadow: none;
+    }
+    &::before {
+      @include style-back-icon;
+      transform: rotate(135deg);
+    }
+  }
 
 .header-text {
   margin: 30px auto 30px auto;
@@ -166,23 +177,6 @@
     .btn:hover {
       @include button-hover-shadow;
     }
-  }
-}
-
-.back-icon {
-  width: 24px;
-  height: 18px;
-  position: relative;
-  border: 0;
-  background-color: $color-bg-transparent;
-  cursor: pointer;
-  &::after {
-    @include style-back-icon;
-    transform: rotate(45deg);
-  }
-  &::before {
-    @include style-back-icon;
-    transform: rotate(135deg);
   }
 }
 
