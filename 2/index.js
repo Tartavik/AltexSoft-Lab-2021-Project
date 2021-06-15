@@ -120,12 +120,14 @@ $(document).ready(function () {
 
 const headerInner = document.getElementsByClassName("header-inner")[0];
 const emptyElement = document.getElementsByClassName("empty-element")[0];
+const container = document.getElementsByClassName('container')[0];
 let stickyMain = headerInner.offsetTop;
 let currentPageYOffset = window.pageYOffset;
 
 function showHeaderInnerStickyMenu() {
   if (window.pageYOffset >= stickyMain + 10 && window.screen.width >= 1440) {
     headerInner.classList.add("sticky-main");
+    container.style.paddingTop = '78px';
     emptyElement.classList.remove("none");
   } else {
     headerInner.classList.remove("sticky-main");

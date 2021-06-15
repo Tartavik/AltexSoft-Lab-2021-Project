@@ -11,7 +11,7 @@
     padding: 20px 20px 30px;
     margin: auto;
     .empty-element {
-      min-height: 80px;
+      min-height: 50px;
     }
   }
 }
@@ -194,7 +194,7 @@
   .header {
     .container {
       position: relative;
-      padding: 28px 54px;
+      padding: 28px 54px 50px;
     }
   }
 
@@ -222,8 +222,7 @@
 
   .header-text {
     max-width: 1100px;
-    margin: 80px auto 0 auto;
-    padding: 20px;
+    margin: 80px auto 80px auto;
     .header-text-value {
       font-size: 70px;
       line-height: 84px;
@@ -232,17 +231,13 @@
 
   .bottom-text-container {
     flex-direction: row;
-    margin-top: 60px;
     .bottom-text {
       @include text-size-small;
-      margin: auto;
-      padding-left: 30px;
-      border-left: 2px solid $colorTextPrimary;
+      padding: 0 30px;
     }
     .bottom-button-why-skout {
       margin: auto;
       .btn {
-        margin-left: 25px;
         min-width: 200px;
         min-height: 40px;
       }
@@ -252,6 +247,7 @@
     background-color:$colorTextPrimary;
     transition: background-color 600ms;
     max-width: 1440px;
+    padding: 29px 90px;
     z-index: 1;
     margin: auto;
     position: fixed;
@@ -300,8 +296,16 @@
   .header {
     .container {
       min-height: 900px;
-      padding: 28px 90px;
+      padding: 28px 90px 100px;
     }
+  }
+
+  .header-inner{
+    align-items: center;
+  }
+
+  .logo{
+    margin-right: 90px;
   }
 
   .container-header-menu {
@@ -369,7 +373,7 @@
 
   .header-text {
     max-width: 1100px;
-    margin: 40px auto 0 auto;
+    margin: 80px auto 110px;
     padding: 0;
 
     .header-text-value {
@@ -379,7 +383,6 @@
 
   .bottom-text-container {
     flex-direction: row;
-    margin-top: 120px;
     .bottom-text {
       @include text-size(20px, 26px);
       margin: auto;
@@ -389,9 +392,7 @@
 
     .bottom-button-why-skout {
       margin: auto;
-
       .btn {
-        margin-left: 0;
         min-width: 200px;
         min-height: 40px;
       }
