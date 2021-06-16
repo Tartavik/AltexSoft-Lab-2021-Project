@@ -49,6 +49,12 @@
     }
 }
 
+.tabs {
+    .current-tabs-link {
+         color: $color-text-links;
+    }
+}
+
 @media (min-width: 768px) {
     .tabs {
         min-width: 550px;
@@ -71,6 +77,15 @@
                 }
             }
         }
+    }
+}
+
+@media (min-width: 1200px) {
+    .sticky {
+        position: fixed;
+        top: 120px;
+        left: 0;
+        right: 0;
     }
 }
 

@@ -114,3 +114,73 @@
         max-height: 38px;
     }
 }
+
+@media (min-width: 768px) {
+    .footer {
+        .footer-wrapper {
+            padding: 60px 70px;
+            .about-company {
+                .address-container {
+                    margin: 30px 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .footer {
+        .footer-wrapper {
+            margin: auto;
+            padding: 80px 135px 100px;
+            .about-company {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                .link-company {
+                    .link-company-item {
+                        margin-bottom: 30px;
+                        .link-company-link {
+                            min-width: 170px;
+                            margin-top: 0;
+                        }
+                    }
+                }
+                .address-container {
+                    margin: 0;
+                    .address {
+                        min-height: 118px;
+                        padding: 20px 0 0;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .address-title {
+                            font-size: 24px;
+                            margin-right: 230px;
+                        }
+                        .address-text {
+                            margin-right: 30px;
+                        }
+                        .phone {
+                            margin-right: 30px;
+                        }
+                        .view-map {
+                            @include text-medium();
+                        }
+                    }
+                }
+            }
+            .social {
+                padding-top: 27px;
+                display: flex;
+                justify-content: space-between;
+                li {
+                    margin-right: 50px;
+                }
+                .skout-bottom {
+                    min-width: 168px;
+                    min-height: 58px;
+                }
+            }
+        }
+    }
+}
