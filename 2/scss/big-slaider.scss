@@ -1,11 +1,12 @@
 @import "vars";
 @import "fonts";
 @import "mixins";
-@import "active";
+
 
 .wrapper-big-slaider {
   background: linear-gradient(15deg, #e0e0e0, #ffffff);
   .big-slider-container {
+    max-width: 1440px;
     padding: 20px 20px 30px;
     min-height: 1085px;
     margin: auto;

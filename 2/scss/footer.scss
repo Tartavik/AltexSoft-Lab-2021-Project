@@ -7,6 +7,7 @@
   width: 100%;
   font-family: Aclonica, Arial, Helvetica, sans-serif;
   &-wrapper {
+    max-width: 1440px;
     display: flex;
     flex-direction: column-reverse;
     padding: 20px 20px 30px;
@@ -87,10 +88,10 @@
         display: inline-block;
         width: 30px;
         height: 24px;
-        background-image: url(../images/twitter.png);
+        background-image: url(../images/icons.png);
         background-position: 0 0;
         &:hover {
-          background-position: 30px 0;
+          background-position: -30px 0px;
           transition: 300ms background-position;
         }
       }
@@ -99,10 +100,10 @@
         display: inline-block;
         width: 25px;
         height: 25px;
-        background-image: url(../images/facebook.png);
-        background-position: 0 0;
+        background-image: url(../images/icons.png);
+        background-position: 54px 0;
         &:hover {
-          background-position: 25px 0;
+          background-position: 29px 0;
           transition: 300ms background-position;
         }
       }
@@ -112,10 +113,10 @@
         display: inline-block;
         width: 32px;
         height: 23px;
-        background-image: url(../images/youtube.png);
-        background-position: 0 0;
+        background-image: url(../images/icons.png);
+        background-position: 0 24px;
         &:hover {
-          background-position: 32px 0;
+          background-position: -32px 24px;
           transition: 300ms background-position;
         }
       }
@@ -124,10 +125,10 @@
         display: inline-block;
         width: 25px;
         height: 25px;
-        background-image: url(../images/in.png);
-        background-position: 0 0;
+        background-image: url(../images/icons.png);
+        background-position: 50px 25px;
         &:hover {
-          background-position: 25px 0;
+          background-position: 25px 25px;
           transition: 300ms background-position;
         }
       }

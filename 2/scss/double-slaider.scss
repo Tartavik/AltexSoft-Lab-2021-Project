@@ -1,10 +1,11 @@
 @import "vars";
 @import "fonts";
 @import "mixins";
-@import 'active';
+
 
 .wrapper-main-double-slaider {
   .main-double-slaider {
+    max-width: 1440px;
     padding: 20px 20px 30px;
     .slider-item {
       cursor: pointer;
@@ -42,6 +43,7 @@
 }
 
 .wrapper-secondary-double-slaider {
+  max-width: 1440px;
   margin: auto;
   padding: 20px 20px 30px;
     .slider-item {
