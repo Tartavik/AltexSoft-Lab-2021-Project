@@ -1,78 +1,13 @@
 @import "vars";
 @import "mixins";
-.back-icon {
-  width: 24px;
-  height: 18px;
-  position: relative;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
-  &::after {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background-color: $color-text-primary;
-    left: 0;
-    top: 5px;
-    transform: rotate(45deg);
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background-color: $color-text-primary;
-    left: 0;
-    top: 5px;
-    transform: rotate(135deg);
-  }
-}
 
-.is-none {
-  display: none;
-}
 
-.added-empty-field{
-  padding-top: 78px;
-}
 .tabs {
   .current-tabs-link {
     color: $color-text-links;
   }
 }
 
-.is-hidden {
-  overflow: hidden;
-}
 
-.accord-text-active {
-  @include text-size(24px,32px);
-  margin-top: 20px;
-  margin-left: 0px;
-}
 
-.accordion-active {
-  margin-left: 18px;
-  border: 1.5px solid $color-text-links;
-  position: relative;
-  min-width: 14px;
-  min-height: 14px;
-  background-color: $color-text-primary;
-  box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
-  border-radius: 20px;
-  cursor: pointer;
-  &::after {
-    content: "";
-    width: 7px;
-    height: 1px;
-    position: absolute;
-    background-color: $color-text-links;
-    top: 6px;
-    left: 2.5px;
-  }
-}
 
-.line {
-  border-bottom: 1px solid $color-text-links;
-}

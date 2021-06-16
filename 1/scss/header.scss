@@ -137,3 +137,186 @@
         }
     }
 }
+
+.is-none {
+    display: none;
+}
+  
+.added-empty-field{
+    padding-top: 78px;
+}
+
+.back-icon {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background-color: $color-text-primary;
+        left: 0;
+        top: 5px;
+        transform: rotate(45deg);
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background-color: $color-text-primary;
+        left: 0;
+        top: 5px;
+        transform: rotate(135deg);
+    }
+}
+
+.is-hidden {
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .header-text {
+        max-width: 270px;
+    }
+    .header {
+        .container {
+            padding: 28px 50px 0 50px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .hamburger-container {
+        display: none;
+        position: absolute;
+    }
+    .logo {
+        margin: auto 24px auto 0;
+    }
+    .container-header-menu {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        .header-menu {
+            padding: 0;
+            width: 100%;
+            flex-direction: row;
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+                .header-menu-item {
+                    margin-bottom: 0;
+                    position: relative;
+                    min-width: 85px;
+                .link {
+                    color: $color-text-primary;
+                    &:hover {
+                        color: $color-link-hover;
+                    }
+                }
+            }
+            .active-link {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    margin-top: 20px;
+                    left: 20px;
+                    width: 40px;
+                    height: 2px;
+                    background-color: $color-text-primary;
+                }
+            }
+        }
+        .enter-buttons {
+            position: static;
+            flex-direction: row;
+            margin-bottom: 0;
+            .header-button {
+                margin: 0 0 0 20px;
+                background-color: transparent;
+                border: 1.5px solid $color-text-primary;
+                color: $color-text-primary;
+                &:hover {
+                    color: $color-link-hover;
+                    border: 1.5px solid $color-link-hover;
+                }
+            }
+        }
+    }
+    .header {
+        .container {
+            min-height: 300px;
+        }
+    }
+    .sticky-main {
+        background-color: $color-text-primary;
+        transition: background-color 600ms;
+        max-width: 1440px;
+        padding: 24px 50px;
+        z-index: 1;
+        margin: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        .logo {
+            color: $color-link-hover;
+        }
+        .container-header-menu {
+            .header-menu {
+                .header-menu-item {
+                    .link {
+                        color: $color-link-hover;
+                    }
+                    &:hover {
+                        color: $color-text-links;
+                    }
+                }
+            }
+            .enter-buttons {
+                .header-button {
+                    color: $color-link-hover;
+                    border: 1px solid $color-link-hover;
+                    &:hover {
+                        color: $color-text-links;
+                        border: 1px solid $color-text-links;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .logo {
+        min-width: 110px;
+        min-height: 24px;
+        font-size: 24px;
+        margin-right: 130px;
+    }
+    .header {
+        .container {
+            position: relative;
+            min-height: 500px;
+            padding: 28px 90px 0 90px;
+        }
+    }
+    .header-text {
+        max-width: none;
+        margin: 102px auto 0;
+        .header-text-value {
+            @include text-very-large;
+        }
+    }
+    .sticky-main {
+        padding: 28px 90px 28px 90px;
+    }
+}
