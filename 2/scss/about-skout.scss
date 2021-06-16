@@ -29,7 +29,7 @@
       font-weight: 400;
     }
     &-text {
-      margin: 20px auto ;
+      margin: 20px auto;
       color: $colorTextPrimaryDark;
       font-family: Aclonica, Arial, Helvetica, sans-serif;
       @include text-size(14px, 24px);
@@ -44,12 +44,7 @@
     flex-direction: column;
     justify-content: space-between;
     .btn:first-child {
-      @include button-primary-first(
-        200px,
-        40px,
-        $colorTextlinks,
-        $colorTextPrimary
-      );
+      @include button-primary-first(200px,40px,$colorTextlinks,$colorTextPrimary);
       border: 1px solid $colorTextlinks;
       margin-bottom: 20px;
       &:hover {
@@ -57,13 +52,8 @@
       }
     }
     .btn:last-child {
+      @include button-primary-first(200px,40px,$colorTextPrimary,$colorTextlinks);
       border: 0;
-      @include button-primary-first(
-        200px,
-        40px,
-        $colorTextPrimary,
-        $colorTextlinks
-      );
       &:hover {
         @include button-hover-shadow;
       }
@@ -101,7 +91,7 @@
 
 @media (min-width: 1440px) {
   .about-skout-container {
-    padding: 50px 135px 110px 135px;
+    padding: 50px 135px 110px;
     display: grid;
     grid-template-areas:
       "s a"
@@ -118,7 +108,7 @@
         @include text-size-large;
       }
       &-text {
-        padding: 40px 0 0 0;
+        padding: 40px 0 0;
         margin: auto;
       }
     }

@@ -81,6 +81,7 @@
       display: grid;
       grid-template-columns: 100% 100%;
       padding-left: 0;
+      list-style-type: none;
       .twitter {
         margin-right: 70px;
         margin-bottom: 40px;
@@ -156,13 +157,17 @@
             margin-right: 25px;
           }
           .twitter {
+            margin-right: 0;
             margin-bottom: 0;
+          }
+          .youtube {
+            margin-right: 0;
           }
         }
       }
-      .address-container{
-        .address{
-          .location-container{
+      .address-container {
+        .address {
+          .location-container {
             display: flex;
             flex-direction: column;
           }
@@ -196,7 +201,7 @@
           padding: 0;
           .address {
             min-height: 118px;
-            padding: 20px 0 0 ;
+            padding: 20px 0 0;
             flex-direction: row;
             justify-content: space-between;
             &-title {
@@ -226,18 +231,16 @@
         padding: 27px 0 0 0;
         display: flex;
         justify-content: space-between;
-        align-items: end;
         &-icons {
           .social-icon {
             margin-left: 0;
             margin-right: 50px;
           }
         }
-
         .skout-bottom {
           min-width: 168px;
           min-height: 58px;
-          margin-right: 45px;
+          margin-right: 65px;
         }
       }
     }

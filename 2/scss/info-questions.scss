@@ -24,7 +24,7 @@
         display: block;
         @include text-size-small;
         font-family: "Aclonica", Arial, Helvetica, sans-serif;
-        padding:20px 0;
+        padding: 20px 0;
       }
     }
   }
@@ -40,7 +40,6 @@
     .learn-more {
       .title-container {
         padding: 25px 0 10px 0;
-
         border-bottom: 2px solid $colorTextPrimary;
         .title {
           font-family: Acme, Arial, Helvetica, sans-serif;
@@ -123,8 +122,7 @@
     .container-info-bottom {
       flex-direction: row;
       justify-content: space-between;
-
-      margin: -100px auto 50px auto;
+      margin: -100px auto 50px;
       .learn-more {
         width: 100%;
       }
@@ -137,7 +135,7 @@
 
 @media (min-width: 1440px) {
   .wrapper-info-questions {
-    padding: 50px 0 110px 0;
+    padding: 50px 0 110px;
     .container-info {
       flex-direction: row;
       align-items: center;
@@ -155,7 +153,7 @@
     }
     .container-info-bottom {
       max-width: 1030px;
-      margin: -60px auto 50px auto;
+      margin: -60px auto 50px;
     }
   }
 }

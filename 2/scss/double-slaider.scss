@@ -2,7 +2,6 @@
 @import "fonts";
 @import "mixins";
 
-
 .wrapper-main-double-slaider {
   .main-double-slaider {
     max-width: 1440px;
@@ -90,7 +89,6 @@
       .slider-item {
         text-align: start;
       }
-
     .slick-track {
       transform: translate3d(0px, 0px, 0px) !important;
     }
@@ -124,10 +122,9 @@
   }
 
   .wrapper-secondary-double-slaider {
-    padding: 0 135px 110px 135px;
-
-      .slick-list {
-        padding: 0 !important;
-      }
+    padding: 0 135px 110px;
+    .slick-list {
+      padding: 0 !important;
+    }
   }
 }
