@@ -292,27 +292,16 @@ html {
         border-radius: 50px;
         cursor: pointer;
         &::after {
-          content: "";
-          width: 7px;
-          height: 1px;
-          position: absolute;
-          background-color: $color-text-links;
-          top: 5.5px;
-          left: 2px;
+          @include accordion-button;
+          transform: translate(-50%, -50%);
         }
         &:hover::after {
           background-color: $color-link-hover;
           transition: 800ms background-color;
         }
         &::before {
-          content: "";
-          width: 7px;
-          height: 1px;
-          position: absolute;
-          background-color: $color-text-links;
-          top: 6px;
-          left: 2px;
-          transform: rotate(90deg);
+          @include accordion-button;
+          transform: translate(-50%, -50%) rotate(90deg);
         }
         &:hover::before {
           background-color: $color-link-hover;

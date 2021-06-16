@@ -59,3 +59,13 @@
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+
+@mixin accordion-button {
+    content: "";
+    width: 7px;
+    height: 1px;
+    position: absolute;
+    background-color: $color-text-links;
+    left: 50%;
+    top: 50%;
+}
