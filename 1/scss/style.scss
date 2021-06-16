@@ -218,7 +218,7 @@ html {
   width: 100%;
   font-family: Aclonica;
 
-  .accordions-container-anchor-top {
+  &-anchor-top {
     padding-top: 10px;
     padding-bottom: 25px;
     border-top: 1px solid $color-anchors;
@@ -325,7 +325,7 @@ html {
       }
     }
   }
-  .accordions-container-anchor-bottom {
+  &-anchor-bottom {
     margin-top: 24px;
     padding-top: 10px;
     border-top: 1px solid $color-anchors;
@@ -479,7 +479,7 @@ html {
 .faqs-container {
   min-width: 335px;
   @include wrapper;
-  .faqs-container-anchor {
+  &-anchor {
     @include anchor-skout;
     border-top: 1px solid $color-anchors;
     border-radius: 1px;
