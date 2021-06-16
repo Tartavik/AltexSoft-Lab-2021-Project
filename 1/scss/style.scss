@@ -49,7 +49,7 @@ html {
 }
 
 .header-text {
-  margin: 30px auto 0 auto;
+  margin: 30px auto 0;
   text-align: center;
   max-width: 123px;
   font-family: Actor;
@@ -254,7 +254,7 @@ html {
         }
         .bottom-info-text{
           @include text-small;
-          margin: 11px 0 23px 0;
+          margin: 11px 0 23px;
           color: $color-link-hover;
         }
       }
@@ -273,7 +273,7 @@ html {
       .number {
         @include text-size(40px,48px);
         @include text-type;
-        margin: 0 16px 0 16px;
+        margin: 0 16px;
         font-family: Actor;
         min-width: 30px;
         color: $color-accord-letter;
@@ -468,7 +468,7 @@ html {
   @include text-small;
   @include text-type;
   display: block;
-  padding: 20px 0 24px 0;
+  padding: 20px 0 24px;
   text-align: center;
   color: $color-text-links;
   font-family: Acme;
@@ -603,8 +603,12 @@ html {
       .address {
         display: flex;
         flex-direction: column;
-        padding: 8px 0 8px 0;
+        padding: 8px 0;
         border-top: 2px solid $color-text-links;
+        .location{
+          display: flex;
+          flex-direction: column;
+        }
         .address-title{
           @include text-size(16px,36px);
           color: $color-link-hover;

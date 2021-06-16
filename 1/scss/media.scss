@@ -54,7 +54,7 @@
 
   .accordions-container {
     margin: auto;
-    padding: 100px 136px 50px 136px;
+    padding: 100px 136px 50px;
     .skout-tips-container {
       padding-top: 20px;
       padding-bottom: 100px;
@@ -97,7 +97,7 @@
       .panel {
         display: flex;
         .main-icon {
-          margin: 42px 0 0 0;
+          margin: 42px 0 0;
         }
         .footer-accordion {
           font-size: 16px;
@@ -247,8 +247,7 @@
   .footer {
     .footer-wrapper {
       margin: auto;
-      padding-left: 135px;
-      padding-right: 135px;
+      padding: 0 135px;
       .about-company {
         display: flex;
         justify-content: space-between;
@@ -265,7 +264,7 @@
         .address-container {
           .address {
             min-height: 118px;
-            padding: 0;
+            padding: 20px 0 0;
             flex-direction: row;
             justify-content: space-between;
             .address-title{
@@ -294,7 +293,6 @@
         .skout-bottom {
           min-width: 168px;
           min-height: 58px;
-          margin-right: 50px;
         }
       }
     }
