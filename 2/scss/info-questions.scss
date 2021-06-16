@@ -22,7 +22,7 @@
       .text {
         display: block;
         @include text-size-small;
-        font-family: "Aclonica";
+        font-family: "Aclonica", Arial, Helvetica, sans-serif;
         padding:20px 0;
       }
     }
@@ -42,22 +42,22 @@
 
         border-bottom: 2px solid $colorTextPrimary;
         .title {
-          font-family: Acme;
+          font-family: Acme, Arial, Helvetica, sans-serif;
           @include text-size(12px, 24px);
           letter-spacing: 2px;
           text-transform: uppercase;
           color: $colorTextPrimary;
         }
       }
-      .learn-more-text-container {
-        margin: 20px 0 0 0;
+      &-text-container {
+        margin-top: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         .learn-more-text {
           @include text-size-small;
           color: $colorTextPrimary;
-          font-family: Aclonica;
+          font-family: Aclonica, Arial, Helvetica, sans-serif;
         }
         .learn-more-btn {
           cursor: pointer;
@@ -70,7 +70,7 @@
           &::before {
             content: "";
             position: absolute;
-            width: 25px;
+            width: 20px;
             left: 4px;
             height: 1px;
             background-color: $colorTextPrimary;
@@ -84,14 +84,15 @@
             left: 15px;
             border-top: 1px solid $colorTextPrimary;
             border-right: 1px solid $colorTextPrimary;
-            transform: rotate(45deg);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
           }
           &:hover {
             border: 1px solid $hoverColorLink;
             transform: scale(1.2);
             &::after {
               border-color: $hoverColorLink;
-              top: 11px;
             }
             &::before {
               background-color: $hoverColorLink;

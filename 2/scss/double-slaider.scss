@@ -12,7 +12,7 @@
       flex-direction: column;
       align-items: center;
       .double-slider-icon {
-        .double-slider-icon-img {
+        &-img {
           min-width: 240px;
           max-height: 120px;
         }
@@ -22,14 +22,14 @@
         text-align: center;
         .slider-text {
           @include text-size(24px, 36px);
-          font-family: Aclonica;
+          font-family: Aclonica, Arial, Helvetica, sans-serif;
           display: block;
           padding: 20px 0;
           color: $hoverColorLink;
         }
         .author {
-          .author-fn-ln {
-            font-family: Acme;
+          &-fn-ln {
+            font-family: Acme, Arial, Helvetica, sans-serif;
             @include text-size(12px, 24px);
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -107,7 +107,7 @@
         display: flex;
         flex-direction: row;
         .double-slider-icon {
-          .double-slider-icon-img {
+          &-img {
             min-width: 340px;
             min-height: 200px;
           }

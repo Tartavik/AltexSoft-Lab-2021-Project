@@ -2,10 +2,18 @@ const containerHeaderMenu = document.querySelector('.container-header-menu');
 const hamburger = document.querySelector('.hamburger-icon');
 const headerMenu = document.querySelector('.header-menu');
 hamburger.addEventListener('click', () => {
-  containerHeaderMenu.classList.toggle('none');
+  containerHeaderMenu.classList.toggle('d-none');
   hamburger.classList.toggle('open-menu');
   document.body.classList.toggle('is-hide');
 });
+
+window.addEventListener(`resize`, () => {
+    if(window.matchMedia("(min-width: 1440px)").matches){
+      document.body.classList.remove('is-hide');
+    } 
+  },
+  false
+);
 
 for (let i = 0; i < headerMenu.children.length; i++) {
   headerMenu.children[i].children[0].addEventListener('click', e => {
@@ -18,36 +26,41 @@ for (let i = 0; i < headerMenu.children.length; i++) {
 
 const skoutSA = document.querySelector('.skout-sa');
 const aboutSkout = document.querySelector('.about-skout');
-const buttonAboutSkout = document.querySelector('.buttons-about-skout');
+const buttonAboutSkout = document.querySelector('.about-skout-buttons');
 const aboutSkoutContainer = document.querySelector('.about-skout-container');
 
-if (window.matchMedia("(min-width: 768px)").matches) {
-  window.onscroll = () => {
-    if (
-      window.pageYOffset >=
-      aboutSkoutContainer.offsetTop - window.screen.height / 3
-    ) {
-      skoutSA.style.opacity = 1;
-      setTimeout(() => {
-        aboutSkout.style.opacity = 1;
-        buttonAboutSkout.style.opacity = 1;
-      }, 700);
-    }
+  if (window.matchMedia("(max-width: 768px)").matches) { 
+    skoutSA.style.opacity = 1;
+    aboutSkout.style.opacity = 1;
+    buttonAboutSkout.style.opacity = 1;
+  } 
 
-    let nextCurrentPageYOffset = window.pageYOffset;
-    if (currentPageYOffset > nextCurrentPageYOffset) {
-      showHeaderInnerStickyMenu();
-    } else {
-      headerInner.classList.remove('sticky-main');
-    }
+  window.addEventListener('scroll', () => {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      if (
+        window.pageYOffset >=
+        aboutSkoutContainer.offsetTop - window.screen.height / 3
+      ) {
+        skoutSA.style.opacity = 1;
+        setTimeout(() => {
+          aboutSkout.style.opacity = 1;
+          buttonAboutSkout.style.opacity = 1;
+        }, 700);
+      }
+      let nextCurrentPageYOffset = window.pageYOffset;
+      const headerInner = document.getElementsByClassName('header-inner')[0];
+      const container = document.getElementsByClassName('container')[0];
+      let stickyMain = headerInner.offsetTop;
 
-    currentPageYOffset = nextCurrentPageYOffset;
-  };
-} else {
-  skoutSA.style.opacity = 1;
-  aboutSkout.style.opacity = 1;
-  buttonAboutSkout.style.opacity = 1;
-}
+      if (currentPageYOffset > nextCurrentPageYOffset) {
+        showHeaderInnerStickyMenu(headerInner,container,stickyMain);
+      } else {
+        headerInner.classList.remove('sticky-main');
+      }
+      currentPageYOffset = nextCurrentPageYOffset;
+    } 
+  });
+
 
 $(document).ready(function () {
   $('.big-slider').slick({
@@ -69,8 +82,8 @@ $(document).ready(function () {
         breakpoint: 1439,
         settings: {
           variableWidth: false,
-          slidesToShow: 4,
-        },
+          slidesToShow: 4
+        }
       },
     ],
   });
@@ -92,28 +105,26 @@ $(document).ready(function () {
     centerMode: true,
     responsive: [
       {
-        breakpoint: 1439,
-        settings: {
-          slidesToShow: 5,
-          centerMode: true,
-        },
-
         breakpoint: 767,
         settings: {
           slidesToShow: 5,
           centerMode: true,
-        },
+        }
+      },
+      {  
+        breakpoint: 1439,
+        settings: {
+          slidesToShow: 5,
+          centerMode: true,
+        }
       },
     ],
   });
 });
 
-const headerInner = document.getElementsByClassName('header-inner')[0];
-const container = document.getElementsByClassName('container')[0];
-let stickyMain = headerInner.offsetTop;
 let currentPageYOffset = window.pageYOffset;
 
-function showHeaderInnerStickyMenu() {
+function showHeaderInnerStickyMenu(headerInner,container,stickyMain) {
   if (window.pageYOffset >= stickyMain + 10 && window.screen.width >= 1440) {
     headerInner.classList.add('sticky-main');
     container.classList.add('added-empty-field');

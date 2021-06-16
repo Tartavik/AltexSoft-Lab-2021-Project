@@ -16,31 +16,31 @@
 }
 
 @mixin text-font-style {
-  font-family: Aclonica;
+  font-family: Aclonica, Arial, Helvetica, sans-serif;
   color: $colorTextPrimaryDark;
 }
 
 @mixin text-size-small {
-  font-size: $fs-small;
-  line-height: $lh-small;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 @mixin text-size-standart {
   @include text-font-style;
-  font-size: $fs-standart;
-  line-height: $lh-standart;
+  font-size: 24px;
+  line-height: 32px;
 }
 
 @mixin text-size-medium {
   @include text-font-style;
-  font-size: $fs-medium;
-  line-height: $lh-medium;
+  font-size: 34px;
+  line-height: 42px;
 }
 
 @mixin text-size-large {
   @include text-font-style;
-  font-size: $fs-large;
-  line-height: $lh-large;
+  font-size: 42px;
+  line-height: 54px;
 }
 
 @mixin text-size($font, $line) {
@@ -61,4 +61,13 @@
 @mixin button-hover-shadow {
   box-shadow: 0px 6px 12px $color-shadow-hover;
   transition: box-shadow 600ms;
+}
+
+@mixin slider-icon {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background-color: $color-bg-transparent;
+  border: 1px solid $colorTextlinks;
+  border-radius: 30px;
 }

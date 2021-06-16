@@ -5,8 +5,8 @@
 .footer {
   background-color: #f2f2f2;
   width: 100%;
-  font-family: Aclonica;
-  .footer-wrapper {
+  font-family: Aclonica, Arial, Helvetica, sans-serif;
+  &-wrapper {
     display: flex;
     flex-direction: column-reverse;
     padding: 20px 20px 30px;
@@ -42,7 +42,7 @@
         flex-direction: column;
         padding: 8px 0 8px 0;
         border-top: 2px solid $colorTextlinks;
-        .address-title {
+        &-title {
           @include text-size(16px, 36px);
           color: $hoverColorLink;
           margin: 0;
@@ -76,7 +76,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    .conteiner-social-icons {
+    &-icons {
       display: grid;
       grid-template-columns: 100% 100%;
       padding-left: 0;
@@ -141,14 +141,14 @@
 
 @media (min-width: 768px) {
   .footer {
-    .footer-wrapper {
+    &-wrapper {
       padding: 28px 54px 50px;
       flex-direction: column;
       .social {
         justify-content: space-between;
         grid-template-columns: none;
         padding-top: 30px;
-        .conteiner-social-icons {
+        &-icons {
           display: flex;
           grid-template-columns: 0;
           .social-icon {
@@ -173,7 +173,7 @@
 
 @media (min-width: 1440px) {
   .footer {
-    .footer-wrapper {
+    &-wrapper {
       margin: auto;
       padding: 75px 135px 110px;
       .about-company {
@@ -198,7 +198,7 @@
             padding: 20px 0 0 ;
             flex-direction: row;
             justify-content: space-between;
-            .address-title {
+            &-title {
               font-size: 24px;
               margin-right: 210px;
             }
@@ -226,7 +226,7 @@
         display: flex;
         justify-content: space-between;
         align-items: end;
-        .conteiner-social-icons {
+        &-icons {
           .social-icon {
             margin-left: 0;
             margin-right: 50px;

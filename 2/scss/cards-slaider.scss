@@ -44,14 +44,14 @@
     .slider-item-content {
       padding: 0 55px 0 55px;
       margin: auto;
-      .slider-item-content-text {
+      &-text {
         display: flex;
         list-style: none;
         min-height: 60px;
         align-items: center;
         border-top: 2px solid #f2f2f2;
         .slider-text {
-          font-family: Aclonica;
+          font-family: Aclonica, Arial, Helvetica, sans-serif;
 
           @include text-size(13px, 24px);
           color: $hoverColorLink;
@@ -86,7 +86,7 @@
         }
       }
       .slider-item-content {
-        .slider-item-content-text {
+        &-text {
           border-top: 1px solid #f2f2f2;
           .slider-text {
             color: $colorTextPrimary;
@@ -116,12 +116,7 @@
 }
 
 .slider-icon {
-  position: relative;
-  min-width: 35px;
-  min-height: 35px;
-  background-color: $color-bg-transparent;
-  border: 1px solid $colorTextlinks;
-  border-radius: 30px;
+  @include slider-icon;
   &::before {
     content: "";
     position: absolute;
@@ -137,12 +132,7 @@
 }
 
 .slider-icon-disable {
-  position: relative;
-  width: 35px;
-  height: 35px;
-  background-color: $color-bg-transparent;
-  border: 1px solid $colorTextlinks;
-  border-radius: 30px;
+  @include slider-icon;
   &::before {
     content: "";
     position: absolute;
@@ -155,7 +145,7 @@
   }
 }
 
-.opacity {
+.translucent {
   opacity: 0.5;
 }
 
@@ -170,11 +160,6 @@
       }
     }
   }
-  // .cards-slider{
-  //   .slick-list{
-  //     overflow: visible;
-  //   }
-  // }
 }
 
 @media (min-width: 1440px) {
