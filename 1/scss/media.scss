@@ -242,7 +242,7 @@
   .footer {
     .footer-wrapper {
       margin: auto;
-      padding: 0 135px;
+      padding: 80px 135px 100px;
       .about-company {
         display: flex;
         justify-content: space-between;
@@ -257,6 +257,7 @@
           }
         }
         .address-container {
+          margin: 0;
           .address {
             min-height: 118px;
             padding: 20px 0 0;
