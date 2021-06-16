@@ -1,0 +1,102 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+
+.more-questions {
+    @include text-small;
+    @include text-type;
+    display: block;
+    padding: 20px 0 24px;
+    text-align: center;
+    color: $color-text-links;
+    font-family: Acme, Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    &:hover {
+        color: $color-link-hover;
+        transition: 800ms color;
+    }
+}
+
+.faqs-container {
+    min-width: 335px;
+    @include wrapper;
+    &-anchor {
+        @include anchor-skout;
+        border-top: 1px solid $color-anchors;
+        border-radius: 1px;
+        width: 100%;
+        padding-top: 10px;
+        #head-FAQs {
+            @include anchor-item;
+        }
+    }
+}
+
+.faqs-accordion-container {
+    @include wrapper;
+    font-family: Aclonica, Arial, Helvetica, sans-serif;
+    .panel {
+        display: flex;
+        padding: 0 20px;
+        color: $color-text-dark;
+        background-color: $color-text-primary;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        .panel-letter {
+            @include text-size(40px, 48px);
+            margin-right: 25px;
+            color: $color-accord-letter;
+        }
+        .answer {
+            @include text-size(14px, 24px);
+            margin: auto 0;
+            color: $color-text-dark;
+        }
+    }
+  
+    .head-accordion-Faqs {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        min-height: 114px;
+        border: 0;
+        padding: 0;
+        background: $color-text-primary;
+        width: 100%;
+        text-align: start;
+        .accordion-letter {
+            @include text-size(40px, 48px);
+            margin-right: 25px;
+            color: $color-accord-letter;
+            font-family: Actor, Arial, Helvetica, sans-serif;
+        }
+        .accordion-button {
+            min-width: 20px;
+            min-height: 20px;
+            border-bottom: 1.5px solid $color-text-links;
+            border-left: 1.5px solid $color-text-links;
+            background: $color-text-primary;
+            border-top: 0;
+            border-right: 0;
+            transform: rotate(-45deg);
+            transition: transform 0.8s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                border-bottom: 1.5px solid $color-link-hover;
+                border-left: 1.5px solid $color-link-hover;
+                transition: 800ms border-left;
+                transition: 800ms border-bottom;
+            }
+        }
+        .rotate {
+            transform: rotate(135deg);
+            transition: transform 0.8s ease-in-out;
+        }
+        .question {
+            width: 100%;
+            color: $color-text-dark;
+            font-family: Aclonica, Arial, Helvetica, sans-serif;
+        }
+    }
+}

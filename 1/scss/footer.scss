@@ -1,0 +1,116 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+
+.footer {
+    background-color: #f2f2f2;
+    width: 100%;
+    font-family: Aclonica, Arial, Helvetica, sans-serif;
+    .footer-wrapper {
+        @include wrapper;
+        padding-bottom: 25px;
+        .about-company {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .link-company {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+                .link-company-item {
+                    .link-company-link {
+                        @include text-small;
+                        color: $color-link-hover;
+                        margin-top: 12px;
+                        text-decoration: none;
+                    }
+                    #Call {
+                        .tel {
+                            @include text-medium();
+                            color: $color-link-hover;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .address-container {
+            padding: 0;
+            .address {
+                display: flex;
+                flex-direction: column;
+                padding: 8px 0;
+                border-top: 2px solid $color-text-links;
+                .location {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .address-title {
+                    @include text-size(16px, 36px);
+                    color: $color-link-hover;
+                    margin: 0;
+                }
+                .address-text {
+                    @include text-medium();
+                    color: $color-link-hover;
+                    font-style: normal;
+                }
+                .phone {
+                    @include text-medium();
+                    color: $color-link-hover;
+                    text-decoration: none;
+                }
+                .view-map {
+                    @include text-small;
+                    text-decoration: none;
+                    color: $color-text-links;
+                    &:hover {
+                    color: $color-link-hover;
+                    transition: 800ms color;
+                    }
+                }
+            }
+        }
+    }
+    .social {
+        border-top: 1.5px solid $color-anchors;
+        padding-top: 20px;
+        text-align: center;
+        .conteiner-social-icons {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+            padding-left: 0;
+            .twitter {
+                @include social-icon(30px, 24px, url(../images/twitter.png));
+                &:hover {
+                    @include social-icon-hover(30px);
+                }
+            }
+            .facebook {
+                @include social-icon(25px, 25px, url(../images/facebook.png));
+                &:hover {
+                    @include social-icon-hover(25px);
+                }
+            }
+            .youtube {
+                @include social-icon(32px, 23px, url(../images/youtube.png));
+                &:hover {
+                    @include social-icon-hover(32px);
+                }
+            }
+            .in {
+                @include social-icon(25px, 25px, url(../images/in.png));
+                &:hover {
+                    @include social-icon-hover(25px);
+                }
+            }
+        }
+    }
+    .skout-bottom {
+        min-width: 105px;
+        max-height: 38px;
+    }
+}

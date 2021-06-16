@@ -1,0 +1,123 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+
+.slider-block {
+    background: linear-gradient(45deg, #e0e0e0, $color-text-primary);
+    font-family: Aclonica, Arial, Helvetica, sans-serif;
+    .slider-wrapper {
+        @include wrapper;
+        .active-slider-link {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 46px;
+                height: 1px;
+                background-color: $color-text-links;
+                bottom: 16px;
+                right: 165px;
+            }
+        }
+        .slider-container {
+            max-width: 335px;
+            background-color: $color-text-primary;
+            box-shadow: 0px 12px 24px $color-accord-letter;
+            border-radius: 5px;
+            display: flex;
+            .slider-head {
+                margin: 40px 75px 40px 60px;
+                width: 100%;
+                .slider-item {
+                    @include text-size(16px, 32px);
+                    position: relative;
+                    .slider-item-text {
+                        cursor: pointer;
+                        color: $color-link-hover;
+                    }
+                    &:hover .slider-item-text {
+                        color: $color-text-links;
+                        transition: 800ms color;
+                    }
+                }
+            }
+            .slider-button-container {
+                display: flex;
+                flex-direction: column;
+                margin-right: 25px;
+                .slider-button {
+                    display: flex;
+                    min-width: 16px;
+                    min-height: 16px;
+                    border-radius: 20px;
+                    background: $color-text-primary;
+                    border: 1px solid $color-text-links;
+                    align-items: stretch;
+                    padding-top: 0px;
+                    margin-top: 16px;
+                    position: relative;
+                    cursor: pointer;
+                    &::after {
+                        content: "";
+                        width: 6px;
+                        height: 6px;
+                        border-right: 2px solid $color-text-links;
+                        border-bottom: 2px solid $color-text-links;
+                        position: absolute;
+                        transform: rotate(-50deg);
+                        top: 4px;
+                        left: 5px;
+                    }
+                    &::before {
+                        content: "";
+                        width: 8px;
+                        height: 2px;
+                        background-color: $color-text-links;
+                        position: absolute;
+                        top: 6px;
+                        left: 2px;
+                    }
+                    &:hover {
+                        border: 1px solid $color-link-hover;
+                        transition: 800ms border;
+                    }
+                    &:hover::after {
+                        border-right: 2px solid $color-link-hover;
+                        border-bottom: 2px solid $color-link-hover;
+                        transition: 800ms border-right;
+                        transition: 800ms border-bottom;
+                    }
+                    &:hover::before {
+                        background-color: $color-link-hover;
+                        transition: 800ms background-color;
+                    }
+                }
+                .rotate-arrow {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .slider-text-container {
+            margin: 32px 24px 0 20px;
+            padding-bottom: 24px;
+            .slider-title {
+                @include text-size(32px, 40px);
+                @include text-type;
+                font-weight: normal;
+                padding-bottom: 24px;
+                margin: 0 0 0 20px;
+                font-family: Actor, Arial, Helvetica, sans-serif;
+                color: $color-text-dark;
+            }
+            .slider-text {
+                display: flex;
+                max-width: 442px;
+                padding-left: 16px;
+                border-left: 1.5px solid $color-text-links;
+                .slider-span {
+                    @include text-medium();
+                    color: $color-text-dark;
+                }
+            }
+        }
+    }
+}
