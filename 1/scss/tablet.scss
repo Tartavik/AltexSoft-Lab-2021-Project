@@ -55,11 +55,11 @@
       .slider-text-container {
         margin: auto;
         .slider-title {
-          @include text-size(50px,70px);
+          @include text-size(50px, 70px);
         }
         .slider-text {
           .slider-span {
-            @include text-size(18px,26px);
+            @include text-size(18px, 26px);
           }
         }
       }

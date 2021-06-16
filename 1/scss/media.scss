@@ -1,7 +1,6 @@
 @import "vars";
 @import "mixins";
 @media (min-width: 1440px) {
-
   .logo {
     min-width: 110px;
     min-height: 24px;
@@ -33,16 +32,16 @@
     max-width: 770px;
     min-height: 80px;
     margin-top: -35px;
-    .anchor{
+    .anchor {
       padding: 28px 100px;
-      &:first-child{
+      &:first-child {
         &::after {
           height: 40px;
           top: 20px;
           left: 235px;
         }
       }
-      &:last-child{
+      &:last-child {
         &::after {
           height: 40px;
           top: 20px;
@@ -74,7 +73,7 @@
           min-width: 50px;
         }
         .accord-text {
-          @include text-size(24px,36px);
+          @include text-size(24px, 36px);
         }
         .accordion-button {
           min-width: 35px;
@@ -131,7 +130,7 @@
   }
 
   .accord-text-active {
-    @include text-size(42px,54px);
+    @include text-size(42px, 54px);
     max-width: 175px;
     margin-top: 57px;
   }
@@ -176,16 +175,16 @@
         justify-content: center;
 
         margin: auto;
-        .slider-title{
-          @include text-size(90px,120px);
+        .slider-title {
+          @include text-size(90px, 120px);
           padding-bottom: 70px;
           margin: 0;
         }
         .slider-text {
           padding-left: 40px;
           margin-left: 80px;
-          .slider-span{
-            @include text-size(24px,36px);
+          .slider-span {
+            @include text-size(24px, 36px);
           }
         }
       }
@@ -220,7 +219,7 @@
         margin-right: 100px;
       }
       .question {
-        @include text-size(24px,36px);
+        @include text-size(24px, 36px);
       }
       .accordion-button {
         margin-right: 80px;
@@ -253,9 +252,9 @@
         justify-content: space-between;
         flex-direction: row;
         .link-company {
-          .link-company-item{
+          .link-company-item {
             margin-bottom: 30px;
-            .link-company-link{
+            .link-company-link {
               min-width: 170px;
               margin-top: 0;
             }
@@ -267,11 +266,11 @@
             padding: 20px 0 0;
             flex-direction: row;
             justify-content: space-between;
-            .address-title{
+            .address-title {
               font-size: 24px;
               margin-right: 150px;
             }
-            .address-text{
+            .address-text {
               margin-right: 30px;
             }
             .phone {
