@@ -54,7 +54,7 @@
   .accordions-container {
     margin: auto;
     padding: 100px 136px 50px;
-    .skout-tips-container {
+    .accordions-container-anchor-top {
       padding-top: 20px;
       padding-bottom: 100px;
       font-size: 38px;
@@ -108,7 +108,7 @@
         }
       }
     }
-    .glossary-container {
+    .accordions-container-anchor-bottom {
       margin-top: 160px;
       padding-top: 20px;
       font-size: 38px;
@@ -200,7 +200,7 @@
   .faqs-container {
     padding: 160px 136px 0;
     margin: auto;
-    .head-FAQs-wrapper {
+    .faqs-container-anchor {
       font-size: 38px;
       padding-top: 20px;
       #head-FAQs {

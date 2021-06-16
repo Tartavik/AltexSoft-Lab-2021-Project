@@ -36,11 +36,11 @@
 
   .accordions-container {
     padding: 60px 70px 30px;
-    .glossary-container {
+    .accordions-container-anchor-bottom {
       margin-top: 62px;
       font-size: 24px;
     }
-    .skout-tips-container {
+    .accordions-container-anchor-top {
       font-size: 24px;
     }
   }
@@ -72,7 +72,7 @@
 
   .faqs-container {
     padding: 60px 70px 0;
-    .head-FAQs-wrapper {
+    .faqs-container-anchor {
       font-size: 24px;
     }
   }
@@ -165,10 +165,10 @@
   }
 
   .accordions-container {
-    .skout-tips-container {
+    .accordions-container-anchor-top {
       font-size: 28px;
     }
-    .glossary-container {
+    .accordions-container-anchor-bottom {
       font-size: 28px;
     }
   }
@@ -187,7 +187,7 @@
   }
 
   .faqs-container {
-    .head-FAQs-wrapper {
+    .faqs-container-anchor {
       font-size: 28px;
     }
   }
