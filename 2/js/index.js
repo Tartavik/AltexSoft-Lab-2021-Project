@@ -2,7 +2,7 @@ const containerHeaderMenu = document.querySelector('.container-header-menu');
 const hamburger = document.querySelector('.hamburger-icon');
 const headerMenu = document.querySelector('.header-menu');
 hamburger.addEventListener('click', () => {
-  containerHeaderMenu.classList.toggle('d-none');
+  containerHeaderMenu.classList.toggle('is-show-menu');
   hamburger.classList.toggle('open-menu');
   document.body.classList.toggle('is-hide');
 });

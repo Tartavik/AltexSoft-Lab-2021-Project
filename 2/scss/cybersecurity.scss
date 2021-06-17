@@ -96,6 +96,8 @@
     }
     .btn:hover {
       @include button-hover-shadow;
+      position: relative;
+      bottom: 3px;
     }
   }
 }

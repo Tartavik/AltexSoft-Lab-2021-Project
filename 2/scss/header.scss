@@ -40,6 +40,7 @@
   background: $colorTextPrimary;
   z-index: 2;
   font-family: Acme, Arial, Helvetica, sans-serif;
+  transition: left 500ms ease;
   .header-menu {
     cursor: pointer;
     margin: 0;
@@ -50,18 +51,20 @@
     padding: 0;
     &-item {
       @include text-size(12px, 24px);
+      padding: 13px;
       text-transform: uppercase;
-      margin-bottom: 12px;
       text-align: center;
       position: relative;
       letter-spacing: 2px;
+      &:hover{
+        .link{
+          color: $hoverColorLink;
+          transition: 600ms color;
+        }
+      }
       .link {
         color: $colorTextlinks;
         text-decoration: none;
-        &:hover {
-          color: $hoverColorLink;
-          transition: 800ms color;
-        }
       }
     }
     .active-link {
@@ -69,7 +72,7 @@
         content: "";
         position: absolute;
         margin-top: 20px;
-        left: 20px;
+        left: 33px;
         width: 40px;
         height: 2px;
         background-color: $colorTextlinks;
@@ -84,12 +87,7 @@
     bottom: 0;
     margin-bottom: 40px;
     .btn {
-      @include button-primary-first(
-        180px,
-        40px,
-        $colorTextlinks,
-        $colorTextPrimary
-      );
+      @include button-primary-first(180px,40px,$colorTextlinks,$colorTextPrimary);
       border: 1px solid $colorTextlinks;
       margin-bottom: 20px;
       &:hover {
@@ -118,6 +116,7 @@
     left: 0;
     top: 0;
     box-shadow: 0 8px 0 0 $colorTextPrimary, 0 16px 0 0 $colorTextPrimary;
+    transition: all 600ms;
   }
 }
 
@@ -126,10 +125,12 @@
     @include style-back-icon;
     transform: rotate(45deg);
     box-shadow: none;
+    transition: all 600ms;
   }
   &::before {
     @include style-back-icon;
     transform: rotate(135deg);
+    transition: rotate 600ms;
   }
 }
 
@@ -167,12 +168,10 @@
     }
     .btn:hover {
       @include button-hover-shadow;
+      position: relative;
+      bottom: 3px;
     }
   }
-}
-
-.d-none {
-  display: none;
 }
 
 .is-hide {
@@ -192,11 +191,12 @@
   }
 
   .container-header-menu {
-    top: 75px;
+    top: 0;
     z-index: 2;
+    left: 50%;
     .header-menu {
+      margin-top: 70px;
       &-item {
-        padding: 13px;
         margin-bottom: 0;
       }
       .active-link {
@@ -228,6 +228,15 @@
         min-width: 200px;
         min-height: 40px;
       }
+    }
+  }
+  .hamburger-icon.open-menu {
+    z-index: 3;
+    &::before{
+      background-color: $colorTextlinks;
+    }
+    &::after{
+      background-color: $colorTextlinks;
     }
   }
   .sticky-main {
@@ -375,4 +384,9 @@
       }
     }
   }
+}
+
+.is-show-menu {
+  left: 1600px;
+  transition: left 500ms ease;
 }

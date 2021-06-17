@@ -46,16 +46,22 @@
     .btn:first-child {
       @include button-primary-first(200px,40px,$colorTextlinks,$colorTextPrimary);
       border: 1px solid $colorTextlinks;
+      padding: 5px;
       margin-bottom: 20px;
       &:hover {
         @include button-hover-shadow;
+        position: relative;
+        bottom: 3px;
       }
     }
     .btn:last-child {
       @include button-primary-first(200px,40px,$colorTextPrimary,$colorTextlinks);
       border: 0;
+      padding: 5px;
       &:hover {
         @include button-hover-shadow;
+        position: relative;
+        bottom: 3px;
       }
     }
   }
