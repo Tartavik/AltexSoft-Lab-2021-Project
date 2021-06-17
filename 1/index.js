@@ -14,6 +14,7 @@ const sliderTitle = document.querySelector('.slider-title');
 const sliderSpan = document.querySelector('.slider-span');
 const sliderButton = document.getElementsByClassName('slider-button');
 const headerInner = document.querySelector('.header-inner');
+const allPanel = document.querySelectorAll('.panel');
 let sliderHead = document.querySelector('.slider-head');
 let newArrSliderText;
 let sticky = tabs.offsetTop;
@@ -100,15 +101,22 @@ function createAccordionTop(acc) {
     acc[i].addEventListener('click', (e) => {
       console.log(e.currentTarget.nextElementSibling);
       let panel = e.currentTarget.nextElementSibling;
-      e.currentTarget.children[2].classList.toggle('accordion-active');
-      e.currentTarget.children[2].classList.toggle('accordion-button');
       e.currentTarget.children[0].classList.toggle('is-show-menu');
       e.currentTarget.children[1].classList.toggle('accord-text-active');
+      if(!(panel.style.maxHeight)){
+        for(let j = 0; j < accordContainer.length;j++){
+          accordContainer[j].children[1].style.maxHeight = null;
+          accordContainer[j].children[0].children[2].classList.remove('accordion-active');
+          accordContainer[j].children[0].children[2].classList.add('accordion-button');
+        }
+      }
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
         panel.style.maxHeight = 800 + 'px';
       }
+      e.currentTarget.children[2].classList.toggle('accordion-active');
+      e.currentTarget.children[2].classList.toggle('accordion-button');
     });
   }
 }
@@ -117,13 +125,18 @@ function createAccordionBottom(acc) {
   for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener('click', (e) => {
       let panel = e.currentTarget.nextElementSibling;
-      console.log(e.currentTarget.children[2]);
-      e.currentTarget.children[2].classList.toggle('rotate');
+      if(!(panel.style.maxHeight)){
+        for(let j = 0; j < acc.length;j++){
+          acc[j].parentNode.children[1].style.maxHeight = null;
+          acc[j].children[2].classList.remove('rotate');
+        }
+      }
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
         panel.style.maxHeight = panel.scrollHeight + 'px';
       }
+      e.currentTarget.children[2].classList.toggle('rotate');
     });
   }
 }
