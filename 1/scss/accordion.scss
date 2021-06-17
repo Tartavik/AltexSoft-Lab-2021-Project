@@ -21,7 +21,6 @@
     }
   
     .accord-container {
-        min-height: 54px;
         border-top: 1px solid $color-text-links;
         .panel {
             padding: 0 18px;
@@ -53,6 +52,7 @@
             cursor: pointer;
             padding: 0;
             border: 0;
+            min-height: 54px;
             background-color: $color-text-primary;
             width: 100%;
             font-family: Aclonica, Arial, Helvetica, sans-serif;
@@ -136,8 +136,9 @@
         height: 1px;
         position: absolute;
         background-color: $color-text-links;
-        top: 6px;
-        left: 2.5px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }
   
@@ -148,6 +149,18 @@
 @media (min-width: 768px) {
     .accordions-container {
         padding: 60px 70px 30px;
+        .accord-container {
+            .head-accordion{
+                min-height: 80px;
+                .accordion-button {
+                    transform: scale(1.5);
+                }
+                .number {
+                    @include text-size(65px, 80px);
+                    margin: 0 55px 0 25px;
+                }
+            }
+        }
         &-anchor-bottom {
             margin-top: 62px;
             font-size: 24px;
@@ -156,16 +169,33 @@
             font-size: 24px;
         }
     }
+    .accordion-active {
+        transform: scale(1.5);
+    }
 }
 
 @media (min-width: 1200px) {
     .accordions-container {
+        .accord-container {
+            .head-accordion{
+                min-height: 120px;
+                .accordion-button {
+                    transform: scale(2);
+                }
+                .accord-text {
+                    @include text-size(24px, 36px);
+                }
+            }
+        }
         &-anchor-top {
           font-size: 28px;
         }
         &-anchor-bottom {
           font-size: 28px;
         }
+    }
+    .accordion-active {
+        transform: scale(2);
     }
 }
 
@@ -182,9 +212,9 @@
             }
         }
         .accord-container {
-            min-height: 151px;
             position: relative;
             .head-accordion {
+                min-height: 151px;
                 justify-content: space-between;
                 .number {
                     @include text-very-large;
@@ -192,11 +222,12 @@
                     min-width: 50px;
                 }
                 .accord-text {
-                    @include text-size(24px, 36px);
+                    @include text-size(20px, 30px);
                 }
                 .accordion-button {
                     min-width: 35px;
                     min-height: 35px;
+                    transform: scale(1);
                     &::after {
                         width: 20px;
                         height: 2px;
@@ -234,12 +265,10 @@
     .accordion-active {
         min-width: 35px;
         min-height: 35px;
+        transform: scale(1);
         &::after {
             width: 20px;
-            height: 2px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            height: 2px;;
         }
     }
     

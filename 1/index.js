@@ -89,7 +89,7 @@ for (let i = 0; i < sliderButton.length; i++) {
 }
 
 hamburgerContainer.addEventListener('click', () => {
-  containerHeaderMenu.classList.toggle('is-none');
+  containerHeaderMenu.classList.toggle('is-show-menu');
   hamburger.classList.toggle('hamburger-icon');
   hamburger.classList.toggle('back-icon');
   document.body.classList.toggle('is-hidden');
@@ -102,7 +102,7 @@ function createAccordionTop(acc) {
       let panel = e.currentTarget.nextElementSibling;
       e.currentTarget.children[2].classList.toggle('accordion-active');
       e.currentTarget.children[2].classList.toggle('accordion-button');
-      e.currentTarget.children[0].classList.toggle('is-none');
+      e.currentTarget.children[0].classList.toggle('is-show-menu');
       e.currentTarget.children[1].classList.toggle('accord-text-active');
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;

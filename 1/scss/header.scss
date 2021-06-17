@@ -19,6 +19,16 @@
             left: 0;
             top: 0;
             box-shadow: 0 8px 0 0 $color-text-primary, 0 16px 0 0 $color-text-primary;
+            transition: all 1s;
+            &::before{
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                left: 0;
+                top: 0;
+                transition: all 1s;
+            }
         }
     }
 }
@@ -65,7 +75,7 @@
 }
 
 .container-header-menu {
-    top: 62px;
+    top: 75px;
     position: fixed;
     display: flex;
     align-items: center;
@@ -76,6 +86,7 @@
     background: $color-text-primary;
     z-index: 2;
     font-family: Acme, Arial, Helvetica, sans-serif;
+    transition: left 600ms ease;
     .header-menu {
         cursor: pointer;
         margin: 0;
@@ -138,8 +149,9 @@
     }
 }
 
-.is-none {
-    display: none;
+.is-show-menu {
+    left: 1400px;
+    transition: left 600ms ease-in;  
 }
   
 .added-empty-field{
@@ -162,6 +174,7 @@
         left: 0;
         top: 5px;
         transform: rotate(45deg);
+        transition: all 1s;
     }
     &::before {
         content: "";
@@ -172,6 +185,7 @@
         left: 0;
         top: 5px;
         transform: rotate(135deg);
+        transition: all 1s;
     }
 }
 
