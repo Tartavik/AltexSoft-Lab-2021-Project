@@ -31,6 +31,10 @@
                             @include text-medium();
                             color: $color-link-hover;
                             margin-bottom: 20px;
+                            &:hover{
+                                color: $color-text-links;
+                                transition: color 600ms;
+                            }
                         }
                     }
                 }
@@ -61,6 +65,10 @@
                     @include text-medium();
                     color: $color-link-hover;
                     text-decoration: none;
+                    &:hover{
+                        color: $color-text-links;
+                        transition: color 600ms;
+                    }
                 }
                 .view-map {
                     @include text-small;

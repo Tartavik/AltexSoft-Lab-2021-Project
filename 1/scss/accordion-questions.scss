@@ -5,15 +5,19 @@
 .more-questions {
     @include text-small;
     @include text-type;
-    display: block;
     padding: 20px 0 24px;
     text-align: center;
     color: $color-text-links;
     font-family: Acme, Arial, Helvetica, sans-serif;
     text-transform: uppercase;
+    display: block;
+    margin: auto;
+    max-width: 250px;
+    transition: all 400ms;
     &:hover {
         color: $color-link-hover;
-        transition: 800ms color;
+        transform: scale(1.1);
+        transition: all 400ms;
     }
 }
 
@@ -35,6 +39,7 @@
 .faqs-accordion-container {
     @include wrapper;
     font-family: Aclonica, Arial, Helvetica, sans-serif;
+    text-align: center;
     .panel {
         display: flex;
         color: $color-text-dark;
