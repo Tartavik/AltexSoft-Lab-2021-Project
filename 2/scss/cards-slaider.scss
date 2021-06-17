@@ -15,7 +15,6 @@
     }
   }
 }
-
 .cards-slider {
   .slick-track {
     display: flex;
@@ -105,7 +104,6 @@
     }
   }
 }
-
 .slider-icon {
   @include slider-icon;
   &::before {
@@ -121,7 +119,6 @@
     right: 8px;
   }
 }
-
 .slider-icon-disable {
   @include slider-icon;
   &::before {
@@ -135,7 +132,6 @@
     right: 8px;
   }
 }
-
 .translucent {
   opacity: 0.5;
 }
@@ -164,7 +160,6 @@
       margin-right: 0;
     }
   }
-
   .wrapper-cards-slaider {
     margin-top: -500px;
     padding: 150px 0;

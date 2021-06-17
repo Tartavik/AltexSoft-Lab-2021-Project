@@ -12,12 +12,10 @@
     margin: auto;
   }
 }
-
 .header-inner {
   display: flex;
   justify-content: space-between;
 }
-
 .logo {
   color: $colorTextPrimary;
   text-decoration: none;
@@ -27,7 +25,6 @@
   font-family: Actor, Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
 }
-
 .container-header-menu {
   top: 60px;
   position: fixed;
@@ -79,7 +76,6 @@
       }
     }
   }
-
   .enter-buttons {
     flex-direction: column;
     display: flex;
@@ -99,7 +95,6 @@
     }
   }
 }
-
 .hamburger-icon {
   min-width: 24px;
   min-height: 18px;
@@ -119,7 +114,6 @@
     transition: all 600ms;
   }
 }
-
 .hamburger-icon.open-menu {
   &::after {
     @include style-back-icon;
@@ -133,7 +127,6 @@
     transition: rotate 600ms;
   }
 }
-
 .header-text {
   margin: 30px auto;
   text-align: center;
@@ -147,7 +140,6 @@
     font-weight: 400;
   }
 }
-
 .bottom-text-container {
   display: flex;
   flex-direction: column;
@@ -173,7 +165,6 @@
     }
   }
 }
-
 .is-hide {
   overflow: hidden;
 }
@@ -185,11 +176,9 @@
       padding: 28px 54px 50px;
     }
   }
-
   .logo {
     font-size: 24px;
   }
-
   .container-header-menu {
     top: 0;
     z-index: 2;
@@ -206,7 +195,6 @@
       }
     }
   }
-
   .header-text {
     max-width: 1100px;
     margin: 80px auto;
@@ -215,7 +203,6 @@
       line-height: 84px;
     }
   }
-
   .bottom-text-container {
     flex-direction: row;
     .bottom-text {
@@ -283,7 +270,6 @@
     display: none;
     position: absolute;
   }
-
   .header {
     .container {
       min-height: 900px;
@@ -293,16 +279,13 @@
       padding: 78px 90px 100px;
     }
   }
-
   .header-inner {
     align-items: center;
   }
-
   .logo {
     font-size: 28px;
     margin-right: 90px;
   }
-
   .container-header-menu {
     display: flex;
     position: static;
@@ -357,7 +340,6 @@
       }
     }
   }
-
   .header-text {
     max-width: 1100px;
     margin: 80px auto 110px;
@@ -366,7 +348,6 @@
       @include text-size(110px, 130px);
     }
   }
-
   .bottom-text-container {
     flex-direction: row;
     .bottom-text {
@@ -375,7 +356,6 @@
       padding-left: 30px;
       border-left: 2px solid $colorTextPrimary;
     }
-
     .bottom-button-why-skout {
       margin: auto;
       .btn {
