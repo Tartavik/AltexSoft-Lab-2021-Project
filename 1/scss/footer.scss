@@ -1,0 +1,194 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+
+.footer {
+    background-color: #f2f2f2;
+    width: 100%;
+    font-family: Aclonica, Arial, Helvetica, sans-serif;
+    .footer-wrapper {
+        @include wrapper;
+        padding-bottom: 25px;
+        .about-company {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .link-company {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+                .link-company-item {
+                    .link-company-link {
+                        @include text-small;
+                        color: $color-link-hover;
+                        margin-top: 12px;
+                        text-decoration: none;
+                    }
+                    #Call {
+                        .tel {
+                            @include text-medium();
+                            color: $color-link-hover;
+                            margin-bottom: 20px;
+                            &:hover{
+                                color: $color-text-links;
+                                transition: color 600ms;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .address-container {
+            padding: 0;
+            .address {
+                display: flex;
+                flex-direction: column;
+                padding: 8px 0;
+                border-top: 2px solid $color-text-links;
+                .location {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .address-title {
+                    @include text-size(16px, 36px);
+                    color: $color-link-hover;
+                    margin: 0;
+                }
+                .address-text {
+                    @include text-medium();
+                    color: $color-link-hover;
+                    font-style: normal;
+                }
+                .phone {
+                    @include text-medium();
+                    color: $color-link-hover;
+                    text-decoration: none;
+                    &:hover{
+                        color: $color-text-links;
+                        transition: color 600ms;
+                    }
+                }
+                .view-map {
+                    @include text-small;
+                    text-decoration: none;
+                    color: $color-text-links;
+                    &:hover {
+                    color: $color-link-hover;
+                    transition: 800ms color;
+                    }
+                }
+            }
+        }
+    }
+    .social {
+        border-top: 1.5px solid $color-anchors;
+        padding-top: 20px;
+        text-align: center;
+        .conteiner-social-icons {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+            padding-left: 0;
+            .twitter {
+                @include social-icon(30px, 24px, url(../images/twitter.png));
+                &:hover {
+                    @include social-icon-hover(30px);
+                }
+            }
+            .facebook {
+                @include social-icon(25px, 25px, url(../images/facebook.png));
+                &:hover {
+                    @include social-icon-hover(25px);
+                }
+            }
+            .youtube {
+                @include social-icon(32px, 23px, url(../images/youtube.png));
+                &:hover {
+                    @include social-icon-hover(32px);
+                }
+            }
+            .in {
+                @include social-icon(25px, 25px, url(../images/in.png));
+                &:hover {
+                    @include social-icon-hover(25px);
+                }
+            }
+        }
+    }
+    .skout-bottom {
+        min-width: 105px;
+        max-height: 38px;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        .footer-wrapper {
+            padding: 60px 70px;
+            .about-company {
+                .address-container {
+                    margin: 30px 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .footer {
+        .footer-wrapper {
+            margin: auto;
+            padding: 80px 135px 100px;
+            .about-company {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                .link-company {
+                    .link-company-item {
+                        margin-bottom: 30px;
+                        .link-company-link {
+                            min-width: 170px;
+                            margin-top: 0;
+                        }
+                    }
+                }
+                .address-container {
+                    margin: 0;
+                    .address {
+                        min-height: 118px;
+                        padding: 20px 0 0;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .address-title {
+                            font-size: 24px;
+                            margin-right: 230px;
+                        }
+                        .address-text {
+                            margin-right: 30px;
+                        }
+                        .phone {
+                            margin-right: 30px;
+                        }
+                        .view-map {
+                            @include text-medium();
+                        }
+                    }
+                }
+            }
+            .social {
+                padding-top: 27px;
+                display: flex;
+                justify-content: space-between;
+                li {
+                    margin-right: 50px;
+                }
+                .skout-bottom {
+                    min-width: 168px;
+                    min-height: 58px;
+                }
+            }
+        }
+    }
+}

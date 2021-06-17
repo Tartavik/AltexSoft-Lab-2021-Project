@@ -1,0 +1,34 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+@import "header";
+@import "tabs";
+@import "accordion";
+@import "slider";
+@import "accordion-questions";
+@import "footer";
+
+body {
+  min-width: 375px;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+::before {
+  box-sizing: inherit;
+}
