@@ -1,0 +1,247 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+
+.footer {
+  background-color: #f2f2f2;
+  width: 100%;
+  font-family: Aclonica, Arial, Helvetica, sans-serif;
+  &-wrapper {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px 20px 30px;
+    .about-company {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .link-company-container {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        .link-company-item {
+          .link-company {
+            @include text-size(12px, 24px);
+            color: $hoverColorLink;
+            margin-top: 12px;
+            text-decoration: none;
+          }
+          span {
+            @include text-size-small;
+            color: $hoverColorLink;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    .address-container {
+      font-style: normal;
+      padding: 0;
+      .address {
+        display: flex;
+        flex-direction: column;
+        padding: 8px 0 8px 0;
+        border-top: 2px solid $colorTextlinks;
+        &-title {
+          @include text-size(16px, 36px);
+          color: $hoverColorLink;
+          margin: 0;
+        }
+        .location {
+          @include text-size-small;
+          color: $hoverColorLink;
+        }
+        .phone {
+          @include text-size-small;
+          color: $hoverColorLink;
+          text-decoration: none;
+        }
+        .view-map {
+          text-decoration: none;
+          @include text-size(12px, 20px);
+          color: $colorTextlinks;
+          &:hover {
+            color: $hoverColorLink;
+            transition: 800ms color;
+          }
+        }
+      }
+    }
+  }
+  .social {
+    border-top: 1.5px solid #b2b2b2;
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &-icons {
+      display: grid;
+      grid-template-columns: 100% 100%;
+      padding-left: 0;
+      list-style-type: none;
+      .twitter {
+        margin-right: 70px;
+        margin-bottom: 40px;
+        cursor: pointer;
+        display: inline-block;
+        width: 30px;
+        height: 24px;
+        background-image: url(../images/icons.png);
+        background-position: 0 0;
+        &:hover {
+          background-position: -30px 0px;
+          transition: 300ms background-position;
+        }
+      }
+      .facebook {
+        cursor: pointer;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-image: url(../images/icons.png);
+        background-position: 54px 0;
+        &:hover {
+          background-position: 29px 0;
+          transition: 300ms background-position;
+        }
+      }
+      .youtube {
+        margin-right: 70px;
+        cursor: pointer;
+        display: inline-block;
+        width: 32px;
+        height: 23px;
+        background-image: url(../images/icons.png);
+        background-position: 0 24px;
+        &:hover {
+          background-position: -32px 24px;
+          transition: 300ms background-position;
+        }
+      }
+      .in {
+        cursor: pointer;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-image: url(../images/icons.png);
+        background-position: 50px 25px;
+        &:hover {
+          background-position: 25px 25px;
+          transition: 300ms background-position;
+        }
+      }
+    }
+  }
+  .skout-bottom {
+    max-width: 105px;
+    max-height: 38px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    &-wrapper {
+      padding: 28px 54px 50px;
+      flex-direction: column;
+      .social {
+        justify-content: space-between;
+        grid-template-columns: none;
+        padding-top: 30px;
+        &-icons {
+          display: flex;
+          grid-template-columns: 0;
+          .social-icon {
+            margin-right: 25px;
+          }
+          .twitter {
+            margin-right: 0;
+            margin-bottom: 0;
+          }
+          .youtube {
+            margin-right: 0;
+          }
+        }
+      }
+      .address-container {
+        .address {
+          .location-container {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    &-wrapper {
+      margin: auto;
+      padding: 75px 135px 110px;
+      .about-company {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 78px;
+        flex-direction: row;
+        .link-company-container {
+          padding-right: 100px;
+          .link-company-item {
+            margin-bottom: 30px;
+            .link-company {
+              min-width: 170px;
+              margin-top: 0;
+            }
+          }
+        }
+        .address-container {
+          padding: 0;
+          .address {
+            min-height: 118px;
+            padding: 20px 0 0;
+            flex-direction: row;
+            justify-content: space-between;
+            &-title {
+              font-size: 24px;
+              margin-right: 210px;
+            }
+            .location {
+              @include text-size-small;
+              margin-right: 30px;
+            }
+            .phone {
+              @include text-size-small;
+              margin-right: 30px;
+            }
+            .view-map {
+              @include text-size-small;
+            }
+            div {
+              display: flex;
+              flex-direction: column;
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+      .social {
+        padding: 27px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        &-icons {
+          .social-icon {
+            margin-left: 0;
+            margin-right: 50px;
+          }
+        }
+        .skout-bottom {
+          min-width: 168px;
+          min-height: 58px;
+          margin-right: 65px;
+        }
+      }
+    }
+  }
+}

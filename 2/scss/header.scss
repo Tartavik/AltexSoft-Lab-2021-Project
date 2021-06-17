@@ -1,0 +1,372 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+
+.header {
+  background: linear-gradient(45deg, #13c3e7, #01f86c);
+  margin: auto;
+  width: 100%;
+  max-width: 1440px;
+  .container {
+    padding: 20px 20px 30px;
+    margin: auto;
+  }
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  color: $colorTextPrimary;
+  text-decoration: none;
+  min-width: 90px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: Actor, Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+}
+.container-header-menu {
+  top: 60px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: $colorTextPrimary;
+  z-index: 2;
+  font-family: Acme, Arial, Helvetica, sans-serif;
+  transition: left 500ms ease;
+  .header-menu {
+    cursor: pointer;
+    margin: 0;
+    list-style: none;
+    flex-direction: column;
+    display: flex;
+    margin-top: 24px;
+    padding: 0;
+    &-item {
+      @include text-size(12px, 24px);
+      padding: 13px;
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+      letter-spacing: 2px;
+      &:hover{
+        .link{
+          color: $hoverColorLink;
+          transition: 600ms color;
+        }
+      }
+      .link {
+        color: $colorTextlinks;
+        text-decoration: none;
+      }
+    }
+    .active-link {
+      &::after {
+        content: "";
+        position: absolute;
+        margin-top: 20px;
+        left: 33px;
+        width: 40px;
+        height: 2px;
+        background-color: $colorTextlinks;
+      }
+    }
+  }
+  .enter-buttons {
+    flex-direction: column;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 40px;
+    .btn {
+      @include button-primary-first(180px,40px,$colorTextlinks,$colorTextPrimary);
+      border: 1px solid $colorTextlinks;
+      margin-bottom: 20px;
+      &:hover {
+        border: 1.5px solid $hoverColorLink;
+        color: $hoverColorLink;
+        transition: 800ms color;
+        transition: 800ms border;
+      }
+    }
+  }
+}
+.hamburger-icon {
+  min-width: 24px;
+  min-height: 18px;
+  position: relative;
+  border: 0;
+  background-color: $color-bg-transparent;
+  cursor: pointer;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: $colorTextPrimary;
+    left: 0;
+    top: 0;
+    box-shadow: 0 8px 0 0 $colorTextPrimary, 0 16px 0 0 $colorTextPrimary;
+    transition: all 600ms;
+  }
+}
+.hamburger-icon.open-menu {
+  &::after {
+    @include style-back-icon;
+    transform: rotate(45deg);
+    box-shadow: none;
+    transition: all 600ms;
+  }
+  &::before {
+    @include style-back-icon;
+    transform: rotate(135deg);
+    transition: rotate 600ms;
+  }
+}
+.header-text {
+  margin: 30px auto;
+  text-align: center;
+  max-width: 500px;
+  font-family: Actor, Arial, Helvetica, sans-serif;
+  &-value {
+    color: $colorTextPrimary;
+    @include text-size(40px, 56px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+}
+.bottom-text-container {
+  display: flex;
+  flex-direction: column;
+  .bottom-text {
+    @include text-size(12px, 24px);
+    color: $colorTextPrimary;
+    font-family: Aclonica, Arial, Helvetica, sans-serif;
+    max-width: 670px;
+    padding-left: 15px;
+    border-left: 1px solid $colorTextPrimary;
+    filter: drop-shadow(0px 2px 6px rgba(26, 26, 26, 0.3));
+  }
+  .bottom-button-why-skout {
+    margin: 20px auto 0;
+    .btn {
+      @include button-primary-first(130px,30px,$colorTextlinks,$colorTextPrimary);
+      border: 0;
+    }
+    .btn:hover {
+      @include button-hover-shadow;
+      position: relative;
+      bottom: 3px;
+    }
+  }
+}
+.is-hide {
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .header {
+    .container {
+      position: relative;
+      padding: 28px 54px 50px;
+    }
+  }
+  .logo {
+    font-size: 24px;
+  }
+  .container-header-menu {
+    top: 0;
+    z-index: 2;
+    left: 50%;
+    .header-menu {
+      margin-top: 70px;
+      &-item {
+        margin-bottom: 0;
+      }
+      .active-link {
+        &::after {
+          left: 32px;
+        }
+      }
+    }
+  }
+  .header-text {
+    max-width: 1100px;
+    margin: 80px auto;
+    &-value {
+      font-size: 70px;
+      line-height: 84px;
+    }
+  }
+  .bottom-text-container {
+    flex-direction: row;
+    .bottom-text {
+      @include text-size-small;
+      padding: 0 30px;
+    }
+    .bottom-button-why-skout {
+      margin: auto;
+      .btn {
+        min-width: 200px;
+        min-height: 40px;
+      }
+    }
+  }
+  .hamburger-icon.open-menu {
+    z-index: 3;
+    &::before{
+      background-color: $colorTextlinks;
+    }
+    &::after{
+      background-color: $colorTextlinks;
+    }
+  }
+  .sticky-main {
+    background-color: $colorTextPrimary;
+    transition: background-color 600ms;
+    max-width: 1440px;
+    padding: 29px 90px;
+    z-index: 1;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    .logo {
+      color: $hoverColorLink;
+    }
+    .container-header-menu {
+      .header-menu {
+        &-item {
+          .link {
+            color: $hoverColorLink;
+            &:hover {
+              color: $colorTextlinks;
+            }
+          }
+        }
+      }
+      .enter-buttons {
+        button {
+          color: $hoverColorLink;
+          border: 1px solid $hoverColorLink;
+          &:hover {
+            color: $colorTextlinks;
+            border: 1px solid $colorTextlinks;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .hamburger-icon {
+    display: none;
+    position: absolute;
+  }
+  .header {
+    .container {
+      min-height: 900px;
+      padding: 28px 90px 100px;
+    }
+    .added-empty-field {
+      padding: 78px 90px 100px;
+    }
+  }
+  .header-inner {
+    align-items: center;
+  }
+  .logo {
+    font-size: 28px;
+    margin-right: 90px;
+  }
+  .container-header-menu {
+    display: flex;
+    position: static;
+    background-color: $color-bg-transparent;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    .header-menu {
+      padding: 0;
+      width: 100%;
+      flex-direction: row;
+      margin-top: 0;
+      display: flex;
+      justify-content: space-between;
+      &-item {
+        margin-bottom: 0;
+        color: $colorTextPrimary;
+        position: relative;
+        min-width: 100px;
+        .link {
+          color: $colorTextPrimary;
+          &:hover {
+            color: $hoverColorLink;
+            &::after {
+              background-color: $hoverColorLink;
+            }
+          }
+        }
+      }
+      .active-link {
+        &::after {
+          width: 50px;
+          left: 25px;
+          background-color: $colorTextPrimary;
+        }
+      }
+    }
+    .enter-buttons {
+      position: static;
+      flex-direction: row;
+      margin-bottom: 0;
+      .btn {
+        margin: 0 0 0 20px;
+        background-color: $color-bg-transparent;
+        border: 1.5px solid $colorTextPrimary;
+        color: $colorTextPrimary;
+        box-shadow: none;
+        &:hover {
+          color: $hoverColorLink;
+          border: 1.5px solid $hoverColorLink;
+        }
+      }
+    }
+  }
+  .header-text {
+    max-width: 1100px;
+    margin: 80px auto 110px;
+    padding: 0;
+    &-value {
+      @include text-size(110px, 130px);
+    }
+  }
+  .bottom-text-container {
+    flex-direction: row;
+    .bottom-text {
+      @include text-size(20px, 26px);
+      margin: auto;
+      padding-left: 30px;
+      border-left: 2px solid $colorTextPrimary;
+    }
+    .bottom-button-why-skout {
+      margin: auto;
+      .btn {
+        min-width: 200px;
+        min-height: 40px;
+      }
+    }
+  }
+}
+
+.is-show-menu {
+  left: 1600px;
+  transition: left 500ms ease;
+}

@@ -1,0 +1,173 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+
+.wrapper-cards-slaider {
+  margin-top: -200px;
+  background-color: $color-bg-transparent;
+  padding: 20px 0 30px;
+  .slider-title-container {
+    padding-bottom: 20px;
+    text-align: center;
+    .slider-title {
+      @include text-size-standart;
+      font-weight: 400;
+    }
+  }
+}
+.cards-slider {
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+  .slider-item {
+    min-height: 530px;
+    background-color: $colorTextPrimary;
+    box-shadow: 0px 12px 24px $colorLightSliderShadow;
+    border-radius: 5px;
+    margin: 0 25px 25px;
+    .slider-item-title-container {
+      margin: 40px auto;
+      text-align: center;
+      .slider-item-title {
+        @include text-size(18px, 24px);
+        font-weight: 400;
+        letter-spacing: 2.25px;
+        text-transform: uppercase;
+        color: $colorTextlinks;
+      }
+    }
+    .slider-item-content {
+      padding: 0 55px;
+      margin: auto;
+      &-text {
+        display: flex;
+        list-style: none;
+        min-height: 60px;
+        align-items: center;
+        border-top: 2px solid #f2f2f2;
+        .slider-text {
+          font-family: Aclonica, Arial, Helvetica, sans-serif;
+          @include text-size(13px, 24px);
+          color: $hoverColorLink;
+          margin-left: 20px;
+        }
+      }
+    }
+    .slider-item-button {
+      margin-top: 50px;
+      text-align: center;
+      .btn {
+        @include button-primary-first(220px,40px,$colorTextlinks,$colorTextPrimary);
+        border: 1.5px solid $colorTextlinks;
+        &:hover {
+          @include button-hover-shadow;
+        }
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(130deg, #19b0f8, #00e99a);
+      transform: scale(1.1);
+      transition: all 1s ease-out;
+      .slider-item-title-container {
+        .slider-item-title {
+          color: $colorTextPrimary;
+        }
+      }
+      .slider-item-content {
+        &-text {
+          border-top: 1px solid #f2f2f2;
+          .slider-text {
+            color: $colorTextPrimary;
+          }
+          .slider-icon {
+            border: 1px solid $colorTextPrimary;
+            &::before {
+              border-bottom: 1px solid $colorTextPrimary;
+              border-left: 1px solid $colorTextPrimary;
+            }
+          }
+          .slider-icon-disable {
+            border: 1px solid $colorTextPrimary;
+            &::before {
+              border-top: 1px solid $colorTextPrimary;
+            }
+          }
+        }
+      }
+      .slider-item-button {
+        .btn {
+          border: 0;
+        }
+      }
+    }
+  }
+}
+.slider-icon {
+  @include slider-icon;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 11px;
+    border-bottom: 1px solid $colorTextlinks;
+    border-left: 1px solid $colorTextlinks;
+    background-color: $color-bg-transparent;
+    transform: rotate(-45deg);
+    top: 8px;
+    right: 8px;
+  }
+}
+.slider-icon-disable {
+  @include slider-icon;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 1px;
+    border-top: 1px solid $colorTextlinks;
+    background-color: $color-bg-transparent;
+    top: 16px;
+    right: 8px;
+  }
+}
+.translucent {
+  opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+  .wrapper-cards-slaider {
+    padding: 28px 0 50px;
+    .slider-title-container {
+      padding-bottom: 30px;
+      .slider-title {
+        @include text-size-medium;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .cards-slider {
+    .slider-item {
+      margin: 0 25px 25px;
+    }
+    div:first-child {
+      margin-left: 0;
+    }
+    div:last-child {
+      margin-right: 0;
+    }
+  }
+  .wrapper-cards-slaider {
+    margin-top: -500px;
+    padding: 150px 0;
+    .slider-title-container {
+      padding-bottom: 70px;
+      .slider-title {
+        @include text-size-medium;
+      }
+    }
+  }
+}
