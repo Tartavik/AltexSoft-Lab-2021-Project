@@ -1,0 +1,177 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+
+.more-questions {
+    @include text-small;
+    @include text-type;
+    padding: 20px 0 24px;
+    text-align: center;
+    color: $color-text-links;
+    font-family: Acme, Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    display: block;
+    margin: auto;
+    max-width: 250px;
+    transition: all 400ms;
+    &:hover {
+        color: $color-link-hover;
+        transform: scale(1.1);
+        transition: all 400ms;
+    }
+}
+
+.faqs-container {
+    min-width: 335px;
+    @include wrapper;
+    &-anchor {
+        @include anchor-skout;
+        border-top: 1px solid $color-anchors;
+        border-radius: 1px;
+        width: 100%;
+        padding-top: 10px;
+        #head-FAQs {
+            @include anchor-item;
+        }
+    }
+}
+
+.faqs-accordion-container {
+    @include wrapper;
+    font-family: Aclonica, Arial, Helvetica, sans-serif;
+    text-align: center;
+    .panel {
+        display: flex;
+        color: $color-text-dark;
+        background-color: $color-text-primary;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        .panel-letter {
+            @include text-size(40px, 48px);
+            margin-right: 25px;
+            color: $color-accord-letter;
+        }
+        .answer {
+            @include text-size(14px, 24px);
+            margin: auto 0;
+            color: $color-text-dark;
+        }
+    }
+  
+    .head-accordion-Faqs {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        min-height: 114px;
+        border: 0;
+        padding: 0;
+        background: $color-text-primary;
+        width: 100%;
+        text-align: start;
+        .accordion-letter {
+            @include text-size(40px, 48px);
+            margin-right: 25px;
+            color: $color-accord-letter;
+            font-family: Actor, Arial, Helvetica, sans-serif;
+        }
+        .accordion-button {
+            min-width: 20px;
+            min-height: 20px;
+            border-bottom: 1.5px solid $color-text-links;
+            border-left: 1.5px solid $color-text-links;
+            background: $color-text-primary;
+            border-top: 0;
+            border-right: 0;
+            transform: rotate(-45deg);
+            transition: transform 0.8s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                border-bottom: 1.5px solid $color-link-hover;
+                border-left: 1.5px solid $color-link-hover;
+                transition: 800ms border-left;
+                transition: 800ms border-bottom;
+            }
+        }
+        .rotate {
+            transform: rotate(135deg);
+            transition: transform 0.8s ease-in-out;
+        }
+        .question {
+            width: 100%;
+            color: $color-text-dark;
+            font-family: Aclonica, Arial, Helvetica, sans-serif;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .more-questions {
+        padding: 25px 0 0 0;
+    }
+    
+    .faqs-container {
+        padding: 60px 70px 0;
+        &-anchor {
+          font-size: 24px;
+        }
+    }
+    
+    .faqs-accordion-container {
+        padding: 50px 70px 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .faqs-container {
+        &-anchor {
+            font-size: 28px;
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .faqs-container {
+        padding: 160px 136px 0;
+        margin: auto;
+        &-anchor {
+            font-size: 38px;
+            padding-top: 20px;
+            #head-FAQs {
+                margin-right: 8px;
+            }
+        }
+    }
+    
+    .faqs-accordion-container {
+        margin: auto;
+        padding: 100px 136px;
+        .head-accordion-Faqs {
+            min-height: 196px;
+            .accordion-letter {
+                @include text-very-large;
+                margin-right: 100px;
+            }
+            .question {
+                @include text-size(24px, 36px);
+            }
+            .accordion-button {
+                margin-right: 80px;
+                min-width: 30px;
+                min-height: 30px;
+            }
+        }
+        .panel {
+            .panel-letter {
+                @include text-very-large;
+                margin-right: 100px;
+            }
+            .answer {
+                @include text-medium();
+            }
+        }
+        .more-questions {
+            padding-top: 50px;
+        }
+    }
+}

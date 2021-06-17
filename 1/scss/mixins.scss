@@ -1,0 +1,71 @@
+@import "vars";
+
+@mixin social-icon($width,$height,$bg-img){
+    cursor: pointer;
+    display: inline-block;
+    width: $width;
+    height: $height;
+    background-image: $bg-img;
+    background-position: 0 0;
+}
+
+@mixin social-icon-hover($bg-x){
+    background-position: $bg-x 0;
+    transition: 300ms background-position;
+}
+
+@mixin wrapper {
+    max-width: 1440px;
+    padding: 24px 20px 0 20px;
+}
+
+@mixin text-small {
+    font-size: 12px;
+    line-height: 24px;
+}
+
+@mixin text-medium {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin text-very-large {
+    font-size: 110px;
+    line-height: 130px;
+}
+
+@mixin text-size($fs,$lh){
+    font-size: $fs;
+    line-height: $lh;
+}
+
+@mixin anchor-skout {
+    color: $color-anchors;
+    font-weight: 900;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Acme;
+    letter-spacing: 2px;
+}
+
+@mixin anchor-item {
+    font-family: Actor;
+    font-weight: 100;
+    margin-left: 4px;
+    text-transform:none;
+}
+
+@mixin text-type {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@mixin accordion-button {
+    content: "";
+    width: 7px;
+    height: 1px;
+    position: absolute;
+    background-color: $color-text-links;
+    left: 50%;
+    top: 50%;
+}
