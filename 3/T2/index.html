@@ -8,22 +8,26 @@
     <title>T2</title>
 </head>
 <body>
-<input type="number" id="domino-up" max="6" class="donimo-item">
-<input type="number" id="domino-down" max="6" class="donimo-item">
-<button id="random">Random</button>
-<button id="start">Start</button>
-
+    <div class="form-wrapper">
+        <div class="input-container">
+            <input type="number" id="domino-up" class="domino-item">
+            <input type="number" id="domino-down" class="domino-item">
+        </div>
+        <div class="button-container">
+            <button id="random" class="button">Random</button>
+            <button id="start" class="button">Start</button>
+        </div>
+    </div>
 <div class="wrapper">
     <div class="domino-container"></div>
-    <div class="result-container is-none">
-        <img src="images/arrow.jpg" alt="arrow" class="arrow">
-        <div class="result is-none">
+    <img src="images/arrow.jpg" alt="arrow" class="arrow">
+
+</div>
+<div class="result is-none">
             <h3>Result</h3>
             <p class="change"></p>
             <p class="line"></p>
         </div>
-    </div>
-</div>
 
 </body>
 <script src="index.js"></script>

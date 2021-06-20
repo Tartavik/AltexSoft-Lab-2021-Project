@@ -5,6 +5,120 @@ body{
     background-color: black;
 }
 
+.money-img{
+    max-width: 50px;
+}
+
+.money-container{
+    display: flex;
+    align-items: center;
+}
+
+.money{
+    font-size: 26px;
+    color: white;
+    margin-left: 20px;
+}
+
+
+
 .atm-title{
-    color: black;
+    text-align: center;
+    color: white;
+}
+
+.atm-form-button{
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.button{
+    min-width: 80px;
+    min-height: 40px;
+    color: grey;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.atm-form-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 25px;
+    margin: 7px;
+}
+
+p{
+    min-width: 30px;
+    color: white;
+    font-size: 26px;
+}
+
+.atm-form{
+    padding-top: 20px;
+}
+
+.atm-form-item-value{
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    -moz-appearance: textfield;
+}
+
+.atm-form-item-value::-webkit-outer-spin-button,
+.atm-form-item-value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.atm-form-getting{
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.atm-form-getting-item{
+    margin-top: 50px;
+    min-width: 250px;
+    min-height: 35px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.atm-form-getting-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.atm-form-getting-button{
+    margin: 30px 0;
+}
+
+
+
+.result{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 26px;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.result-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.is-hide{
+    display: none;
 }

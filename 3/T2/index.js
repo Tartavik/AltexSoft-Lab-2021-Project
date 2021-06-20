@@ -3,7 +3,6 @@ const dominoDown = document.getElementById('domino-down');
 const buttonStart = document.getElementById('start');
 const buttonRandom = document.getElementById('random');
 const dominoContainer = document.getElementsByClassName('domino-container')[0];
-const resultContainer = document.getElementsByClassName('result-container')[0];
 const resultEl = document.getElementsByClassName('result')[0];
 
 let arrDominoUp = [];
@@ -51,6 +50,7 @@ buttonRandom.addEventListener('click',()=>{
     arrDominoUp = Array.from(dominoUp.value);
     arrDominoDown = Array.from(dominoDown.value);
     drawDomino(arrDominoUp,arrDominoDown);
+    resultEl.classList.add('is-none');
 })
 
 function addListener(){
@@ -162,10 +162,10 @@ function changeDomino (el) {
     let currentElementB = arrDominoDown[+el.currentTarget.id-1];
     console.log(arrDominoUp[0],el.currentTarget.id,arrDominoUp[+el.currentTarget.id-1],arrDominoUp);
     arrDominoUp[el.currentTarget.id-1] = currentElementB;
-    arrDominoDown[el.currentTarget.id-1] = currentElementT ;
+    arrDominoDown[el.currentTarget.id-1] = currentElementT;
+    dominoUp.value = arrDominoUp.join('');
+    dominoDown.value = arrDominoDown.join('');;
     drawDomino(arrDominoUp,arrDominoDown);
-    console.log('arrDominoUp', arrDominoUp);
-    console.log('arrDominoDown',arrDominoDown);
 }
 
 function startPreparation (){
@@ -174,7 +174,6 @@ function startPreparation (){
     arrDominoUp = Array.from(dominoUp.value);
     arrDominoDown = Array.from(dominoDown.value);
     drawDomino(arrDominoUp,arrDominoDown);
-    resultContainer.classList.remove('is-none');
 }
 
 function getRandomNumbers(){
