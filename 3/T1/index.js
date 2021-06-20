@@ -9,6 +9,7 @@ buttonStart.addEventListener('click',() => {
     if(isFinite(howManyCoins.value)){
         coin(howManyCoins.value);
         howManyCoins.value = '';
+        numberOfLines.classList.remove('is-hide')
     }else{
         alert('This is not are number')
     }
@@ -16,6 +17,7 @@ buttonStart.addEventListener('click',() => {
 
 buttonClean.addEventListener('click',()=>{
     tree.innerHTML = '';
+    numberOfLines.classList.add('is-hide')
 })
 
 function coin (number){
@@ -40,6 +42,7 @@ function renderCoin (line,lNum,num){
     for(let i = 0; i < line; i++){
         console.log('1');
         let p = document.createElement('p');
+        p.classList.add('sumbol');
         p.innerText = quantityCoins;
         tree.appendChild(p);
         quantityCoins += sumbol;
@@ -49,6 +52,7 @@ function renderCoin (line,lNum,num){
         quantityCoins = convert(remainder);
         let p = document.createElement('p');
         p.innerText = quantityCoins;
+        p.classList.add('sumbol');
         tree.appendChild(p);
     }
 
