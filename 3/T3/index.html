@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>T3</title>
+</head>
+<body>
+    <div class="money-container">
+        <img src="images/coin.jpg" alt="coin" class="money-img">
+        <div class="money">0</div>
+    </div>
+
+    <div class="atm">
+        <h1 class="atm-title">Welcome to our ATM</h1>
+        <div class="atm-form">
+                <div class="atm-form-item">
+                    <p>500</p><input type="number" class="atm-form-item-value" name="500">
+                  </div>
+                  <div class="atm-form-item">
+                      <p>200</p><input type="number" class="atm-form-item-value" name="200">
+                  </div>
+                  <div class="atm-form-item">
+                      <p>100</p><input type="number" class="atm-form-item-value" name="100">
+                  </div>
+                  <div class="atm-form-item">
+                      <p>50</p><input type="number" class="atm-form-item-value" name="50">
+                  </div>
+                  <div class="atm-form-item">
+                      <p>20</p><input type="number" class="atm-form-item-value" name="20">
+                  </div>
+                  <div class="atm-form-item">
+                      <p>10</p><input type="number" class="atm-form-item-value" name="10">
+                  </div>
+                  <div class="atm-form-item">
+                      <p>5</p><input type="number" class="atm-form-item-value" name="5">
+                  </div>
+                  <div class="atm-form-item">
+                      <p>2</p><input type="number" class="atm-form-item-value" name="2">
+                  </div>
+                  <div class="atm-form-item">
+                      <p>1</p><input type="text" class="atm-form-item-value" name="1">
+                  </div>
+            
+            <button class="atm-form-button button">Confirm</button>
+        </div>
+        <div class="atm-form-getting is-hide">
+            <h2>How much do you want to take?</h2>
+            <div class="atm-form-getting-wrapper">
+                <input type="text"class="atm-form-getting-item">
+                <button class="atm-form-getting-button button">Get</button>
+                <button class="atm-form-put-button button">Put</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="result is-hide">
+        <span class="generalSum"></span>
+        <span>You got:</span>
+        <div class="result-wrapper"></div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
