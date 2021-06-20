@@ -40,7 +40,6 @@ function renderCoin (line,lNum,num){
     console.log(remainder);
     let quantityCoins = sumbol;
     for(let i = 0; i < line; i++){
-        console.log('1');
         let p = document.createElement('p');
         p.classList.add('sumbol');
         p.innerText = quantityCoins;
@@ -48,16 +47,13 @@ function renderCoin (line,lNum,num){
         quantityCoins += sumbol;
     }
     numberOfLines.innerText = line;
-    if(remainder > 0){
+    if(remainder > 0){                                       // Here I create an incomplete line, if there is one.
         quantityCoins = convert(remainder);
         let p = document.createElement('p');
         p.innerText = quantityCoins;
         p.classList.add('sumbol');
         tree.appendChild(p);
-    }
-
-    
-    
+    }   
 }
 
 function convert (number){

@@ -61,7 +61,7 @@ function addListener(){
 
 }
 
-function findAppropriateNumbers (str){
+function findAppropriateNumbers (str){               // Here I find the number of numbers that are greater than or equal to rangeNumbers.maxLength
     let arrDomino = str.split('');
     let resultArrNumbers = [];
     for(let i = 1; i < arrDominoUp.length + 1; i++){
@@ -75,7 +75,7 @@ function findAppropriateNumbers (str){
     return resultArrNumbers;
 }
 
-function сheckOnQuantityAppropriateNumbers(obj){
+function сheckOnQuantityAppropriateNumbers(obj){    //Here I am looking for the number of equal numbers of dominoes top and bottom, example 3/3
     let newArr = [];
     obj.forEach((elem,i) => {
         let resultQuantityAppropriate = 0;
