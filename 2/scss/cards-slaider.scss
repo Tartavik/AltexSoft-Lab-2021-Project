@@ -1,5 +1,4 @@
 @import "vars";
-@import "fonts";
 @import "mixins";
 
 .wrapper-cards-slaider {
@@ -58,7 +57,7 @@
       margin-top: 50px;
       text-align: center;
       .btn {
-        @include button-primary-first(220px,40px,$colorTextlinks,$colorTextPrimary);
+        @include button-primary-first(220px,40px);
         border: 1.5px solid $colorTextlinks;
         &:hover {
           @include button-hover-shadow;

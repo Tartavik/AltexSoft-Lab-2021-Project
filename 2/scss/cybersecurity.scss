@@ -1,5 +1,5 @@
 @import "vars";
-@import "fonts";
+// @import "fonts";
 @import "mixins";
 
 .cybersecurity-container {
@@ -88,7 +88,7 @@
     display: flex;
     justify-content: center;
     .btn {
-      @include button-primary-first(230px,40px,$colorTextPrimary,$colorTextlinks);
+      @include button-primary-first(230px,40px);
       border: 0;
     }
     .btn:hover {

@@ -1,10 +1,8 @@
 @import "vars";
 
-@mixin button-primary-first($width, $height, $color, $bg) {
+@mixin button-primary-first($width, $height) {
   min-width: $width;
   min-height: $height;
-  color: $color;
-  background-color: $bg;
   font-family: Acme;
   border-radius: 30px;
   cursor: pointer;

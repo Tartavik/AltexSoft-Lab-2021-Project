@@ -1,12 +1,8 @@
 @import "vars";
-@import "fonts";
 @import "mixins";
 
 
 .main-double-slaider {
-  // max-width: 1440px;
-  // padding: 20px 20px 30px;
-  // margin: auto;
   .slider-item {
     cursor: pointer;
     display: flex;

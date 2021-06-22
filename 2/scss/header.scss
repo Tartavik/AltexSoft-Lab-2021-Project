@@ -1,5 +1,4 @@
 @import "vars";
-@import "fonts";
 @import "mixins";
 
 .header {
@@ -78,7 +77,9 @@
     bottom: 0;
     margin-bottom: 40px;
     .btn {
-      @include button-primary-first(180px,40px,$colorTextlinks,$colorTextPrimary);
+      @include button-primary-first(180px,40px);
+      background-color: transparent;
+      color: $colorTextlinks;
       border: 1px solid $colorTextlinks;
       margin-bottom: 20px;
       &:hover {
@@ -150,7 +151,9 @@
   .bottom-button-why-skout {
     margin: 20px auto 0;
     .btn {
-      @include button-primary-first(130px,30px,$colorTextlinks,$colorTextPrimary);
+      @include button-primary-first(130px,30px);
+      color: $colorTextlinks;
+      background-color: $colorTextPrimary;
       border: 0;
     }
     .btn:hover {
@@ -270,9 +273,9 @@
       min-height: 900px;
       padding: 28px 90px 100px;
     }
-    .added-empty-field {
-      padding: 78px 90px 100px;
-    }
+  }
+  .added-empty-field {
+    padding: 50px 0 0;
   }
   .header-inner {
     align-items: center;

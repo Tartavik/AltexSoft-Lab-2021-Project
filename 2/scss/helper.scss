@@ -1,0 +1,20 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+
+.section{
+    max-width: 1440px;
+    padding: 20px 20px 30px;
+    margin: auto;
+}
+  
+.btn-outline{
+    color: $colorTextPrimary;
+    background-color: $colorTextlinks;
+}
+
+.btn-primary{
+    color: $colorTextlinks;
+    background-color: $colorTextPrimary;
+    border: 1px solid $colorTextlinks;
+}

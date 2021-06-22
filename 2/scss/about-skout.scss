@@ -1,5 +1,4 @@
 @import "vars";
-@import "fonts";
 @import "mixins";
 
 .about-skout-container {
@@ -34,14 +33,15 @@
   }
   .about-skout-buttons {
     opacity: 0;
-    max-width: 560px;
     order: 2;
     margin: 20px auto 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    .btn:first-child {
-      @include button-primary-first(200px,40px,$colorTextlinks,$colorTextPrimary);
+    .btn {
+      @include button-primary-first(200px,40px);
+    }
+    .btn-primary {
       border: 1px solid $colorTextlinks;
       padding: 5px;
       margin-bottom: 20px;
@@ -51,8 +51,7 @@
         bottom: 3px;
       }
     }
-    .btn:last-child {
-      @include button-primary-first(200px,40px,$colorTextPrimary,$colorTextlinks);
+    .btn-outline {
       border: 0;
       padding: 5px;
       &:hover {
