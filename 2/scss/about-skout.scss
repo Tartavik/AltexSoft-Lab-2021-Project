@@ -6,93 +6,10 @@
   flex-flow: wrap;
   justify-content: center;
   flex-direction: column;
-  .skout-sa {
-    order: 2;
-    opacity: 0;
-    transition: opacity 700ms;
-    &-img {
-      width: 100%;
-    }
-  }
-  .about-skout {
-    order: 1;
-    opacity: 0;
-    transition: opacity 700ms;
-    max-width: 560px;
-    margin: auto;
-    &-title {
-      @include text-size-standart;
-      font-weight: 400;
-    }
-    &-text {
-      margin: 20px auto;
-      color: $colorTextPrimaryDark;
-      font-family: Aclonica, Arial, Helvetica, sans-serif;
-      @include text-size(14px, 24px);
-    }
-  }
-  .about-skout-buttons {
-    opacity: 0;
-    order: 2;
-    margin: 20px auto 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .btn {
-      @include button-primary-first(200px,40px);
-    }
-    .btn-primary {
-      border: 1px solid $colorTextlinks;
-      padding: 5px;
-      margin-bottom: 20px;
-      &:hover {
-        @include button-hover-shadow;
-        position: relative;
-        bottom: 3px;
-      }
-    }
-    .btn-outline {
-      border: 0;
-      padding: 5px;
-      &:hover {
-        @include button-hover-shadow;
-        position: relative;
-        bottom: 3px;
-      }
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .about-skout-container {
+  @media (min-width: 768px) {
     padding: 28px 54px 50px;
-    .skout-sa {
-      justify-content: center;
-      display: flex;
-      &-img {
-        width: auto;
-      }
-    }
-    .about-skout {
-      &-title {
-        @include text-size-medium;
-      }
-      &-text {
-        margin: 30px auto;
-        font-size: 16px;
-      }
-    }
-    .about-skout-buttons {
-      margin: 30px auto 0;
-      .btn {
-        height: 40px;
-      }
-    }
   }
-}
-
-@media (min-width: 1440px) {
-  .about-skout-container {
+  @media (min-width: 1440px) {
     padding: 50px 135px 110px;
     display: grid;
     grid-template-areas:
@@ -100,27 +17,112 @@
       "s b";
     grid-template-rows: 3fr 1fr;
     grid-template-columns: 2fr;
-    .skout-sa {
-      grid-area: s;
-      margin-right: 100px;
-    }
-    .about-skout {
-      grid-area: a;
-      &-title {
-        @include text-size-large;
-      }
-      &-text {
-        padding: 40px 0 0;
-        margin: auto;
-      }
-    }
-    .about-skout-buttons {
-      flex-direction: row;
-      grid-area: b;
-      margin: 0;
-      .btn:first-child {
-        margin-bottom: 0;
-      }
+  }
+}
+
+.skout-sa {
+  order: 2;
+  opacity: 0;
+  transition: opacity 700ms;
+  @media (min-width: 768px) {
+    justify-content: center;
+    display: flex;
+  }
+  @media (min-width: 1440px) {
+    grid-area: s;
+    margin-right: 100px;
+  }
+
+  &-img {
+    width: 100%;
+    @media (min-width: 768px) {
+      width: auto;
     }
   }
 }
+
+.about-skout {
+  order: 1;
+  opacity: 0;
+  transition: opacity 700ms;
+  max-width: 560px;
+  margin: auto;
+  @media (min-width: 1440px) {
+    grid-area: a;
+  }
+
+  &-title {
+    @include text-size-standart;
+    font-weight: 400;
+    @media (min-width: 768px) {
+      @include text-size-medium;
+    }
+    @media (min-width: 1440px) {
+      @include text-size-large;
+    }
+  }
+
+  &-text {
+    margin: 20px auto;
+    color: $colorTextPrimaryDark;
+    font-family: Aclonica, Arial, Helvetica, sans-serif;
+    @include text-size(14px, 24px);
+    @media (min-width: 768px) {
+      margin: 30px auto;
+      font-size: 16px;
+    }
+    @media (min-width: 1440px) {
+      padding: 40px 0 0;
+      margin: auto;
+    }
+  }
+}
+
+.about-skout-buttons {
+  opacity: 0;
+  order: 2;
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (min-width: 768px) {
+    margin: 30px auto 0;
+  }
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    grid-area: b;
+    margin: 0;
+  }
+
+  .btn {
+    @include button-primary-first(200px,40px);
+    @media (min-width: 768px) {
+      height: 40px;
+    }
+  }
+
+  .btn-primary {
+    border: 1px solid $colorTextlinks;
+    padding: 5px;
+    margin-bottom: 20px;
+    &:hover {
+      @include button-hover-shadow;
+      position: relative;
+      bottom: 3px;
+    }
+    @media (min-width: 1440px) {
+      margin-bottom: 0;
+    }
+  }
+
+  .btn-outline {
+    border: 0;
+    padding: 5px;
+    &:hover {
+      @include button-hover-shadow;
+      position: relative;
+      bottom: 3px;
+    }
+  }
+}
+

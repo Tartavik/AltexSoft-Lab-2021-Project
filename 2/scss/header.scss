@@ -160,7 +160,7 @@
   position: fixed;
   bottom: 0;
   margin-bottom: 40px;
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     position: static;
     flex-direction: row;
     margin-bottom: 0;
@@ -178,17 +178,15 @@
       transition: 800ms color;
       transition: 800ms border;
     }
-    @media (min-width: 1440px){
-      & {
-        margin: 0 0 0 20px;
-        background-color: $color-bg-transparent;
-        border: 1.5px solid $colorTextPrimary;
-        color: $colorTextPrimary;
-        box-shadow: none;
-        &:hover {
-          color: $hoverColorLink;
-          border: 1.5px solid $hoverColorLink;
-        }
+    @media (min-width: 1440px) {
+      margin: 0 0 0 20px;
+      background-color: $color-bg-transparent;
+      border: 1.5px solid $colorTextPrimary;
+      color: $colorTextPrimary;
+      box-shadow: none;
+      &:hover {
+        color: $hoverColorLink;
+        border: 1.5px solid $hoverColorLink;
       }
     }
   }
@@ -201,7 +199,7 @@
   border: 0;
   background-color: $color-bg-transparent;
   cursor: pointer;
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     display: none;
     position: absolute;
   }
@@ -232,10 +230,10 @@
   }
   @media (min-width: 768px){
     z-index: 3;
-    &::before{
+    &::before {
       background-color: $colorTextlinks;
     }
-    &::after{
+    &::after {
       background-color: $colorTextlinks;
     }
   }
@@ -263,15 +261,11 @@
     text-transform: uppercase;
     font-weight: 400;
     @media (min-width: 768px) {
-      &{
-        font-size: 70px;
-        line-height: 84px;
-      }
+      font-size: 70px;
+      line-height: 84px;
     }
     @media (min-width: 1440px) {
-      &{
-        @include text-size(110px, 130px);
-      }
+      @include text-size(110px, 130px);
     }
   }
 }
@@ -295,7 +289,7 @@
       @include text-size-small;
       padding: 0 30px;
     }
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       @include text-size(20px, 26px);
       margin: auto;
     }
@@ -303,7 +297,7 @@
 
   .bottom-button-why-skout {
     margin: 20px auto 0;
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       margin: auto;
     }
 
@@ -312,17 +306,15 @@
       color: $colorTextlinks;
       background-color: $colorTextPrimary;
       border: 0;
-      @media (min-width: 768px){
-        .btn {
-          min-width: 200px;
-          min-height: 40px;
-        }
+      &:hover {
+        @include button-hover-shadow;
+        position: relative;
+        bottom: 3px;
       }
-    }
-    .btn:hover {
-      @include button-hover-shadow;
-      position: relative;
-      bottom: 3px;
+      @media (min-width: 768px) {
+        min-width: 200px;
+        min-height: 40px;
+      }
     }
   }
 }
