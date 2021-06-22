@@ -78,52 +78,39 @@
       grid-template-columns: 100% 100%;
       padding-left: 0;
       list-style-type: none;
-      .twitter {
-        cursor: pointer;
-        display: inline-block;
-        width: 30px;
-        height: 24px;
-        background-image: url(../images/icons.png);
-        background-position: 0 0;
-        &:hover {
-          background-position: -30px 0px;
-          transition: 300ms background-position;
+      .icon{
+        @include social-icon;
+        &-twitter {
+          width: 30px;
+          height: 24px;
+          background-position: 0 0;
+          &:hover {
+            background-position: -30px 0px;
+          }
         }
-      }
-      .facebook {
-        cursor: pointer;
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        background-image: url(../images/icons.png);
-        background-position: 54px 0;
-        &:hover {
-          background-position: 29px 0;
-          transition: 300ms background-position;
+        &-facebook {
+          width: 25px;
+          height: 25px;
+          background-position: 54px 0;
+          &:hover {
+            background-position: 29px 0;
+          }
         }
-      }
-      .youtube {
-        cursor: pointer;
-        display: inline-block;
-        width: 32px;
-        height: 23px;
-        background-image: url(../images/icons.png);
-        background-position: 0 24px;
-        &:hover {
-          background-position: -32px 24px;
-          transition: 300ms background-position;
+        &-youtube {
+          width: 32px;
+          height: 23px;
+          background-position: 0 24px;
+          &:hover {
+            background-position: -32px 24px;
+          }
         }
-      }
-      .in {
-        cursor: pointer;
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        background-image: url(../images/icons.png);
-        background-position: 50px 25px;
-        &:hover {
-          background-position: 25px 25px;
-          transition: 300ms background-position;
+        &-in {
+          width: 25px;
+          height: 25px;
+          background-position: 50px 25px;
+          &:hover {
+            background-position: 25px 25px;
+          }
         }
       }
     }

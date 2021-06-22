@@ -69,3 +69,10 @@
   border: 1px solid $colorTextlinks;
   border-radius: 30px;
 }
+
+@mixin social-icon{
+  background-image: url(../images/icons.png);
+  cursor: pointer;
+  display: inline-block;
+  transition: 300ms background-position;
+}
