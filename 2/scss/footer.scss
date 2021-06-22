@@ -12,13 +12,13 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      .link-company-container {
+      .link-company {
         list-style: none;
         display: flex;
         flex-direction: column;
         padding: 0;
-        .link-company-item {
-          .link-company {
+        &-item {
+          &-value {
             @include text-size(12px, 24px);
             color: $hoverColorLink;
             margin-top: 12px;
@@ -166,11 +166,11 @@
         justify-content: space-between;
         padding-top: 78px;
         flex-direction: row;
-        .link-company-container {
+        .link-company {
           padding-right: 100px;
-          .link-company-item {
+          &-item {
             margin-bottom: 30px;
-            .link-company {
+            &-value {
               min-width: 170px;
               margin-top: 0;
             }
