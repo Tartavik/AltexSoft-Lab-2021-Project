@@ -76,13 +76,12 @@
   .wrapper-secondary-double-slaider {
     padding: 28px 54px 50px;
       .slider-item {
+        max-width: 120px;
         text-align: start;
       }
     .slick-track {
+      justify-content: space-between;
       transform: translate3d(0px, 0px, 0px) !important;
-    }
-    .width {
-      width: 100% !important;
     }
   }
 }
@@ -91,8 +90,6 @@
   .main-double-slaider {
     padding: 0 135px 100px 135px;
     .slider-item {
-      display: flex;
-      flex-direction: row;
       .double-slider-icon {
         &-img {
           min-width: 340px;
