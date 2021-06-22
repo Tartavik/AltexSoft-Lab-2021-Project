@@ -1,0 +1,25 @@
+{
+  "name": "altexsoft-lab-2021-project",
+  "version": "1.0.0",
+  "description": "project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tartavik/AltexSoft-Lab-2021-Project.git"
+  },
+  "author": "Anton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tartavik/AltexSoft-Lab-2021-Project/issues"
+  },
+  "homepage": "https://github.com/Tartavik/AltexSoft-Lab-2021-Project#readme",
+  "devDependencies": {
+    "gulp-sass": "^4.1.0"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
