@@ -5,10 +5,7 @@
 .wrapper-big-slaider {
   background: linear-gradient(15deg, #e0e0e0, #ffffff);
   .big-slider-container {
-    max-width: 1440px;
-    padding: 20px 20px 30px;
     min-height: 1085px;
-    margin: auto;
     .slider-title-container {
       text-align: center;
       .slider-title {
@@ -29,16 +26,17 @@
       margin: 20px auto;
       li {
         cursor: pointer;
-        padding: 10px;
         list-style: none;
       }
       button {
         cursor: pointer;
-        padding: 5px;
+        padding: 0;
         position: relative;
         font-size: 0;
         border: 0;
         background-color: $color-bg-transparent;
+        width: 30px;
+        height: 30px;
         &::before {
           position: absolute;
           content: "";
@@ -46,16 +44,13 @@
           height: 6px;
           background-color: $colorTextlinks;
           border-radius: 20px;
-          left: 2px;
-          top: 2px;
+          left: calc(50% - 3px);
+          top: calc(50% - 3px);
         }
       }
       .slick-active {
         button {
-          margin-top: 8px;
           border: 1px solid $colorTextlinks;
-          min-width: 24px;
-          min-height: 24px;
           border-radius: 20px;
           &::before {
             left: 50%;

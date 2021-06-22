@@ -7,10 +7,8 @@
   width: 100%;
   font-family: Aclonica, Arial, Helvetica, sans-serif;
   &-wrapper {
-    max-width: 1440px;
     display: flex;
     flex-direction: column-reverse;
-    padding: 20px 20px 30px;
     .about-company {
       display: flex;
       flex-direction: column;
@@ -179,7 +177,6 @@
 @media (min-width: 1440px) {
   .footer {
     &-wrapper {
-      margin: auto;
       padding: 75px 135px 110px;
       .about-company {
         display: flex;

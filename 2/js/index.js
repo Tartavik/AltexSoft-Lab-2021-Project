@@ -77,6 +77,7 @@ $(document).ready(function () {
     infinite: true,
     variableWidth: true,
     mobileFirst: true,
+    centerMode: true,
     responsive: [
       {
         breakpoint: 1439,
