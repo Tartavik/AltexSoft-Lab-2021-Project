@@ -4,156 +4,160 @@
 
 .wrapper-big-slaider {
   background: linear-gradient(15deg, #e0e0e0, #ffffff);
-  .big-slider-container {
-    min-height: 1085px;
-    .slider-title-container {
-      text-align: center;
-      .slider-title {
-        @include text-size-standart;
-        font-weight: 400;
+}
+
+.big-slider-container {
+  min-height: 1085px;
+  @media (min-width: 768px) {
+    padding: 28px 54px 50px;
+  }
+  @media (min-width: 1440px) {
+    padding: 110px 135px 110px;
+  }
+
+  .slider-title-container {
+    text-align: center;
+    @media (min-width: 1440px) {
+      text-align: start;
+      margin-bottom: 80px;
+    }
+
+    .slider-title {
+      @include text-size-standart;
+      font-weight: 400;
+      @media (min-width: 768px) {
+        @include text-size-medium;
+      }
+      @media (min-width: 1440px){
+        @include text-size-large;
       }
     }
   }
 }
+
+
 .inner-wrapper {
-  .container-dots {
-    margin: 30px 0 30px 0;
-    .slick-dots {
-      display: flex;
-      padding: 0;
-      align-items: center;
-      justify-content: center;
-      margin: 20px auto;
-      li {
-        cursor: pointer;
-        list-style: none;
-      }
-      button {
-        cursor: pointer;
-        padding: 0;
-        position: relative;
-        font-size: 0;
-        border: 0;
-        background-color: $color-bg-transparent;
-        width: 30px;
-        height: 30px;
-        &::before {
-          position: absolute;
-          content: "";
-          width: 6px;
-          height: 6px;
-          background-color: $colorTextlinks;
-          border-radius: 20px;
-          left: calc(50% - 3px);
-          top: calc(50% - 3px);
-        }
-      }
-      .slick-active {
-        button {
-          border: 1px solid $colorTextlinks;
-          border-radius: 20px;
-          &::before {
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-          }
-        }
-      }
-    }
-  }
-  .big-slider {
-    .slider-image {
-      text-align: center;
-    }
-    .btn {
-      @include button-primary-first(180px,40px);
-      border: 0;
-      display: block;
-      margin: 30px auto 10px;
-      &:hover {
-        @include button-hover-shadow;
-        position: relative;
-        bottom: 3px;
-      }
-    }
-    .slider-text-container {
-      padding-top: 30px;
-      max-width: 400px;
-      margin: auto;
-      .slider-title {
-        font-family: Acme, Arial, Helvetica, sans-serif;
-        @include text-size(18px, 24px);
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: $colorTextPrimaryDark;
-        display: block;
-        font-weight: 400;
-      }
-      .slider-text {
-        font-family: Aclonica, Arial, Helvetica, sans-serif;
-        color: $colorTextPrimaryDark;
-        @include text-size-small;
-      }
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .wrapper-big-slaider {
-    .big-slider-container {
-      padding: 28px 54px 50px;
-      min-height: 1085px;
-      .slider-title-container {
-        .slider-title {
-          @include text-size-medium;
-        }
-      }
-    }
-  }
-  .inner-wrapper {
-    .container-dots {
-      margin: 45px 0;
-    }
-  }
-}
-
-@media (min-width: 1440px) {
-  .inner-wrapper {
+  @media (min-width: 1440px) {
     display: flex;
     flex-direction: row-reverse;
-    .container-dots {
-      margin: 0;
-      .slick-dots {
-        display: flex;
-        flex-direction: column;
+  }
+}
+
+.container-dots {
+  margin: 30px 0 30px 0;
+  @media (min-width: 768px) {
+    margin: 45px 0;
+  }
+  @media (min-width: 1440px) {
+    margin: 0;
+  }
+
+  .slick-dots {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    @media (min-width: 1440px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    li {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 0;
+      position: relative;
+      font-size: 0;
+      border: 0;
+      background-color: $color-bg-transparent;
+      width: 30px;
+      height: 30px;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 6px;
+        height: 6px;
+        background-color: $colorTextlinks;
+        border-radius: 20px;
+        left: calc(50% - 3px);
+        top: calc(50% - 3px);
       }
     }
-    .big-slider {
-      min-width: 0px;
-      padding: 0 0 0 70px;
-      .slider-item {
-        min-width: 0;
-        display: flex;
-        flex-direction: row-reverse;
-      }
-      .slider-image {
-        min-width: 625px;
-      }
-      .btn {
-        margin: 50px 0 0;
+
+    .slick-active {
+      button {
+        border: 1px solid $colorTextlinks;
+        border-radius: 20px;
+        &::before {
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
     }
   }
-  .wrapper-big-slaider {
-    .big-slider-container {
-      padding: 110px 135px 110px;
-      .slider-title-container {
-        text-align: start;
-        margin-bottom: 80px;
-        .slider-title {
-          @include text-size-large;
-        }
-      }
+}
+
+.big-slider {
+  @media (min-width: 1440px) {
+    min-width: 0px;
+    padding: 0 0 0 70px;
+  }
+
+  .slider-item {
+    @media (min-width: 1440px){
+      min-width: 0;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  .slider-image {
+    text-align: center;
+    @media (min-width: 1400px) {
+      min-width: 625px;
+    }
+  }
+
+  .btn {
+    @include button-primary-first(180px,40px);
+    border: 0;
+    display: block;
+    margin: 30px auto 10px;
+    &:hover {
+      @include button-hover-shadow;
+      position: relative;
+      bottom: 3px;
+    }
+    @media (min-width: 1400px) {
+      margin: 50px 0 0;
+    }
+  }
+
+  .slider-text-container {
+    padding-top: 30px;
+    max-width: 400px;
+    margin: auto;
+
+    .slider-title {
+      font-family: Acme, Arial, Helvetica, sans-serif;
+      @include text-size(18px, 24px);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: $colorTextPrimaryDark;
+      display: block;
+      font-weight: 400;
+    }
+
+    .slider-text {
+      font-family: Aclonica, Arial, Helvetica, sans-serif;
+      color: $colorTextPrimaryDark;
+      @include text-size-small;
     }
   }
 }
