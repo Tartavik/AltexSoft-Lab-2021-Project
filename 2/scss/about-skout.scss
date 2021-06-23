@@ -20,26 +20,25 @@
   }
 }
 
+
+
+
 .skout-sa {
+  width: 100%;
   order: 2;
   opacity: 0;
   transition: opacity 700ms;
+  margin: auto;
   @media (min-width: 768px) {
+    max-width: 600px;
     justify-content: center;
     display: flex;
   }
   @media (min-width: 1440px) {
     grid-area: s;
-    margin-right: 100px;
-  }
-
-  &-img {
-    width: 100%;
-    @media (min-width: 768px) {
-      width: auto;
-    }
   }
 }
+
 
 .about-skout {
   order: 1;
@@ -49,6 +48,7 @@
   margin: auto;
   @media (min-width: 1440px) {
     grid-area: a;
+    padding-left: 100px;
   }
 
   &-title {
@@ -92,6 +92,7 @@
     flex-direction: row;
     grid-area: b;
     margin: 0;
+    padding-left: 100px;
   }
 
   .btn {

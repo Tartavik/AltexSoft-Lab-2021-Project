@@ -43,19 +43,17 @@
       }
       
       .author {
+        display: block;          
+        font-family: Acme, Arial, Helvetica, sans-serif;
+        @include text-size(12px, 24px);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $hoverColorLink;
         @media (min-width: 768px) {
           text-align: right;
         }
         @media (min-width: 1440px){
           margin-bottom: 0;
-        }
-
-        &-fn-ln {
-          font-family: Acme, Arial, Helvetica, sans-serif;
-          @include text-size(12px, 24px);
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          color: $hoverColorLink;
         }
       }
     }

@@ -240,33 +240,26 @@
 }
 
 .header-text {
+  display: block;
   margin: 30px auto;
   text-align: center;
   max-width: 500px;
   font-family: Actor, Arial, Helvetica, sans-serif;
+  color: $colorTextPrimary;
+  @include text-size(40px, 56px);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 400;
   @media (min-width: 768px) {
     max-width: 1100px;
     margin: 80px auto;
+    font-size: 70px;
+    line-height: 84px;
   }
   @media (min-width: 1440px){
-    max-width: 1100px;
+    @include text-size(110px, 130px);
     margin: 80px auto 110px;
     padding: 0;
-  }
-
-  &-value {
-    color: $colorTextPrimary;
-    @include text-size(40px, 56px);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 400;
-    @media (min-width: 768px) {
-      font-size: 70px;
-      line-height: 84px;
-    }
-    @media (min-width: 1440px) {
-      @include text-size(110px, 130px);
-    }
   }
 }
 
@@ -288,33 +281,27 @@
     @media (min-width: 768px) {
       @include text-size-small;
       padding: 0 30px;
+      margin: auto;
     }
     @media (min-width: 1440px) {
-      @include text-size(20px, 26px);
-      margin: auto;
+      @include text-size(20px, 26px);     
     }
   }
-
-  .bottom-button-why-skout {
+  .btn {
+    @include button-primary-first(130px,30px);
+    color: $colorTextlinks;
+    background-color: $colorTextPrimary;
+    border: 0;
     margin: 20px auto 0;
-    @media (min-width: 768px) {
-      margin: auto;
+    &:hover {
+      @include button-hover-shadow;
+      position: relative;
+      bottom: 3px;
     }
-
-    .btn {
-      @include button-primary-first(130px,30px);
-      color: $colorTextlinks;
-      background-color: $colorTextPrimary;
-      border: 0;
-      &:hover {
-        @include button-hover-shadow;
-        position: relative;
-        bottom: 3px;
-      }
-      @media (min-width: 768px) {
-        min-width: 200px;
-        min-height: 40px;
-      }
+    @media (min-width: 768px) {
+      min-width: 200px;
+      min-height: 40px;
+      margin: auto;
     }
   }
 }

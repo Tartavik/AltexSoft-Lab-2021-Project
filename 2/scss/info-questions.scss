@@ -91,17 +91,15 @@
     width: 100%;
   }
 
-  .title-container {
+  .title {
+    display: block;
     padding: 25px 0 10px 0;
     border-bottom: 2px solid $colorTextPrimary;
-
-    .title {
-      font-family: Acme, Arial, Helvetica, sans-serif;
-      @include text-size(12px, 24px);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: $colorTextPrimary;
-    }
+    font-family: Acme, Arial, Helvetica, sans-serif;
+    @include text-size(12px, 24px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $colorTextPrimary;
   }
 
   &-text-container {
