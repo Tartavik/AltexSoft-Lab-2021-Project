@@ -1,6 +1,6 @@
-const containerHeaderMenu = document.querySelector('.container-header-menu');
+const containerHeaderMenu = document.querySelector('.header-menu');
 const hamburger = document.querySelector('.hamburger-icon');
-const headerMenu = document.querySelector('.header-menu');
+const headerMenu = document.querySelector('.header-menu-list');
 hamburger.addEventListener('click', () => {
   containerHeaderMenu.classList.toggle('is-show-menu');
   hamburger.classList.toggle('open-menu');
