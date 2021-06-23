@@ -28,14 +28,14 @@ const buttonAboutSkout = document.querySelector('.about-skout-buttons');
 const aboutSkoutContainer = document.querySelector('.about-skout-container');
 let currentPageYOffset = window.pageYOffset;
 
-  if (window.matchMedia("(max-width: 768px)").matches) { 
+  if (window.matchMedia('(max-width: 768px)').matches) { 
     skoutSA.style.opacity = 1;
     aboutSkout.style.opacity = 1;
     buttonAboutSkout.style.opacity = 1;
   } 
 
   window.addEventListener('scroll', () => {
-    if (window.matchMedia("(min-width: 768px)").matches) {
+    if (window.matchMedia('(min-width: 768px)').matches) {
       if (window.pageYOffset >= aboutSkoutContainer.offsetTop - window.screen.height / 3) {
         skoutSA.style.opacity = 1;
         setTimeout(() => {
