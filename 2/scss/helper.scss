@@ -3,8 +3,8 @@
 @import "mixins";
 
 .section{
-    max-width: 1440px;
-    padding: 20px 20px 30px;
+    max-width: 1200px;
+    padding: 20px 15px 30px;
     margin: auto;
 }
   
@@ -35,7 +35,7 @@
     background-color: $colorTextPrimary;
     transition: background-color 600ms;
     max-width: 1440px;
-    padding: 29px 90px;
+    padding: 29px 135px;
     z-index: 1;
     margin: auto;
     position: fixed;
