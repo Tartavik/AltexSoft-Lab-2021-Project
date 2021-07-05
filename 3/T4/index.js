@@ -3,7 +3,19 @@ const max = document.getElementById('max');
 const buttonFindFriendlyNumbers = document.getElementById('find');
 
 buttonFindFriendlyNumbers.addEventListener('click',() =>{
-    findFriendlyNumbers(+min.value,+max.value);
+    if(+min.value < +max.value){
+        if(+min.value >0&&+max.value >0){
+            findFriendlyNumbers(+min.value,+max.value);
+        }else{
+            alert('The numbers should be > 0');
+            min.value = '';
+            max.value = '';
+        }
+    }else{
+        alert('The beginning of the range cannot be smaller than the end');
+        min.value = '';
+        max.value = '';
+    }
 })
 
 function findFriendlyNumbers (min,max) {
