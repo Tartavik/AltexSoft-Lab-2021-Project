@@ -1,11 +1,21 @@
-const min = document.getElementById('min');
-const max = document.getElementById('max');
-const buttonFindFriendlyNumbers = document.getElementById('find');
+const min = document.getElementById('min'),
+max = document.getElementById('max'),
+buttonFindFriendlyNumbers = document.getElementById('find');
 
 buttonFindFriendlyNumbers.addEventListener('click',() =>{
-    if(+min.value < +max.value){
-        if(+min.value >0&&+max.value >0){
-            findFriendlyNumbers(+min.value,+max.value);
+    numberCheck();
+})
+
+addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+        numberCheck();
+    }
+})
+
+function numberCheck () {
+    if (+min.value < +max.value) {
+        if (+min.value > 0&&+max.value > 0) {
+            findFriendlyNumbers(Math.floor(+min.value), Math.floor(+max.value));
         }else{
             alert('The numbers should be > 0');
             min.value = '';
@@ -13,25 +23,26 @@ buttonFindFriendlyNumbers.addEventListener('click',() =>{
         }
     }else{
         alert('The beginning of the range cannot be smaller than the end');
-        min.value = '';
-        max.value = '';
+        const flag = min.value;
+        min.value = max.value;
+        max.value = flag;
     }
-})
+}
 
-function findFriendlyNumbers (min,max) {
-    let arrFriendlyNumbers = [];
+function findFriendlyNumbers (min, max) {
+    const arrFriendlyNumbers = [];
     for (let i = min; i <= max; i++){
-        let arrDividerFirst = getDividerNumber(i);
-        let sumArrDividerF = getSumArrDivider(arrDividerFirst);
-        if(sumArrDividerF < max){
-            let arrDividerSecond = getDividerNumber(sumArrDividerF);
-            let sumArrDividerS = getSumArrDivider(arrDividerSecond);
-            if(i === sumArrDividerS&&sumArrDividerF > sumArrDividerS?true:false){
+        const arrDividerFirst = getDividerNumber(i);
+        const sumArrDividerF = getSumArrDivider(arrDividerFirst);
+        if (sumArrDividerF <= max) {
+            const arrDividerSecond = getDividerNumber(sumArrDividerF);
+            const sumArrDividerS = getSumArrDivider(arrDividerSecond);
+            if (i === sumArrDividerS&&sumArrDividerF > sumArrDividerS) {
                 arrFriendlyNumbers.push([i,sumArrDividerF])
             }
         }
     }
-    console.log(arrFriendlyNumbers);
+    alert(arrFriendlyNumbers);
 }
 
 function isInteger (num) {
@@ -39,11 +50,11 @@ function isInteger (num) {
 }
 
 function getDividerNumber (num) {
-    let arr = [1];
+    const arr = [1];
     let lastNumb = num;
-    for (j = 2; j < lastNumb; j++){
-        let result = num / j;
-        if(isInteger(result)){
+    for (j = 2; j < lastNumb; j++) {
+        const result = num / j;
+        if (isInteger(result)) {
             arr.push(result);
             arr.push(j);
             lastNumb = result;
@@ -53,7 +64,5 @@ function getDividerNumber (num) {
 }
 
 function getSumArrDivider (arr) {
-    return arr.reduce((cur,prev) => {
-        return cur += prev;
-    },0)
+    return arr.reduce((cur,prev) => cur += prev, 0)
 }

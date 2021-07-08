@@ -1,66 +1,71 @@
-const howManyCoins = document.getElementById("coins");
-const buttonStart = document.getElementById("start");
-const buttonClean = document.getElementById("clean");
-const tree = document.getElementById("tree");
-const numberOfLines = document.getElementById("number-of-lines");
-let sumbol = "*";
+const howManyCoins = document.getElementById('coins'),
+buttonStart = document.getElementById('start'),
+buttonClean = document.getElementById('clean'),
+tree = document.getElementById('tree'),
+numberOfLines = document.getElementById('number-of-lines'),
+outputSymbol = '*';
 
-buttonStart.addEventListener("click", () => {
+buttonStart.addEventListener('click', () => {
+  numberCheck();
+});
+
+buttonClean.addEventListener('click', () => {
+  tree.innerHTML = '';
+  numberOfLines.classList.add('is-hide');
+});
+
+function numberCheck() {
   if (isFinite(howManyCoins.value)) {
-    coin(howManyCoins.value);
-    howManyCoins.value = "";
-    numberOfLines.classList.remove("is-hide");
+    createCoinTree(+howManyCoins.value);
+    howManyCoins.value = '';
+    numberOfLines.classList.remove('is-hide');
   } else {
-    alert("This is not are number");
+    alert('This is not are number');
   }
-});
+}
 
-buttonClean.addEventListener("click", () => {
-  tree.innerHTML = "";
-  numberOfLines.classList.add("is-hide");
-});
-
-function coin(number) {
-  let line = 0;
-  let lastNumber = 0;
-  for (let i = 1; lastNumber < number; i++) {
-    lastNumber += i;
-    if (lastNumber <= number) {
-      line++;
+function createCoinTree(number) {
+  let quantityLine = 0;
+  let lastLineQuantitySymbols = 0;
+  for (let i = 1; lastLineQuantitySymbols < number; i++) {
+    lastLineQuantitySymbols += i;
+    if (lastLineQuantitySymbols <= number) {
+      quantityLine++;
     } else {
-      lastNumber -= i;
+      lastLineQuantitySymbols -= i;
       break;
     }
   }
-  renderCoin(line, lastNumber, number);
+  lastLineQuantitySymbols = number - lastLineQuantitySymbols;
+  renderCoin(quantityLine, lastLineQuantitySymbols);
 }
 
-function renderCoin(line, lNum, num) {
-  let remainder = num - lNum;
-  console.log(remainder);
-  let quantityCoins = sumbol;
-  for (let i = 0; i < line; i++) {
-    let p = document.createElement("p");
-    p.classList.add("sumbol");
-    p.innerText = quantityCoins;
-    tree.appendChild(p);
-    quantityCoins += sumbol;
+function renderCoin(qLine, lLine) {
+  let quantityCoins = outputSymbol;
+  for (let i = 0; i < qLine; i++) {
+    createElement(quantityCoins);
+    quantityCoins += outputSymbol;
   }
-  numberOfLines.innerText = line;
-  if (remainder > 0) {
+  numberOfLines.innerText = qLine;
+  if (lLine > 0) {
     // Here I create an incomplete line, if there is one.
-    quantityCoins = convert(remainder);
-    let p = document.createElement("p");
-    p.innerText = quantityCoins;
-    p.classList.add("sumbol");
-    tree.appendChild(p);
+    quantityCoins = convert(lLine);
+    createElement(quantityCoins);
   }
 }
 
 function convert(number) {
-  let result = sumbol;
+  let result = outputSymbol;
   for (let i = 1; i < number; i++) {
-    result += sumbol;
+    result += outputSymbol;
   }
   return result;
+}
+
+function createElement(quantityCoins) {
+  const p = document.createElement('p');
+  p.classList.add('outputSymbol');
+  p.innerText = quantityCoins;
+  tree.appendChild(p);
+  return p;
 }

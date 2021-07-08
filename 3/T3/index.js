@@ -1,42 +1,42 @@
-const buttonConfirm = document.getElementsByClassName("atm-form-button")[0];
-const buttonGet = document.getElementsByClassName("atm-form-getting-button")[0];
-const buttonPut = document.getElementsByClassName("atm-form-put-button")[0];
-const getValue = document.getElementsByClassName("atm-form-getting-item")[0];
-const resultInfo = document.getElementsByClassName("result")[0];
-const resultWrapper = document.getElementsByClassName("result-wrapper")[0];
-const generalSum = document.getElementsByClassName("generalSum")[0];
-const money = document.getElementsByClassName("money")[0];
-const atmForm = document.getElementsByClassName("atm-form")[0];
-const atmFormGetting = document.getElementsByClassName("atm-form-getting")[0];
-let atm = new Map();
-let issuedMoney = new Map();
-let values = document.getElementsByClassName("atm-form-item-value");
-Array.from(values).forEach((el) => {
+const buttonConfirm = document.getElementById('atm-form-button'),
+buttonGet = document.getElementById('atm-form-getting-button'),
+buttonPut = document.getElementById('atm-form-put-button'),
+getValue = document.getElementById('atm-form-getting-item'),
+resultInfo = document.getElementById('result'),
+resultWrapper = document.getElementById('result-wrapper'),
+generalSum = document.getElementById('generalSum'),
+money = document.getElementById('money'),
+atmForm = document.getElementById('atm-form'),
+atmFormGetting = document.getElementById('atm-form-getting'),
+atm = new Map(),
+issuedMoney = new Map(),
+values = document.getElementsByClassName('atm-form-item-value');
+
+Array.from(values).forEach( el => {
   atm.set(el.name, +el.value);
   issuedMoney.set(el.name, +el.value);
 });
 
-buttonConfirm.addEventListener("click", () => {
+buttonConfirm.addEventListener('click', () => {
   if (checkPositiveNumber()) {
-    Array.from(values).forEach((el) => {
+    Array.from(values).forEach( el => {
       atm.set(el.name, atm.get(el.name) + +el.value);
     });
     money.innerText = howMuchMoney();
-    console.log(money.innerText);
-    atmForm.classList.add("is-hide");
-    atmFormGetting.classList.remove("is-hide");
+    atmForm.classList.add('is-hide');
+    atmFormGetting.classList.remove('is-hide');
   } else {
-    alert("Please write only numbers > 0");
+    alert('Please write only numbers > 0');
   }
   resetInputValues();
 });
 
-buttonPut.addEventListener("click", () => {
-  atmForm.classList.remove("is-hide");
-  atmFormGetting.classList.add("is-hide");
+buttonPut.addEventListener('click', () => {
+  atmForm.classList.remove('is-hide');
+  atmFormGetting.classList.add('is-hide');
 });
 
-buttonGet.addEventListener("click", () => {
+buttonGet.addEventListener('click', () => {
   getMoney(getValue.value);
 });
 
@@ -44,29 +44,32 @@ function getMoney(sum) {
   let amountRequested = sum;
   for (let entry of atm) {
     if (entry[1] !== 0) {
-      let result = Math.floor(amountRequested / +entry[0]);
-      if (result > entry[1]) {
-        result = entry[1];
+      const banknoteСount = Math.floor(amountRequested / +entry[0]);
+      if (banknoteСount > entry[1]) {
+        banknoteСount = entry[1];
       }
-      if (result > 0) {
-        atm.set(entry[0], entry[1] - result);
-        amountRequested -= +entry[0] * result;
-        issuedMoney.set(entry[0], result);
+      if (banknoteСount > 0) {
+        atm.set(entry[0], entry[1] - banknoteСount);
+        amountRequested -= +entry[0] * banknoteСount;
+        issuedMoney.set(entry[0], banknoteСount);
       }
     }
   }
-  if (amountRequested > 0) {
-    alert("Sorry but in atm do not money");
+  balanceCheck(amountRequested, sum);
+}
+
+function balanceCheck(remainder, sum) {
+  if (remainder > 0) {
+    alert('Sorry, but there is not enough money in the ATM');
     returnMoney();
   } else {
     showYouMoney(sum);
     money.innerText = howMuchMoney();
     resetMap();
-    atmFormGetting.classList.add("is-hide");
-    resultInfo.classList.remove("is-hide");
-    getValue.value = "";
+    atmFormGetting.classList.add('is-hide');
+    resultInfo.classList.remove('is-hide');
+    getValue.value = '';
   }
-  console.log(atm);
 }
 
 function returnMoney() {
@@ -83,23 +86,27 @@ function resetMap() {
 }
 
 function showYouMoney(sum) {
-  resultWrapper.innerHTML = "";
-  let button = document.createElement("button");
-  button.classList.add("button");
-  button.classList.add("back");
-  button.innerText = "Back";
-  generalSum.innerText = "Total amount " + sum;
+  resultWrapper.innerHTML = '';
+  const button = document.createElement('button');
+  button.classList.add('button');
+  button.classList.add('back');
+  button.innerText = 'Back';
+  generalSum.innerText = 'Total amount ' + sum;
   for (let entry of issuedMoney) {
     if (entry[1] > 0) {
-      let span = document.createElement("span");
-      span.innerText = entry[1] + " banknote, denomination " + entry[0];
+      const span = document.createElement('span');
+      span.innerText = entry[1] + ' banknote, denomination ' + entry[0];
       resultWrapper.appendChild(span);
     }
   }
   resultWrapper.appendChild(button);
-  button.addEventListener("click", () => {
-    atmFormGetting.classList.remove("is-hide");
-    resultInfo.classList.add("is-hide");
+  addButtonListener(button);
+}
+
+function addButtonListener(el) {
+  el.addEventListener('click', () => {
+    atmFormGetting.classList.remove('is-hide');
+    resultInfo.classList.add('is-hide');
   });
 }
 
@@ -112,13 +119,13 @@ function howMuchMoney() {
 }
 
 function checkPositiveNumber() {
-  return Array.from(values).every((el) => {
+  return Array.from(values).every( el => {
     return +el.value >= 0;
   });
 }
 
 function resetInputValues() {
-  Array.from(values).forEach((el) => {
-    el.value = "";
+  Array.from(values).forEach( el => {
+    el.value = '';
   });
 }

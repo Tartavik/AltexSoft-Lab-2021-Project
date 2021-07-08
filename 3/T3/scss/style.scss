@@ -1,8 +1,5 @@
 body {
-  min-height: 800px;
-  background: url("./../images/atm.png") no-repeat;
-  background-size: 100% 100%;
-  background-color: black;
+  margin: auto;
 }
 
 .money-img {
@@ -12,9 +9,10 @@ body {
 .money-container {
   display: flex;
   align-items: center;
+  padding: 8px;
 }
 
-.money {
+#money {
   font-size: 26px;
   color: white;
   margin-left: 20px;
@@ -25,7 +23,7 @@ body {
   color: white;
 }
 
-.atm-form-button {
+#atm-form-button {
   display: block;
   margin: auto;
   margin-top: 50px;
@@ -53,7 +51,7 @@ p {
   font-size: 26px;
 }
 
-.atm-form {
+#atm-form {
   padding-top: 20px;
 }
 
@@ -66,17 +64,17 @@ p {
 
 .atm-form-item-value::-webkit-outer-spin-button,
 .atm-form-item-value::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
-.atm-form-getting {
+#atm-form-getting {
   display: block;
   text-align: center;
   margin-top: 50px;
 }
 
-.atm-form-getting-item {
+#atm-form-getting-item {
   margin-top: 50px;
   min-width: 250px;
   min-height: 35px;
@@ -91,11 +89,11 @@ p {
   align-items: center;
 }
 
-.atm-form-getting-button {
+#atm-form-getting-button {
   margin: 30px 0;
 }
 
-.result {
+#result {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -105,7 +103,7 @@ p {
   margin-top: 80px;
 }
 
-.result-wrapper {
+#result-wrapper {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -113,5 +111,13 @@ p {
 }
 
 .is-hide {
-  display: none;
+  display: none !important;
+}
+
+.img-wrapper{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  margin: auto;
+  max-height: 800px;
 }
