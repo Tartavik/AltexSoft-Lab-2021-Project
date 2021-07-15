@@ -1,0 +1,205 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  .logo {
+    color: #c2c2c2;
+    text-decoration: none;
+    font-weight: 900;
+  }
+  .entrance-container {
+    display: flex;
+    align-items: center;
+    .welcoming-title {
+      color: #727272;
+      padding-right: 10px;
+    }
+    #logOut {
+      max-height: 20px;
+      color: #727272;
+      border: none;
+      background: white;
+      border-left: 1px solid #eeeeee;
+    }
+  }
+}
+
+.container {
+  &-people-icon {
+    background-color: #3f51b5;
+    display: flex;
+    #people-icon {
+      padding: 10px 10px 10px 20px;
+      background-color: #3f51b5;
+    }
+    .icon-text {
+      color: #fefefe;
+    }
+  }
+  &-filter {
+    padding: 10px 20px 20px;
+    &-input {
+      display: flex;
+      justify-content: space-between;
+      &-inner {
+          display: flex;
+          align-items: center;
+      }
+      .input-filter {
+        padding: 7px 15px;
+        color: #b8c1ce;
+        border: 1px solid #f3f3f3;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.add-user {
+  min-width: 60px;
+  min-height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ea1e63;
+  position: relative;
+  cursor: pointer;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover {
+    box-shadow: 0px 6px 12px rgba(127, 127, 127, 0.5);
+    transition: box-shadow 600ms;
+  }
+}
+
+.btn-edit {
+  background: url("/editUser.png") no-repeat center;
+  width: 35px;
+  height: 35px;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: url("/deleteUser.png") no-repeat center;
+  width: 35px;
+  height: 35px;
+  border: 0;
+  cursor: pointer;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  .table-user {
+    .row {
+      height: 50px;
+      border-bottom: 1px solid #e8e9ed;
+    }
+  }
+  .row-head {
+    color: #757575;
+    height: 50px;
+    border-bottom: 1px solid #e8e9ed;
+    border-top: 1px solid #e8e9ed;
+  }
+}
+
+.btn-filter {
+    max-height: 35px;
+    &:hover {
+        box-shadow: 0px 6px 12px rgba(127, 127, 127, 0.5);
+        transition: box-shadow 600ms;
+      }
+}
+
+.title-filter{
+    color: #767676;
+}
+
+.btn {
+    padding: 10px 20px;
+    color: white;
+    background-color: #3f51b5;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0px 6px 12px rgba(127, 127, 127, 0.5);
+        transition: box-shadow 600ms;
+      }
+}
+
+.form-user {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &-input {
+    padding: 7px 15px;
+    margin: 10px;
+    color: #b8c1ce;
+    border: 1px solid #f3f3f3;
+    max-width: 250px;
+  }
+}
+
+.is-hide {
+  display: none;
+}
+
+.custom-checkbox {
+  cursor: pointer;
+  margin: 0 15px;
+  .custom-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    &:focus + .custom-span::before {
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    &:checked + .custom-span::before {
+      border-color: #ea1e63;
+      background-color: #ea1e63;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    }
+  }
+  .custom-span::before {
+    content: "";
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #adb5bd;
+    border-radius: 3px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 70%;
+  }
+}
+
+.is-translucent{
+    opacity: 0.5;
+}
