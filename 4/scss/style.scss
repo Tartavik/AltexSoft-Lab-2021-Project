@@ -1,7 +1,7 @@
 @import "fonts";
 
-body{
-    font-family: Actor, Arial, Helvetica, sans-serif;
+body {
+  font-family: Actor, Arial, Helvetica, sans-serif;
 }
 
 .header {
@@ -52,8 +52,8 @@ body{
       display: flex;
       justify-content: space-between;
       &-inner {
-          display: flex;
-          align-items: center;
+        display: flex;
+        align-items: center;
       }
       .input-filter {
         padding: 7px 15px;
@@ -105,7 +105,7 @@ body{
   height: 35px;
   border: 0;
   cursor: pointer;
-  &:hover{
+  &:hover {
     background: url("/edit.png") no-repeat center;
   }
 }
@@ -118,7 +118,7 @@ body{
   cursor: pointer;
   background-color: #c6c6c6;
   border-radius: 50%;
-  &:hover{
+  &:hover {
     background-color: #ea1e63;
   }
 }
@@ -142,27 +142,27 @@ body{
 }
 
 .btn-filter {
-    max-height: 35px;
-    &:hover {
-        box-shadow: 0px 6px 12px rgba(127, 127, 127, 0.5);
-        transition: box-shadow 600ms;
-      }
+  max-height: 35px;
+  &:hover {
+    box-shadow: 0px 6px 12px rgba(127, 127, 127, 0.5);
+    transition: box-shadow 600ms;
+  }
 }
 
-.title-filter{
-    color: #767676;
+.title-filter {
+  color: #767676;
 }
 
 .btn {
-    padding: 10px 20px;
-    color: white;
-    background-color: #3f51b5;
-    border: none;
-    cursor: pointer;
-    &:hover {
-        box-shadow: 0px 6px 12px rgba(127, 127, 127, 0.5);
-        transition: box-shadow 600ms;
-      }
+  padding: 10px 20px;
+  color: white;
+  background-color: #3f51b5;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 6px 12px rgba(127, 127, 127, 0.5);
+    transition: box-shadow 600ms;
+  }
 }
 
 .form-user {
@@ -218,6 +218,6 @@ body{
   }
 }
 
-.is-translucent{
-    opacity: 0.5;
+.is-translucent {
+  opacity: 0.5;
 }

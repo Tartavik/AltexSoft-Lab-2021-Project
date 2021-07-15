@@ -1,45 +1,44 @@
-const requestUrl = "http://localhost:3000/users";
-const mainCheckbox = document.getElementById("main-checkbox");
-const userCompany = document.getElementById("user-company");
-const userName = document.getElementById("user-name");
-const userAddress = document.getElementById("user-address");
-const userCity = document.getElementById("user-city");
-const userCountry = document.getElementById("user-country");
-const formUser = document.getElementsByClassName("form-user")[0];
-const editUserBtn = document.getElementsByClassName("edit-user")[0];
-const createUserBtn = document.getElementsByClassName("create-user")[0];
-const addUserBtn = document.getElementsByClassName("add-user")[0];
-const allDelete = document.getElementById("all-delete");
-const arrUserCheckbox = document.getElementsByClassName("user-checkbox");
+const requestUrl = 'http://localhost:3000/users';
+const mainCheckbox = document.getElementById('main-checkbox');
+const userCompany = document.getElementById('user-company');
+const userName = document.getElementById('user-name');
+const userAddress = document.getElementById('user-address');
+const userCity = document.getElementById('user-city');
+const userCountry = document.getElementById('user-country');
+const formUser = document.getElementsByClassName('form-user')[0];
+const editUserBtn = document.getElementsByClassName('edit-user')[0];
+const createUserBtn = document.getElementsByClassName('create-user')[0];
+const addUserBtn = document.getElementsByClassName('add-user')[0];
+const allDelete = document.getElementById('all-delete');
+const arrUserCheckbox = document.getElementsByClassName('user-checkbox');
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   getUsersInfo();
 });
 
-addUserBtn.addEventListener("click", () => {
-    const arrFormUserInput = document.getElementsByClassName('form-user-input');
-    formUser.classList.remove("is-hide");
-    createUserBtn.classList.remove("is-hide");
-    createUserBtn.setAttribute("disabled", "disabled");
-    createUserBtn.classList.add('is-translucent');
-    for (let i = 0; i < arrFormUserInput.length; i++) {
-        arrFormUserInput[i].addEventListener('blur',formCheck)
-    } 
+addUserBtn.addEventListener('click', () => {
+  const arrFormUserInput = document.getElementsByClassName('form-user-input');
+  formUser.classList.remove('is-hide');
+  createUserBtn.classList.remove('is-hide');
+  createUserBtn.setAttribute('disabled', 'disabled');
+  createUserBtn.classList.add('is-translucent');
+  for (let i = 0; i < arrFormUserInput.length; i++) {
+    arrFormUserInput[i].addEventListener('blur', formCheck);
+  }
 });
 
-createUserBtn.addEventListener("click", () => {
-    createUser();
-    formUser.classList.add("is-hide");
-    createUserBtn.classList.add("is-hide");
-    userCompany.value = "";
-    userName.value = "";
-    userAddress.value = "";
-    userCity.value = "";
-    userCountry.value = "";
-  
+createUserBtn.addEventListener('click', () => {
+  createUser();
+  formUser.classList.add('is-hide');
+  createUserBtn.classList.add('is-hide');
+  userCompany.value = '';
+  userName.value = '';
+  userAddress.value = '';
+  userCity.value = '';
+  userCountry.value = '';
 });
 
-allDelete.addEventListener("click", () => {
+allDelete.addEventListener('click', () => {
   deleteSelectedUsers();
 });
 
@@ -51,7 +50,7 @@ function createUser() {
     city: userCity.value,
     country: userCountry.value,
   };
-  sendRequsest("POST", requestUrl, newUser)
+  sendRequsest('POST', requestUrl, newUser)
     .then((data) => {
       createTableUsers([data]);
     })
@@ -59,61 +58,61 @@ function createUser() {
 }
 
 function formCheck() {
-    if(
-        userCompany.value !== ""&&
-        userName.value !== ''&&
-        userAddress.value !== ''&&
-        userCity.value !== ''&&
-        userCountry.value !== ''
-        ){
-            createUserBtn.removeAttribute("disabled", "disabled");
-            createUserBtn.classList.remove('is-translucent');
-    }
+  if (
+    userCompany.value !== '' &&
+    userName.value !== '' &&
+    userAddress.value !== '' &&
+    userCity.value !== '' &&
+    userCountry.value !== ''
+  ) {
+    createUserBtn.removeAttribute('disabled', 'disabled');
+    createUserBtn.classList.remove('is-translucent');
+  }
 }
 
 function getUsersInfo() {
-  sendRequsest("GET", requestUrl + "?" + "_page=2&_limit=40")
+  sendRequsest('GET', requestUrl + '?' + '_page=2&_limit=40')
     .then((data) => createTableUsers(data))
     .catch((err) => console.log(err));
 }
 
-mainCheckbox.addEventListener("click", () => {
+mainCheckbox.addEventListener('click', () => {
   for (let i = 0; i < arrUserCheckbox.length; i++) {
     if (mainCheckbox.checked !== arrUserCheckbox[i].checked) {
       arrUserCheckbox[i].checked = !arrUserCheckbox[i].checked;
     }
   }
-  allDelete.classList.toggle("is-hide");
+  allDelete.classList.toggle('is-hide');
 });
 
-editUserBtn.addEventListener("click", () => {
+editUserBtn.addEventListener('click', () => {
   editUser();
-  userCompany.value = "";
-  userName.value = "";
-  userAddress.value = "";
-  userCity.value = "";
-  userCountry.value = "";
-  formUser.classList.add("is-hide");
-  editUserBtn.classList.add("is-hide");
+  userCompany.value = '';
+  userName.value = '';
+  userAddress.value = '';
+  userCity.value = '';
+  userCountry.value = '';
+  formUser.classList.add('is-hide');
+  editUserBtn.classList.add('is-hide');
 });
 
 function createTableUsers(arr) {
-  const tableUser = document.getElementsByClassName("table-user")[0];
+  const tableUser = document.getElementsByClassName('table-user')[0];
   for (let i = 0; i < arr.length; i++) {
-    const tr = document.createElement("tr");
+    const tr = document.createElement('tr');
     tr.id = arr[i].id;
-    tr.classList.add("row");
+    tr.classList.add('row');
 
-    const tdCheckbox = document.createElement("td");
-    const checkbox = document.createElement("input");
-    const label = document.createElement("label");
-    const span = document.createElement("span");
-    checkbox.classList.add("custom-input");
-    checkbox.classList.add("user-checkbox");
+    const tdCheckbox = document.createElement('td');
+    const checkbox = document.createElement('input');
+    const label = document.createElement('label');
+    const span = document.createElement('span');
+    checkbox.classList.add('custom-input');
+    checkbox.classList.add('user-checkbox');
     checkbox.name = arr[i].id;
-    span.classList.add("custom-span");
-    label.classList.add("custom-checkbox");
-    checkbox.type = "checkbox";
+    span.classList.add('custom-span');
+    label.classList.add('custom-checkbox');
+    checkbox.type = 'checkbox';
     label.appendChild(checkbox);
     label.appendChild(span);
     tdCheckbox.appendChild(label);
@@ -124,56 +123,61 @@ function createTableUsers(arr) {
     createTdElement(arr[i].address, tr);
     createTdElement(arr[i].city, tr);
     createTdElement(arr[i].country, tr);
-    createTdButtonElement(arr[i].id, tr, "btn-edit");
-    createTdButtonElement(arr[i].id, tr, "btn-delete");
+    createTdButtonElement(arr[i].id, tr, 'btn-edit');
+    createTdButtonElement(arr[i].id, tr, 'btn-delete');
 
     tableUser.appendChild(tr);
   }
 }
 
 function createTdElement(value, parent) {
-  const td = document.createElement("td");
+  const td = document.createElement('td');
   td.innerText = value;
   parent.appendChild(td);
 }
 
 function createTdButtonElement(value, parent, style) {
-  const button = document.createElement("button");
-  const td = document.createElement("td");
+  const button = document.createElement('button');
+  const td = document.createElement('td');
   button.name = value;
   button.classList.add(style);
   td.appendChild(button);
   parent.appendChild(td);
-  if (style === "btn-edit") {
-    button.addEventListener("click", showUserForm);
+  if (style === 'btn-edit') {
+    button.addEventListener('click', showUserForm);
   } else {
-    button.addEventListener("click", checkCheckbox);
+    button.addEventListener('click', checkCheckbox);
   }
 }
 
 function checkCheckbox(el) {
-  if (el.currentTarget.parentNode.parentNode.children[0].children[0].children[0].checked) {
-    deleteUser(el.currentTarget.parentNode.parentNode.children[0].children[0].children[0]);
+  if (
+    el.currentTarget.parentNode.parentNode.children[0].children[0].children[0]
+      .checked
+  ) {
+    deleteUser(
+      el.currentTarget.parentNode.parentNode.children[0].children[0].children[0]
+    );
   } else {
-    alert("The checkbox should be highlighted!");
+    alert('The checkbox should be highlighted!');
   }
 }
 
 function deleteUser(el) {
-  sendRequsest("DELETE", requestUrl + "/" + el.name)
+  sendRequsest('DELETE', requestUrl + '/' + el.name)
     .then((data) => console.log(data))
     .catch((err) => console.log(err));
   el.parentNode.parentNode.parentNode.remove();
 }
 
 function showUserForm(el) {
-  formUser.classList.remove("is-hide");
-  editUserBtn.classList.remove("is-hide");
+  formUser.classList.remove('is-hide');
+  editUserBtn.classList.remove('is-hide');
   getEditObj(el.currentTarget.name);
 }
 
 function getEditObj(id) {
-  sendRequsest("GET", requestUrl + "/" + id)
+  sendRequsest('GET', requestUrl + '/' + id)
     .then((data) => addValueToForm(data))
     .catch((err) => console.log(err));
 }
@@ -196,7 +200,7 @@ function editUser() {
     name: userName.value,
     country: userCountry.value,
   };
-  sendRequsest("PUT", requestUrl + "/" + newUser.id, newUser)
+  sendRequsest('PUT', requestUrl + '/' + newUser.id, newUser)
     .then((data) => renderEditUser(data))
     .catch((err) => console.log(err));
 }
@@ -224,7 +228,7 @@ function renderEditUser(obj) {
 
 function sendRequsest(method, url, body) {
   const headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   };
   return fetch(url, {
     method: method,
