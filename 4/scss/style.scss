@@ -1,3 +1,9 @@
+@import "fonts";
+
+body{
+    font-family: Actor, Arial, Helvetica, sans-serif;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -14,6 +20,7 @@
     .welcoming-title {
       color: #727272;
       padding-right: 10px;
+      font-weight: 500;
     }
     #logOut {
       max-height: 20px;
@@ -35,6 +42,8 @@
     }
     .icon-text {
       color: #fefefe;
+      font-weight: bold;
+      font-size: 14px;
     }
   }
   &-filter {
@@ -109,6 +118,7 @@
 .table {
   border-collapse: collapse;
   width: 100%;
+  font-size: 14px;
   .table-user {
     .row {
       height: 50px;
