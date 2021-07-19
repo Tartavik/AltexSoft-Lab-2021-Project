@@ -15,6 +15,8 @@ const companyInput = document.getElementById('company-input');
 const nameInput = document.getElementById('name-input');
 const addressInput = document.getElementById('address-input');
 const inputFilter = document.getElementsByClassName('input-filter');
+const titleNewUser = document.getElementById('title-new-user');
+const titleEditUser = document.getElementById('title-edit-user');
 
 document.addEventListener('DOMContentLoaded', () => {
   getUsersInfo('_start=40&_limit=50');
@@ -25,6 +27,7 @@ addUserBtn.addEventListener('click', () => {
   const arrFormUserInput = document.getElementsByClassName('form-user-input');
   formUser.classList.remove('is-hide');
   createUserBtn.classList.remove('is-hide');
+  titleNewUser.classList.remove('is-hide');
   createUserBtn.setAttribute('disabled', 'disabled');
   createUserBtn.classList.add('is-translucent');
   for (let i = 0; i < arrFormUserInput.length; i++) {
@@ -36,11 +39,37 @@ createUserBtn.addEventListener('click', () => {
   createUser();
   formUser.classList.add('is-hide');
   createUserBtn.classList.add('is-hide');
+  titleNewUser.classList.add('is-hide');
   userCompany.value = '';
   userName.value = '';
   userAddress.value = '';
   userCity.value = '';
   userCountry.value = '';
+});
+
+allDelete.addEventListener('click', () => {
+  deleteSelectedUsers();
+});
+
+mainCheckbox.addEventListener('click', () => {
+  for (let i = 0; i < arrUserCheckbox.length; i++) {
+    if (mainCheckbox.checked !== arrUserCheckbox[i].checked) {
+      arrUserCheckbox[i].checked = !arrUserCheckbox[i].checked;
+    }
+  }
+  allDelete.classList.toggle('is-hide');
+});
+
+editUserBtn.addEventListener('click', () => {
+  editUser();
+  userCompany.value = '';
+  userName.value = '';
+  userAddress.value = '';
+  userCity.value = '';
+  userCountry.value = '';
+  formUser.classList.add('is-hide');
+  editUserBtn.classList.add('is-hide');
+  titleEditUser.classList.add('is-hide');
 });
 
 function addInputListener() {
@@ -62,17 +91,12 @@ function addInputListener() {
                   console.log(addressInput.value,);
                   getUsersInfo('_start=40&_limit=50');
                 }else{
-                  console.log('2');
                   getUsersInfo(resultSort);
                 }
             }
         })
     }
 }
-
-allDelete.addEventListener('click', () => {
-  deleteSelectedUsers();
-});
 
 function createUser() {
   let newUser = {
@@ -108,30 +132,10 @@ function getUsersInfo(arg) {
     .catch((err) => console.log(err));
 }
 
-mainCheckbox.addEventListener('click', () => {
-  for (let i = 0; i < arrUserCheckbox.length; i++) {
-    if (mainCheckbox.checked !== arrUserCheckbox[i].checked) {
-      arrUserCheckbox[i].checked = !arrUserCheckbox[i].checked;
-    }
-  }
-  allDelete.classList.toggle('is-hide');
-});
-
-editUserBtn.addEventListener('click', () => {
-  editUser();
-  userCompany.value = '';
-  userName.value = '';
-  userAddress.value = '';
-  userCity.value = '';
-  userCountry.value = '';
-  formUser.classList.add('is-hide');
-  editUserBtn.classList.add('is-hide');
-});
-
 function createTableUsers(arr, check) {
   const tableUser = document.getElementsByClassName('table-user')[0];
   if (check !== 'dont-delete') {
-    tableUser.innerHTML = '';
+    // tableUser.innerHTML = '';
   }
   for (let i = 0; i < arr.length; i++) {
     const tr = document.createElement('tr');
@@ -186,6 +190,7 @@ function createTdButtonElement(value, parent, style) {
 }
 
 function checkCheckbox(el) {
+  debugger;
   if (
     el.currentTarget.parentNode.parentNode.children[0].children[0].children[0]
       .checked
@@ -208,6 +213,7 @@ function deleteUser(el) {
 function showUserForm(el) {
   formUser.classList.remove('is-hide');
   editUserBtn.classList.remove('is-hide');
+  titleEditUser.classList.remove('is-hide');
   getEditObj(el.currentTarget.name);
 }
 
