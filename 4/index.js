@@ -11,9 +11,14 @@ const createUserBtn = document.getElementsByClassName('create-user')[0];
 const addUserBtn = document.getElementsByClassName('add-user')[0];
 const allDelete = document.getElementById('all-delete');
 const arrUserCheckbox = document.getElementsByClassName('user-checkbox');
+const companyInput = document.getElementById('company-input');
+const nameInput = document.getElementById('name-input');
+const addressInput = document.getElementById('address-input');
+const inputFilter = document.getElementsByClassName('input-filter');
 
 document.addEventListener('DOMContentLoaded', () => {
-  getUsersInfo();
+  getUsersInfo('_start=40&_limit=50');
+  addInputListener();
 });
 
 addUserBtn.addEventListener('click', () => {
@@ -38,6 +43,28 @@ createUserBtn.addEventListener('click', () => {
   userCountry.value = '';
 });
 
+function addInputListener() {
+    for (let i = 0; i < inputFilter.length; i++) {
+        inputFilter[i].addEventListener('keyup',e => {
+            if (e.keyCode >= 48&&e.keyCode <= 90) {
+                let resultSort = '';
+                if (companyInput.value !== '') {
+                    resultSort += 'company_like=' + companyInput.value + '&&';
+                }
+                if (nameInput.value !== '') {
+                    resultSort += 'name_like=' + nameInput.value + '&&';
+                }
+                if (addressInput.value !== '') {
+                    resultSort += 'address_like=' + addressInput.value + '&&';
+                }
+                getUsersInfo(resultSort);
+            }
+        })
+    }
+}
+
+
+
 allDelete.addEventListener('click', () => {
   deleteSelectedUsers();
 });
@@ -52,7 +79,7 @@ function createUser() {
   };
   sendRequsest('POST', requestUrl, newUser)
     .then((data) => {
-      createTableUsers([data]);
+      createTableUsers([data],'dont-delete');
     })
     .catch((err) => console.log(err));
 }
@@ -70,8 +97,9 @@ function formCheck() {
   }
 }
 
-function getUsersInfo() {
-  sendRequsest('GET', requestUrl + '?' + '_page=2&_limit=40')
+function getUsersInfo(arg) {
+    console.log(arg);
+  sendRequsest('GET', requestUrl + '?' + arg)
     .then((data) => createTableUsers(data))
     .catch((err) => console.log(err));
 }
@@ -96,8 +124,12 @@ editUserBtn.addEventListener('click', () => {
   editUserBtn.classList.add('is-hide');
 });
 
-function createTableUsers(arr) {
+function createTableUsers(arr, check) {
+    console.log(arr);
   const tableUser = document.getElementsByClassName('table-user')[0];
+  if (check !== 'dont-delete') {
+    tableUser.innerHTML = '';
+  }
   for (let i = 0; i < arr.length; i++) {
     const tr = document.createElement('tr');
     tr.id = arr[i].id;
@@ -177,6 +209,7 @@ function showUserForm(el) {
 }
 
 function getEditObj(id) {
+    console.log(id);
   sendRequsest('GET', requestUrl + '/' + id)
     .then((data) => addValueToForm(data))
     .catch((err) => console.log(err));
