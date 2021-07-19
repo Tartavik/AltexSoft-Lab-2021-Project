@@ -46,7 +46,8 @@ createUserBtn.addEventListener('click', () => {
 function addInputListener() {
     for (let i = 0; i < inputFilter.length; i++) {
         inputFilter[i].addEventListener('keyup',e => {
-            if (e.keyCode >= 48&&e.keyCode <= 90) {
+          console.log(e.keyCode);
+            if (e.keyCode >= 48&&e.keyCode <= 90||e.keyCode === 8) {
                 let resultSort = '';
                 if (companyInput.value !== '') {
                     resultSort += 'company_like=' + companyInput.value + '&&';
@@ -57,13 +58,17 @@ function addInputListener() {
                 if (addressInput.value !== '') {
                     resultSort += 'address_like=' + addressInput.value + '&&';
                 }
-                getUsersInfo(resultSort);
+                if (e.keyCode === 8&&companyInput.value === ''&&nameInput.value === ''&&addressInput.value === '') {
+                  console.log(addressInput.value,);
+                  getUsersInfo('_start=40&_limit=50');
+                }else{
+                  console.log('2');
+                  getUsersInfo(resultSort);
+                }
             }
         })
     }
 }
-
-
 
 allDelete.addEventListener('click', () => {
   deleteSelectedUsers();
