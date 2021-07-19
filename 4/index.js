@@ -19,6 +19,7 @@ const titleNewUser = document.getElementById('title-new-user');
 const titleEditUser = document.getElementById('title-edit-user');
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('1');
   getUsersInfo('_start=40&_limit=50');
   addInputListener();
 });
@@ -135,7 +136,7 @@ function getUsersInfo(arg) {
 function createTableUsers(arr, check) {
   const tableUser = document.getElementsByClassName('table-user')[0];
   if (check !== 'dont-delete') {
-    // tableUser.innerHTML = '';
+    tableUser.innerHTML = '';
   }
   for (let i = 0; i < arr.length; i++) {
     const tr = document.createElement('tr');
@@ -190,7 +191,6 @@ function createTdButtonElement(value, parent, style) {
 }
 
 function checkCheckbox(el) {
-  debugger;
   if (
     el.currentTarget.parentNode.parentNode.children[0].children[0].children[0]
       .checked
