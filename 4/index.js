@@ -31,7 +31,7 @@ addUserBtn.addEventListener('click', () => {
   createUserBtn.setAttribute('disabled', 'disabled');
   createUserBtn.classList.add('is-translucent');
   for (let i = 0; i < arrFormUserInput.length; i++) {
-    arrFormUserInput[i].addEventListener('blur', formCheck);
+    arrFormUserInput[i].addEventListener('keyup', formCheck);
   }
 });
 
@@ -87,9 +87,8 @@ function addInputListener() {
                     resultSort += 'address_like=' + addressInput.value + '&&';
                 }
                 if (e.keyCode === 8&&companyInput.value === ''&&nameInput.value === ''&&addressInput.value === '') {
-                  console.log(addressInput.value,);
                   getUsersInfo('_start=40&_limit=50');
-                }else{
+                } else {
                   getUsersInfo(resultSort);
                 }
             }
@@ -122,6 +121,8 @@ function formCheck() {
   ) {
     createUserBtn.removeAttribute('disabled', 'disabled');
     createUserBtn.classList.remove('is-translucent');
+  } else {
+    createUserBtn.classList.add('is-translucent');
   }
 }
 
