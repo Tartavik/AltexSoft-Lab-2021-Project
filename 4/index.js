@@ -19,7 +19,6 @@ const titleNewUser = document.getElementById('title-new-user');
 const titleEditUser = document.getElementById('title-edit-user');
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('1');
   getUsersInfo('_start=40&_limit=50');
   addInputListener();
 });
@@ -76,7 +75,6 @@ editUserBtn.addEventListener('click', () => {
 function addInputListener() {
     for (let i = 0; i < inputFilter.length; i++) {
         inputFilter[i].addEventListener('keyup',e => {
-          console.log(e.keyCode);
             if (e.keyCode >= 48&&e.keyCode <= 90||e.keyCode === 8) {
                 let resultSort = '';
                 if (companyInput.value !== '') {
