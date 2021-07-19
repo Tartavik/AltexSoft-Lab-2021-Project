@@ -98,7 +98,6 @@ function formCheck() {
 }
 
 function getUsersInfo(arg) {
-    console.log(arg);
   sendRequsest('GET', requestUrl + '?' + arg)
     .then((data) => createTableUsers(data))
     .catch((err) => console.log(err));
@@ -125,7 +124,6 @@ editUserBtn.addEventListener('click', () => {
 });
 
 function createTableUsers(arr, check) {
-    console.log(arr);
   const tableUser = document.getElementsByClassName('table-user')[0];
   if (check !== 'dont-delete') {
     tableUser.innerHTML = '';
