@@ -12,6 +12,10 @@ bin-release/
 2/css
 1/node_modules
 1/css
+node_modules/
+**/node_modules/
+css/
+**/css/
 # Executables
 *.swf
 *.air
