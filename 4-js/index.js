@@ -203,7 +203,7 @@ function createTableUsers(arr, check) {
     createTdButtonElement(arr[i].id, tr, 'btn-edit');
     createTdButtonElement(arr[i].id, tr, 'btn-delete');
 
-    tableUser.appendChild(tr);
+    tableUser.insertBefore(tr, tableUser.firstChild);
   }
 }
 
