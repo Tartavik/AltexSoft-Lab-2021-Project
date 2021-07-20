@@ -1,0 +1,17 @@
+@mixin btn-action {
+    width: 35px;
+    height: 35px;
+    border: 0;
+    cursor: pointer;
+}
+
+@mixin pseudo-element($w,$h) {
+    content: "";
+    position: absolute;
+    width: $w;
+    height: $h;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

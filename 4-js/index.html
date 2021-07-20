@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>T5</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="#" class="logo">Logo Placeholder</a>
+            <div class="entrance-container">
+                <h5 class="welcoming-title">Welcome,user</h5>
+                <button id='logOut'>Log Out</button>
+            </div>
+        </div>
+        <div class="container-people-icon">
+            <img src="/4-js/img/people.png" alt="people-icon" id="people-icon">
+            <p class="icon-text">Customers</p>
+        </div>
+        <div class="container-filter">
+            <h3 class="title-filter">Filters</h3>
+            <div class="container-filter-input">
+                <div class="container-filter-input-inner">
+                    <input type="text" placeholder="Company Name*" class="input-filter" id='company-input'>
+                    <input type="text" placeholder="Contact Name*" class="input-filter" id='name-input'>
+                    <input type="text" placeholder="Address*" class="input-filter" id='address-input'>
+                    <button class="btn-filter btn">FILTER</button>
+                </div>
+                <button class="add-user"></button>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr class="row-head">
+                    <td>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" class="custom-input" id="main-checkbox">
+                            <span class="custom-span"></span>
+                        </label>
+                    </td>
+                    <td>Company Name</td>
+                    <td>Contact Name</td>
+                    <td>Address</td>
+                    <td>City</td>
+                    <td>Country</td>
+                    <td></td>
+                    <td><button id="all-delete" class="is-hide btn-delete"></button></td>
+                </tr>
+            </thead>
+            <tbody class="table-user">
+            </tbody>
+        </table>
+        <div class="form-user is-hide">
+            <h2 class="is-hide" id="title-new-user">Add new user</h2>
+            <h2 class="is-hide" id="title-edit-user">Edit current user</h2>
+            <input type="text" id="user-company" class="form-user-input" placeholder="Company Name">
+            <input type="text" id="user-name" class="form-user-input" placeholder="Customer Name">
+            <input type="text" id="user-address" class="form-user-input" placeholder="Address">
+            <input type="text" id="user-city" class="form-user-input" placeholder="City">
+            <input type="text" id="user-country" class="form-user-input" placeholder="Country">
+            <button class="is-hide edit-user btn">Edit user</button>
+            <button class="is-hide create-user btn">Create user</button>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
