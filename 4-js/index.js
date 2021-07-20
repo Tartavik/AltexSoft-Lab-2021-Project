@@ -18,6 +18,7 @@ const inputFilter = document.getElementsByClassName('input-filter');
 const titleNewUser = document.getElementById('title-new-user');
 const titleEditUser = document.getElementById('title-edit-user');
 const paginator = document.getElementById('paginator');
+const paginations = document.getElementsByClassName('paginator-number');
 
 document.addEventListener('DOMContentLoaded', () => {
   findArrLenghtUsers();
@@ -97,8 +98,7 @@ function createPaginator(length) {
 }
 
 function showPagination() {
-  const lengthPaginations = document.getElementsByClassName('paginator-number').length;
-  getUsersInfo('_start=' + (lengthPaginations * 10 - this.name) + '&_limit=50');
+  getUsersInfo('_start=' + (paginations.length * 10 - this.name) + '&_limit=50');
   changeStylePagination(this);
 }
 
@@ -125,13 +125,18 @@ function addInputListener() {
                     resultSort += 'address_like=' + addressInput.value + '&&';
                 }
                 if (e.keyCode === 8&&companyInput.value === ''&&nameInput.value === ''&&addressInput.value === '') {
-                  getUsersInfo('_start=40&_limit=50');
+                  getUsersInfo('_start=' + (paginations.length * 10 - getCurrentNumberPogination()) + '&_limit=50');
                 } else {
                   getUsersInfo(resultSort);
                 }
             }
         })
     }
+}
+
+function getCurrentNumberPogination() {
+  let el = document.querySelector('.active');
+  return el.name;
 }
 
 function createUser() {
