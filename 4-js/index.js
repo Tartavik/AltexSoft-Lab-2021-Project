@@ -17,9 +17,10 @@ const addressInput = document.getElementById('address-input');
 const inputFilter = document.getElementsByClassName('input-filter');
 const titleNewUser = document.getElementById('title-new-user');
 const titleEditUser = document.getElementById('title-edit-user');
+const paginator = document.getElementById('paginator');
 
 document.addEventListener('DOMContentLoaded', () => {
-  getUsersInfo('_start=40&_limit=50');
+  findArrLenghtUsers();
   addInputListener();
 });
 
@@ -71,6 +72,42 @@ editUserBtn.addEventListener('click', () => {
   editUserBtn.classList.add('is-hide');
   titleEditUser.classList.add('is-hide');
 });
+
+function findArrLenghtUsers() {
+  sendRequsest('GET',requestUrl).then((data) => {
+    createPaginator(Array.from(data).length)
+  })
+  .catch((err) => console.log(err));
+}
+
+function createPaginator(length) {
+  const quantityPagination = Math.ceil(length / 10);
+  for (let i = 1; i <= quantityPagination; i++) {
+    let button = document.createElement('button');
+    button.innerText = i;
+    button.name = i * 10;
+    button.classList.add('paginator-number');
+    paginator.appendChild(button);
+    if (i === 1) {
+      button.classList.add('active');
+    }
+    button.addEventListener('click',showPagination);
+  }
+  getUsersInfo('_start=40&_limit=50');
+}
+
+function showPagination() {
+  getUsersInfo('_start=' + (50 - this.name) + '&_limit=50');
+  changeStylePagination(this);
+}
+
+function changeStylePagination(el) {
+  const arrPaginations = document.getElementsByClassName('paginator-number');
+  for (let i = 0; i < arrPaginations.length; i++) {
+    arrPaginations[i].classList.remove('active');
+  }
+  el.classList.add('active');
+}
 
 function addInputListener() {
     for (let i = 0; i < inputFilter.length; i++) {

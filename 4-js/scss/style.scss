@@ -196,6 +196,31 @@ body {
   }
 }
 
+.paginator-number {
+  min-width: 40px;
+  min-height: 40px;
+  cursor: pointer;
+  border: 1px solid#e0e0e0;
+  background: white;
+  color: #a4a4a4;
+  &:hover {
+    background-color: #f2f2f2;
+  }
+}
+
+#paginator {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.active {
+  background-color: $color-standard-btn;
+  border: $color-standard-btn;
+  &:hover {
+    background-color: $color-standard-btn;
+  }
+}
+
 .is-translucent {
   opacity: 0.5;
 }
