@@ -44,7 +44,7 @@ function getMoney(sum) {
   let amountRequested = sum;
   for (let entry of atm) {
     if (entry[1] !== 0) {
-      const banknoteСount = Math.floor(amountRequested / +entry[0]);
+      let banknoteСount = Math.floor(amountRequested / +entry[0]);
       if (banknoteСount > entry[1]) {
         banknoteСount = entry[1];
       }
