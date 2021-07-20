@@ -75,7 +75,7 @@ editUserBtn.addEventListener('click', () => {
 
 function findArrLenghtUsers() {
   sendRequsest('GET',requestUrl).then((data) => {
-    createPaginator(Array.from(data).length)
+    createPaginator(data.length)
   })
   .catch((err) => console.log(err));
 }
@@ -93,11 +93,12 @@ function createPaginator(length) {
     }
     button.addEventListener('click',showPagination);
   }
-  getUsersInfo('_start=40&_limit=50');
+  getUsersInfo('_start=' + (quantityPagination * 10 - 10) + '&_limit=50');
 }
 
 function showPagination() {
-  getUsersInfo('_start=' + (50 - this.name) + '&_limit=50');
+  const lengthPaginations = document.getElementsByClassName('paginator-number').length;
+  getUsersInfo('_start=' + (lengthPaginations * 10 - this.name) + '&_limit=50');
   changeStylePagination(this);
 }
 
