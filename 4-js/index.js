@@ -19,6 +19,7 @@ const titleNewUser = document.getElementById('title-new-user');
 const titleEditUser = document.getElementById('title-edit-user');
 const paginator = document.getElementById('paginator');
 const paginations = document.getElementsByClassName('paginator-number');
+const limitOfItems = 10;
 
 document.addEventListener('DOMContentLoaded', () => {
   findArrLenghtUsers();
@@ -82,11 +83,12 @@ function findArrLenghtUsers() {
 }
 
 function createPaginator(length) {
-  const quantityPagination = Math.ceil(length / 10);
+  const quantityPagination = Math.ceil(length / limitOfItems);
+  const startResult = quantityPagination * limitOfItems - 10;
   for (let i = 1; i <= quantityPagination; i++) {
     let button = document.createElement('button');
     button.innerText = i;
-    button.name = i * 10;
+    button.name = i * limitOfItems;
     button.classList.add('paginator-number');
     paginator.appendChild(button);
     if (i === 1) {
@@ -94,11 +96,12 @@ function createPaginator(length) {
     }
     button.addEventListener('click',showPagination);
   }
-  getUsersInfo('_start=' + (quantityPagination * 10 - 10) + '&_limit=50');
+  getUsersInfo(`_start=${startResult}&_limit=50`);
 }
 
 function showPagination() {
-  getUsersInfo('_start=' + (paginations.length * 10 - this.name) + '&_limit=50');
+  const startResult = paginations.length * limitOfItems - this.name;
+  getUsersInfo(`_start=${startResult}&_limit=50`);
   changeStylePagination(this);
 }
 
@@ -113,19 +116,20 @@ function changeStylePagination(el) {
 function addInputListener() {
     for (let i = 0; i < inputFilter.length; i++) {
         inputFilter[i].addEventListener('keyup',e => {
-            if (e.keyCode >= 48&&e.keyCode <= 90||e.keyCode === 8) {
+            if (e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode === 8) {
                 let resultSort = '';
+                const startResult = paginations.length * limitOfItems - document.querySelector('.active').name;
                 if (companyInput.value !== '') {
-                    resultSort += 'company_like=' + companyInput.value + '&&';
+                    resultSort += `company_like=${companyInput.value}&&`;
                 }
                 if (nameInput.value !== '') {
-                    resultSort += 'name_like=' + nameInput.value + '&&';
+                    resultSort += `name_like=${nameInput.value}&&`;
                 }
                 if (addressInput.value !== '') {
-                    resultSort += 'address_like=' + addressInput.value + '&&';
+                    resultSort += `address_like=${addressInput.value}&&`;
                 }
-                if (e.keyCode === 8&&companyInput.value === ''&&nameInput.value === ''&&addressInput.value === '') {
-                  getUsersInfo('_start=' + (paginations.length * 10 - getCurrentNumberPogination()) + '&_limit=50');
+                if (e.keyCode === 8 && companyInput.value === '' && nameInput.value === '' && addressInput.value === '') {
+                  getUsersInfo(`_start=${startResult}&_limit=50`);
                 } else {
                   getUsersInfo(resultSort);
                 }
@@ -134,20 +138,15 @@ function addInputListener() {
     }
 }
 
-function getCurrentNumberPogination() {
-  let el = document.querySelector('.active');
-  return el.name;
-}
-
 function createUser() {
-  let newUser = {
+  sendRequsest('POST', requestUrl, 
+  {
     company: userCompany.value,
     name: userName.value,
     address: userAddress.value,
     city: userCity.value,
     country: userCountry.value,
-  };
-  sendRequsest('POST', requestUrl, newUser)
+  })
     .then((data) => {
       createTableUsers([data],'dont-delete');
     })
@@ -177,9 +176,9 @@ function getUsersInfo(arg) {
 
 function createTableUsers(arr, check) {
   const tableUser = document.getElementsByClassName('table-user')[0];
-  if (check !== 'dont-delete') {
-    tableUser.innerHTML = '';
-  }
+  // if (check !== 'dont-delete') {
+  //   tableUser.innerHTML = '';
+  // }
   for (let i = 0; i < arr.length; i++) {
     const tr = document.createElement('tr');
     tr.id = arr[i].id;
