@@ -37,7 +37,7 @@ function findFriendlyNumbers (min, max) {
     if (sumArrDividerF <= max) {
         const arrDividerSecond = getDividerNumber(sumArrDividerF);
         const sumArrDividerS = getSumArrDivider(arrDividerSecond);
-        if (i === sumArrDividerS&&sumArrDividerF > sumArrDividerS) {
+        if (i === sumArrDividerS && sumArrDividerF > sumArrDividerS) {
             arrFriendlyNumbers.push([i, sumArrDividerF])
         }
     }
