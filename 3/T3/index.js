@@ -12,14 +12,14 @@ atm = new Map(),
 issuedMoney = new Map(),
 values = document.getElementsByClassName('atm-form-item-value');
 
-Array.from(values).forEach( el => {
+[...values].forEach( el => {
   atm.set(el.name, +el.value);
   issuedMoney.set(el.name, +el.value);
 });
 
 buttonConfirm.addEventListener('click', () => {
   if (checkPositiveNumber()) {
-    Array.from(values).forEach( el => {
+    [...values].forEach( el => {
       atm.set(el.name, atm.get(el.name) + +el.value);
     });
     money.innerText = howMuchMoney();
@@ -119,13 +119,13 @@ function howMuchMoney() {
 }
 
 function checkPositiveNumber() {
-  return Array.from(values).every( el => {
+  return [...values].every( el => {
     return +el.value >= 0;
   });
 }
 
 function resetInputValues() {
-  Array.from(values).forEach( el => {
+  [...values].forEach( el => {
     el.value = '';
   });
 }

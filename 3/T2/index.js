@@ -3,11 +3,11 @@ dominoDown = document.getElementById('domino-down'),
 buttonStart = document.getElementById('start'),
 buttonRandom = document.getElementById('random'),
 dominoContainer = document.getElementById('domino-container'),
-resultEl = document.getElementsByClassName('result')[0],
+resultEl = document.querySelector('.result'),
 rangeNumbers = {
   min: 1,
   max: 6,
-  maxLength: 6,
+  maxLength: 6
 };
 let arrDominoUp = [];
 let arrDominoDown = [];
@@ -68,14 +68,20 @@ function findAppropriateNumber(str) {
   // Here I find the number of numbers that are greater than or equal to rangeNumbers.maxLength
   const arrDomino = str.split('');
   for (let i = 1; i < arrDominoUp.length + 1; i++) {
-    const newArr = arrDomino.filter((elem) => {
+    const newArr = arrDomino.filter( elem => {
       return +elem === i;
     });
     if (newArr.length >= arrDominoUp.length) {
-      return { number: newArr[0], quantity: newArr.length };
+      return { 
+        number: newArr[0], 
+        quantity: newArr.length 
+      };
     }
   }
-  return { number: 0, quantity: 0 };
+  return { 
+    number: 0, 
+    quantity: 0 
+  };
 }
 
 function сheckOnQuantityAppropriateNumber(obj) {
@@ -118,7 +124,7 @@ function rotateSomeNumbers(number) {
 function findChange(number) {
   const arrNumberLineDominoСhange = [];
   let quantityСhange = 0;
-  let cloneArr = arrDominoUp.concat();
+  const cloneArr = arrDominoUp.concat();
   cloneArr.forEach((num, i) => {
     const numberArrDominoDown = arrDominoDown[i];
     if (!(+num === +number)) {
@@ -165,11 +171,11 @@ function drawResult(line, change) {
   lineEl.innerText = 'Have been changed ' + strLine + ' line';
 }
 
-function changeDomino(el) {
-  const currentElementT = arrDominoUp[+el.currentTarget.id - 1];
-  const currentElementB = arrDominoDown[+el.currentTarget.id - 1];
-  arrDominoUp[el.currentTarget.id - 1] = currentElementB;
-  arrDominoDown[el.currentTarget.id - 1] = currentElementT;
+function changeDomino(event) {
+  const currentElementT = arrDominoUp[+event.currentTarget.id - 1];
+  const currentElementB = arrDominoDown[+event.currentTarget.id - 1];
+  arrDominoUp[event.currentTarget.id - 1] = currentElementB;
+  arrDominoDown[event.currentTarget.id - 1] = currentElementT;
   dominoUp.value = arrDominoUp.join('');
   dominoDown.value = arrDominoDown.join('');
   drawDomino(arrDominoUp, arrDominoDown);

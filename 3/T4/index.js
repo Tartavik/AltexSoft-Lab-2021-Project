@@ -14,7 +14,7 @@ addEventListener('keypress', e => {
 
 function numberCheck () {
     if (+min.value < +max.value) {
-        if (+min.value > 0&&+max.value > 0) {
+        if (+min.value > 0 && +max.value > 0) {
             findFriendlyNumbers(Math.floor(+min.value), Math.floor(+max.value));
         }else{
             alert('The numbers should be > 0');
@@ -38,7 +38,7 @@ function findFriendlyNumbers (min, max) {
             const arrDividerSecond = getDividerNumber(sumArrDividerF);
             const sumArrDividerS = getSumArrDivider(arrDividerSecond);
             if (i === sumArrDividerS&&sumArrDividerF > sumArrDividerS) {
-                arrFriendlyNumbers.push([i,sumArrDividerF])
+                arrFriendlyNumbers.push([i, sumArrDividerF])
             }
         }
     }
