@@ -176,9 +176,9 @@ function getUsersInfo(arg) {
 
 function createTableUsers(arr, check) {
   const tableUser = document.getElementsByClassName('table-user')[0];
-  // if (check !== 'dont-delete') {
-  //   tableUser.innerHTML = '';
-  // }
+  if (check !== 'dont-delete') {
+    tableUser.innerHTML = '';
+  }
   for (let i = 0; i < arr.length; i++) {
     const tr = document.createElement('tr');
     tr.id = arr[i].id;
@@ -217,14 +217,14 @@ function createTdElement(value, parent) {
   parent.appendChild(td);
 }
 
-function createTdButtonElement(value, parent, style) {
+function createTdButtonElement(value, parent, editMode) {
   const button = document.createElement('button');
   const td = document.createElement('td');
   button.name = value;
-  button.classList.add(style);
+  button.classList.add(editMode);
   td.appendChild(button);
   parent.appendChild(td);
-  if (style === 'btn-edit') {
+  if (editMode === 'btn-edit') {
     button.addEventListener('click', showUserForm);
   } else {
     button.addEventListener('click', checkCheckbox);
@@ -233,12 +233,9 @@ function createTdButtonElement(value, parent, style) {
 
 function checkCheckbox(el) {
   if (
-    el.currentTarget.parentNode.parentNode.children[0].children[0].children[0]
-      .checked
+    el.currentTarget.closest('tr').querySelector('.custom-input').checked
   ) {
-    deleteUser(
-      el.currentTarget.parentNode.parentNode.children[0].children[0].children[0]
-    );
+    deleteUser( el.currentTarget.closest('tr').querySelector('.custom-input') );
   } else {
     alert('The checkbox should be highlighted!');
   }
@@ -248,7 +245,7 @@ function deleteUser(el) {
   sendRequsest('DELETE', requestUrl + '/' + el.name)
     .then((data) => console.log(data))
     .catch((err) => console.log(err));
-  el.parentNode.parentNode.parentNode.remove();
+    el.closest('tr').remove();
 }
 
 function showUserForm(el) {
@@ -259,7 +256,6 @@ function showUserForm(el) {
 }
 
 function getEditObj(id) {
-    console.log(id);
   sendRequsest('GET', requestUrl + '/' + id)
     .then((data) => addValueToForm(data))
     .catch((err) => console.log(err));
@@ -275,15 +271,15 @@ function addValueToForm(obj) {
 }
 
 function editUser() {
-  let newUser = {
+  sendRequsest('PUT', requestUrl + '/' + userCompany.name, 
+  {
     id: userCompany.name,
     address: userAddress.value,
     city: userCity.value,
     company: userCompany.value,
     name: userName.value,
     country: userCountry.value,
-  };
-  sendRequsest('PUT', requestUrl + '/' + newUser.id, newUser)
+  })
     .then((data) => renderEditUser(data))
     .catch((err) => console.log(err));
 }
@@ -314,16 +310,14 @@ function sendRequsest(method, url, body) {
     'Content-Type': 'application/json',
   };
   return fetch(url, {
-    method: method,
+    method,
     body: JSON.stringify(body),
-    headers: headers,
+    headers,
   }).then((response) => {
-    if (response.ok) {
-      return response.json();
-    }
-    return response.json().then((error) => {
-      const e = new Error(error);
-      throw e;
-    });
-  });
+      if (response.status === 200||response.status === 201) {
+        return response.json();
+      }
+  }).catch((e) => {
+    throw e;
+  })
 }
