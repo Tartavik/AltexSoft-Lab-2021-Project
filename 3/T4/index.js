@@ -64,5 +64,5 @@ function getDividerNumber (num) {
 }
 
 function getSumArrDivider (arr) {
-    return arr.reduce((cur,prev) => cur += prev, 0)
+    return arr.reduce((cur, prev) => cur += prev, 0)
 }
