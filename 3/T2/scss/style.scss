@@ -1,0 +1,115 @@
+ul {
+  margin: 0;
+}
+
+.form-wrapper {
+  margin-top: 20px;
+  padding-top: 20px;
+  text-align: center;
+  .domino-item {
+    background: #4caf50;
+    border: 3px solid #4caf50;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 3px;
+    letter-spacing: 5px;
+  }
+  .domino-item::-webkit-outer-spin-button,
+  .domino-item::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+  .button-container {
+    margin-top: 40px;
+    .button {
+      min-width: 100px;
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #4caf50; /* Green */
+      border: 1px solid green;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 3px;
+      box-shadow: 0px 6px 12px rgba(127, 127, 127, 0.3);
+      &:active {
+        border: 1px solid #4caf50;
+        box-shadow: 0px 3px 6px rgba(127, 127, 127, 0.3);
+      }
+      &:hover {
+        opacity: 0.9;
+        transition: opacity 0.5s;
+      }
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  margin: 50px auto;
+  justify-content: center;
+  #domino-container {
+    margin-top: 30px;
+    .list:first-child {
+      .item {
+        border-radius: 5px 5px 0 0;
+      }
+    }
+    .list:last-child {
+      .item {
+        border-radius: 0 0 5px 5px;
+        margin-top: -1px
+      }
+    }
+  }
+}
+
+.arrow {
+  transform: rotate(90deg);
+  max-width: 150px;
+  margin-left: 30px;
+  &:hover {
+    transform: rotate(450deg);
+    transition: transform 1s;
+  }
+}
+
+.result {
+  border: 3px solid green;
+  margin: auto;
+  display: block;
+  max-width: 300px;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.list {
+  display: flex;
+}
+
+.item {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  margin: 0 10px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #4caf50;
+}
+
+.is-none {
+  display: none;
+}
+
+.is-hide {
+  opacity: 0;
+}
