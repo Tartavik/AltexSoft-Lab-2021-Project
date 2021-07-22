@@ -135,8 +135,8 @@ function findChange(number) {
     }
   });
   return {
-    arrNumberLineDominoСhange: arrNumberLineDominoСhange, 
-    quantityСhange: quantityСhange
+    arrNumberLineDominoСhange, 
+    quantityСhange,
   };
 }
 
