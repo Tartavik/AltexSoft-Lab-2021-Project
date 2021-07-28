@@ -149,7 +149,7 @@
       country: userCountry.value,
     })
       .then((data) => {
-        createTableUsers([data],'dont-delete');
+        getUsersInfo();
       })
       .catch((err) => console.log(err));
   }
@@ -176,11 +176,8 @@
       .catch((err) => console.log(err));
   }
 
-  function createTableUsers(arr, check) {
+  function createTableUsers(arr) {
     const tableUser = document.getElementsByClassName('table-user')[0];
-    if (check !== 'dont-delete') {
-      tableUser.innerHTML = '';
-    }
     for (let i = 0; i < arr.length; i++) {
       const tr = document.createElement('tr');
       tr.id = arr[i].id;
