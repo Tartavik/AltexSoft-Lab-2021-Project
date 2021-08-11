@@ -1,30 +1,19 @@
-import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer'; 
-import MyFeeds from './Components/MyFeeds/MyFeeds';
-import GlobalFeeds from './Components/GlobalFeeds/GlobalFeeds';
+import Header from './Components/Layout/Header/Header';
+import Footer from './Components/Layout/Footer/Footer'; 
 import SingUp from './Components/SingUp/SingUp';
+import Content from './Components/Content/Content';
 import LogIn from './Components/LogIn/LogIn';
-import { useState } from 'react';
+import {Route} from 'react-router-dom';
+// import { useState } from 'react';
 
-function App(props) {
-  
-  let [form, setForm] = useState('Home')
-
-  let clickButton = (value) => {
-    setForm(form = value)
-  }
+const App = (props) => {
 
   return (
     <div className="App">
-      <Header clickButton={clickButton}/>
-      {form === 'LogIn'?<LogIn />:''}
-      {form === 'SingUp'?<SingUp />:''}
-      {form === 'Home'? 
-        <div>
-          <p>Home</p>
-          <MyFeeds />
-          <GlobalFeeds />
-        </div>: ''}
+      <Header />
+      <Route path='/LogIn' component={LogIn} />
+      <Route path='/SingUp' component={SingUp} />
+      <Content />
       <Footer />
     </div>
   );

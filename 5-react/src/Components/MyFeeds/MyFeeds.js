@@ -1,5 +1,9 @@
-function MyFeeds() {
-    return (<div></div>)
+const MyFeeds = () => {
+    return (
+    <div>
+        MyFeeds
+    </div>
+    )
 }
 
 export default MyFeeds;
