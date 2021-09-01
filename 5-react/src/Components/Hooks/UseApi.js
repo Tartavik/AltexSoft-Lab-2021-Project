@@ -1,5 +1,5 @@
 import { initGetArticleApi, initGetArticlesApi } from "../API/Articles/Articles";
-import { initUserLoginApi, initRegestrationUser, initGetUser } from "../API/Auth/Auth";
+import { initUserLoginApi, initRegestrationUser, initGetUser, initRegesterNewUser } from "../API/Auth/Auth";
 
 export const UseApi = () => {
     const baseUrl = 'https://conduit.productionready.io';
@@ -11,8 +11,10 @@ export const UseApi = () => {
         //Auth
         userLoginApi: initUserLoginApi(baseUrl),
         userCheckReg: initRegestrationUser(baseUrl),
+        registerUser: initRegesterNewUser(baseUrl),
 
         //User
         getUser: initGetUser(baseUrl),
+
     }
 }

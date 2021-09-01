@@ -11,3 +11,7 @@ export const initRegestrationUser = (baseUrl) => (option) => {
 export const initGetUser = (baseUrl) => (user) => {
     return axios.get(`${baseUrl}/api/profiles/${user}`)
 }
+
+export const initRegesterNewUser = (baseUrl) => (option) => {
+    return axios.post(`${baseUrl}/api/users`,option)
+}

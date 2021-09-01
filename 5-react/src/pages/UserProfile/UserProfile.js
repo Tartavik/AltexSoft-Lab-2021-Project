@@ -22,8 +22,6 @@ const UserProfile = (props) => {
         fetchArticles('?activeTab=0&author=' + userNameProfile);    
     },[userNameProfile])
 
-    console.log(showDataUser, showData);
-
     const myPost = () => {
         if(stateNav === 'favorite'){
             fetchArticles('?activeTab=0&author=' + userNameProfile);
@@ -50,8 +48,7 @@ const UserProfile = (props) => {
                 ):(
                     <div></div>
                 )
-            }
-            
+            }          
             <div>
                 <div>
                     <button onClick={myPost}>My Posts</button>
