@@ -1,0 +1,9 @@
+.nav{
+    list-style-type: none
+}
+
+.wrapperNav{
+    padding: 0;
+    position: absolute;
+    margin: 0 -40px;
+}

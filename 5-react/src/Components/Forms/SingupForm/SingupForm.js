@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const SingUp = (props) => {
+const SingupForm = (props) => {
 
     function createNewUser(e) {
         e.preventDefault();
@@ -32,4 +32,4 @@ const SingUp = (props) => {
     );
 }
 
-export default SingUp;
+export default SingupForm;
