@@ -4,11 +4,11 @@ import header from "./Header.module.css";
 import DrobDown from "../../DrobDown/DrobDown";
 import { useState } from 'react';
 import { useAuth } from "../../../context/useAuth";
-import history from "../../../history/history";
+
 
 const Header = (props) => {
 
-    const { isSignedIn, user, singIn } = useAuth();
+    const { isSignedIn, user } = useAuth();
 
     const [stateDrobDown, setStateDrobDown] = useState(false);
 
@@ -19,14 +19,13 @@ const Header = (props) => {
     return (
         <header className={header.header}>
             <a href='#/' className='logo'>LOGO</a>
-            <button onClick={singIn}>Sindddddd</button>
             <div className={header.wrapperNav}>
                 <NavLink to='/' className={header.btn}>Home</NavLink>
                 {
                     isSignedIn ? (
                         <div onClick={changeStateDrobDown}>
                             <UserAvatar src={user !== undefined?user.image:'#'} width='50px' height='50px'/>
-                            {stateDrobDown&&<DrobDown />}
+                            {stateDrobDown&&<DrobDown setStateModal={props.setStateModal} setTypeModalWindow={props.setTypeModalWindow}/>}
                         </div>    
                     ):(
                         <ul className={header.wrapperButton}>

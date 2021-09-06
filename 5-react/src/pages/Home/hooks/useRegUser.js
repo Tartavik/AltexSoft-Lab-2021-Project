@@ -11,16 +11,14 @@ export const useRegUser = () => {
            }
          }; 
     
-         const { singIn, getToken, getUser, getuserNameProfile } = useAuth();
+         const { singIn, getToken, getUser } = useAuth();
     const [isLoad, checkUserReg] = useDataFetch({
         fetchHandler: async () => {
             try{
                 const res = await userCheckReg(header);
-                console.log(res);
                 singIn();
                 getToken(res.data.user.token);
                 getUser(res.data.user);
-                getuserNameProfile(res.data.user.username)
                 return res;   
             }catch(e) {
                 return e;

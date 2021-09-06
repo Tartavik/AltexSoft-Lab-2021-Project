@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 export const useAuhtProvider = () => {
     const [isSignedIn, setSignedIn] = useState(false);
-    const [user, setUser] = useState({});
-    const [token, setToken] = useState('');
-    const [userNameProfile, setUserNameProfile] = useState('');
+    const [user, setUser] = useState();
+    const [token, setToken] = useState();
+    const [userNameProfile, setUserNameProfile] = useState();
 
     const singIn = () => {
         setSignedIn(true)
