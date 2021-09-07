@@ -1,15 +1,19 @@
 import newArticle from "./newArticle.module.css";
 import { useCreateArticle } from "./useCreateArticle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useForm } from "../../context/useAuth";
 
 
-const NewArticle = ({state, setState, typeModal, bodyArticalUpdate}) => {
+const NewArticle = () => {
+
+    const { showDataArticle, fetchArticle } = useCreateArticle();
+    const { whatShowFormArticle, valueFormUpdateArticle, stateFormArticle, setStateArticleForm} = useForm();
    
-    const [articleTitlte, setArticleTitle ] = useState(bodyArticalUpdate !== false?bodyArticalUpdate.article.title:'');
-    const [article, setArticle ] = useState(bodyArticalUpdate !== false?bodyArticalUpdate.article.body:'');
-    const [description, setDescription ] = useState(bodyArticalUpdate !== false?bodyArticalUpdate.article.description:'');
-    const [tagList, setTagList] = useState(bodyArticalUpdate !== false?bodyArticalUpdate.article.tagList:'');
-    console.log(bodyArticalUpdate, articleTitlte, article, description );
+    const [articleTitlte, setArticleTitle ] = useState('');
+    const [article, setArticle ] = useState('');
+    const [description, setDescription ] = useState('');
+    const [tagList, setTagList] = useState('');
+    console.log(1,'newArtical', whatShowFormArticle);
     const bodyArtylce = {
         article: {
             title: articleTitlte,
@@ -19,13 +23,29 @@ const NewArticle = ({state, setState, typeModal, bodyArticalUpdate}) => {
           }
     }
 
-    const { showDataArticle, fetchArticle } = useCreateArticle();
+    useEffect(()=>{
+        if(valueFormUpdateArticle !== undefined){
+            if(whatShowFormArticle === 'edit'){
+                setArticleTitle(valueFormUpdateArticle.article.title);
+                setArticle(valueFormUpdateArticle.article.body);
+                setDescription(valueFormUpdateArticle.article.description);
+                setTagList(valueFormUpdateArticle.article.tagList);
+            }
+        }
+    },[valueFormUpdateArticle]);
+
+    
+
 
     const createNewArticle = (e) => {
         e.preventDefault();
         createTag(e.target[3]);
-        setState(false);
+        setStateArticleForm(false);
         fetchArticle(bodyArtylce);
+        setArticleTitle('');
+        setArticle('');
+        setDescription('');
+        setTagList('');
     }
 
     const changeArticleTitle = (e) => {
@@ -46,10 +66,10 @@ const NewArticle = ({state, setState, typeModal, bodyArticalUpdate}) => {
     }
 
     return (
-        <div className={state ?`${newArticle.modal} ${newArticle.active}`:newArticle.modal} onClick={() => setState(false)}>
+        <div className={stateFormArticle ?`${newArticle.modal} ${newArticle.active}`:newArticle.modal} onClick={() => setStateArticleForm(false)}>
             <div className={newArticle.modalContent} onClick={e => e.stopPropagation()}>
                 <div className={newArticle.container}>
-                    <button onClick={() => setState(false)}>X</button>
+                    <button onClick={() => setStateArticleForm(false)}>X</button>
                     <h2>New Article</h2>
                     <form onSubmit={createNewArticle}>
                         <label>
@@ -68,7 +88,7 @@ const NewArticle = ({state, setState, typeModal, bodyArticalUpdate}) => {
                             <p>Tag</p>
                             <input placeholder='Write tag for article' value={tagList} />
                         </label>
-                        { typeModal === 'create'?
+                        { whatShowFormArticle === 'create'?
                             <input type='submit' value='create'></input>
                             :
                             <input type='submit' value='update'></input>

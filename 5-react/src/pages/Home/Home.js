@@ -11,7 +11,6 @@ const Home = (props) => {
     const { articles, showSpiner } = UseHome();
     const { dataTegs, fetchTags} = useTag();
 
-    console.log(dataTegs, fetchTags);
     const onChangeTabs = (e) => {
         setCurrentIndex(e)
     }

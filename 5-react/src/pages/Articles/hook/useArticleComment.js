@@ -7,7 +7,6 @@ export const useArticleComment = () => {
     
     const [showDataComment, fetchComment] = useDataFetch({
         fetchHandler: async (slug, comm) => {
-          console.log(slug);
           const res = await getArticleComments(slug);
     
           return res;

@@ -2,6 +2,11 @@ import post from "./Post.module.css";
 import UserAvatar from "../UserAvatar/UserAvatar"
 import { useAuth } from "../../context/useAuth";
 import { NavLink } from "react-router-dom";
+import { useForm } from "../../context/useAuth";
+import { usePost } from "./hook/usePost";
+import { usePostDelete } from "./hook/usePostDelete";
+import { useState, useEffect } from "react";
+import { useDeleteArticle } from "./hook/useDeleteArticle";
 
 const Post = (props) => {
     const [image, username, date, title, description, tagList, favorited, favoritesCount, slug, updatedAt, body] = 
@@ -20,14 +25,25 @@ const Post = (props) => {
     ]
 
     const { getuserNameProfile } = useAuth();
+    const { setShowFormArticle, setFormUpdateArticle, setStateArticleForm} = useForm();
+    const { dataPostFavorite, fetchPostFavorite } = usePost();
+    const { dataPostDeleteFavorite, fetchPostDeleteFavorite } = usePostDelete();
+    const { dataDeleteArticle, fetchDeleteArticle} = useDeleteArticle();
+    const [like, setLike] = useState(favoritesCount);
+    console.log(dataDeleteArticle);
+    useEffect(() => {
+        if(dataPostFavorite.data.article !== undefined){
+            setLike(dataPostFavorite.data.article.favoritesCount)
+        }
+    }, [dataPostFavorite])
 
     const changeUser = () => {
         getuserNameProfile(username)
     }
 
     const showEditForm = () => {
-        props.setTypeModalWindow('edit');
-        props.setBodyArticalUpdate({
+        setShowFormArticle('edit');
+        setFormUpdateArticle({
             article: {
                 title,
                 description,
@@ -35,7 +51,19 @@ const Post = (props) => {
                 tagList,
             }
         });
-        props.setStateModal(true);
+        setStateArticleForm(true);
+    }
+
+    const addFavoritePost = () => {
+        if(favorited){
+            fetchPostDeleteFavorite(slug);
+        }else{  
+            fetchPostFavorite(slug);
+        }
+    }
+
+    const deleteArticle = () => {
+        fetchDeleteArticle(slug);
     }
 
     return (
@@ -49,11 +77,11 @@ const Post = (props) => {
                 </div>
             </div>
             { props.isShow?
-                <button className={post.btnLike}>{props.info.favoritesCount}</button>
+                <button className={post.btnLike} onClick={addFavoritePost}>{like}</button>
                 :
                 <div>
                     <button onClick={showEditForm}>Edit Article</button>
-                    <button>Delete</button>
+                    <button onClick={deleteArticle}>Delete</button>
                 </div>
             }
         </div>
@@ -69,7 +97,7 @@ const Post = (props) => {
         <div>{tagList}</div>
 
         {
-            props.isShow&&<NavLink to='/article' onClick={() => props.slug(props.info.slug)}>Read more</NavLink>
+            props.isShow&&<NavLink to={`/article/${slug}`}>Read more</NavLink>
         }
 
     </div>

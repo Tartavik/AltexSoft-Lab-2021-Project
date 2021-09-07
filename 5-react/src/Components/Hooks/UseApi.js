@@ -1,4 +1,14 @@
-import { initGetArticleApi, initGetArticlesApi, initCreateArticle, initGetArticleComment, initCreateArticleComment, initDeleteArticalComment } from "../API/Articles/Articles";
+import { 
+    initGetArticleApi, 
+    initGetArticlesApi, 
+    initCreateArticle, 
+    initGetArticleComment, 
+    initCreateArticleComment, 
+    initDeleteArticalComment, 
+    initAddFavoriteArticle,
+    initDeleteFavoriteArticle, 
+    initDeleteArticle,
+} from "../API/Articles/Articles";
 import { initUserLoginApi, initRegestrationUser, initGetUser, initRegesterNewUser } from "../API/Auth/Auth";
 import { initUpdateUserProfile } from "../API/User/User";
 import { initGetTag } from "../API/Tag/Tag";
@@ -20,6 +30,9 @@ export const UseApi = () => {
         createArticalComment: initCreateArticleComment(baseUrl, option),
         getArticleComments: initGetArticleComment(baseUrl),
         deleteArticleComment: initDeleteArticalComment(baseUrl, option),
+        addFavoriteArticle: initAddFavoriteArticle(baseUrl, option),
+        deleteFavoriteArticle: initDeleteFavoriteArticle(baseUrl, option),
+        deleteArticle: initDeleteArticle(baseUrl, option),
 
         //Auth
         userLoginApi: initUserLoginApi(baseUrl),

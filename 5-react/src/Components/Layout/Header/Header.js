@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useAuth } from "../../../context/useAuth";
 
 
-const Header = (props) => {
+const Header = () => {
 
     const { isSignedIn, user } = useAuth();
 
@@ -25,7 +25,7 @@ const Header = (props) => {
                     isSignedIn ? (
                         <div onClick={changeStateDrobDown}>
                             <UserAvatar src={user !== undefined?user.image:'#'} width='50px' height='50px'/>
-                            {stateDrobDown&&<DrobDown setStateModal={props.setStateModal} setTypeModalWindow={props.setTypeModalWindow}/>}
+                            {stateDrobDown&&<DrobDown />}
                         </div>    
                     ):(
                         <ul className={header.wrapperButton}>

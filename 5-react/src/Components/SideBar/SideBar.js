@@ -14,9 +14,7 @@ const SideBar = (props) => {
         <ul>
             {
                 props.tags.map((tag, index) => {
-                    console.log('index', index, flag);
                     if(index < flag){
-                        console.log('1');
                         return <Tag key={index} tag={tag}/>
                     }
                     return null;

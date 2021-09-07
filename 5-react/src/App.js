@@ -19,23 +19,18 @@ const App = () => {
   const [typeModalWindow, setTypeModalWindow] = useState('');
   const [articleSlug, setArticleSlug] = useState();
 
-  
-  // const getArticleSlug = (slug) => {
-  //   setArticleSlug(slug)
-  // }
-
   return (
     <div>
       <ProviderAuth>
         <ProviderForm>
-          <Header setStateModal={setModalState} setTypeModalWindow={setTypeModalWindow}/>
-          <NewArticle state={modalState} setState={setModalState} typeModal={typeModalWindow} bodyArticalUpdate={bodyArticalUpdate}/>
+          <Header />
+          <NewArticle />
           <UserUpdateForm />
           <Switch>
             <Route path='/logIn' component={() => <LoginForm />}/>
             <Route path='/singUp' component={() => <SingupForm />}/> 
             <Route path='/userProfile/:username' component={() => <UserProfile  />} />
-            <Route path='/article' component={() => <Articles slug={articleSlug} setTypeModalWindow={setTypeModalWindow} setBodyArticalUpdate={setBodyArticalUpdate} setStateModal={setModalState}/>} />
+            <Route path='/article/:slug' component={() => <Articles slug={articleSlug} setTypeModalWindow={setTypeModalWindow} setBodyArticalUpdate={setBodyArticalUpdate} setStateModal={setModalState}/>} />
             <Route path='/' component={() => <Home  />} />
           </Switch>
           <Footer />

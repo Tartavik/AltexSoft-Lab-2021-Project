@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import drobDown from "./DrobDown.module.css" 
 import { useAuth } from "../../context/useAuth";
+import { useForm } from "../../context/useAuth";
 
 const DrobDown = (props) => {
-console.log(props);
+
     const logOut = () => {
         localStorage.removeItem('token');
         singOut();
@@ -11,14 +12,15 @@ console.log(props);
         getUser('');
     }
     const { singOut, getToken, getUser, getuserNameProfile, user } = useAuth();
+    const { setShowFormArticle, setStateArticleForm } = useForm();
 
     const changeUserProfile = () => {
         getuserNameProfile(user.username)
     }
 
     const openCreateFormArtical = () => {
-        props.setStateModal(true);
-        props.setTypeModalWindow('create');
+        setStateArticleForm(true);
+        setShowFormArticle('create');
     }
  
 

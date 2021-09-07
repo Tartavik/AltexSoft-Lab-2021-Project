@@ -6,12 +6,14 @@ import UserAvatar from "../../Components/UserAvatar/UserAvatar";
 import Comment from "../../Components/Comment/Comment";
 import { useCreateArticleComment } from "./hook/useCreateArticleComment";
 import { useDeleteArticleComment } from "./hook/useDeleteArticalComment";
+import { useParams } from "react-router";
 
 const Article = (props) => {
+
+    const { slug } = useParams();
     const [isShow, setIsShow] = useState(false);
     const [isShowComm, setIsShowComm] = useState(false);
     const [comment, setComment] = useState('');
-    const articleSlug = props.slug;
     const { fetchArticles, showData } = useUserArticle();
     const { fetchComment, showDataComment } = useArticleComment();
     const { fetchNewComment, showDataNewComment } = useCreateArticleComment();
@@ -24,37 +26,43 @@ const Article = (props) => {
     }
     
     useEffect(() => { 
-        if(articleSlug !== undefined){
-            fetchArticles('/' + articleSlug).then(() => {
-                setIsShow(true);
-            });
-            fetchComment(articleSlug).then(() => {
-                setIsShowComm(true)
-            })
-        }
+        fetchArticles('/' + slug);
+        fetchComment(slug);
     },[])
+
+    useEffect(() => {
+        if(showData.data.article !== undefined){
+            setIsShow(true);
+        }
+    }, [showData])
+
+    useEffect(() => {
+        if(showDataComment.data.comments !== undefined){
+            setIsShowComm(true);
+        }
+    }, [showDataComment])
 
     const addPostComment = () => {
         console.log(comment);
         fetchNewComment({
-            articleSlug, 
+            slug, 
             bodyComment
         }).then(() => {
-            fetchComment(articleSlug);
+            fetchComment(slug);
         })
     }
 
     const deleteArticalComment = (slug,id) => {
         console.log(slug,id);
         fetchDeleteComment({slug,id}).then(() => {
-            fetchComment(articleSlug);
+            fetchComment(slug);
         })
     }
 
     return (
         <div>
             <div>
-                { isShow&&<Post info={showData.data.article} isShow={false} setTypeModalWindow={props.setTypeModalWindow} setBodyArticalUpdate={props.setBodyArticalUpdate} setStateModal={props.setStateModal} showBodyorDescrip={false}/>} 
+                { isShow&&<Post info={showData.data.article} isShow={false} showBodyorDescrip={false}/>} 
             </div>
             <div>
                 { isShow&&
@@ -69,7 +77,7 @@ const Article = (props) => {
             </div>
             {
                 isShowComm&& Array.from(showDataComment.data.comments).map((comm,index)=>{
-                    return <Comment comm={comm} key={index} articleSlug={articleSlug} delete={deleteArticalComment}/>    
+                    return <Comment comm={comm} key={index} slug={slug} delete={deleteArticalComment}/>    
                   
                 })
             }

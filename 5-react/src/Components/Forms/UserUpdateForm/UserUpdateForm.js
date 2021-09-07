@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 import { useUpdateForm } from "./hook/useUpdateForm";
 import userUpdateForm from "./userUpdateForm.module.css";
 import { useForm } from "../../../context/useAuth";
-import { NavLink } from "react-router-dom";
 
 const UserUpdateForm = () => {
    
     const { formUpdate, stateEditForm, setstateFormEdit, setFormUpdateUser } = useForm();
-    console.log(formUpdate);
 
     const [image, setImage] = useState('');
     const [bio, setBio] = useState('');
@@ -24,7 +22,6 @@ const UserUpdateForm = () => {
         }
     }, [formUpdate])
 
-    console.log(image,bio,email,password,username);
     const newUserBody = {
         user: {
             email,
@@ -36,7 +33,6 @@ const UserUpdateForm = () => {
     }
 
     const { showDataUpdateUser, updateUser, } = useUpdateForm();
-    console.log(showDataUpdateUser);
 
     const updateUserProfile = (e) => {
         updateUser(newUserBody);

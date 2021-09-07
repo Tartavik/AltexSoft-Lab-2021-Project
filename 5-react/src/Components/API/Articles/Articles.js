@@ -17,10 +17,21 @@ export const initGetArticleComment = (baseUrl) => (slug) => {
 }
 
 export const initCreateArticleComment = (baseUrl, option) => (arg) => {
-    console.log(arg, option, baseUrl);
     return axios.post(`${baseUrl}/api/articles/${arg.articleSlug}/comments`, arg.bodyComment, option);
 }
 
 export const initDeleteArticalComment = (baseUrl, option) => (arg) => {
     return axios.delete(`${baseUrl}/api/articles/${arg.slug}/comments/${arg.id}`, option);
+}
+
+export const initAddFavoriteArticle = (baseUrl, option) => (slug) => {
+    return axios.post(`${baseUrl}/api/articles/${slug}/favorite`, {}, option);
+}
+
+export const initDeleteFavoriteArticle = (baseUrl, option) => (slug) => {
+    return axios.delete(`${baseUrl}/api/articles/${slug}/favorite`, option);
+}
+
+export const initDeleteArticle = (baseUrl, option) => (slug) => {
+    return axios.delete(`${baseUrl}/api/articles/${slug}`, option);
 }
