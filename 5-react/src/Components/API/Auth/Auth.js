@@ -13,5 +13,6 @@ export const initGetUser = (baseUrl) => (user) => {
 }
 
 export const initRegesterNewUser = (baseUrl) => (option) => {
-    return axios.post(`${baseUrl}/api/users`,option)
+    console.log(option);
+    return axios.post(`${baseUrl}/api/users`, option)
 }

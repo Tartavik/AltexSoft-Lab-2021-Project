@@ -40,10 +40,10 @@ export const ProviderAuth = ({ children }) => {
         checkUserReg();
     }, []); 
 
-    return !authState.isLoading
-    ?<AuthContext.Provider value={auth}>{ children }</AuthContext.Provider>
-    :'LOADING...';
+    // return !authState.isLoading
+    // ?<AuthContext.Provider value={auth}>{ children }</AuthContext.Provider>
+    // :'LOADING...';
 
-    // return <AuthContext.Provider value={auth}>{ children }</AuthContext.Provider>
+    return <AuthContext.Provider value={auth}>{ children }</AuthContext.Provider>
 }
 

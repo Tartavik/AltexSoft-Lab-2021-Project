@@ -7,6 +7,7 @@ import { usePost } from "./hook/usePost";
 import { usePostDelete } from "./hook/usePostDelete";
 import { useState, useEffect } from "react";
 import { useDeleteArticle } from "./hook/useDeleteArticle";
+import likeimage from "../../images/art.png"
 
 const Post = (props) => {
     const [image, username, date, title, description, tagList, favorited, favoritesCount, slug, updatedAt, body] = 
@@ -25,12 +26,18 @@ const Post = (props) => {
     ]
 
     const { getuserNameProfile } = useAuth();
-    const { setShowFormArticle, setFormUpdateArticle, setStateArticleForm} = useForm();
+    const { setShowFormArticle, setFormUpdateArticle, setStateArticleForm, renderItemArticle} = useForm();
     const { dataPostFavorite, fetchPostFavorite } = usePost();
     const { dataPostDeleteFavorite, fetchPostDeleteFavorite } = usePostDelete();
     const { dataDeleteArticle, fetchDeleteArticle} = useDeleteArticle();
     const [like, setLike] = useState(favoritesCount);
-    console.log(dataDeleteArticle);
+    const bodyArticle = {
+        title: title,
+        description: description,
+        body: body,
+        tagList: tagList,
+    }
+
     useEffect(() => {
         if(dataPostFavorite.data.article !== undefined){
             setLike(dataPostFavorite.data.article.favoritesCount)
@@ -42,6 +49,7 @@ const Post = (props) => {
     }
 
     const showEditForm = () => {
+        props.flag(bodyArticle);
         setShowFormArticle('edit');
         setFormUpdateArticle({
             article: {
@@ -51,6 +59,8 @@ const Post = (props) => {
                 tagList,
             }
         });
+        console.log(props, props.flag);
+        
         setStateArticleForm(true);
     }
 
@@ -77,7 +87,9 @@ const Post = (props) => {
                 </div>
             </div>
             { props.isShow?
-                <button className={post.btnLike} onClick={addFavoritePost}>{like}</button>
+                <button className={post.btnLike} onClick={addFavoritePost}>{like}
+                <image src={likeimage} alt='like' className={post.likeImage}></image>
+                </button>
                 :
                 <div>
                     <button onClick={showEditForm}>Edit Article</button>

@@ -6,9 +6,8 @@ export const useFormProvider = () => {
     const [stateEditForm, setStateEditForm] = useState();
 
     const [whatShowFormArticle, setShowForm] = useState();
-    const [valueFormUpdateArticle, setValueFormUpdateArticle] = useState();
-    const [stateFormArticle, setStateFormArticle] = useState(false)
-
+    const [valueFormUpdateArticle, setValueFormUpdateArticle] = useState(null);
+    const [stateFormArticle, setStateFormArticle] = useState(false);
 
     const setFormUpdateUser = (obj) => {
         setFormUpdate(obj)

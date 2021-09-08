@@ -1,68 +1,66 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 import { useSingupForm } from "./hook/useSingupForm";
+import { FastField, withFormik, Form as FormikForm } from "formik";
+import ErrorMessage from '../../ErrorMessage/ErrorMessage';
+import { FormSchemaSingUp } from "../../FormsSchema/FormSchemaSingUp";
+import singupForm from "./singupForm.module.css";
+
+const DEFAULT_VALUES = {
+    username: "",
+    email: "",
+    password: "",
+  };
 
 const SingupForm = (props) => {
 
-    const [userPassword, setUserPassword] = useState('');
-    const [userEmail, setUserEmai] = useState('');
-    const [userName, setUserName] = useState('');
+    const { errors, isValid, handleSubmit, values } = props;
+
     const bodyUser = {
             'user':{
-                'email': userEmail,
-                'password': userPassword,
-                'username': userName,
+                'email': values.email,
+                'password': values.password,
+                'username': values.username,
             }
-    }
-
-    function createNewUser(e) {
-        e.preventDefault();
-        console.log(e.target[0].value);
-        console.log(e.target[1].value);
-        console.log(e.target[2].value);
-    }
-
-    const changeName = (e) => {
-        setUserName(e.currentTarget.value);
-    }
-
-    const changeEmail = (e) => {
-        setUserEmai(e.currentTarget.value);
-    }
-
-    const changePassword = (e) => {
-        setUserPassword(e.currentTarget.value);
     }
 
     const registerNewUser = (e) => {
         e.preventDefault();
+        handleSubmit();
         regUser(bodyUser)
     }
 
     const { regUser, showDataReg } = useSingupForm();
 
-    console.log(showDataReg, regUser);
     return (
-        <div>
+        <div className={singupForm.wrapper}>
             <h2>Sing Up</h2>
-            <form onSubmit={createNewUser}>
-                <label>
-                    <p>Username</p>
-                    <input onChange={changeName} placeholder='Write you name'/>
+            <FormikForm onSubmit={registerNewUser}>
+                <label className={ singupForm.wrapperField }>
+                    <p className={singupForm.text}>Username</p>
+                    <FastField type='text' className={ singupForm.input } name='username' placeholder='Write you name'/>
                 </label>
-                <label>
-                    <p>Email</p>
-                    <input onChange={changeEmail} placeholder='Write you email' type='email'/>
+                <ErrorMessage name="username" />
+                <label className={ singupForm.wrapperField }>
+                    <p className={singupForm.text}>Email</p>
+                    <FastField type='text' className={ singupForm.input } name='email' placeholder='Write you email' />
                 </label>
-                <label>
-                    <p>Password</p>
-                    <input onChange={changePassword} placeholder='Write you password'/>
+                <ErrorMessage name="email" />
+                <label className={ singupForm.wrapperField }>
+                    <p className={singupForm.text}>Password</p>
+                    <FastField type='text' className={ singupForm.input } name='password' placeholder='Write you password'/>
                 </label>
-                <button type='submit' onClick={registerNewUser}>Sing Up</button>
-            </form>
-            <p>Already a member?</p><NavLink to='/LogIn'>Log In</NavLink>
+                <ErrorMessage name="password" />
+                <button type='submit' className={singupForm.btn}>Sing Up</button>
+            </FormikForm>
+            <div className={singupForm.footerLoginForm}>
+                <p className={singupForm.footerText}>Already a member?</p><NavLink to='/LogIn' className={singupForm.link}>Log In</NavLink>
+            </div>  
         </div>
     );
 }
 
-export default SingupForm;
+export default withFormik({
+    validationSchema: FormSchemaSingUp,
+    mapPropsToValues: ({ initialValues }) =>
+      initialValues ? initialValues : DEFAULT_VALUES,
+  })(SingupForm);

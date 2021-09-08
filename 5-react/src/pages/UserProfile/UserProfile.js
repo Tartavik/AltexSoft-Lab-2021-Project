@@ -7,7 +7,7 @@ import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import Post from "../../Components/Post/Post";
 
 const UserProfile = (props) => {
-
+    console.log(props);
     const { username } = useParams();
     const { user } = useAuth();
     const { fetchArticles, showData } = useUserArticle();
@@ -68,7 +68,7 @@ const UserProfile = (props) => {
                 </TabPanel>
                 <TabPanel>
                     {showData.data.articles !== undefined?showData.data.articles.map((elem,index) => {
-                        return <Post key={index} info={elem} isShow={true} showBodyorDescrip={true}/>
+                        return <Post key={index} info={elem} isShow={true} showBodyorDescrip={true} />
                     }):
                     <div></div>
                     }

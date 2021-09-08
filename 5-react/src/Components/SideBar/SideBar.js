@@ -1,5 +1,6 @@
 import Tag from "../Tag/Tag";
 import { useState } from "react";
+import sideBar from "./sideBar.module.css"
 
 const SideBar = (props) => {
     const [flag, setFlag ] = useState(5);
@@ -11,15 +12,15 @@ const SideBar = (props) => {
 
     return (
     <aside>
-        <ul>
+        <ul className={sideBar.wrapperTag}>
             {
                 props.tags.map((tag, index) => {
                     if(index < flag){
-                        return <Tag key={index} tag={tag}/>
+                        return <Tag key={index} tag={tag} className={`${index % 2 === 0 ? "Odd" : "Even"}`}/>
                     }
                     return null;
                 })
-            }         
+            }        
         </ul>
         {
             isShow?

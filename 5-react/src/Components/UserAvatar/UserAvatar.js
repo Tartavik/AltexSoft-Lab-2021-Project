@@ -1,8 +1,11 @@
+import userAvatar from "./userAvatar.module.css";
+import art from "../../images/art.png"
 
 const UserAvatar = (props) => {
     return (
-        <div>
-            <img src={props.src} width={props.width} height={props.height} alt='avatar'></img>
+        <div className={userAvatar.wrapper}>
+            <img src={props.src} width={props.width} height={props.height} className={userAvatar.avatar} alt='avatar'></img>
+            <img src={art} className={userAvatar.dotts} alt='dotts'></img>
         </div>
     );
 }

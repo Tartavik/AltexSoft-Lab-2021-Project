@@ -1,0 +1,67 @@
+.wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+.wrapperField{
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    min-height: 40px;
+    border-radius: 5px;
+    border: 1px solid #f2faf8;
+    padding-left: 15px;
+    font-size: 16px;
+    color: rgb(219, 206, 206);
+}
+
+.text { 
+    min-width: 120px;
+    font-size: 18px;
+    color: #2e937a;
+}
+
+.btn {
+    width: 100%;
+    min-height: 50px;
+    background-color: #2e937a;
+    border: none;
+    color: #ffffff;
+    border-radius: 15px;
+    cursor:pointer;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    box-shadow: 0px 12px 24px rgba(127, 127, 127, 0.3);
+}
+
+.btn:active {
+   background-color: #237e67;
+}
+
+.footerLoginForm {
+    display: flex;
+    align-items: center;
+    margin: -15px 0 0 0;
+    padding:  0 0 0 10px
+}
+
+.footerText{
+    color: black;
+    margin-right: 15px;
+}
+
+.link {
+    color: #2e937a;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #f1c599;
+    text-decoration: underline;
+}

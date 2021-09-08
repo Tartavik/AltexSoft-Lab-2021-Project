@@ -1,4 +1,4 @@
-
+import tsg from './tag.module.css';
 const Tag = (props) => {
     return (
         <li>

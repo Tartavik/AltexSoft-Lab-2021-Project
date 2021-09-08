@@ -7,6 +7,7 @@ import Comment from "../../Components/Comment/Comment";
 import { useCreateArticleComment } from "./hook/useCreateArticleComment";
 import { useDeleteArticleComment } from "./hook/useDeleteArticalComment";
 import { useParams } from "react-router";
+import { useForm } from "../../context/useAuth";
 
 const Article = (props) => {
 
@@ -44,6 +45,7 @@ const Article = (props) => {
 
     const addPostComment = () => {
         console.log(comment);
+        console.log(slug);
         fetchNewComment({
             slug, 
             bodyComment
@@ -62,7 +64,7 @@ const Article = (props) => {
     return (
         <div>
             <div>
-                { isShow&&<Post info={showData.data.article} isShow={false} showBodyorDescrip={false}/>} 
+                { isShow&&<Post flag={props.flag} info={showData.data.article} isShow={false} showBodyorDescrip={false}/>} 
             </div>
             <div>
                 { isShow&&

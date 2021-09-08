@@ -1,49 +1,60 @@
 import { NavLink } from "react-router-dom";
 import { UseLoginForm } from "./hook/UseLoginForm";
-import { useState } from "react";
+import { FastField, withFormik, Form as FormikForm } from "formik";
+import { FormSchemaLogin } from '../../FormsSchema/FormSchemaLogin';
+import ErrorMessage from "../../ErrorMessage/ErrorMessage";
+import loginForm from "./loginForm.module.css";
+
+
+const DEFAULT_VALUES = {
+    email: "",
+    password: "",
+  };
 
 const LoginForm = (props) => {
-    const [userPassword, setUserPassword] = useState('');
-    const [userEmail, setUserEmai] = useState('');
+
+    const { errors, isValid, handleSubmit, values } = props;
     const bodyUser = {
                 'user':{
-                    'email': userEmail,
-                    'password': userPassword
+                    'email': values.email,
+                    'password': values.password,
                 }
             }
 
     const checkUser = (e) => {
         e.preventDefault();
+        handleSubmit()
         loginUser(bodyUser);
-    }
-
-    const changePassword = (e) => {
-        setUserPassword(e.currentTarget.value);
-    }
-
-    const changeEmail = (e) => {
-        setUserEmai(e.currentTarget.value);
     }
 
     const { loginUser, logUser } = UseLoginForm();
 
     return (
-        <div>
+        <div className={loginForm.wrapper}>
             <h2>Log In</h2>
-            <form onSubmit={checkUser}>
-                <label>
-                    <p>Email</p>
-                    <input onChange={changeEmail} type='email' placeholder='Write you email'/>
+            <FormikForm onSubmit={ checkUser }>
+                <label className={ loginForm.wrapperField }>
+                    <p className={ loginForm.text }>Email</p>
+                    <FastField name='email' type='text' placeholder='Write you email' className={ loginForm.input }/>
                 </label>
-                <label>
-                    <p>Password</p>
-                    <input onChange={changePassword} placeholder='Write you password'/>
+                <ErrorMessage name="email" />
+                <label className={ loginForm.wrapperField }>
+                    <p className={ loginForm.text }>Password</p>
+                    <FastField  name='password' type='text' placeholder='Write you password' className={ loginForm.input }/>
                 </label>
-                <button type='submit'>Log In</button>
-            </form>
-            <p>Don’t have an account yet?</p><NavLink to='SingUp'>Create an account</NavLink>
+                <ErrorMessage name="password" />
+                <button type='submit' className={ loginForm.btn }>Log In</button>
+            </FormikForm>
+            <div className={loginForm.footerLoginForm}>
+                <p className={loginForm.footerText}>Don’t have an account yet?</p><NavLink to='SingUp' className={loginForm.link}>Create an account</NavLink>   
+            </div>
+            
         </div>
     );
 }
 
-export default LoginForm;
+export default  withFormik({
+    validationSchema: FormSchemaLogin,
+    mapPropsToValues: ({ initialValues }) =>
+      initialValues ? initialValues : DEFAULT_VALUES,
+  })(LoginForm);

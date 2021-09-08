@@ -20,7 +20,7 @@ const Header = () => {
         <header className={header.header}>
             <a href='#/' className='logo'>LOGO</a>
             <div className={header.wrapperNav}>
-                <NavLink to='/' className={header.btn}>Home</NavLink>
+                <NavLink to='/' className={`${header.btn}`}>Home</NavLink>
                 {
                     isSignedIn ? (
                         <div onClick={changeStateDrobDown}>
@@ -29,11 +29,11 @@ const Header = () => {
                         </div>    
                     ):(
                         <ul className={header.wrapperButton}>
-                            <li className={header.btn}>
-                                <NavLink to='/logIn' className={header.link}>Log in</NavLink>
+                            <li className={header.list}>
+                                <NavLink to='/logIn' className={header.btn}>Log in</NavLink>
                             </li>
-                            <li className={header.btn}>
-                                <NavLink to='/singUp' className={header.link}>Sing up</NavLink>
+                            <li className={header.list}>
+                                <NavLink to='/singUp' className={header.btn}>Sing up</NavLink>
                             </li>
                         </ul>
                     )

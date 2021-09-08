@@ -1,8 +1,9 @@
 import UserAvatar from "../UserAvatar/UserAvatar"
 
 const Comment = (props) => {
-    const [slug, id] = [props.articleSlug, props.comm.id];
-
+    const [slug, id] = [props.slug, props.comm.id];
+    console.log(props);
+    console.log(slug);
     return (
         <div>
             <div>

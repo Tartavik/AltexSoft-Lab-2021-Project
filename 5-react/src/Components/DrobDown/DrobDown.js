@@ -12,7 +12,7 @@ const DrobDown = (props) => {
         getUser('');
     }
     const { singOut, getToken, getUser, getuserNameProfile, user } = useAuth();
-    const { setShowFormArticle, setStateArticleForm } = useForm();
+    const { setShowFormArticle, setStateArticleForm, setFormUpdateArticle } = useForm();
 
     const changeUserProfile = () => {
         getuserNameProfile(user.username)
@@ -21,6 +21,14 @@ const DrobDown = (props) => {
     const openCreateFormArtical = () => {
         setStateArticleForm(true);
         setShowFormArticle('create');
+        setFormUpdateArticle({
+            article: {
+                title: '',
+                description: '',
+                body: '',
+                tagList: '',
+            }
+        });
     }
  
 

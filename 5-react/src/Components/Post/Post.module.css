@@ -14,6 +14,7 @@
 }
 
 .btnLike{
+    background-color: transparent;
     width: 30px;
     height: 20px;
 }
@@ -31,4 +32,9 @@
 .titlePost{
     margin: 0 0 10px 0;
 
+}
+
+.likeImage{
+    width: 10px !important;
+    height: 10px;
 }

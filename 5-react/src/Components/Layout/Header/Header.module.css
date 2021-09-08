@@ -2,15 +2,34 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
+    background-color: white;
+    border-bottom: #c3e9df;
 }
 
 .btn {
     list-style: none;
+    padding: 5px;
+    color: #2e937a;
+    text-decoration: none;
     font-size: 16px;
-    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    border-radius: 25px;
+    margin: 0 20px;
+}
+
+.list {
+    list-style: none;
 }
 
 
+
+.btn:hover {
+    background: linear-gradient(360deg, rgb(247, 245, 245), rgb(255, 255, 255), #ffffff);
+}
 
 .wrapperButton {
     display: flex;
@@ -20,4 +39,8 @@
 
 .wrapperNav{
     display: flex;
+}
+
+.logo{
+
 }

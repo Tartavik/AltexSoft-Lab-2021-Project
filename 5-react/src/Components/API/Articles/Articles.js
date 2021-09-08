@@ -17,10 +17,11 @@ export const initGetArticleComment = (baseUrl) => (slug) => {
 }
 
 export const initCreateArticleComment = (baseUrl, option) => (arg) => {
-    return axios.post(`${baseUrl}/api/articles/${arg.articleSlug}/comments`, arg.bodyComment, option);
+    return axios.post(`${baseUrl}/api/articles/${arg.slug}/comments`, arg.bodyComment, option);
 }
 
 export const initDeleteArticalComment = (baseUrl, option) => (arg) => {
+    console.log(arg);
     return axios.delete(`${baseUrl}/api/articles/${arg.slug}/comments/${arg.id}`, option);
 }
 

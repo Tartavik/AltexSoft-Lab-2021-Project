@@ -1,0 +1,16 @@
+
+.avatar {
+    border: 3px solid #a3d7ca;
+    border-radius: 40px;
+}
+
+.wrapper{
+    position: relative;
+}
+
+.dotts {
+    width: 13px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}

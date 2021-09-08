@@ -9,31 +9,40 @@ import LoginForm from './Components/Forms/LoginForm/LoginForm';
 import {Route, Switch} from 'react-router-dom';
 import UserProfile from './pages/UserProfile/UserProfile';
 import Articles from './pages/Articles/Articles';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import UserUpdateForm from './Components/Forms/UserUpdateForm/UserUpdateForm';
-
+import { useForm } from './context/useAuth';
 const App = () => { 
   const [modalState, setModalState] = useState(false);
-
   const [bodyArticalUpdate, setBodyArticalUpdate] = useState(false)
   const [typeModalWindow, setTypeModalWindow] = useState('');
   const [articleSlug, setArticleSlug] = useState();
+
+  const { valueFormUpdateArticle } = useForm();
+  const [flag, setFlag] = useState('')
+  
+  const body = {
+    title: flag.title,
+    description: flag.description,
+    body: flag.body,
+    tagList: flag.tagList,
+}
 
   return (
     <div>
       <ProviderAuth>
         <ProviderForm>
-          <Header />
-          <NewArticle />
-          <UserUpdateForm />
-          <Switch>
-            <Route path='/logIn' component={() => <LoginForm />}/>
-            <Route path='/singUp' component={() => <SingupForm />}/> 
-            <Route path='/userProfile/:username' component={() => <UserProfile  />} />
-            <Route path='/article/:slug' component={() => <Articles slug={articleSlug} setTypeModalWindow={setTypeModalWindow} setBodyArticalUpdate={setBodyArticalUpdate} setStateModal={setModalState}/>} />
-            <Route path='/' component={() => <Home  />} />
-          </Switch>
-          <Footer />
+            <Header />
+            <NewArticle initialValues={body} />
+            <UserUpdateForm />
+            <Switch>
+              <Route path='/logIn' component={() => <LoginForm />}/>
+              <Route path='/singUp' component={() => <SingupForm />}/> 
+              <Route path='/userProfile/:username' component={() => <UserProfile />} />
+              <Route path='/article/:slug' component={() => <Articles flag={setFlag} slug={articleSlug} setTypeModalWindow={setTypeModalWindow} setBodyArticalUpdate={setBodyArticalUpdate} setStateModal={setModalState}/>} />
+              <Route path='/' component={() => <Home />} />
+            </Switch>
+            <Footer />
         </ProviderForm>
       </ProviderAuth>
     </div>

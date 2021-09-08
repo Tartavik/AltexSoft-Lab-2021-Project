@@ -2,18 +2,19 @@ import newArticle from "./newArticle.module.css";
 import { useCreateArticle } from "./useCreateArticle";
 import { useEffect, useState } from "react";
 import { useForm } from "../../context/useAuth";
+import { FastField, withFormik, Form as FormikForm } from "formik";
+import { FormSchemaArticle } from "../../Components/FormsSchema/FormSchemaArticle";
 
+const DEFAULT_VALUES = {}
 
-const NewArticle = () => {
-
+const NewArticle = (props) => {
+    console.log(props);
     const { showDataArticle, fetchArticle } = useCreateArticle();
     const { whatShowFormArticle, valueFormUpdateArticle, stateFormArticle, setStateArticleForm} = useForm();
-   
     const [articleTitlte, setArticleTitle ] = useState('');
     const [article, setArticle ] = useState('');
     const [description, setDescription ] = useState('');
     const [tagList, setTagList] = useState('');
-    console.log(1,'newArtical', whatShowFormArticle);
     const bodyArtylce = {
         article: {
             title: articleTitlte,
@@ -24,13 +25,11 @@ const NewArticle = () => {
     }
 
     useEffect(()=>{
-        if(valueFormUpdateArticle !== undefined){
-            if(whatShowFormArticle === 'edit'){
-                setArticleTitle(valueFormUpdateArticle.article.title);
-                setArticle(valueFormUpdateArticle.article.body);
-                setDescription(valueFormUpdateArticle.article.description);
-                setTagList(valueFormUpdateArticle.article.tagList);
-            }
+        if(valueFormUpdateArticle !== null){
+            setArticleTitle(valueFormUpdateArticle.article.title);
+            setArticle(valueFormUpdateArticle.article.body);
+            setDescription(valueFormUpdateArticle.article.description);
+            setTagList(valueFormUpdateArticle.article.tagList);
         }
     },[valueFormUpdateArticle]);
 
@@ -42,10 +41,7 @@ const NewArticle = () => {
         createTag(e.target[3]);
         setStateArticleForm(false);
         fetchArticle(bodyArtylce);
-        setArticleTitle('');
-        setArticle('');
-        setDescription('');
-        setTagList('');
+
     }
 
     const changeArticleTitle = (e) => {
@@ -71,33 +67,37 @@ const NewArticle = () => {
                 <div className={newArticle.container}>
                     <button onClick={() => setStateArticleForm(false)}>X</button>
                     <h2>New Article</h2>
-                    <form onSubmit={createNewArticle}>
+                    <FormikForm onSubmit={createNewArticle}>
                         <label>
                             <p>Article Title</p>
-                            <input placeholder='Write article title' value={articleTitlte} onChange={changeArticleTitle}/>
+                            <FastField placeholder='Write article title' name='title'/>
                         </label>
                         <label>
                             <p>Description</p>
-                            <input placeholder='Write about article' value={description} onChange={changeDescription}/>
+                            <FastField placeholder='Write about article' name='description'/>
                         </label>
                         <label>
                             <p>Article</p>
-                            <input placeholder='Write you article' value={article} onChange={changeArticle}/>
+                            <FastField placeholder='Write you article' name='body'/>
                         </label>
                         <label>
                             <p>Tag</p>
-                            <input placeholder='Write tag for article' value={tagList} />
+                            <FastField placeholder='Write tag for article' name='tagList'/>
                         </label>
                         { whatShowFormArticle === 'create'?
                             <input type='submit' value='create'></input>
                             :
                             <input type='submit' value='update'></input>
                         }   
-                    </form>
+                    </FormikForm>
                 </div>
             </div>
         </div>
     );
 }
 
-export default NewArticle;
+export default withFormik({
+    validationSchema: FormSchemaArticle,
+    mapPropsToValues: ({ initialValues }) =>
+      initialValues ? initialValues : DEFAULT_VALUES,
+  })(NewArticle);
