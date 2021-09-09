@@ -37,7 +37,6 @@ const Home = (props) => {
             setArrArticles(res.data.articles)
             })
       };
-      console.log(arrArticles, showSpiner);
     return (
         <div>
             <img src={ green } alt="mainImage" className={home.mainImage}></img>
@@ -48,7 +47,17 @@ const Home = (props) => {
                         <Tab className={currentIndex === 1 ?`${home.active} ${home.tab}`:home.tab}>Global Feeds</Tab>
                     </TabList>
                     <TabPanel>
-                        2
+                        <div>
+                            <div className={home.emptyField}>
+                                <BeatLoader color={'#36d7b7'} loading={true} size={15} />
+                            </div>
+                            <div className={home.emptyField}>
+                                <BeatLoader color={'#36d7b7'} loading={true} size={15} />
+                            </div>
+                            <div className={home.emptyField}>
+                                <BeatLoader color={'#36d7b7'} loading={true} size={15} />
+                            </div>
+                        </div>
                     </TabPanel>
                     <TabPanel>
                         {arrArticles.map((elem,index) => {
@@ -70,7 +79,7 @@ const Home = (props) => {
                         </div>
                         )
                         :
-                        <div>Sorry, try again later</div>
+                        <div className={home.errorText}>Sorry, try again later</div>
 
                     }
                     

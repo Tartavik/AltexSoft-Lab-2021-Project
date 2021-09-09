@@ -38,18 +38,18 @@ const SingupForm = (props) => {
                 <label className={ singupForm.wrapperField }>
                     <p className={singupForm.text}>Username</p>
                     <FastField type='text' className={ singupForm.input } name='username' placeholder='Write you name'/>
+                    <ErrorMessage name="username" />
                 </label>
-                <ErrorMessage name="username" />
                 <label className={ singupForm.wrapperField }>
                     <p className={singupForm.text}>Email</p>
                     <FastField type='text' className={ singupForm.input } name='email' placeholder='Write you email' />
+                    <ErrorMessage name="email" />
                 </label>
-                <ErrorMessage name="email" />
                 <label className={ singupForm.wrapperField }>
                     <p className={singupForm.text}>Password</p>
                     <FastField type='text' className={ singupForm.input } name='password' placeholder='Write you password'/>
+                    <ErrorMessage name="password" />
                 </label>
-                <ErrorMessage name="password" />
                 <button type='submit' className={singupForm.btn}>Sing Up</button>
             </FormikForm>
             <div className={singupForm.footerLoginForm}>

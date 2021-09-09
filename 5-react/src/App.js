@@ -17,10 +17,11 @@ const App = () => {
 
   const { valueFormUpdateArticle, formUpdate } = useForm();
   const { isSignedIn } = useAuth();
-  
+  console.log(isSignedIn);
   return (
     <div>
       <ProviderAuth>
+        {isSignedIn? <Redirect to="/"/>:null}
           <ProviderModals>
             <Header />
             <NewArticle initialValues={valueFormUpdateArticle} />

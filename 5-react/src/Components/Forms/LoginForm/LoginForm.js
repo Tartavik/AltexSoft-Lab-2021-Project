@@ -36,13 +36,14 @@ const LoginForm = (props) => {
                 <label className={ loginForm.wrapperField }>
                     <p className={ loginForm.text }>Email</p>
                     <FastField name='email' type='text' placeholder='Write you email' className={ loginForm.input }/>
+                    <ErrorMessage name="email" />
                 </label>
-                <ErrorMessage name="email" />
+                
                 <label className={ loginForm.wrapperField }>
                     <p className={ loginForm.text }>Password</p>
                     <FastField  name='password' type='text' placeholder='Write you password' className={ loginForm.input }/>
+                    <ErrorMessage name="password" />
                 </label>
-                <ErrorMessage name="password" />
                 <button type='submit' className={ loginForm.btn }>Log In</button>
             </FormikForm>
             <div className={loginForm.footerLoginForm}>
