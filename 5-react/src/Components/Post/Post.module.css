@@ -139,3 +139,34 @@ btnFavoriteLike{
     color: #2e937a;
     text-align: end;
 }
+
+.btnEdit {
+    width: 100px;
+    min-height: 50px;
+    background-color: #fbeee0;
+    border: none;
+    color: #e59846;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btnEdit:hover {
+    background-color: #e59846;
+    color: #fbeee0;
+}
+
+.btnDelete {
+    width: 100px;
+    min-height: 50px;
+    background-color: #eba2a2;
+    border: none;
+    color: #e55e46;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.btnDelete:hover {
+    background-color: #e55e46; 
+    color: #eba2a2;
+}

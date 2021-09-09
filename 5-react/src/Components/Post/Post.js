@@ -90,7 +90,7 @@ const Post = (props) => {
     }
 
     return (
-    <div className={post.wrapperPost}>
+    <div className={`${post.wrapperPost} ${props.style}`}>
         <div className={post.wrapperHeaderPost}>
             <div className={post.wrapper}>
                 <UserAvatar src={image} width='35px' height='35px' />
@@ -105,8 +105,8 @@ const Post = (props) => {
                 </div> 
             ):
                 <div>
-                    <button onClick={showEditForm}>Edit Article</button>
-                    <button onClick={deleteArticle}>Delete</button>
+                    <button onClick={showEditForm} className={post.btnEdit}>Edit Article</button>
+                    <button onClick={deleteArticle} className={post.btnDelete}>Delete</button>
                 </div>
             }
         </div>

@@ -4,14 +4,17 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ProviderForm } from './context/FormContext'
-import index from './index.module.css';
+import { ProviderAuth } from './context/AuthContext';
+import index from './index.module.css'
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter >
       <ProviderForm>
-        <ProviderForm>
-          <App />
-        </ProviderForm>
+        <ProviderAuth>
+          <ProviderForm>
+            <App />
+          </ProviderForm>
+        </ProviderAuth>
       </ProviderForm>  
     </BrowserRouter>
   </React.StrictMode>,

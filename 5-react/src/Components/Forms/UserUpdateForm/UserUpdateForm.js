@@ -34,35 +34,35 @@ const UserUpdateForm = (props) => {
     return (
         <div className={stateEditForm ?`${userUpdateForm.modal} ${userUpdateForm.active}`:userUpdateForm.modal} onClick={() => setstateFormEdit(false)}>
             <div className={userUpdateForm.modalContent} onClick={e => e.stopPropagation()}>
-                <button>x</button>
+                <button onClick={() => setstateFormEdit(false)} className={userUpdateForm.btnClose}>x</button>
                 <h2>Profile info</h2>
                 <FormikForm onSubmit={updateUserProfile}>
-                    <label>
-                        <p>Picture</p>
-                        <FastField type='text' name='image'/>
+                    <label className={ userUpdateForm.wrapperField }>
+                        <p className={ userUpdateForm.text }>Picture</p>
+                        <FastField type='text' name='image' className={ userUpdateForm.input }/>
                     </label>
                     <ErrorMessage name="image" />
-                    <label>
-                        <p>Username</p>
-                        <FastField type='text' name='username'/>
+                    <label className={ userUpdateForm.wrapperField }>
+                        <p className={ userUpdateForm.text }>Username</p>
+                        <FastField type='text' name='username' className={ userUpdateForm.input }/>
                     </label>
                     <ErrorMessage name="username" />
-                    <label>
-                        <p>Biography</p>
-                        <FastField type='text' name='bio'/>
+                    <label className={ userUpdateForm.wrapperField }>
+                        <p className={ userUpdateForm.text }>Biography</p>
+                        <FastField type='text' name='bio' className={ userUpdateForm.input }/>
                     </label>
                     <ErrorMessage name="bio" />
-                    <label>
-                        <p>Email</p>
-                        <FastField type='text' name='email'/>
+                    <label className={ userUpdateForm.wrapperField }>
+                        <p className={ userUpdateForm.text }>Email</p>
+                        <FastField type='text' name='email' className={ userUpdateForm.input }/>
                     </label>
                     <ErrorMessage name="email" />
-                    <label>
-                        <p>Confirm password or enter new</p>
-                        <FastField type='text' name='password'/>
+                    <label className={ userUpdateForm.wrapperField }>
+                        <p className={ userUpdateForm.text }>Confirm password or enter new</p>
+                        <FastField type='text' name='password' className={ userUpdateForm.input }/>
                     </label>
                     <ErrorMessage name="password" />
-                    <button>Update profile</button>
+                    <button className={userUpdateForm.btn}>Update profile</button>
                 </FormikForm>
             </div>
         </div>

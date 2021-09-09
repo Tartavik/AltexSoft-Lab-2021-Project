@@ -1,6 +1,6 @@
 import userAvatar from "./userAvatar.module.css";
 import art from "../../images/art.png"
-
+console.log(art);
 const UserAvatar = (props) => {
     return (
         <div className={userAvatar.wrapper}>

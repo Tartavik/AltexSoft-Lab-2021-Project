@@ -36,13 +36,13 @@ const DrobDown = (props) => {
         <div>
             <ul className={drobDown.wrapperNav}>
                 <li className={drobDown.nav}>
-                    <NavLink to={`/userProfile/${user.username}`} onClick={changeUserProfile}>User Profile</NavLink>
+                    <NavLink to={`/userProfile/${user.username}`} onClick={changeUserProfile} className={drobDown.btn}>User Profile</NavLink>
+                </li>
+                <li className={`${drobDown.nav} ${drobDown.line}`}>
+                    <button onClick={openCreateFormArtical} className={drobDown.btn}>New Article</button>
                 </li>
                 <li className={drobDown.nav}>
-                    <button onClick={openCreateFormArtical}>New Article</button>
-                </li>
-                <li className={drobDown.nav}>
-                    <button onClick={logOut}>Log Out</button>
+                    <button onClick={logOut} className={drobDown.btn}>Log Out</button>
                 </li>
             </ul>
 

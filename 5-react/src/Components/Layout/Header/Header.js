@@ -4,8 +4,9 @@ import header from "./Header.module.css";
 import DrobDown from "../../DrobDown/DrobDown";
 import { useState } from 'react';
 import { useAuth } from "../../../context/useAuth";
+import logo from "./../../../images/logo.png"
 
-
+console.log(logo);
 const Header = () => {
 
     const { isSignedIn, user } = useAuth();
@@ -18,7 +19,7 @@ const Header = () => {
 
     return (
         <header className={header.header}>
-            <a href='#/' className='logo'>LOGO</a>
+            <image src={ logo } className='logo'></image>
             <div className={header.wrapperNav}>
                 <NavLink to='/' className={`${header.btn}`}>Home</NavLink>
                 {

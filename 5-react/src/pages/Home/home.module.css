@@ -50,11 +50,13 @@
 
 .sidebar {
   min-width: 250px;
+  min-height: 300px;
 }
 
 .mainImage{
   width: 100%;
   max-height: 250px;
+
 }
 
 .tab {
@@ -106,4 +108,12 @@
   list-style: none;
   position: relative;
   cursor: pointer;
+}
+
+.emptyField {
+  background-color: #d6eee8;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  height: 190px;
 }

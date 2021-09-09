@@ -6,18 +6,18 @@ import SingupForm from './Components/Forms/SingupForm/SingupForm';
 import NewArticle from './pages/NewArticle/NewArticle'
 import Home from './pages/Home/Home';
 import LoginForm from './Components/Forms/LoginForm/LoginForm';
-import {Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import UserProfile from './pages/UserProfile/UserProfile';
 import Articles from './pages/Articles/Articles';
 import UserUpdateForm from './Components/Forms/UserUpdateForm/UserUpdateForm';
-import { useForm } from './context/useAuth';
-import BeatLoader from "react-spinners/BeatLoader";
+import { useAuth, useForm } from './context/useAuth';
+
 
 const App = () => { 
 
   const { valueFormUpdateArticle, formUpdate } = useForm();
-
-  console.log(formUpdate);
+  const { isSignedIn } = useAuth();
+  
   return (
     <div>
       <ProviderAuth>
@@ -26,16 +26,17 @@ const App = () => {
             <NewArticle initialValues={valueFormUpdateArticle} />
             <UserUpdateForm initialValues={formUpdate} />
             <Switch>
-              <Route path='/logIn' component={() => <LoginForm />}/>
-              <Route path='/singUp' component={() => <SingupForm />}/> 
+              <Route path='/logIn' component={() => <LoginForm />}>
+                {isSignedIn? <Redirect to="/"/>:<LoginForm />}
+              </Route> 
+              <Route path='/singUp' component={() => <SingupForm />}> 
+                {isSignedIn? <Redirect to="/"/>:<SingupForm />}
+              </Route> 
               <Route path='/userProfile/:username' component={() => <UserProfile />} />
               <Route path='/article/:slug' component={() => <Articles />} />
               <Route path='/' component={() => <Home />} />
             </Switch>
             <Footer />
-            <div>
-              <BeatLoader color={'#36d7b7'} loading={true} size={8} />
-            </div>
           </ProviderModals>
       </ProviderAuth>
     </div>

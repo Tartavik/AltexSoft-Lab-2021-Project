@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     transform: scale(0);
+    z-index: 3;
 }
 
 .modalContent{
@@ -21,4 +22,65 @@
 
 .modal.active {
     transform: scale(1);
+}
+
+.wrapperField{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.text { 
+    min-width: 120px;
+    font-size: 18px;
+    color: #2e937a;
+}
+
+.input {
+    width: 100%;
+    min-height: 40px;
+    border-radius: 5px;
+    border: 1px solid #f2faf8;
+    padding-left: 15px;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    background-color: #d6eee8;
+}
+
+.btn {
+    width: 100%;
+    min-height: 50px;
+    background-color: #2e937a;
+    border: none;
+    color: #ffffff;
+    border-radius: 15px;
+    cursor:pointer;
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.btn:hover {
+    box-shadow: 0px 12px 24px rgba(127, 127, 127, 0.3);
+}
+
+.btn:active {
+   background-color: #237e67;
+}
+
+.btnClose {
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #237e67;
+    color: #237e67;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btnClose:hover { 
+    border: 1px solid white;
+    color: white;
+    background-color: #237e67;
+    cursor: pointer;
 }

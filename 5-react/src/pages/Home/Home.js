@@ -8,8 +8,15 @@ import ReactPaginate from "react-paginate";
 import home from './home.module.css';
 import green from '../../images/green2.jpg';
 import BeatLoader from "react-spinners/BeatLoader";
+import { css } from "@emotion/react";
 
 const Home = (props) => {
+
+    const override = css`
+        margin-top: 140px;
+        display: flex;
+        justify-content: center;
+    `;
 
     const [currentIndex, setCurrentIndex] = useState(1);
     const [arrArticles, setArrArticles] = useState([]);
@@ -30,7 +37,7 @@ const Home = (props) => {
             setArrArticles(res.data.articles)
             })
       };
-
+      console.log(arrArticles, showSpiner);
     return (
         <div>
             <img src={ green } alt="mainImage" className={home.mainImage}></img>
@@ -48,13 +55,33 @@ const Home = (props) => {
                             return <Post key={index} info={elem} isShow={true} showBodyorDescrip={true} />
                         })}
                     </TabPanel>
+                    {
+                        showSpiner.isLoading?(
+                        <div>
+                            <div className={home.emptyField}>
+                                <BeatLoader color={'#36d7b7'} loading={true} size={15} />
+                            </div>
+                            <div className={home.emptyField}>
+                                <BeatLoader color={'#36d7b7'} loading={true} size={15} />
+                            </div>
+                            <div className={home.emptyField}>
+                                <BeatLoader color={'#36d7b7'} loading={true} size={15} />
+                            </div>
+                        </div>
+                        )
+                        :
+                        <div>Sorry, try again later</div>
+
+                    }
+                    
                 </Tabs>
+               
                 {
                     dataTegs.data.tags !== undefined?
                     <SideBar tags={dataTegs.data.tags} className={home.sidebar}/>
                     :
                     <div className={home.sidebar}>
-                        <BeatLoader color={'#36d7b7'} loading={true} size={8} />
+                        <BeatLoader color={'#36d7b7'} loading={true} size={15} css={override}/>
                     </div>
                 }
                 

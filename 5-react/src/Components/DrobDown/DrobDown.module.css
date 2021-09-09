@@ -1,9 +1,44 @@
 .nav{
-    list-style-type: none
+    list-style-type: none;
+    padding: 10px;
+    text-align: center;
+    height: 25px;
+    position: relative;
 }
 
-.wrapperNav{
+.nav:hover::after{
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background-color: #237e67;
+    top: 40px;
+    left: 50px;
+}
+
+.nav:active {
+    background-color: #9efce4;
+}
+
+.wrapperNav {
     padding: 0;
     position: absolute;
-    margin: 0 -40px;
+    margin: 0px -110px;
+    min-width: 180px;
+    background-color: #d6eee8;
+    cursor: pointer;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 0;
+    color: #237e67;
+}
+
+.line {
+    border-top: 1px solid #237e67;
+    border-bottom: 1px solid #237e67;
 }

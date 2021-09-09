@@ -41,7 +41,11 @@ const NewArticle = (props) => {
             <div className={newArticle.modalContent} onClick={e => e.stopPropagation()}>
                 <div className={newArticle.container}>
                     <button onClick={() => setStateArticleForm(false)} className={newArticle.btnClose}>X</button>
-                    <h2>New Article</h2>
+                    { whatShowFormArticle === 'create'?
+                        <h2>New Article</h2>
+                        :
+                        <h2>Update</h2>
+                    }
                     <FormikForm onSubmit={createNewArticle}>
                         <label className={ newArticle.wrapperField }>
                             <p className={ newArticle.text }>Article Title</p>

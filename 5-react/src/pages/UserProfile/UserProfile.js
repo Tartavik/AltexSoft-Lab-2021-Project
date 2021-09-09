@@ -69,9 +69,9 @@ const UserProfile = (props) => {
                         }
                     </div>
                 </div>
-                ):(
-                    <div></div>
-                )
+                ):
+                    <div className={userProfile.wrapperProfile}></div>
+                
             }
             <Tabs onSelect={onChangeTabs} selectedIndex={currentIndex} className={userProfile.wrapperArticle}>
                 <TabList className={userProfile.nav}>

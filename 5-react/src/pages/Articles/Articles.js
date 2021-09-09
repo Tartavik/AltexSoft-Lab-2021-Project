@@ -7,9 +7,17 @@ import Comment from "../../Components/Comment/Comment";
 import { useCreateArticleComment } from "./hook/useCreateArticleComment";
 import { useDeleteArticleComment } from "./hook/useDeleteArticalComment";
 import { useParams } from "react-router";
-import { useForm } from "../../context/useAuth";
+import article from "./article.module.css";
+import BeatLoader from "react-spinners/BeatLoader";
+import { css } from "@emotion/react";
 
 const Article = (props) => {
+
+    const override = css`
+        display: flex;
+        margin-top: 125px;
+        justify-content: center;
+    `;
 
     const { slug } = useParams();
     const [isShow, setIsShow] = useState(false);
@@ -59,9 +67,14 @@ const Article = (props) => {
     }
 
     return (
-        <div>
+        <div className={article.wrapperPost}>
+            {
+                !isShow&&<div>
+                    <BeatLoader color={'#36d7b7'} loading={true} size={30} css={override}/>
+                </div>
+            }
             <div>
-                { isShow&&<Post info={showData.data.article} isShow={false} showBodyorDescrip={false}/>} 
+                { isShow&&<Post info={showData.data.article} isShow={false} showBodyorDescrip={false} />} 
             </div>
             <div>
                 { isShow&&
