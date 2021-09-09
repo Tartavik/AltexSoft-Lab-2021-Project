@@ -5,15 +5,18 @@ import { useUser } from "./hooks/useUser";
 import { useParams } from "react-router-dom";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import Post from "../../Components/Post/Post";
+import { useLocation } from "react-router";
+import userProfile from "./userProfile.module.css"
 
 const UserProfile = (props) => {
-    console.log(props);
     const { username } = useParams();
     const { user } = useAuth();
     const { fetchArticles, showData } = useUserArticle();
     const { fetchUser, showDataUser} = useUser();
     const { setstateFormEdit, setFormUpdateUser } = useForm();
-    const [currentIndex, setCurrentIndex] = useState(1);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const location = useLocation().pathname.slice(13);
+
     const onChangeTabs = (e) => {
         setCurrentIndex(e)
     }
@@ -30,45 +33,61 @@ const UserProfile = (props) => {
     const favoritePost = () => {
             fetchArticles('?activeTab=1&favorited=' + username);
     }
+    console.log(showDataUser.data.profile);
 
+    const editProfile = (e) => {
+        e.preventDefault();
+        const bodyUser = {
+            image: user.image,
+            username: user.username,
+            bio: user.bio,
+            email: user.email,
+            password: user.password,
+        }
+        setFormUpdateUser(bodyUser);
+        setstateFormEdit(true);
+    }
+
+  
 
     return (
         <div>
             {
                 showDataUser.data.profile !== undefined?(
-                <div>
+                <div className={userProfile.wrapperProfile}>
                     <img src={showDataUser.data.profile.image} alt='avatar' width='120px' height='120px'></img>
-                    <p>{showDataUser.data.profile.username}</p>
-                    <p>{showDataUser.data.profile.bio}</p>
-                    {
-                        user.username === username?
-                        <button onClick={(e) =>{ 
-                            e.preventDefault();
-                            console.log(user);
-                            setFormUpdateUser(user);
-                            setstateFormEdit(true)
-                        }}>
-                            Edit Profile
-                        </button>
-                        :
-                        <button>Follow</button>
-                    }
+                    <div className={userProfile.wrapperInfoUser}>
+                        <p className={userProfile.name}>My name is {showDataUser.data.profile.username}</p>
+                        <p className={userProfile.bio}>A few words about me: {showDataUser.data.profile.bio}</p>
+                        {
+                            user.username === location?
+                            <button onClick={editProfile} className={userProfile.btnEdit}>
+                                Edit Profile
+                            </button>
+                            :
+                            <button>Follow</button>
+                        }
+                    </div>
                 </div>
                 ):(
                     <div></div>
                 )
             }
-            <Tabs onSelect={onChangeTabs} selectedIndex={currentIndex}>
-                <TabList>
-                    <Tab onClick={myPost}>My Posts</Tab>
-                    <Tab onClick={favoritePost}>Favorited Posts</Tab>
+            <Tabs onSelect={onChangeTabs} selectedIndex={currentIndex} className={userProfile.wrapperArticle}>
+                <TabList className={userProfile.nav}>
+                    <Tab onClick={myPost} className={currentIndex === 0 ?`${userProfile.active} ${userProfile.tab}`:userProfile.tab}>My Posts</Tab>
+                    <Tab onClick={favoritePost} className={currentIndex === 1 ?`${userProfile.active} ${userProfile.tab}`:userProfile.tab}>Favorited Posts</Tab>
                 </TabList>
                 <TabPanel>
-                    2
+                    {showData.data.articles !== undefined?showData.data.articles.map((elem,index) => {
+                        return <Post key={index} info={elem} isShow={true} showBodyorDescrip={true} q='q'/>
+                    }):
+                    <div></div>
+                    }
                 </TabPanel>
                 <TabPanel>
                     {showData.data.articles !== undefined?showData.data.articles.map((elem,index) => {
-                        return <Post key={index} info={elem} isShow={true} showBodyorDescrip={true} />
+                        return <Post key={index} info={elem} isShow={true} showBodyorDescrip={true} q='q'/>
                     }):
                     <div></div>
                     }

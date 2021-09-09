@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { useTag } from './hooks/useTag';
 import ReactPaginate from "react-paginate";
 import home from './home.module.css';
+import green from '../../images/green2.jpg';
+import BeatLoader from "react-spinners/BeatLoader";
 
 const Home = (props) => {
 
@@ -18,9 +20,9 @@ const Home = (props) => {
     useEffect(() => {
         setArrArticles(articles)
     }, [articles])
-    console.log(articles);
+    
     const onChangeTabs = (e) => {
-        setCurrentIndex(e)
+        setCurrentIndex(e);
     }
 
     const changePage = ({ selected }) => {
@@ -31,11 +33,12 @@ const Home = (props) => {
 
     return (
         <div>
+            <img src={ green } alt="mainImage" className={home.mainImage}></img>
             <div className={home.wrapper}>           
                 <Tabs onSelect={onChangeTabs} selectedIndex={currentIndex} className={home.wrapperArticle}>
-                    <TabList>
-                        <Tab>My Feeds</Tab>
-                        <Tab>Global Feeds</Tab>
+                    <TabList className={home.nav}>
+                        <Tab className={currentIndex === 0 ?`${home.active} ${home.tab}`:home.tab}>My Feeds</Tab>
+                        <Tab className={currentIndex === 1 ?`${home.active} ${home.tab}`:home.tab}>Global Feeds</Tab>
                     </TabList>
                     <TabPanel>
                         2
@@ -50,7 +53,9 @@ const Home = (props) => {
                     dataTegs.data.tags !== undefined?
                     <SideBar tags={dataTegs.data.tags} className={home.sidebar}/>
                     :
-                    <div className={home.sidebar}></div>
+                    <div className={home.sidebar}>
+                        <BeatLoader color={'#36d7b7'} loading={true} size={8} />
+                    </div>
                 }
                 
             </div>

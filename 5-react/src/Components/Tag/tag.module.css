@@ -1,0 +1,41 @@
+.Odd {
+    background-color: #fbeee0;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+.Odd:hover{
+    background-color: #e59846;
+}
+
+.Odd button:hover {
+    color: #fbeee0; 
+}
+
+.Odd button {
+    color: #e59846; 
+}
+
+.Even button {
+    color: #2e937a;
+}
+.Even button:hover {
+    color: #d6eee8;
+}
+.Even:hover {
+    background-color: #2e937a;
+}
+
+.Even {
+    background-color: #d6eee8;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: transparent;;
+    border: none;
+    font-size: 16px;
+    padding: 8px;
+}

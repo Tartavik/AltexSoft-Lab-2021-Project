@@ -1,21 +1,22 @@
 import * as yup from "yup";
 
 const commonErrorMessages = {
-    emailNotValid: "Email is not valid!",
-    emailRequired: "Email is required!",
-    passwordRequired: "Password is required!",
-    passwordMinLength: "Password should be at least 8 characters!",
+    titleRequired: "Title is required!",
+    descriptionRequired: "Description is required!",
+    bodyRequired: "Body is required!",
   };
   
   export const FormSchemaArticle = yup.object().shape({
-    email: yup
+    title: yup
       .string()
       .trim()
-      .email(() => commonErrorMessages.emailNotValid)
-      .required(() => commonErrorMessages.emailRequired),
-      password: yup
+      .required(() => commonErrorMessages.titleRequired),
+    description: yup
       .string()
       .trim()
-      .required(() => commonErrorMessages.passwordRequired)
-      .min(8, () => commonErrorMessages.passwordMinLength),
+      .required(() => commonErrorMessages.descriptionRequired),
+    body: yup
+    .string()
+    .trim()
+    .required(() => commonErrorMessages.bodyRequired)
   });

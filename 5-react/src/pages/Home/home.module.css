@@ -41,12 +41,69 @@
 
 .wrapper {
   display: flex;
+  background-color: white;
 }
 
 .wrapperArticle {
   flex: 1 1 0%;
 }
 
-.sideBar {
+.sidebar {
+  min-width: 250px;
+}
+
+.mainImage{
+  width: 100%;
+  max-height: 250px;
+}
+
+.tab {
   min-width: 100px;
+  min-height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid #2e937a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  border-radius:  10px;
+  color: #2e937a;
+}
+
+.tab:hover {
+  background-color: #2e937a;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.active {
+  color: #e59846;
+  border-color: #e59846;
+}
+
+.active::after {
+  content: '';
+  width: 70px;
+  height: 1px;
+  position: absolute;
+  border-bottom: 3px solid #e59846;
+  top: 37px;
+}
+
+.active::after:hover {
+  border-bottom: 3px solid #ffffff;
+}
+
+.active:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: #e59846;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  position: relative;
+  cursor: pointer;
 }

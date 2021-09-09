@@ -44,8 +44,6 @@ const Article = (props) => {
     }, [showDataComment])
 
     const addPostComment = () => {
-        console.log(comment);
-        console.log(slug);
         fetchNewComment({
             slug, 
             bodyComment
@@ -55,7 +53,6 @@ const Article = (props) => {
     }
 
     const deleteArticalComment = (slug,id) => {
-        console.log(slug,id);
         fetchDeleteComment({slug,id}).then(() => {
             fetchComment(slug);
         })
@@ -64,7 +61,7 @@ const Article = (props) => {
     return (
         <div>
             <div>
-                { isShow&&<Post flag={props.flag} info={showData.data.article} isShow={false} showBodyorDescrip={false}/>} 
+                { isShow&&<Post info={showData.data.article} isShow={false} showBodyorDescrip={false}/>} 
             </div>
             <div>
                 { isShow&&

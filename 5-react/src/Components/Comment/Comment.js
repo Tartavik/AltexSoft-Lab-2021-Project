@@ -8,8 +8,10 @@ const Comment = (props) => {
         <div>
             <div>
                 <div>
-                    <UserAvatar src={props.comm.author.image} width='35px' height='35px' />
                     <div>
+                        <UserAvatar src={props.comm.author.image} width='35px' height='35px' />
+                    <div>
+                    </div>
                         <p>{props.comm.author.username}</p>
                         <p>{props.comm.createdAt}</p>
                     </div>

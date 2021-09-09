@@ -2,6 +2,7 @@
 .avatar {
     border: 3px solid #a3d7ca;
     border-radius: 40px;
+    cursor: pointer;
 }
 
 .wrapper{

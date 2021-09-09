@@ -1,40 +1,31 @@
-import { useState, useEffect } from "react";
 import { useUpdateForm } from "./hook/useUpdateForm";
 import userUpdateForm from "./userUpdateForm.module.css";
 import { useForm } from "../../../context/useAuth";
+import { FastField, withFormik, Form as FormikForm } from "formik";
+import { FormSchemaUpdateProfile } from "../../FormsSchema/FormSchemaUpdateProfile";
+import ErrorMessage from "../../ErrorMessage/ErrorMessage";
 
-const UserUpdateForm = () => {
+const DEFAULT_VALUES = {};
+
+const UserUpdateForm = (props) => {
    
-    const { formUpdate, stateEditForm, setstateFormEdit, setFormUpdateUser } = useForm();
-
-    const [image, setImage] = useState('');
-    const [bio, setBio] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [username, setUsername] = useState('');
-
-    useEffect(() => {
-        if(formUpdate !== undefined){
-            setImage(formUpdate.image);
-            setBio(formUpdate.bio);
-            setEmail(formUpdate.email);
-            setUsername(formUpdate.username);
-        }
-    }, [formUpdate])
+    const { stateEditForm, setstateFormEdit, setFormUpdateUser } = useForm();
+    const { errors, isValid, handleSubmit, values } = props;
 
     const newUserBody = {
         user: {
-            email,
-            image,
-            bio,
-            password,
-            username
+            email: values.email,
+            image: values.image,
+            bio: values.bio,
+            password: values.password,
+            username: values.username,
         }
     }
 
     const { showDataUpdateUser, updateUser, } = useUpdateForm();
 
     const updateUserProfile = (e) => {
+        e.preventDefault();
         updateUser(newUserBody);
         setFormUpdateUser(newUserBody);
         setstateFormEdit(false)
@@ -45,32 +36,42 @@ const UserUpdateForm = () => {
             <div className={userUpdateForm.modalContent} onClick={e => e.stopPropagation()}>
                 <button>x</button>
                 <h2>Profile info</h2>
-                <form onSubmit={updateUserProfile}>
+                <FormikForm onSubmit={updateUserProfile}>
                     <label>
                         <p>Picture</p>
-                        <input type='text' value={image} onChange={(e) => setImage(e.currentTarget.value)}/>
+                        <FastField type='text' name='image'/>
                     </label>
+                    <ErrorMessage name="image" />
                     <label>
                         <p>Username</p>
-                        <input type='text' value={username} onChange={(e) => setUsername(e.currentTarget.value)}/>
+                        <FastField type='text' name='username'/>
                     </label>
+                    <ErrorMessage name="username" />
                     <label>
                         <p>Biography</p>
-                        <input type='text' value={bio} onChange={(e) => setBio(e.currentTarget.value)}/>
+                        <FastField type='text' name='bio'/>
                     </label>
+                    <ErrorMessage name="bio" />
                     <label>
                         <p>Email</p>
-                        <input type='text' value={email} onChange={(e) => setEmail(e.currentTarget.value)}/>
+                        <FastField type='text' name='email'/>
                     </label>
+                    <ErrorMessage name="email" />
                     <label>
                         <p>Confirm password or enter new</p>
-                        <input type='text' value={password} onChange={(e) => setPassword(e.currentTarget.value)}/>
+                        <FastField type='text' name='password'/>
                     </label>
+                    <ErrorMessage name="password" />
                     <button>Update profile</button>
-                </form>
+                </FormikForm>
             </div>
         </div>
     )
 }
 
-export default UserUpdateForm;
+export default withFormik({
+    validationSchema: FormSchemaUpdateProfile,
+    enableReinitialize: true,
+    mapPropsToValues: ({ initialValues }) =>
+      initialValues ? initialValues : DEFAULT_VALUES,
+  })(UserUpdateForm);

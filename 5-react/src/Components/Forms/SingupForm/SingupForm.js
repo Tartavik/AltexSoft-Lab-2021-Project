@@ -13,7 +13,7 @@ const DEFAULT_VALUES = {
 
 const SingupForm = (props) => {
 
-    const { errors, isValid, handleSubmit, values } = props;
+    const { handleSubmit, values } = props;
 
     const bodyUser = {
             'user':{
@@ -29,7 +29,7 @@ const SingupForm = (props) => {
         regUser(bodyUser)
     }
 
-    const { regUser, showDataReg } = useSingupForm();
+    const { regUser } = useSingupForm();
 
     return (
         <div className={singupForm.wrapper}>

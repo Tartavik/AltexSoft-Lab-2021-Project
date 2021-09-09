@@ -13,7 +13,7 @@ const DEFAULT_VALUES = {
 
 const LoginForm = (props) => {
 
-    const { errors, isValid, handleSubmit, values } = props;
+    const { handleSubmit, values } = props;
     const bodyUser = {
                 'user':{
                     'email': values.email,
@@ -23,11 +23,11 @@ const LoginForm = (props) => {
 
     const checkUser = (e) => {
         e.preventDefault();
-        handleSubmit()
+        handleSubmit();
         loginUser(bodyUser);
     }
 
-    const { loginUser, logUser } = UseLoginForm();
+    const { loginUser } = UseLoginForm();
 
     return (
         <div className={loginForm.wrapper}>

@@ -1,0 +1,100 @@
+.tab {
+    padding: 5px;
+    min-width: 100px;
+    min-height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #2e937a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    border-radius:  10px;
+    color: #2e937a;
+}
+
+.tab:hover {
+    background-color: #2e937a;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.active {
+    color: #e59846;
+border-color: #e59846;
+}
+
+.active::after {
+    content: '';
+    width: 70px;
+    height: 1px;
+    position: absolute;
+    border-bottom: 3px solid #e59846;
+    top: 31px;
+}
+
+.active::after:hover {
+    border-bottom: 3px solid #ffffff;
+}
+
+.active:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: #e59846;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+    margin: 0 0 20px 0;
+}
+
+.wrapperArticle {
+    background: white;
+    padding-top: 20px;
+}
+
+.wrapperProfile {
+    display: flex;
+    padding: 20px;
+}
+
+.wrapperInfoUser {
+    margin-left: 30px;
+    border: 1px solid black;
+    padding: 20px;
+    max-width: 300px;
+    border-radius: 3px;
+    border-color: #2e937a;
+}
+
+.btnEdit {
+    width: 100%;
+    min-height: 30px;
+    background-color: #2e937a;
+    border: none;
+    color: #ffffff;
+    border-radius: 15px;
+    cursor:pointer;
+    margin-top: 35px;
+}
+
+.btnEdit:hover {
+    box-shadow: 0px 12px 24px rgba(127, 127, 127, 0.3);
+}
+
+.btnEdit:active {
+   background-color: #237e67;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bio{
+    font: 17px;
+}

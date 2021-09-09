@@ -9,7 +9,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter >
       <ProviderForm>
+        <ProviderForm>
           <App />
+        </ProviderForm>
       </ProviderForm>  
     </BrowserRouter>
   </React.StrictMode>,

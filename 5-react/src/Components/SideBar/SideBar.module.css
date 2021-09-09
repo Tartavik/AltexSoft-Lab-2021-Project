@@ -6,3 +6,16 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.btn {
+    background: transparent;
+    border: none;
+    color: #2e937a;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+.btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
