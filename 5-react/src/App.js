@@ -17,22 +17,17 @@ const App = () => {
 
   const { valueFormUpdateArticle, formUpdate } = useForm();
   const { isSignedIn } = useAuth();
-  console.log(isSignedIn);
+  console.log(formUpdate);
   return (
     <div>
       <ProviderAuth>
-        {isSignedIn? <Redirect to="/"/>:null}
           <ProviderModals>
             <Header />
             <NewArticle initialValues={valueFormUpdateArticle} />
             <UserUpdateForm initialValues={formUpdate} />
             <Switch>
-              <Route path='/logIn' component={() => <LoginForm />}>
-                {isSignedIn? <Redirect to="/"/>:<LoginForm />}
-              </Route> 
-              <Route path='/singUp' component={() => <SingupForm />}> 
-                {isSignedIn? <Redirect to="/"/>:<SingupForm />}
-              </Route> 
+              <Route path='/logIn' component={() => <LoginForm />}/>
+              <Route path='/singUp' component={() => <SingupForm />}/> 
               <Route path='/userProfile/:username' component={() => <UserProfile />} />
               <Route path='/article/:slug' component={() => <Articles />} />
               <Route path='/' component={() => <Home />} />
