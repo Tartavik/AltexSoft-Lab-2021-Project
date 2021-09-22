@@ -6,17 +6,17 @@ import SingupForm from './Components/Forms/SingupForm/SingupForm';
 import NewArticle from './pages/NewArticle/NewArticle'
 import Home from './pages/Home/Home';
 import LoginForm from './Components/Forms/LoginForm/LoginForm';
-import {Redirect, Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import UserProfile from './pages/UserProfile/UserProfile';
 import Articles from './pages/Articles/Articles';
 import UserUpdateForm from './Components/Forms/UserUpdateForm/UserUpdateForm';
-import { useAuth, useForm } from './context/useAuth';
+import { useForm } from './context/useAuth';
 
 
 const App = () => { 
 
   const { valueFormUpdateArticle, formUpdate } = useForm();
-  const { isSignedIn } = useAuth();
+
   console.log(formUpdate);
   return (
     <div>

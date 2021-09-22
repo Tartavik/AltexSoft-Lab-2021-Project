@@ -10,6 +10,7 @@ import { useParams } from "react-router";
 import article from "./article.module.css";
 import BeatLoader from "react-spinners/BeatLoader";
 import { css } from "@emotion/react";
+import { useAuth } from "../../context/useAuth";
 
 const Article = (props) => {
 
@@ -22,12 +23,14 @@ const Article = (props) => {
     const { slug } = useParams();
     const [isShow, setIsShow] = useState(false);
     const [isShowComm, setIsShowComm] = useState(false);
+    const [showEditAndDeleteButton, setshowEditAndDeleteButton] = useState();
     const [comment, setComment] = useState('');
     const { fetchArticles, showData } = useUserArticle();
     const { fetchComment, showDataComment } = useArticleComment();
     const { fetchNewComment, showDataNewComment } = useCreateArticleComment();
     const { fetchDeleteComment, showDataDeleteComment } = useDeleteArticleComment();
-
+    const { user } = useAuth();
+    
     const bodyComment = {
         comment: {
           body: comment
@@ -42,6 +45,11 @@ const Article = (props) => {
     useEffect(() => {
         if(showData.data.article !== undefined){
             setIsShow(true);
+            if(showData.data.article.author.username === user.username){
+                setshowEditAndDeleteButton(false);
+            }else{
+                setshowEditAndDeleteButton(true);
+            }
         }
     }, [showData])
 
@@ -74,7 +82,7 @@ const Article = (props) => {
                 </div>
             }
             <div>
-                { isShow&&<Post info={showData.data.article} isShow={false} showBodyorDescrip={false} />} 
+                { isShow&&<Post info={showData.data.article} isShow={showEditAndDeleteButton} showBodyorDescrip={false} />} 
             </div>
             <div>
                 { isShow&&

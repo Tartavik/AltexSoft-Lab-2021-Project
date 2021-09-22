@@ -10,6 +10,7 @@ import { useDeleteArticle } from "./hook/useDeleteArticle";
 
 
 const Post = (props) => {
+    console.log(props.isShow);
     const [image, username, date, title, description, tagList, favorited, favoritesCount, slug, updatedAt, body] = 
     [
         props.info.author.image,
