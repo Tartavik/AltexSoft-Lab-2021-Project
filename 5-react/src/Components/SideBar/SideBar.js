@@ -1,6 +1,6 @@
 import Tag from "../Tag/Tag";
 import { useState } from "react";
-import sideBar from "./sideBar.module.css"
+import sideBar from "./SideBar.module.css"
 
 
 const SideBar = (props) => {
