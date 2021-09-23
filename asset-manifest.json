@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/css/main.5bdb7850.chunk.css",
+    "main.js": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/js/main.ff8f8230.chunk.js",
+    "main.js.map": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/js/main.ff8f8230.chunk.js.map",
+    "runtime-main.js": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/js/runtime-main.f0d3fb55.js",
+    "runtime-main.js.map": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/js/runtime-main.f0d3fb55.js.map",
+    "static/js/2.cb6b91ec.chunk.js": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/js/2.cb6b91ec.chunk.js",
+    "static/js/2.cb6b91ec.chunk.js.map": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/js/2.cb6b91ec.chunk.js.map",
+    "static/js/3.dbbfcfaf.chunk.js": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/js/3.dbbfcfaf.chunk.js",
+    "static/js/3.dbbfcfaf.chunk.js.map": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/js/3.dbbfcfaf.chunk.js.map",
+    "index.html": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/index.html",
+    "static/css/main.5bdb7850.chunk.css.map": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/css/main.5bdb7850.chunk.css.map",
+    "static/js/2.cb6b91ec.chunk.js.LICENSE.txt": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/js/2.cb6b91ec.chunk.js.LICENSE.txt",
+    "static/media/green2.75c3c839.jpg": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/media/green2.75c3c839.jpg",
+    "static/media/logo.7e068dfd.png": "/AltexSoft-Lab-2021-Project-Anton-Palchyk/static/media/logo.7e068dfd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f0d3fb55.js",
+    "static/js/2.cb6b91ec.chunk.js",
+    "static/css/main.5bdb7850.chunk.css",
+    "static/js/main.ff8f8230.chunk.js"
+  ]
+}
