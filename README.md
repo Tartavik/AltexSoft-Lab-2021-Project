@@ -1,4 +1,4 @@
-[DEMO LINK](https://tartavik.github.io/AltexSoft-Lab-2021-Project-Anton-Palchyk/)
+[DEMO LINK](https://tartavik.github.io/AltexSoft-Lab-2021/)
 
 # Getting Started with Create React App
 
